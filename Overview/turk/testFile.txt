@@ -6,236 +6,317 @@ Post HIT
 Post HIT
 Post HIT
 Post HIT
+0 - num Assignable hits
+Expire old hit
+Expire 3QMELQS6Y5MFBUOWMD7ESRRD6PQ6RH
+Expire done 3QMELQS6Y5MFBUOWMD7ESRRD6PQ6RH
+Dispose done 3QMELQS6Y5MFBUOWMD7ESRRD6PQ6RH
+Expiration process completed
+0 - num Assignable hits
+Expire old hit
+Expire 3Z3R5YC0P3YOA2UZRVFDMC58N9PTFJ
+Expire done 3Z3R5YC0P3YOA2UZRVFDMC58N9PTFJ
+Dispose done 3Z3R5YC0P3YOA2UZRVFDMC58N9PTFJ
+Expiration process completed
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
 1 - num Assignable hits
 2 - num Assignable hits
 3 - num Assignable hits
 4 - num Assignable hits
 5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
 6 - num Assignable hits
 Start loop
 Post HIT
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Start loop
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Expire 3GS542CVJVYDOQSWNDXN90DJ48859C
-Expire done 3GS542CVJVYDOQSWNDXN90DJ48859C
-Dispose done 3GS542CVJVYDOQSWNDXN90DJ48859C
+0 - num Assignable hits
+Expire old hit
+Expire 3QMELQS6Y5MFBUOWMD7ESRRD6PQ6RH
+Expire done 3QMELQS6Y5MFBUOWMD7ESRRD6PQ6RH
+Dispose done 3QMELQS6Y5MFBUOWMD7ESRRD6PQ6RH
 Expiration process completed
-Expire 3UEBBGULPFZ3AF9OR05NR8RA6NVUFA
-Expire done 3UEBBGULPFZ3AF9OR05NR8RA6NVUFA
-Dispose done 3UEBBGULPFZ3AF9OR05NR8RA6NVUFA
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
 Expiration process completed
-Expire 33IXYHIZB5T2KP0QD5BB37BIBVX2EI
-Expire done 33IXYHIZB5T2KP0QD5BB37BIBVX2EI
-Dispose done 33IXYHIZB5T2KP0QD5BB37BIBVX2EI
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
 Expiration process completed
-Expire 3UUSLRKAULE4EKJWNMHMTGA5MZI7DA
-Expire done 3UUSLRKAULE4EKJWNMHMTGA5MZI7DA
-Dispose done 3UUSLRKAULE4EKJWNMHMTGA5MZI7DA
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
 Expiration process completed
-Expire 3VMHWJRYHVRVRJ3JW5GABFQE05CXF5
-Expire done 3VMHWJRYHVRVRJ3JW5GABFQE05CXF5
-Dispose done 3VMHWJRYHVRVRJ3JW5GABFQE05CXF5
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
 Expiration process completed
-Expire 3LEG2HW4UFYUQ30M8GVHLPWINWC2F0
-Expire done 3LEG2HW4UFYUQ30M8GVHLPWINWC2F0
-Dispose done 3LEG2HW4UFYUQ30M8GVHLPWINWC2F0
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
 Expiration process completed
-Expire 3FCO4VKOZ4O96QXWJHS6ZYSQMBJ7E3
-Expire done 3FCO4VKOZ4O96QXWJHS6ZYSQMBJ7E3
-Dispose done 3FCO4VKOZ4O96QXWJHS6ZYSQMBJ7E3
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
 Expiration process completed
-Expire 39RRBHZ0AUC9SBPOX29ZQM9BWZYZVS
-Expire done 39RRBHZ0AUC9SBPOX29ZQM9BWZYZVS
-Dispose done 39RRBHZ0AUC9SBPOX29ZQM9BWZYZVS
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
 Expiration process completed
-Enter foreach 3GS542CVJVYDOQSWNDXN90DJ48859C
-Prepared 3GS542CVJVYDOQSWNDXN90DJ48859C
-Executed 3GS542CVJVYDOQSWNDXN90DJ48859C
-Enter foreach 3UEBBGULPFZ3AF9OR05NR8RA6NVUFA
-Prepared 3UEBBGULPFZ3AF9OR05NR8RA6NVUFA
-Executed 3UEBBGULPFZ3AF9OR05NR8RA6NVUFA
-Enter foreach 33IXYHIZB5T2KP0QD5BB37BIBVX2EI
-Prepared 33IXYHIZB5T2KP0QD5BB37BIBVX2EI
-Executed 33IXYHIZB5T2KP0QD5BB37BIBVX2EI
-Enter foreach 3UUSLRKAULE4EKJWNMHMTGA5MZI7DA
-Prepared 3UUSLRKAULE4EKJWNMHMTGA5MZI7DA
-Executed 3UUSLRKAULE4EKJWNMHMTGA5MZI7DA
-Enter foreach 3VMHWJRYHVRVRJ3JW5GABFQE05CXF5
-Prepared 3VMHWJRYHVRVRJ3JW5GABFQE05CXF5
-Executed 3VMHWJRYHVRVRJ3JW5GABFQE05CXF5
-Enter foreach 3LEG2HW4UFYUQ30M8GVHLPWINWC2F0
-Prepared 3LEG2HW4UFYUQ30M8GVHLPWINWC2F0
-Executed 3LEG2HW4UFYUQ30M8GVHLPWINWC2F0
-Enter foreach 3FCO4VKOZ4O96QXWJHS6ZYSQMBJ7E3
-Enter foreach 39RRBHZ0AUC9SBPOX29ZQM9BWZYZVS
-Prepared 39RRBHZ0AUC9SBPOX29ZQM9BWZYZVS
-Executed 39RRBHZ0AUC9SBPOX29ZQM9BWZYZVS
-Exit
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+Expire old hit
+Expire 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expire done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Dispose done 3IQ9O0AYW6A8KTWPS3LYP9I031HTIA
+Expiration process completed
+1 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits

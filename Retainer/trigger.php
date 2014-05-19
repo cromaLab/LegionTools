@@ -9,6 +9,7 @@
     <script type="text/javascript" src="scripts/bootstrap.touchspin.js"></script>
     <script type="text/javascript" src="scripts/hitsOverview.js"></script>
 
+    <script> var baseURL = "<?php include('../baseURL.php'); echo $baseURL; ?>"; </script>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/trigger.css">
@@ -92,38 +93,12 @@
               <input type="text" class="form-control" id="numFire" placeholder="Number of workers to fire">
             </div>
             <div id = "fireButtonsGroup">
-                <button type="submit" id="fireButton" class="btn btn-primary">Fire!</button>
-                <button type="submit" id="clear_queue_button" class="btn btn-danger">Clear entire queue</button>
+                <button type="submit" id="fireWorkers" class="btn btn-primary">Fire!</button>
+                <button type="submit" id="clearQueue" class="btn btn-danger">Clear entire queue (pays workers)</button>
             </div>
           </form>
       </div>
     </div>
-
-
-   <!--  <h2>Send workers to a page</h2>
-    <p>Specify a task with the "task" URL parameter.</p>
-
-    <BR/>
-
-    <div id="trigger_info">
-        URL:
-        <input type="textbox" id="url_text" style="width: 800px" value="https://roc.cs.rochester.edu/convInterface/videocoding/tools/workrouter" ></input> <br/>
-        <p id = "numOnlineText"> There are <span id="numOnline">x</span> worker(s) online for this task </p>
-
-        Number of workers to fire:
-        <input type="textbox" id="numFire"></input> </br>
-        <input type="button" id="fire_button" value="Fire"></input> <br /> </br>
-
-        Update target number of workers:
-        <input type="textbox" id="numTarget"></input>
-        <input type="button" id="updateTarget" value="Update target"></input> <br />
-        Current target: <span id="currentTarget"> </span>
-    </div>
-
-    <p> <input type="button" id="clear_queue_button" value="Clear queue"></input> <br /> </p>
-    <p> <input type="button" id="send_to_tutorial_button" value="Send queue to Glance tutorial"></input> <br /> </p>
- -->
-
 
 </body>
 

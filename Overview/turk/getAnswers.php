@@ -53,40 +53,9 @@ fwrite($debug, "Expire done " . $hitId . "\n");
 		$mt = turk_easyDispose($hitId);
 fwrite($debug, "Dispose done " . $hitId . "\n");
 		sleep(.25); //Give the HIT a moment to dispose
-
-// 		// If hit was successfully disposed, delete from db
-// 		if($mt->FinalData['Request']['IsValid']){
-// fwrite($debug, "Remove from array " . $hitId . "\n");
-// 			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
-// fwrite($debug, "Query formed " . $hitId . "\n");
-
-// 			$count = 0;
-// 			$maxTries = 5;
-// 			$success = false;
-// 			while(!$success) {
-// 				try {
-// fwrite($debug, "Try: " . $hitId . "\n");
-// 					$sth = $dbh->prepare($sql);
-// fwrite($debug, "Prepared " . $hitId . "\n");
-// 				    $sth->execute(array(':hit_Id' => $hitId));
-// fwrite($debug, "Success " . $hitId . "\n");
-// 				    $success = true; //break out of loop on success
-// 				}
-// 				catch(PDOException $e) {
-// 				    // echo "Statement failed: " . $e->getMessage();
-// 				    // return false;
-// fwrite($debug, "Catch: " . $e->getMessage() . "\n");
-// 					$count++;
-// 					if($count >= $maxTries){
-// fwrite($debug, "Throw e: " . $e->getMessage() . "\n");
-// 						// throw $e;
-// 						return false;
-// 					}
-// 				}
-// 			}
-// 			$numAssignableHits--;
-// 		}
-fwrite($debug, "Expiration process completed\n");
+		if($mt['Request']['IsValid']){
+write($debug, "Expiration process valid\n");
+		}
 }
 
 function iShouldQuit(){
@@ -104,12 +73,6 @@ function isTargetReached(){
 	// Get target number of workers
 	$result = getTaskRowInDb();
 	$numWorkersTarget = $result[0]["target_workers"];
-
-// 	// Quit if no workers are needed
-// 	if($numWorkersTarget == 0){
-// 		expireAllHits($dbh);
-// 		exit();
-// 	}
 
 	// Get num workers currently online
 	$sth = $dbh->query("SELECT COUNT(*) AS count FROM `whois_online` WHERE `task`='".$_REQUEST['task']."'");

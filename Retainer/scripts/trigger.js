@@ -1,127 +1,8 @@
 $(document).ready( function() {
-    //
-    $('#fireButton').click( function() {
-        event.preventDefault();
-
-        link = $('#fireToURL').val();
-	   // Check if the link already contains a header
-	   if( link.substring(0, 7) != "http://" && link.substring(0, 8) != "https://"  && link.substring(0,3) != "../" ) {
-		// If not, add one
-		//link = link.substring(7);
-		link = "https://" + link;
-	   }
-
-        var numFire = $('#numFire').val();
-        // var task = gup('task') ? gup('task') : "default";
-        var task = $("#taskSession");
-        var r = confirm("Firing to: " + link + ". Click cancel to stop.");
-    	if(r == true){
-        	$.ajax({
-                url: "php/setFire.php",
-                type: "POST",
-                async: false,
-                data: {url: link, task: task},
-                dataType: "text",
-                success: function(d) {
-                    //
-                    //alert("Fire successful");
-                },
-            fail: function() {
-                alert("Fire failed!")
-            },
-        	});
-    	
-        	$.ajax({
-                url: "php/updateReleased.php",
-                type: "POST",
-                async: false,
-                data: {url: link, max: numFire, task: task},
-                dataType: "text",
-                success: function(d) {
-                    
-                },
-                fail: function() {
-                    alert("Sending number of workers failed");
-                },
-        	});
-    	}
-    });
-
-    function clearQueue(link){
-        // link = 'https://roc.cs.rochester.edu/LegionJS/LegionTools/Retainer/submitOnly.php';
-
-        // var task = gup('task') ? gup('task') : "default";
-        var task = $("#taskSession");
-        var numFire = 0;
-        //gets number of workers in queue
-        $.ajax({
-            url: "php/ajax_whosonline.php",
-            async: false,
-            type: "POST",
-            data: {task: task, role: "trigger"},
-            dataType: "text",
-            success: function(d) {
-                //
-                numFire = parseInt(d);
-            },
-            fail: function() {
-            alert("setOnline failed!");
-            }
-        });
-
-        // alert(numFire);
-        // var task = gup('task') ? gup('task') : "default";
-        var task = $("#taskSession");
-        var r = confirm("Send all workers in queue to destination?");
-        if(r == true){
-            $.ajax({
-                url: "php/setFire.php",
-                type: "POST",
-                async: false,
-                data: {url: link, task: task},
-                dataType: "text",
-                success: function(d) {
-                    //
-                    //alert("Fire successful");
-                },
-                fail: function() {
-                    alert("Clear queue failed!");
-                }
-            });
-            
-            $.ajax({
-                url: "php/updateReleased.php",
-                type: "POST",
-                async: false,
-                data: {url: link, max: numFire, task: task},
-                dataType: "text",
-                success: function(d) {
-                    
-                },
-                fail: function() {
-                    alert("Sending number of workers failed");
-                }
-            });
-        }
-    }
-
-    $('#clear_queue_button').click(function() {
-        event.preventDefault();
-
-        clearQueue('submitOnly.php');
-    });
 
     // $('#send_to_tutorial_button').click(function() {
     //     clearQueue('https://roc.cs.rochester.edu/convInterface/videocoding/tutorial/tutorial.php?justTutorial=true');
     // });
-
-    $('#url_text').keypress( function(e) {
-        if( e.which == 13 ) {
-            e.preventDefault;
-            $('#fire_button').click();
-        }
-    });
-
 
     $("#addNewTask").on("click", function(event){
         event.preventDefault();
@@ -318,16 +199,105 @@ $("#approveAll").on("click", function(event){
     });
 });
 
-$("#disposeAll").on("click", function(event){
+$("#clearQueue").on("click", function(event){
     event.preventDefault();
     
-    $('#hitsList li').each(function() {
-        var id = this.id;
-        // $("#" + id + " .disposeButton").trigger("click");
-        setTimeout(function(){
-            $("#" + id + " .disposeButton").trigger("click");
-        },250);
+    clearQueue(baseURL + '/Retainer/submitOnly.php');
+});
+
+function clearQueue(link){
+    var numOnline = 0;
+    var task = $("#taskSession").val();
+    $.ajax({
+        url: "php/ajax_whosonline.php",
+        type: "POST",
+        async: false,
+        data: {task: task, role: "trigger"},
+        dataType: "text",
+        success: function(d) {
+            //
+            // document.getElementById("numOnline").innerHTML= "There are " + d + " worker(s) online for this task";
+            numOnline = d;
+        },
+        fail: function() {
+            alert("setOnline failed!")
+        },
     });
+    var r = confirm("Send all workers in queue to destination?");
+    if(r == true){
+        $.ajax({
+            url: "php/setFire.php",
+            type: "POST",
+            async: false,
+            data: {url: link, task: task},
+            dataType: "text",
+            success: function(d) {
+                //
+                //alert("Fire successful");
+            },
+            fail: function() {
+                alert("Clear queue failed!");
+            }
+        });
+        
+        $.ajax({
+            url: "php/updateReleased.php",
+            type: "POST",
+            async: false,
+            data: {url: link, max: numOnline, task: task},
+            dataType: "text",
+            success: function(d) {
+                
+            },
+            fail: function() {
+                alert("Sending number of workers failed");
+            }
+        });
+    }
+}
+
+$("#fireWorkers").on("click", function(){
+    event.preventDefault();
+
+    var task = $("#taskSession").val();
+    var link  = $("#fireToURL").val();
+    var numFire  = $("#numFire").val();
+
+    if( link.substring(0, 7) != "http://" && link.substring(0, 8) != "https://"  && link.substring(0,3) != "../" ) {
+        link = "https://" + link;
+    }
+
+    var r = confirm("Fire " + numFire + " workers to: " + link + " ?");
+    if(r == true){
+        $.ajax({
+            url: "php/setFire.php",
+            type: "POST",
+            async: false,
+            data: {url: link, task: task},
+            dataType: "text",
+            success: function(d) {
+                //
+                //alert("Fire successful");
+            },
+            fail: function() {
+                alert("Clear queue failed!");
+            }
+        });
+        
+        $.ajax({
+            url: "php/updateReleased.php",
+            type: "POST",
+            async: false,
+            data: {url: link, max: numFire, task: task},
+            dataType: "text",
+            success: function(d) {
+                
+            },
+            fail: function() {
+                alert("Sending number of workers failed");
+            }
+        });
+    }
 });
 
 
