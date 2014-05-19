@@ -21,8 +21,8 @@ LegionTools provides three key features for requesters:
 * Modify `isSandbox.php` to determine whether you post HITs on the sandbox.
 * Navigate to `LegionTools/Retainer/trigger.php` in your browser (confirmed to work with the latest version of Chrome) to pull up the control UI.
 * Add a new task by typing a title, description, keywords, and unique session name and clicking `Add new task`.
-* Pull up a previous task using just your task session name.
 * Click `Start recruiting` to beging recruiting. **You must click `Stop recruiting` to end the recruiting process**.
+* Pull up a previous task using just your task session name. If you close the UI page and leave the recruiting tool running, you may stop recruiting by loading your session and clicking `Stop recruiting`.
 * Modify task title, description, and keywords with `Update task via task session`.
 * Send workers to a URL with the Fire button. **Your chosen URL must be `HTTPS`**. 
 * When you are ready to review HITs, click `Reload` in the `Overview` section to load all reviewable HITs associated with a given task session.
