@@ -9,11 +9,11 @@ LegionTools provides three key features for requesters:
 
 # Getting Started
 ## Installation
-1. Install PHP 5.0.1 or higher, if not already installed.
+1. Clone LegionTools to a public web server with PHP 5.1.2 or higher.
 2. Install PHP’s SOAP extension, if not already installed. Odds are, if you’re running PHP on Mac OS or Windows, the extension’s already installed.
 	* CentOS/RedHat: `yum install php-soap`
 	* Debian/Ubuntu: `apt-get install php5-soap`
-3. Download the `LegionTools` directory.
+3. Modify `LegionTools/baseURL.php` to contain the public URL of your LegionTools installation.
 4. Add your Amazon Mechanical Turk keys in `LegionTools/amtKeys.php`
 5. Ensure that `LegionTools/db` and its contents has permissions `777`.
 
@@ -24,8 +24,9 @@ LegionTools provides three key features for requesters:
 * Pull up a previous task using just your task session name.
 * Click `Start recruiting` to beging recruiting. **You must click `Stop recruiting` to end the recruiting process**.
 * Modify task title, description, and keywords with `Update task via task session`.
-* Sent workers to a URL with the Fire button. **Your URL must be `HTTPS`**. 
-* When you are ready to review HITs, click `Reload` in the `Overview` section to load all reviable HITs associated with a given task session.
+* Send workers to a URL with the Fire button. **Your chosen URL must be `HTTPS`**. 
+* When you are ready to review HITs, click `Reload` in the `Overview` section to load all reviewable HITs associated with a given task session.
+* Modify `LegionTools/Retainer/instructions.php` to change what workers will see while they are being staged.
 
 # Authors
 * [Mitchell Gordon](http://mgordon.me/ "Mitchell Gordon")
