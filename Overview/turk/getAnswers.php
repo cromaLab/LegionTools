@@ -53,7 +53,8 @@ fwrite($debug, "Expire done " . $hitId . "\n");
 		$mt = turk_easyDispose($hitId);
 fwrite($debug, "Dispose done " . $hitId . "\n");
 		sleep(.25); //Give the HIT a moment to dispose
-		if($mt['Request']['IsValid']){
+		// print_r($mt);
+		if(is_array($mt)){
 write($debug, "Expiration process valid\n");
 		}
 }
@@ -94,7 +95,7 @@ fwrite($debug, "Target number of workers reached\n");
 
 $task = $_REQUEST['task'];
 
-$debugFile = "testFile.txt";
+$debugFile = "debugFile.txt";
 $debug = fopen($debugFile, 'w');
 
 $numAssignableHits = 0;
@@ -136,6 +137,7 @@ fwrite($debug, "Post HIT\n");
 		$hitId = $hit['hit_Id'];
 		$hitInfo = turk50_getHit($hitId);
 // print_r($hitInfo);
+fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
 		if($hitInfo->HIT->HITStatus == "Disposed"){
 			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
 			$sth = $dbh->prepare($sql);
@@ -143,16 +145,17 @@ fwrite($debug, "Post HIT\n");
 		}
 		else if($hitInfo->HIT->HITStatus == "Assignable"){
 			$numAssignableHits++;
+			if((time() - $hit['time']) > 200){
+fwrite($debug, "Expire old hit\n");
+				sleep(1);
+				expireHit($hitId);
+			}
 		}
 fwrite($debug, $numAssignableHits . " - num Assignable hits\n");
 		// echo $hit['time'] . "</br>";
 		// echo time() . "</br>";
 // fwrite($debug, time() . " " . $hit['time'] . "\n");
-		if((time() - $hit['time']) > 200){
-fwrite($debug, "Expire old hit\n");
-			expireHit($hitId);
-		}
-		sleep(.5); //Don't overload mturk with getHit
+		sleep(1); //Don't overload mturk with getHit
 	}
 	sleep(2);
 }
@@ -173,7 +176,7 @@ fwrite($debug, "Prepared " . $hitId . "\n");
 		$sth->execute(array(':hit_Id' => $hitId));
 fwrite($debug, "Executed " . $hitId . "\n");
 	}
-	sleep(.5); //Don't overload mturk with getHit
+	sleep(1); //Don't overload mturk with getHit
 }
 
 fwrite($debug, "Exit\n");
