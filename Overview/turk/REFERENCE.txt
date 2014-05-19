@@ -1,0 +1,184 @@
+mTurk PHP API Reference Guide
+-----------------------------
+
+Class: MTurkInterface
+
+Note: Many functions exist named for their counterparts in the mTurk AWS
+      library (which are not listed here), but it is NOT intended for you 
+      to call these functions directly, utilize the Invoke() function to 
+      start things in motion once your variables are set.
+
+---
+
+Constructor: new MTurkInterface($AccessKey, $SecretKey, $Version = "2006-08-23")
+
+  $AccessKey - Your AWS Access Key (Required)
+  $SecretKey - Your AWS Secret Key (Required)
+  $Version   - The version of the API to pass to AWS (Optional)
+
+  Returns: New interface for class.
+
+---
+
+function SetOperation($operation)
+
+  $operation - The mturk operation you wish to perform.
+
+  Returns: Boolean TRUE if the operation exists, FALSE with $this->Fault set
+           otherwise.
+
+---
+
+function SetVar($var, $val)
+
+  Can be utilized, but technically quicker to just set variables in the class
+  directly.
+
+  $var - The variable to set
+  $val - The value of the variable
+
+  Returns: Boolean TRUE if the variable was set successfully, NULL with
+           $this->Fault set otherwise.
+
+---
+
+function Invoke()
+
+  Invokes the requested operation.
+
+  No arguments.
+
+  Returns: Boolean TRUE if the operation was successful, FALSE with 
+           $this->Fault set if the operation failed.
+
+---
+
+function Unix2ISO8601($int_date)
+
+  Converts a UNIX Timestamp date to the ISO 8601 standard used by AWS.
+
+  $int_date - UNIX Timestamp.
+
+  Returns: ISO 8601 Date.
+
+---
+
+function ISO86012Unix($timestamp)
+
+  Converts an ISO 8601 date standard to a UNIX Timestamp.
+
+  $timestamp - ISO 8601 Date.
+
+  Returns: UNIX Timestamp.
+
+---
+
+function LoadQuestion($inputsource)
+
+  Loads an external question XML file.
+
+  $inputsource - Source file to load.
+
+  Returns: Boolean TRUE if successful, NULL with $this->Fault set otherwise.
+
+---
+
+function LoadTest($inputsource)
+
+  Loads an external question/test XML file for Qualifications.
+
+  $inputsource - Source file to load.
+
+  Returns: Boolean TRUE if successful, NULL with $this->Fault set otherwise.
+
+---
+
+function LoadAnswerKey($inputsource)
+
+  Loads an external answerkey XML file for Qualifications.
+
+  $inputsource - Source file to load.
+
+  Returns: Boolean TRUE if successful, NULL with $this->Fault set otherwise.
+
+---
+
+function PullHITList()
+
+  Returns a list of HITs from the last operation run, if existing.
+
+  No arguments.
+
+  Returns: Array of HIT Id's, empty if no results.
+
+---
+
+function PullAssignmentList()
+
+  Returns a multi-dimensional array of Assignments from the last operation
+  run, if existing.
+
+  No arguments.
+
+  Returns: Array of Assignment details, empty if no results.
+
+---
+
+function PullQualificationRequestList()
+
+  Returns a multi-dimensional array of Qualification requests from the last
+  operation run, if existing.
+
+  No arguments.
+
+  Returns: Array of Qualification request details, empty if no results.
+
+---
+
+function mtMinutes($input)
+
+  Helper function to return a number of seconds based on minutes input.
+
+  $input - Number of minutes, example: 30.
+
+  Returns: Integer value, example: 60 would produce 3600.
+
+---
+
+function mtHours($input)
+
+  Helper function to return number of seconds based on hours input.
+
+  $input - Number of hours, example: 3.
+
+  Returns: Integer value, example: 3 would produce 10800.
+
+---
+
+function mtDays($input)
+
+  Helper function to return number of seconds based on days input.
+
+  $input - Number of days, example: 7.
+
+  Returns: Integer value, example: 7 would produce 604800.
+
+---
+
+function mtLocale($country)
+
+  Helper function to return a LocaleValue result.
+
+  $country - Two letter country code.
+
+  Returns: XML string containing the country code.
+
+---
+
+function UnpackAnswers($key, $answerXML)
+
+  Internal SCT function to convert an XML Answer to individual results,
+  will probably be removed by the next release!
+
+---
+

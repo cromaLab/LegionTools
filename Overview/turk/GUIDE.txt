@@ -1,0 +1,137 @@
+mTurk PHP API Quick User Guide
+------------------------------
+
+Read this document to gain a quick understanding of how to utilize the
+mTurk PHP API library properly.
+
+---
+
+Include the library in your code:
+
+   include("mturk.lib.php");
+
+And substantiate the interface with your access/secret keys.
+
+   $AccessKey = "xxxxxxxxxxxxxx";
+   $SecretKey = "xxxxxxxxxxxxxx";
+   $mt = new mTurkInterface($AccessKey, $SecretKey);
+
+We will use $mt in all examples here as the mturk class variable.
+
+To perform an operation on mturk, use SetOperation.
+
+   $mt->SetOperation("GetReviewableHITs");
+
+This action clears all variables in the class, giving it a clean
+slate in case you utilize it in a loop.
+
+Any variables you can utilize in the mturk api docs is available here,
+set it directly, like so. For the GetReviewableHITs method:
+
+  $mt->Status     = "Reviewable";
+  $mt->PageSize   = 100;
+  $mt->PageNumber = 1;
+
+---
+
+To make the actual call to mturk, use the Invoke() function.
+
+  $result = $mt->Invoke();
+
+In this case, if $result is not boolean TRUE, something went wrong.
+Depending on the action requested, you can examine several variables to 
+see the outcome of the operation - most of these are only required for 
+debugging purposes, there are helper variables/functions that will be 
+described shortly.
+
+  $mt->Fault          - Fault condition, 99% of the time locally generated.
+  $mt->RequestId      - AWS Request ID.
+  $mt->IsValid        - AWS Validity Indicator.
+  $mt->RawData        - The raw SOAP data from AWS in plain text.
+  $mt->ArrayData      - The SOAP data converted into a PHP array.
+  $mt->FinalData      - Cut down array of results (see note *)
+  $mt->ResultCounter  - For operations with a NumResults return count.
+  $mt->ResultsTotal   - For operations with a TotalNumResults return count.
+
+* For most operations, $mt->FinalData contains the 'meat & potatoes' of the
+response. An example - when performing a GetAssignmentsForHIT operation, you
+could either get the resulting list with:
+
+  $list = $mt->ArrayData["GetAssignmentsForHITResponse"]["GetAssignmentsForHITResult"]["Assignment"];
+
+Or:
+
+  $list = $mt->FinalData;
+
+But, why would you want to do either of those! For operations that return lists
+of HIT Id's, Assignment Id's or Qualification Requests, you can use these helper
+functions:
+
+  $hits = $mt->PullHITList();
+
+or
+
+  $assignments = $mt->PullAssignmentList();
+
+or
+
+  $qualrequests = $mt->PullQualificationRequestList();
+
+For HITs, the array contains a simple list of HIT Id's, the others will contain
+more complex arrays of the resulting details, see the mturk api documentation
+for the resulting return structures, or as we've done many times in the past 
+during testing, print_r the resulting array to find out it's contents.
+
+---
+
+One deviant from the simple variable assignment standard is qualifications, 
+which you provide with an array of details, like this:
+
+  $qual["QualificationTypeId"] = "XXXXXXXXXXXXXXXXXXXX";
+  $qual["Comparator"]          = "GreaterThan";
+  $qual["IntegerValue"]        = 50;
+
+  $qualList[] = $qual; /* Add to list */
+
+Then set with:
+
+  $mt->QualificationRequirement   = $qualList;
+
+An example of using the Locale qualification (with helper function):
+
+  $qual["QualificationTypeId"] = "00000000000000000071";
+  $qual["Comparator"]          = "EqualTo";
+  $qual["LocaleValue"]         = $mt->mtLocale("US");
+
+---
+
+Another difference with this system in it's current form that deviates
+from the standard documentation is specifying the amount paid for HIT
+creation. Use:
+
+  $mt->Amount = "0.50";
+
+---
+
+If you wish to utilize an externally generated question, test or answer key, 
+you can utilize the LoadQuestion/LoadTest/LoadAnswerKey functions, like so:
+
+  $mt->LoadQuestion("myquestion.xml");
+
+---
+
+Want to specify a period of time when creating a HIT or qualification? Use the
+internal time generation functions, for example:
+
+  $mt->LifetimeInSeconds           = $mt->mtDays(7);
+
+Would set the lifetime of a HIT to 7 days time. There are also mtHours and 
+mtDays functions.
+
+---
+
+That covers the basics of using the mTurk PHP API library.
+
+Enjoy!
+
+-- Rob Beckett, Santa Cruz Tech (subwolf@gmail.com)

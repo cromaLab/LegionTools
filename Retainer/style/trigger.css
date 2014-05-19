@@ -1,0 +1,18 @@
+#numOnlineText{
+	text-align: center;
+	font-size: 100pt;
+}
+
+#fireButtonsGroup{
+	text-align: center;
+}
+
+body{
+	padding-left:20px;
+}
+
+#hitsList{
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 21em;
+}
