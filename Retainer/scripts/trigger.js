@@ -199,6 +199,18 @@ $("#approveAll").on("click", function(event){
     });
 });
 
+$("#diposeAll").on("click", function(event){
+    event.preventDefault();
+    
+    $('#hitsList li').each(function() {
+        var id = this.id;
+        setTimeout(function(){
+            $("#" + id + " .disposeButton").trigger("click");
+        },250);
+    });
+});
+
+
 $("#clearQueue").on("click", function(event){
     event.preventDefault();
     

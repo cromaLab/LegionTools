@@ -1,0 +1,1492 @@
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Assignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Assignable
+2 - num Assignable hits
+Hit status: Assignable
+3 - num Assignable hits
+Hit status: Assignable
+4 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Assignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Assignable
+2 - num Assignable hits
+Hit status: Assignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Assignable
+4 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 39O0SQZVJNIYFU215NGTLG8NKX27RI
+Expire done 39O0SQZVJNIYFU215NGTLG8NKX27RI
+Dispose done 39O0SQZVJNIYFU215NGTLG8NKX27RI
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3FI30CQHVKUSVN77QGPBFN3N70E6B4
+Expire done 3FI30CQHVKUSVN77QGPBFN3N70E6B4
+Dispose done 3FI30CQHVKUSVN77QGPBFN3N70E6B4
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 33P2GD6NRN39LFVISCT8BHB3383HK0
+Expire done 33P2GD6NRN39LFVISCT8BHB3383HK0
+Dispose done 33P2GD6NRN39LFVISCT8BHB3383HK0
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 307L9TDWJY3VZD9MA4WMZFRXEYQN34
+Expire done 307L9TDWJY3VZD9MA4WMZFRXEYQN34
+Dispose done 307L9TDWJY3VZD9MA4WMZFRXEYQN34
+4 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3SSN80MU8CZ675VXXGBUE3ZXRYNKXX
+Expire done 3SSN80MU8CZ675VXXGBUE3ZXRYNKXX
+Dispose done 3SSN80MU8CZ675VXXGBUE3ZXRYNKXX
+5 - num Assignable hits
+Hit status: Unassignable
+5 - num Assignable hits
+Hit status: Unassignable
+5 - num Assignable hits
+Hit status: Assignable
+6 - num Assignable hits
+Hit status: Assignable
+7 - num Assignable hits
+Hit status: Assignable
+8 - num Assignable hits
+Hit status: Unassignable
+8 - num Assignable hits
+Hit status: Assignable
+9 - num Assignable hits
+Hit status: Unassignable
+9 - num Assignable hits
+Hit status: Assignable
+10 - num Assignable hits
+Hit status: Assignable
+11 - num Assignable hits
+Hit status: Unassignable
+11 - num Assignable hits
+Hit status: Assignable
+12 - num Assignable hits
+Hit status: Unassignable
+12 - num Assignable hits
+Hit status: Assignable
+13 - num Assignable hits
+Hit status: Assignable
+14 - num Assignable hits
+Hit status: Assignable
+15 - num Assignable hits
+Start loop
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3WYZV0QBFJO5E2R3R3Y1F0G744DBX3
+Expire done 3WYZV0QBFJO5E2R3R3Y1F0G744DBX3
+Dispose done 3WYZV0QBFJO5E2R3R3Y1F0G744DBX3
+1 - num Assignable hits
+Hit status: Disposed
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Reviewable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Disposed
+1 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 31ANT7FQN8D63WAFLPP29SSL6I95H4
+Expire done 31ANT7FQN8D63WAFLPP29SSL6I95H4
+Dispose done 31ANT7FQN8D63WAFLPP29SSL6I95H4
+2 - num Assignable hits
+Hit status: Disposed
+2 - num Assignable hits
+Hit status: Disposed
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3X55NP42EORV2YLZQJ9E34WSEDSP33
+Expire done 3X55NP42EORV2YLZQJ9E34WSEDSP33
+Dispose done 3X55NP42EORV2YLZQJ9E34WSEDSP33
+3 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3ZFRE2BDQ9P1W0UJXHE41INAV70ZXY
+Expire done 3ZFRE2BDQ9P1W0UJXHE41INAV70ZXY
+Dispose done 3ZFRE2BDQ9P1W0UJXHE41INAV70ZXY
+4 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 368IUKXGA5JUZH8H9L7CA78CO4UP69
+Expire done 368IUKXGA5JUZH8H9L7CA78CO4UP69
+Dispose done 368IUKXGA5JUZH8H9L7CA78CO4UP69
+5 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3BPP3MA3TCV8LBMYNBX35ER50SHELL
+Expire done 3BPP3MA3TCV8LBMYNBX35ER50SHELL
+Dispose done 3BPP3MA3TCV8LBMYNBX35ER50SHELL
+6 - num Assignable hits
+Hit status: Unassignable
+6 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3VW0145YLYN029QB1O9927JM553MJG
+Expire done 3VW0145YLYN029QB1O9927JM553MJG
+Dispose done 3VW0145YLYN029QB1O9927JM553MJG
+7 - num Assignable hits
+Hit status: Unassignable
+7 - num Assignable hits
+Hit status: Unassignable
+7 - num Assignable hits
+Hit status: Assignable
+8 - num Assignable hits
+Hit status: Unassignable
+8 - num Assignable hits
+Hit status: Unassignable
+8 - num Assignable hits
+Hit status: Unassignable
+8 - num Assignable hits
+Hit status: Unassignable
+8 - num Assignable hits
+Hit status: Unassignable
+8 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3RZS0FBRWKLJFYHIJCKFW70MKQ4PC0
+Expire done 3RZS0FBRWKLJFYHIJCKFW70MKQ4PC0
+Dispose done 3RZS0FBRWKLJFYHIJCKFW70MKQ4PC0
+1 - num Assignable hits
+Hit status: Disposed
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Disposed
+1 - num Assignable hits
+Hit status: Disposed
+1 - num Assignable hits
+Hit status: Disposed
+1 - num Assignable hits
+Hit status: Disposed
+1 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3EHIMLB7F7APQETHJNW5LC2C88AH8I
+Expire done 3EHIMLB7F7APQETHJNW5LC2C88AH8I
+Dispose done 3EHIMLB7F7APQETHJNW5LC2C88AH8I
+2 - num Assignable hits
+Hit status: Disposed
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Reviewable
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3MQKOF1EE2ZJ4ZKXVUTL87Q0YNLDWL
+Expire done 3MQKOF1EE2ZJ4ZKXVUTL87Q0YNLDWL
+Dispose done 3MQKOF1EE2ZJ4ZKXVUTL87Q0YNLDWL
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Hit status: Unassignable
+3 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Assignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Assignable
+2 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3YKP7CX6G2QBZNLC9QU3L13J2B0B7A
+Expire done 3YKP7CX6G2QBZNLC9QU3L13J2B0B7A
+Dispose done 3YKP7CX6G2QBZNLC9QU3L13J2B0B7A
+1 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 32LAQ1JNT90DTKRPMKEZVNNPGTYTUL
+Expire done 32LAQ1JNT90DTKRPMKEZVNNPGTYTUL
+Dispose done 32LAQ1JNT90DTKRPMKEZVNNPGTYTUL
+2 - num Assignable hits
+Hit status: Reviewable
+2 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3WGCNLZJKFJQ3Y4UY640FH062AD1DB
+Expire done 3WGCNLZJKFJQ3Y4UY640FH062AD1DB
+Dispose done 3WGCNLZJKFJQ3Y4UY640FH062AD1DB
+3 - num Assignable hits
+Hit status: Reviewable
+3 - num Assignable hits
+Hit status: Assignable
+4 - num Assignable hits
+Hit status: Unassignable
+4 - num Assignable hits
+Hit status: Assignable
+5 - num Assignable hits
+Hit status: Unassignable
+5 - num Assignable hits
+Hit status: Unassignable
+5 - num Assignable hits
+Hit status: Unassignable
+5 - num Assignable hits
+Hit status: Assignable
+6 - num Assignable hits
+Hit status: Assignable
+7 - num Assignable hits
+Hit status: Unassignable
+7 - num Assignable hits
+Hit status: Assignable
+8 - num Assignable hits
+Hit status: Assignable
+9 - num Assignable hits
+Hit status: Assignable
+10 - num Assignable hits
+Hit status: Assignable
+11 - num Assignable hits
+Hit status: Unassignable
+11 - num Assignable hits
+Hit status: Assignable
+12 - num Assignable hits
+Hit status: Assignable
+13 - num Assignable hits
+Hit status: Assignable
+14 - num Assignable hits
+Hit status: Assignable
+15 - num Assignable hits
+Hit status: Assignable
+16 - num Assignable hits
+Start loop
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Unassignable
+0 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 372AGES0I4GSU98SN0KRFFLBMQHXR3
+Expire done 372AGES0I4GSU98SN0KRFFLBMQHXR3
+Dispose done 372AGES0I4GSU98SN0KRFFLBMQHXR3
+1 - num Assignable hits
+Hit status: Reviewable
+1 - num Assignable hits
+Hit status: Reviewable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Unassignable
+1 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3GL25Y684351XTV0ISOATGR1G3IMX4
+Expire done 3GL25Y684351XTV0ISOATGR1G3IMX4
+Dispose done 3GL25Y684351XTV0ISOATGR1G3IMX4
+2 - num Assignable hits
+Hit status: Disposed
+2 - num Assignable hits
+Hit status: Disposed
+2 - num Assignable hits
+Hit status: Reviewable
+2 - num Assignable hits
+Hit status: Disposed
+2 - num Assignable hits
+Hit status: Reviewable
+2 - num Assignable hits
+Hit status: Unassignable
+2 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+Expire done 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+Dispose done 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+3 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+Expire done 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+Dispose done 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+4 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+Expire done 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+Dispose done 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+5 - num Assignable hits
+Hit status: Unassignable
+5 - num Assignable hits
+Hit status: Unassignable
+5 - num Assignable hits
+Hit status: Unassignable
+5 - num Assignable hits
+Hit status: Assignable
+Expire old hit
+Expire 38F60IALAGSXDYF9OD0F6GZI04U0TP
+Expire done 38F60IALAGSXDYF9OD0F6GZI04U0TP
+Dispose done 38F60IALAGSXDYF9OD0F6GZI04U0TP
+6 - num Assignable hits
+Hit status: Unassignable
+6 - num Assignable hits
+Hit status: Assignable
+7 - num Assignable hits
+Hit status: Assignable
+8 - num Assignable hits
+Hit status: Unassignable
+8 - num Assignable hits
+Hit status: Assignable
+9 - num Assignable hits
+Hit status: Unassignable
+9 - num Assignable hits
+Hit status: Unassignable
+9 - num Assignable hits
+Hit status: Assignable
+10 - num Assignable hits
+Hit status: Assignable
+11 - num Assignable hits
+Hit status: Assignable
+12 - num Assignable hits
+Hit status: Assignable
+13 - num Assignable hits
+Expire 3W0XM68YZP6YH4A4QNM0WJEI3NRK1H
+Expire done 3W0XM68YZP6YH4A4QNM0WJEI3NRK1H
+Dispose done 3W0XM68YZP6YH4A4QNM0WJEI3NRK1H
+Expire 3VDI8GSXAF4BQIY6ZHA0D19XACG8GM
+Expire done 3VDI8GSXAF4BQIY6ZHA0D19XACG8GM
+Dispose done 3VDI8GSXAF4BQIY6ZHA0D19XACG8GM
+Expire 3RZS0FBRWKLJFYHIJCGS9WJ81UOCP0
+Expire done 3RZS0FBRWKLJFYHIJCGS9WJ81UOCP0
+Dispose done 3RZS0FBRWKLJFYHIJCGS9WJ81UOCP0
+Expire 3B286OTISESZ08HM4LFH6578SSXAJW
+Expire done 3B286OTISESZ08HM4LFH6578SSXAJW
+Dispose done 3B286OTISESZ08HM4LFH6578SSXAJW
+Expire 3LG268AV38HJO9HBSVQC4FJQNOTRE4
+Expire done 3LG268AV38HJO9HBSVQC4FJQNOTRE4
+Dispose done 3LG268AV38HJO9HBSVQC4FJQNOTRE4
+Expire 3KTCJ4SCVGCT7SA7BZZGBW6MSSR1M8
+Expire done 3KTCJ4SCVGCT7SA7BZZGBW6MSSR1M8
+Dispose done 3KTCJ4SCVGCT7SA7BZZGBW6MSSR1M8
+Expire 33CLA8O0MIMBUNH7N6AIMX4QZP8RFM
+Expire done 33CLA8O0MIMBUNH7N6AIMX4QZP8RFM
+Dispose done 33CLA8O0MIMBUNH7N6AIMX4QZP8RFM
+Expire 3YOAVL4CA0SAYY69D68CHW9YJGIZ4Z
+Expire done 3YOAVL4CA0SAYY69D68CHW9YJGIZ4Z
+Dispose done 3YOAVL4CA0SAYY69D68CHW9YJGIZ4Z
+Expire 3BJKPTD2QCNLDSZ8IQF731JRQYGTRW
+Expire done 3BJKPTD2QCNLDSZ8IQF731JRQYGTRW
+Dispose done 3BJKPTD2QCNLDSZ8IQF731JRQYGTRW
+Expire 3K3IX1W4S62VMJKKZYK131TK1R7PAF
+Expire done 3K3IX1W4S62VMJKKZYK131TK1R7PAF
+Dispose done 3K3IX1W4S62VMJKKZYK131TK1R7PAF
+Expire 3LN3BXKGC06MGJUOXKQ6RHCJSJNWGT
+Expire done 3LN3BXKGC06MGJUOXKQ6RHCJSJNWGT
+Dispose done 3LN3BXKGC06MGJUOXKQ6RHCJSJNWGT
+Expire 3ZVPAMTJWNEH8ND2YQG04I42048RGL
+Expire done 3ZVPAMTJWNEH8ND2YQG04I42048RGL
+Dispose done 3ZVPAMTJWNEH8ND2YQG04I42048RGL
+Expire 3BFF0DJK8XNXE7ZLXFFCTBONC0ZTSK
+Expire done 3BFF0DJK8XNXE7ZLXFFCTBONC0ZTSK
+Dispose done 3BFF0DJK8XNXE7ZLXFFCTBONC0ZTSK
+Expire 3IZPORCT1FKV8J8DIWYIPIG3F4LRHK
+Expire done 3IZPORCT1FKV8J8DIWYIPIG3F4LRHK
+Dispose done 3IZPORCT1FKV8J8DIWYIPIG3F4LRHK
+Expire 36MUZ9VAE6DPNZY6AUZFM1J0RJCDE1
+Expire done 36MUZ9VAE6DPNZY6AUZFM1J0RJCDE1
+Dispose done 36MUZ9VAE6DPNZY6AUZFM1J0RJCDE1
+Expire 3OID399FXGIHTDY255JL4J403KRDFJ
+Expire done 3OID399FXGIHTDY255JL4J403KRDFJ
+Dispose done 3OID399FXGIHTDY255JL4J403KRDFJ
+Expire 3IH9TRB0FBA7B9KGQK5B6EGJUFHI1Q
+Expire done 3IH9TRB0FBA7B9KGQK5B6EGJUFHI1Q
+Dispose done 3IH9TRB0FBA7B9KGQK5B6EGJUFHI1Q
+Expire 3MDKGGG61QYSR91OQ2GWFH99D7F6TV
+Expire done 3MDKGGG61QYSR91OQ2GWFH99D7F6TV
+Dispose done 3MDKGGG61QYSR91OQ2GWFH99D7F6TV
+Expire 3LXX8KJXPWKZW0YESSX95HUO4069ON
+Expire done 3LXX8KJXPWKZW0YESSX95HUO4069ON
+Dispose done 3LXX8KJXPWKZW0YESSX95HUO4069ON
+Expire 3ZQA3IO31B2H7VVJOFIGQBC56OI1O6
+Expire done 3ZQA3IO31B2H7VVJOFIGQBC56OI1O6
+Dispose done 3ZQA3IO31B2H7VVJOFIGQBC56OI1O6
+Expire 3WRAAIUSBJA0VSMBLPY5KPW1MMRXAT
+Expire done 3WRAAIUSBJA0VSMBLPY5KPW1MMRXAT
+Dispose done 3WRAAIUSBJA0VSMBLPY5KPW1MMRXAT
+Expire 3DTJ4WT8BDQSQ0322COCDT23F1OZEO
+Expire done 3DTJ4WT8BDQSQ0322COCDT23F1OZEO
+Dispose done 3DTJ4WT8BDQSQ0322COCDT23F1OZEO
+Expire 3SBNLSTU6UGNYUP26HDS7BKIFPNDZ9
+Expire done 3SBNLSTU6UGNYUP26HDS7BKIFPNDZ9
+Dispose done 3SBNLSTU6UGNYUP26HDS7BKIFPNDZ9
+Expire 363A7XIFV4X8R3HGLAXNW4ZG6BKAV4
+Expire done 363A7XIFV4X8R3HGLAXNW4ZG6BKAV4
+Dispose done 363A7XIFV4X8R3HGLAXNW4ZG6BKAV4
+Expire 3N3WJQXELS1GQVAIUR223DIG3PQ2L6
+Expire done 3N3WJQXELS1GQVAIUR223DIG3PQ2L6
+Dispose done 3N3WJQXELS1GQVAIUR223DIG3PQ2L6
+Expire 3XU80RHWHZRUV1IKSDM9ABD31HS44C
+Expire done 3XU80RHWHZRUV1IKSDM9ABD31HS44C
+Dispose done 3XU80RHWHZRUV1IKSDM9ABD31HS44C
+Expire 36BTXXLZ2VJ1W7KI3PIMI4ODTVBR4H
+Expire done 36BTXXLZ2VJ1W7KI3PIMI4ODTVBR4H
+Dispose done 36BTXXLZ2VJ1W7KI3PIMI4ODTVBR4H
+Expire 3VP28W7DUNVKWE3YXN8IVBN3R23ZF6
+Expire done 3VP28W7DUNVKWE3YXN8IVBN3R23ZF6
+Dispose done 3VP28W7DUNVKWE3YXN8IVBN3R23ZF6
+Expire 3K8CQCU3KECSQBBAKO7O4C2UCRLWNK
+Expire done 3K8CQCU3KECSQBBAKO7O4C2UCRLWNK
+Dispose done 3K8CQCU3KECSQBBAKO7O4C2UCRLWNK
+Expire 31S7M7DAGG1AAU4VD6MY40R6323LTH
+Expire done 31S7M7DAGG1AAU4VD6MY40R6323LTH
+Dispose done 31S7M7DAGG1AAU4VD6MY40R6323LTH
+Expire 3WYZV0QBFJO5E2R3R3Y1F0G744CXBO
+Expire done 3WYZV0QBFJO5E2R3R3Y1F0G744CXBO
+Dispose done 3WYZV0QBFJO5E2R3R3Y1F0G744CXBO
+Expire 3D3B8GE8922HH0AF7SAOUHZEE529P4
+Expire done 3D3B8GE8922HH0AF7SAOUHZEE529P4
+Dispose done 3D3B8GE8922HH0AF7SAOUHZEE529P4
+Expire 3PMR2DOWOOCCRKMK6I5JF3JH1DN45H
+Expire done 3PMR2DOWOOCCRKMK6I5JF3JH1DN45H
+Dispose done 3PMR2DOWOOCCRKMK6I5JF3JH1DN45H
+Expire 3VGZ74AYTGRD2LOJGTUS2YMUJZHGCN
+Expire done 3VGZ74AYTGRD2LOJGTUS2YMUJZHGCN
+Dispose done 3VGZ74AYTGRD2LOJGTUS2YMUJZHGCN
+Expire 3H5TOKO3D9U8AOMYB1FO79XHX8Y46X
+Expire done 3H5TOKO3D9U8AOMYB1FO79XHX8Y46X
+Dispose done 3H5TOKO3D9U8AOMYB1FO79XHX8Y46X
+Expire 33NKDW9FFXTOO7J953UWQKMPMPCXCV
+Expire done 33NKDW9FFXTOO7J953UWQKMPMPCXCV
+Dispose done 33NKDW9FFXTOO7J953UWQKMPMPCXCV
+Expire 3R868ACW4SNQAEZT87E0DWNFSH3ZG5
+Expire done 3R868ACW4SNQAEZT87E0DWNFSH3ZG5
+Dispose done 3R868ACW4SNQAEZT87E0DWNFSH3ZG5
+Expire 3LAZVA75NI2OWGDF7JIUVUMAYUW2OO
+Expire done 3LAZVA75NI2OWGDF7JIUVUMAYUW2OO
+Dispose done 3LAZVA75NI2OWGDF7JIUVUMAYUW2OO
+Expire 30U1YOGZGA7QXI3OBPJKBINFSANSDJ
+Expire done 30U1YOGZGA7QXI3OBPJKBINFSANSDJ
+Dispose done 30U1YOGZGA7QXI3OBPJKBINFSANSDJ
+Expire 304QEQWKZPVH06A1SWEGC6TV1WC0O2
+Expire done 304QEQWKZPVH06A1SWEGC6TV1WC0O2
+Dispose done 304QEQWKZPVH06A1SWEGC6TV1WC0O2
+Expire 31KPKEKW4AOXHCLSOR9U6MTWUXTB09
+Expire done 31KPKEKW4AOXHCLSOR9U6MTWUXTB09
+Dispose done 31KPKEKW4AOXHCLSOR9U6MTWUXTB09
+Expire 3SA4EMRVJVDZL6M27WRV16YLB18P08
+Expire done 3SA4EMRVJVDZL6M27WRV16YLB18P08
+Dispose done 3SA4EMRVJVDZL6M27WRV16YLB18P08
+Expire 3D06DR5225UP1GN77IWW98G3FI9MA0
+Expire done 3D06DR5225UP1GN77IWW98G3FI9MA0
+Dispose done 3D06DR5225UP1GN77IWW98G3FI9MA0
+Expire 372AGES0I4GSU98SN0KRFFLBMQHXR3
+Expire done 372AGES0I4GSU98SN0KRFFLBMQHXR3
+Dispose done 372AGES0I4GSU98SN0KRFFLBMQHXR3
+Expire 3FI30CQHVKUSVN77QGPBFN3N70GB6B
+Expire done 3FI30CQHVKUSVN77QGPBFN3N70GB6B
+Dispose done 3FI30CQHVKUSVN77QGPBFN3N70GB6B
+Expire 3LOJFQ4BOXQS9ZQG6GAIKWW5BGBKDV
+Expire done 3LOJFQ4BOXQS9ZQG6GAIKWW5BGBKDV
+Dispose done 3LOJFQ4BOXQS9ZQG6GAIKWW5BGBKDV
+Expire 3D17ECOUOE6SL62X5HYO28EUBXN31E
+Expire done 3D17ECOUOE6SL62X5HYO28EUBXN31E
+Dispose done 3D17ECOUOE6SL62X5HYO28EUBXN31E
+Expire 3Y7LTZE0YTX9FW0OSC3HHBO61PJUZ1
+Expire done 3Y7LTZE0YTX9FW0OSC3HHBO61PJUZ1
+Dispose done 3Y7LTZE0YTX9FW0OSC3HHBO61PJUZ1
+Expire 3GL25Y684351XTV0ISOATGR1G3IMX4
+Expire done 3GL25Y684351XTV0ISOATGR1G3IMX4
+Dispose done 3GL25Y684351XTV0ISOATGR1G3IMX4
+Expire 34KYK9TV2RJXIL54XTSEGSZFPPCSBD
+Expire done 34KYK9TV2RJXIL54XTSEGSZFPPCSBD
+Dispose done 34KYK9TV2RJXIL54XTSEGSZFPPCSBD
+Expire 3AFT28WXLFDS71RHWM3MIATRNQUOIM
+Expire done 3AFT28WXLFDS71RHWM3MIATRNQUOIM
+Dispose done 3AFT28WXLFDS71RHWM3MIATRNQUOIM
+Expire 3H6W48L9F40STWNN03KG817PC6NPWA
+Expire done 3H6W48L9F40STWNN03KG817PC6NPWA
+Dispose done 3H6W48L9F40STWNN03KG817PC6NPWA
+Expire 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+Expire done 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+Dispose done 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+Expire 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+Expire done 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+Dispose done 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+Expire 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+Expire done 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+Dispose done 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+Expire 3SD15I2WD25NSS3UBNA5X45BJ8363F
+Expire done 3SD15I2WD25NSS3UBNA5X45BJ8363F
+Dispose done 3SD15I2WD25NSS3UBNA5X45BJ8363F
+Expire 36MUZ9VAE6DPNZY6AUZFM1J0RJGED6
+Expire done 36MUZ9VAE6DPNZY6AUZFM1J0RJGED6
+Dispose done 36MUZ9VAE6DPNZY6AUZFM1J0RJGED6
+Expire 3JMNNNO3B1FW1PMHY594COZW1WWW2V
+Expire done 3JMNNNO3B1FW1PMHY594COZW1WWW2V
+Dispose done 3JMNNNO3B1FW1PMHY594COZW1WWW2V
+Expire 38F60IALAGSXDYF9OD0F6GZI04U0TP
+Expire done 38F60IALAGSXDYF9OD0F6GZI04U0TP
+Dispose done 38F60IALAGSXDYF9OD0F6GZI04U0TP
+Expire 3UY4PIS8QRWZPAV7N0I3BMC0GEDN1D
+Expire done 3UY4PIS8QRWZPAV7N0I3BMC0GEDN1D
+Dispose done 3UY4PIS8QRWZPAV7N0I3BMC0GEDN1D
+Expire 3LG268AV38HJO9HBSVUZRQ046K7REP
+Expire done 3LG268AV38HJO9HBSVUZRQ046K7REP
+Dispose done 3LG268AV38HJO9HBSVUZRQ046K7REP
+Expire 3D7VY91L658UKQSZDWWS4J09X0VBML
+Expire done 3D7VY91L658UKQSZDWWS4J09X0VBML
+Dispose done 3D7VY91L658UKQSZDWWS4J09X0VBML
+Expire 3JU8CV4BRLNKONEL9HT6R7U394POPY
+Expire done 3JU8CV4BRLNKONEL9HT6R7U394POPY
+Dispose done 3JU8CV4BRLNKONEL9HT6R7U394POPY
+Expire 3YO4AH2FPDVKLINH796K1BOVGXUQ00
+Expire done 3YO4AH2FPDVKLINH796K1BOVGXUQ00
+Dispose done 3YO4AH2FPDVKLINH796K1BOVGXUQ00
+Expire 38LRF35D5L78U3TV7588DAJRMULU35
+Expire done 38LRF35D5L78U3TV7588DAJRMULU35
+Dispose done 38LRF35D5L78U3TV7588DAJRMULU35
+Expire 3LCXHSGDLTHVPOHO7KU4H050SMPSED
+Expire done 3LCXHSGDLTHVPOHO7KU4H050SMPSED
+Dispose done 3LCXHSGDLTHVPOHO7KU4H050SMPSED
+Expire 31MCUE39BKXPPLS0N0JR9VI0DM63GE
+Expire done 31MCUE39BKXPPLS0N0JR9VI0DM63GE
+Dispose done 31MCUE39BKXPPLS0N0JR9VI0DM63GE
+Expire 3EAWOID6MT8CQQJYT80U7YN3XPA0V5
+Expire done 3EAWOID6MT8CQQJYT80U7YN3XPA0V5
+Dispose done 3EAWOID6MT8CQQJYT80U7YN3XPA0V5
+Expire 31HLTCK4BL691UUJ7APXSQAJ46ZGVO
+Expire done 31HLTCK4BL691UUJ7APXSQAJ46ZGVO
+Dispose done 31HLTCK4BL691UUJ7APXSQAJ46ZGVO
+Expire 341H3G5YF0PTZAO8U5PXS40ZL0GZ04
+Expire done 341H3G5YF0PTZAO8U5PXS40ZL0GZ04
+Dispose done 341H3G5YF0PTZAO8U5PXS40ZL0GZ04
+Enter foreach 3W0XM68YZP6YH4A4QNM0WJEI3NRK1H
+Enter foreach 3VDI8GSXAF4BQIY6ZHA0D19XACG8GM
+Enter foreach 3RZS0FBRWKLJFYHIJCGS9WJ81UOCP0
+Enter foreach 3B286OTISESZ08HM4LFH6578SSXAJW
+Enter foreach 3LG268AV38HJO9HBSVQC4FJQNOTRE4
+Enter foreach 3KTCJ4SCVGCT7SA7BZZGBW6MSSR1M8
+Enter foreach 33CLA8O0MIMBUNH7N6AIMX4QZP8RFM
+Enter foreach 3YOAVL4CA0SAYY69D68CHW9YJGIZ4Z
+Enter foreach 3BJKPTD2QCNLDSZ8IQF731JRQYGTRW
+Enter foreach 3K3IX1W4S62VMJKKZYK131TK1R7PAF
+Enter foreach 3LN3BXKGC06MGJUOXKQ6RHCJSJNWGT
+Enter foreach 3ZVPAMTJWNEH8ND2YQG04I42048RGL
+Enter foreach 3BFF0DJK8XNXE7ZLXFFCTBONC0ZTSK
+Enter foreach 3IZPORCT1FKV8J8DIWYIPIG3F4LRHK
+Enter foreach 36MUZ9VAE6DPNZY6AUZFM1J0RJCDE1
+Enter foreach 3OID399FXGIHTDY255JL4J403KRDFJ
+Enter foreach 3IH9TRB0FBA7B9KGQK5B6EGJUFHI1Q
+Enter foreach 3MDKGGG61QYSR91OQ2GWFH99D7F6TV
+Enter foreach 3LXX8KJXPWKZW0YESSX95HUO4069ON
+Enter foreach 3ZQA3IO31B2H7VVJOFIGQBC56OI1O6
+Enter foreach 3WRAAIUSBJA0VSMBLPY5KPW1MMRXAT
+Enter foreach 3DTJ4WT8BDQSQ0322COCDT23F1OZEO
+Enter foreach 3SBNLSTU6UGNYUP26HDS7BKIFPNDZ9
+Enter foreach 363A7XIFV4X8R3HGLAXNW4ZG6BKAV4
+Enter foreach 3N3WJQXELS1GQVAIUR223DIG3PQ2L6
+Enter foreach 3XU80RHWHZRUV1IKSDM9ABD31HS44C
+Enter foreach 36BTXXLZ2VJ1W7KI3PIMI4ODTVBR4H
+Enter foreach 3VP28W7DUNVKWE3YXN8IVBN3R23ZF6
+Prepared 3VP28W7DUNVKWE3YXN8IVBN3R23ZF6
+Executed 3VP28W7DUNVKWE3YXN8IVBN3R23ZF6
+Enter foreach 3K8CQCU3KECSQBBAKO7O4C2UCRLWNK
+Prepared 3K8CQCU3KECSQBBAKO7O4C2UCRLWNK
+Executed 3K8CQCU3KECSQBBAKO7O4C2UCRLWNK
+Enter foreach 31S7M7DAGG1AAU4VD6MY40R6323LTH
+Prepared 31S7M7DAGG1AAU4VD6MY40R6323LTH
+Executed 31S7M7DAGG1AAU4VD6MY40R6323LTH
+Enter foreach 3WYZV0QBFJO5E2R3R3Y1F0G744CXBO
+Prepared 3WYZV0QBFJO5E2R3R3Y1F0G744CXBO
+Executed 3WYZV0QBFJO5E2R3R3Y1F0G744CXBO
+Enter foreach 3D3B8GE8922HH0AF7SAOUHZEE529P4
+Prepared 3D3B8GE8922HH0AF7SAOUHZEE529P4
+Executed 3D3B8GE8922HH0AF7SAOUHZEE529P4
+Enter foreach 3PMR2DOWOOCCRKMK6I5JF3JH1DN45H
+Enter foreach 3VGZ74AYTGRD2LOJGTUS2YMUJZHGCN
+Enter foreach 3H5TOKO3D9U8AOMYB1FO79XHX8Y46X
+Enter foreach 33NKDW9FFXTOO7J953UWQKMPMPCXCV
+Enter foreach 3R868ACW4SNQAEZT87E0DWNFSH3ZG5
+Prepared 3R868ACW4SNQAEZT87E0DWNFSH3ZG5
+Executed 3R868ACW4SNQAEZT87E0DWNFSH3ZG5
+Enter foreach 3LAZVA75NI2OWGDF7JIUVUMAYUW2OO
+Enter foreach 30U1YOGZGA7QXI3OBPJKBINFSANSDJ
+Enter foreach 304QEQWKZPVH06A1SWEGC6TV1WC0O2
+Enter foreach 31KPKEKW4AOXHCLSOR9U6MTWUXTB09
+Enter foreach 3SA4EMRVJVDZL6M27WRV16YLB18P08
+Enter foreach 3D06DR5225UP1GN77IWW98G3FI9MA0
+Enter foreach 372AGES0I4GSU98SN0KRFFLBMQHXR3
+Prepared 372AGES0I4GSU98SN0KRFFLBMQHXR3
+Executed 372AGES0I4GSU98SN0KRFFLBMQHXR3
+Enter foreach 3FI30CQHVKUSVN77QGPBFN3N70GB6B
+Enter foreach 3LOJFQ4BOXQS9ZQG6GAIKWW5BGBKDV
+Enter foreach 3D17ECOUOE6SL62X5HYO28EUBXN31E
+Enter foreach 3Y7LTZE0YTX9FW0OSC3HHBO61PJUZ1
+Enter foreach 3GL25Y684351XTV0ISOATGR1G3IMX4
+Prepared 3GL25Y684351XTV0ISOATGR1G3IMX4
+Executed 3GL25Y684351XTV0ISOATGR1G3IMX4
+Enter foreach 34KYK9TV2RJXIL54XTSEGSZFPPCSBD
+Enter foreach 3AFT28WXLFDS71RHWM3MIATRNQUOIM
+Enter foreach 3H6W48L9F40STWNN03KG817PC6NPWA
+Enter foreach 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+Prepared 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+Executed 3FTID4TN8L96RG3PNC9XCHJLI4NLY8
+Enter foreach 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+Prepared 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+Executed 3DW3BNF1GHTU8FO1OCD90DTLGNM8V0
+Enter foreach 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+Prepared 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+Executed 34O39PNDK6JLH65RI4S9QIUJ3NURBP
+Enter foreach 3SD15I2WD25NSS3UBNA5X45BJ8363F
+Enter foreach 36MUZ9VAE6DPNZY6AUZFM1J0RJGED6
+Enter foreach 3JMNNNO3B1FW1PMHY594COZW1WWW2V
+Enter foreach 38F60IALAGSXDYF9OD0F6GZI04U0TP
+Prepared 38F60IALAGSXDYF9OD0F6GZI04U0TP
+Executed 38F60IALAGSXDYF9OD0F6GZI04U0TP
+Enter foreach 3UY4PIS8QRWZPAV7N0I3BMC0GEDN1D
+Enter foreach 3LG268AV38HJO9HBSVUZRQ046K7REP
+Prepared 3LG268AV38HJO9HBSVUZRQ046K7REP
+Executed 3LG268AV38HJO9HBSVUZRQ046K7REP
+Enter foreach 3D7VY91L658UKQSZDWWS4J09X0VBML
+Enter foreach 3JU8CV4BRLNKONEL9HT6R7U394POPY
+Enter foreach 3YO4AH2FPDVKLINH796K1BOVGXUQ00
+Enter foreach 38LRF35D5L78U3TV7588DAJRMULU35
+Enter foreach 3LCXHSGDLTHVPOHO7KU4H050SMPSED
+Prepared 3LCXHSGDLTHVPOHO7KU4H050SMPSED
+Executed 3LCXHSGDLTHVPOHO7KU4H050SMPSED
+Enter foreach 31MCUE39BKXPPLS0N0JR9VI0DM63GE
+Prepared 31MCUE39BKXPPLS0N0JR9VI0DM63GE
+Executed 31MCUE39BKXPPLS0N0JR9VI0DM63GE
+Enter foreach 3EAWOID6MT8CQQJYT80U7YN3XPA0V5
+Enter foreach 31HLTCK4BL691UUJ7APXSQAJ46ZGVO
+Prepared 31HLTCK4BL691UUJ7APXSQAJ46ZGVO
+Executed 31HLTCK4BL691UUJ7APXSQAJ46ZGVO
+Enter foreach 341H3G5YF0PTZAO8U5PXS40ZL0GZ04
+Exit

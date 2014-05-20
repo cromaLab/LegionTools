@@ -1,0 +1,102 @@
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Disposed
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: 
+0 - num Assignable hits
+Hit status: Assignable
+1 - num Assignable hits
+Hit status: Assignable
+2 - num Assignable hits
+Hit status: Assignable
+3 - num Assignable hits
+Hit status: Assignable
+4 - num Assignable hits
+Hit status: Assignable
+5 - num Assignable hits
+Hit status: Assignable
+6 - num Assignable hits
+Hit status: Assignable
+7 - num Assignable hits
+Hit status: Assignable
+8 - num Assignable hits
+Start loop
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
+Hit status: Reviewable
+0 - num Assignable hits
