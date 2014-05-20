@@ -16,6 +16,8 @@ LegionTools provides three key features for requesters:
 3. Modify `LegionTools/baseURL.php` to contain the public URL of your LegionTools installation.
 4. Add your Amazon Mechanical Turk keys in `LegionTools/amtKeys.php`
 5. Ensure that `LegionTools/db` and its contents has permissions `777`.
+6. Import `LegionTools/mturk.js` to your task page. This will look for a form element with id="mturk_form". All that the task page needs to do is submit the form element when ready, and workers will be able to submit HITs.
+
 
 ## Usage
 * Modify `isSandbox.php` to determine whether you post HITs on the sandbox.
