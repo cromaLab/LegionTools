@@ -27,6 +27,32 @@ function getTaskRowInDb(){
 	return $result;
 }
 
+function createQualificationRequirement($row){
+
+	$percentApproved = (string)$row[0]["percentApproved"];
+	// require Worker_PercentAssignmentsApproved >= IntegerValue
+	if($percentApproved != ""){
+		$Worker_PercentAssignmentsApproved = array(
+		 "QualificationTypeId" => "000000000000000000L0",
+		 "Comparator" => "GreaterThanOrEqualTo",
+		 "IntegerValue" => $percentApproved
+		);
+	}	
+
+	// require Worker_Locale == Country
+	$country = $row[0]["country"];
+	if($country != "" && $country != "All"){
+		$Worker_Locale = array(
+		 "QualificationTypeId" => "00000000000000000071",
+		 "Comparator" => "EqualTo",
+		 "LocaleValue" => array("Country" => $country)
+		);
+		return array($Worker_Locale, $Worker_PercentAssignmentsApproved);
+	}
+
+	return array($Worker_PercentAssignmentsApproved);
+}
+
 //Expires all HITs for given task
 function expireAllHits(){
 	global $dbh, $debug;
@@ -104,6 +130,7 @@ fwrite($debug, "Start loop\n");
 
  	// Post HITs
 	$result = getTaskRowInDb();
+	$qualification = createQualificationRequirement($result);
 	while(!isTargetReached() && ($numAssignableHits < ($result[0]["target_workers"] + 5))) //Number of HITs to post: target number of workers + 5
 	// while($numAssignableHits < 3) //Number of HITs to post: target number of workers + 5
 	{
@@ -112,7 +139,7 @@ fwrite($debug, "Start loop\n");
 		$price = rand( $minPrice, $maxPrice ) / 100;
 
 		// turk50_hit($title,$description,$money,$url,$duration,$lifetime);
-		$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'], 3000, 3000);
+		$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'], 3000, 3000, $qualification);
 		$hitId = $hitResponse->HIT->HITId;
 		$currentTime = time();
 		$sql = "INSERT INTO hits (task, hit_Id, time) values (:task, :hit_Id, :time)";

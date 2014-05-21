@@ -18,10 +18,12 @@ if( $dbh ) {
 	$taskDescription = $_REQUEST['taskDescription'];
 	$taskKeywords = $_REQUEST['taskKeywords'];
 	$task = $_REQUEST['task'];
+	$country = $_REQUEST['country'];
+	$percentApproved = $_REQUEST['percentApproved'];
 
-	$sql = "INSERT INTO retainer(task_title, task_description, task_keywords, task) VALUES (:task_title, :task_description, :task_keywords, :task)";
+	$sql = "INSERT INTO retainer(task_title, task_description, task_keywords, task, country, percentApproved) VALUES (:task_title, :task_description, :task_keywords, :task, :country, :percentApproved)";
 	$sth = $dbh->prepare($sql); 
-	$sth->execute(array(':task_title' => $taskTitle, ':task_description' => $taskDescription, ':task_keywords' => $taskKeywords, ':task' => $task));
+	$sth->execute(array(':task_title' => $taskTitle, ':task_description' => $taskDescription, ':task_keywords' => $taskKeywords, ':country' => $country, ':percentApproved' => $percentApproved, ':task' => $task));
 	
 }
 

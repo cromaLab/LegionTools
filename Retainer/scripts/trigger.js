@@ -10,7 +10,7 @@ var retainerLocation = "Retainer/";
             url: retainerLocation + "php/addNewTask.php",
             type: "POST",
             async: false,
-            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val()},
+            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
             dataType: "text",
             success: function(d) {
                 
@@ -140,6 +140,8 @@ alert(d);
         $("#minPrice").val(taskData.min_price);
         $("#maxPrice").val(taskData.max_price);
         $("#currentTarget").val(taskData.target_workers);
+        $("#country").val(taskData.country);
+        $("#percentApproved").val(taskData.percentApproved);
 
         if(taskData.done == "1"){
             $('#stopRecruiting').attr('disabled','disabled');
@@ -159,7 +161,7 @@ alert(d);
             url: retainerLocation + "php/updateTask.php",
             type: "POST",
             async: false,
-            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val()},
+            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
             dataType: "text",
             success: function(d) {
                 

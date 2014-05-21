@@ -21,8 +21,48 @@
     <div class="row">
       <div class="col-md-6" style = "border-right: 1px #ccc solid;">
         <h3>Manage task (HIT)</h3>
-
-        <form role="form">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="taskSession" class="col-sm-5 control-label">Task session name (remember this)</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="taskSession" placeholder="Enter a task session name">
+            </div>
+          </div>
+          </br>
+          <div class="form-group">
+            <label for="hitTitle" class="col-sm-3 control-label">HIT Title</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="hitTitle" placeholder="Enter HIT title">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="hitDescription" class="col-sm-3 control-label">HIT Description</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="hitDescription" placeholder="Enter HIT description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="hitKeywords" class="col-sm-3 control-label">HIT Keywords</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (separated by a single space)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="country" class="col-sm-3 control-label">Worker country</label>
+            <div class="col-sm-9">
+              <select id = "country" class="form-control">
+                <option>All</option>
+                <option>US</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="percentApproved" class="col-sm-5 control-label">Worker minimum percent HITs approved</label>
+            <div class="col-sm-7">
+              <input type="number" min = "0" max = "100" class="form-control" id="percentApproved" value = "0">
+            </div>
+          </div>
+<!--         <form role="form">
           <div class="form-group">
             <label for="hitTitle">Task Title</label>
             <input type="text" class="form-control" id="hitTitle" placeholder="Enter HIT title">
@@ -39,6 +79,17 @@
             <label for="taskSession">Task session name</label>
             <input type="text" class="form-control" id="taskSession" placeholder="Enter a task session name">
           </div>
+          <div class="form-group">
+            <label for="country">What country must workers reside in?</label>
+            <select id = "country" class="form-control">
+              <option>All</option>
+              <option>US</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="percentApproved">What percent of a workers HITs must have been approved?</label>
+            <input type="number" min = "0" max = "100" class="form-control" id="percentApproved" value = "0">
+          </div> -->
 
           <button type="submit" id="addNewTask" class="btn btn-primary">Add new task</button>
           <button type="submit" id="loadTask" class="btn btn-default">Load task via task session</button>

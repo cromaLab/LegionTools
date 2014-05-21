@@ -44,7 +44,7 @@
 	// 	  turk_debug($mt);
 	// }
 
-    function turk50_hit($title,$description,$money,$url,$duration,$lifetime) {
+    function turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification) {
     	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
     	
     	if($SANDBOX)
@@ -66,13 +66,14 @@
     	 "Question" => $Question,
     	 "Reward" => array("Amount" => $money, "CurrencyCode" => "USD"),
     	 "AssignmentDurationInSeconds" => $duration,
-    	 "LifetimeInSeconds" => $lifetime
+    	 "LifetimeInSeconds" => $lifetime,
+         "QualificationRequirement" => $qualification
     	);
 
     	// invoke CreateHIT
     	$CreateHITResponse = $turk50->CreateHIT($Request);
-        $hitId = $CreateHITResponse->HIT->HITId;
-        $assignId = turk_easyHitToAssn($hitId);
+        // $hitId = $CreateHITResponse->HIT->HITId;
+        // $assignId = turk_easyHitToAssn($hitId);
         return $CreateHITResponse;
     	
     }

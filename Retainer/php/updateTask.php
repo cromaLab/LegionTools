@@ -18,10 +18,12 @@ if( $dbh ) {
 	$taskDescription = $_REQUEST['taskDescription'];
 	$taskKeywords = $_REQUEST['taskKeywords'];
 	$task = $_REQUEST['task'];
+	$country = $_REQUEST['country'];
+	$percentApproved = $_REQUEST['percentApproved'];
 
-	$sql = "UPDATE retainer SET task_title = :task_title, task_description = :task_description, task_keywords = :task_keywords WHERE task = :task";
+	$sql = "UPDATE retainer SET task_title = :task_title, task_description = :task_description, task_keywords = :task_keywords, country = :country, percentApproved = :percentApproved WHERE task = :task";
 	$sth = $dbh->prepare($sql); 
-	$sth->execute(array(':task_title' => $taskTitle, ':task_description' => $taskDescription, ':task_keywords' => $taskKeywords, ':task' => $task));
+	$sth->execute(array(':task_title' => $taskTitle, ':task_description' => $taskDescription, ':task_keywords' => $taskKeywords, ':country' => $country, ':percentApproved' => $percentApproved, ':task' => $task));
 	
 }
 
