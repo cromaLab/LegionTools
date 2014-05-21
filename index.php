@@ -19,7 +19,7 @@
 <body>
 
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-6" style = "border-right: 1px #ccc solid;">
         <h3>Manage task (HIT)</h3>
 
         <form role="form">
@@ -44,6 +44,7 @@
           <button type="submit" id="loadTask" class="btn btn-default">Load task via task session</button>
           <button type="submit" id="updateTask" class="btn btn-default">Update task via task session</button>
         </form>
+        </br>
       </div>
 
       <div class="col-md-5">
@@ -70,7 +71,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-6" style = "border-right: 1px #ccc solid; border-top: 1px #ccc solid;">
         <h3>Overview</h3>
         <form role="form">
           <button type="submit" id="approveAll" class="btn btn-success">Approve all</button>
@@ -83,7 +84,7 @@
         </ul>
 
       </div>
-      <div class="col-md-5">
+      <div class="col-md-5" style = "border-top: 1px #ccc solid;">
           <h3>Workers ready</h3>
           <p id = "numOnlineText"><span id="numOnline">x</span></p>
 
