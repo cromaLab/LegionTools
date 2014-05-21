@@ -89,7 +89,7 @@
 
           <form class="form" role="form">
             <div class="form-group">
-              <input type="text" class="form-control" id="fireToURL" placeholder="Enter URL to send workers to">
+              <input type="text" class="form-control" id="fireToURL" placeholder="USE HTTPS Enter URL to send workers to">
               <input type="text" class="form-control" id="numFire" placeholder="Number of workers to fire">
             </div>
             <div id = "fireButtonsGroup">

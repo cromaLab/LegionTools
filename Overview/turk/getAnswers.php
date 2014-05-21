@@ -138,19 +138,26 @@ fwrite($debug, "Post HIT\n");
 		$hitInfo = turk50_getHit($hitId);
 // print_r($hitInfo);
 fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
-		if(!property_exists($hitInfo->HIT, "HITStatus") || $hitInfo->HIT->HITStatus == "Disposed"){
-			expireHit($hitId);
-			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(':hit_Id' => $hitId));
-		}
-		else if($hitInfo->HIT->HITStatus == "Assignable"){
-			$numAssignableHits++;
-			if((time() - $hit['time']) > 200){
-fwrite($debug, "Expire old hit\n");
-				sleep(1);
-				expireHit($hitId);
+$propExist = property_exists($hitInfo->HIT, "HITStatus");
+fwrite($debug, "Property exist test: " . $propExist . "\n");
+		if(property_exists($hitInfo->HIT, "HITStatus")){
+			if($hitInfo->HIT->HITStatus == "Disposed"){
+				// expireHit($hitId);
+				$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+				$sth = $dbh->prepare($sql);
+				$sth->execute(array(':hit_Id' => $hitId));
 			}
+			else if($hitInfo->HIT->HITStatus == "Assignable"){
+				$numAssignableHits++;
+				if((time() - $hit['time']) > 200){
+fwrite($debug, "Expire old hit\n");
+					sleep(1);
+					expireHit($hitId);
+				}
+			}
+		}
+		else{
+			expireHit($hitId);
 		}
 fwrite($debug, $numAssignableHits . " - num Assignable hits\n");
 		// echo $hit['time'] . "</br>";
@@ -170,13 +177,17 @@ foreach ($hits as $hit) {
 	$hitId = $hit['hit_Id'];
 fwrite($debug, "Enter foreach " . $hitId . "\n");
 	$hitInfo = turk50_getHit($hitId);
-	if(!property_exists($hitInfo->HIT, "HITStatus") || $hitInfo->HIT->HITStatus == "Disposed"){
+fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
+	if(property_exists($hitInfo->HIT, "HITStatus")){
+		if($hitInfo->HIT->HITStatus == "Disposed"){
+			// expireHit($hitId);
+			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(':hit_Id' => $hitId));
+		}
+	}
+	else{
 		expireHit($hitId);
-		$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
-		$sth = $dbh->prepare($sql);
-fwrite($debug, "Prepared " . $hitId . "\n");
-		$sth->execute(array(':hit_Id' => $hitId));
-fwrite($debug, "Executed " . $hitId . "\n");
 	}
 	sleep(1); //Don't overload mturk with getHit
 }
