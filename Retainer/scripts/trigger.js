@@ -1,5 +1,5 @@
 $(document).ready( function() {
-
+var retainerLocation = "Retainer/";
     // $('#send_to_tutorial_button').click(function() {
     //     clearQueue('https://roc.cs.rochester.edu/convInterface/videocoding/tutorial/tutorial.php?justTutorial=true');
     // });
@@ -7,7 +7,7 @@ $(document).ready( function() {
     $("#addNewTask").on("click", function(event){
         event.preventDefault();
         $.ajax({
-            url: "php/addNewTask.php",
+            url: retainerLocation + "php/addNewTask.php",
             type: "POST",
             async: false,
             data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val()},
@@ -24,7 +24,7 @@ $(document).ready( function() {
     $("#updatePrice").on("click", function(event){
         event.preventDefault();
         $.ajax({
-            url: "php/updatePrice.php",
+            url: retainerLocation + "php/updatePrice.php",
             type: "POST",
             async: false,
             data: {task: $("#taskSession").val(), min_price: $("#minPrice").val(), max_price: $("#maxPrice").val()},
@@ -41,7 +41,7 @@ $(document).ready( function() {
     $("#currentTarget").change(function(){
 
         $.ajax({
-            url: "php/updateTargetNumWorkers.php",
+            url: retainerLocation + "php/updateTargetNumWorkers.php",
             type: "POST",
             async: false,
             data: {task: $("#taskSession").val(), target_workers: $("#currentTarget").val()},
@@ -63,7 +63,7 @@ $(document).ready( function() {
     $("#stopRecruiting").on("click", function(event){
         event.preventDefault();
         $.ajax({
-            url: "php/stopRecruiting.php",
+            url: retainerLocation + "php/stopRecruiting.php",
             type: "POST",
             async: false,
             data: {task: $("#taskSession").val()},
@@ -84,7 +84,7 @@ $(document).ready( function() {
         event.preventDefault();
 
         $.ajax({
-            url: "php/startRecruiting.php",
+            url: retainerLocation + "php/startRecruiting.php",
             type: "POST",
             async: false,
             data: {task: $("#taskSession").val()},
@@ -99,7 +99,7 @@ $(document).ready( function() {
 
         // Start the recruiting tool
         $.ajax({
-            url: "../Overview/turk/getAnswers.php",
+            url: "Overview/turk/getAnswers.php",
             type: "POST",
             async: true,
             data: {task: $("#taskSession").val()},
@@ -121,7 +121,7 @@ alert(d);
 
         var taskData;
         $.ajax({
-            url: "php/loadTask.php",
+            url: retainerLocation + "php/loadTask.php",
             type: "POST",
             async: false,
             data: {task: $("#taskSession").val()},
@@ -156,7 +156,7 @@ alert(d);
     $("#updateTask").on("click", function(event){
         event.preventDefault();
         $.ajax({
-            url: "php/updateTask.php",
+            url: retainerLocation + "php/updateTask.php",
             type: "POST",
             async: false,
             data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val()},
@@ -221,7 +221,7 @@ function clearQueue(link){
     var numOnline = 0;
     var task = $("#taskSession").val();
     $.ajax({
-        url: "php/ajax_whosonline.php",
+        url: retainerLocation + "php/ajax_whosonline.php",
         type: "POST",
         async: false,
         data: {task: task, role: "trigger"},
@@ -238,7 +238,7 @@ function clearQueue(link){
     var r = confirm("Send all workers in queue to destination?");
     if(r == true){
         $.ajax({
-            url: "php/setFire.php",
+            url: retainerLocation + "php/setFire.php",
             type: "POST",
             async: false,
             data: {url: link, task: task},
@@ -253,7 +253,7 @@ function clearQueue(link){
         });
         
         $.ajax({
-            url: "php/updateReleased.php",
+            url: retainerLocation + "php/updateReleased.php",
             type: "POST",
             async: false,
             data: {url: link, max: numOnline, task: task},
@@ -282,7 +282,7 @@ $("#fireWorkers").on("click", function(){
     var r = confirm("Fire " + numFire + " workers to: " + link + " ?");
     if(r == true){
         $.ajax({
-            url: "php/setFire.php",
+            url: retainerLocation + "php/setFire.php",
             type: "POST",
             async: false,
             data: {url: link, task: task},
@@ -297,7 +297,7 @@ $("#fireWorkers").on("click", function(){
         });
         
         $.ajax({
-            url: "php/updateReleased.php",
+            url: retainerLocation + "php/updateReleased.php",
             type: "POST",
             async: false,
             data: {url: link, max: numFire, task: task},

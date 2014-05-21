@@ -4,7 +4,7 @@ setInterval( function() {
     // var task = gup('task') ? gup('task') : "default";
     var task = $("#taskSession").val();
         $.ajax({
-            url: "php/ajax_whosonline.php",
+            url: "Retainer/php/ajax_whosonline.php",
             type: "POST",
             data: {task: task, role: "trigger"},
             dataType: "text",

@@ -2,7 +2,7 @@ function getHits(task){
 	var hits;
 
 	$.ajax({
-	    url: "php/getHits.php",
+	    url: "Retainer/php/getHits.php",
 	    type: "POST",
 	    async: false,
 	    data: {task: task},
@@ -20,7 +20,7 @@ function getHits(task){
 
 function approveHit(assignmentId, hitId, id){
 	$.ajax({
-	    url: "php/approveOrRejectHit.php",
+	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
 	    async: false,
 	    data: {id: assignmentId, operation: "Approve"},
@@ -38,7 +38,7 @@ function approveHit(assignmentId, hitId, id){
 
 function rejectHit(assignmentId, hitId, id){
 	$.ajax({
-	    url: "php/approveOrRejectHit.php",
+	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
 	    async: false,
 	    data: {id: assignmentId, operation: "Reject"},
@@ -55,7 +55,7 @@ function rejectHit(assignmentId, hitId, id){
 
 function disposeHit(hitId, id){
 	$.ajax({
-	    url: "php/approveOrRejectHit.php",
+	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
 	    async: false,
 	    data: {id: hitId, operation: "Dispose"},

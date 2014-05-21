@@ -2,7 +2,7 @@ function getMoney(worker){
 	var money = 0;
 	$.ajax({
 				async: false,
-				url: "/convInterface/retainer/php/getTimeWaited.php",
+				url: "Retainer/php/getTimeWaited.php",
 				data: {workerId: worker},
 				dataType: "text",
 				success: function(d) {
