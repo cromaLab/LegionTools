@@ -139,6 +139,7 @@ fwrite($debug, "Post HIT\n");
 // print_r($hitInfo);
 fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
 		if(!property_exists($hitInfo->HIT, "HITStatus") || $hitInfo->HIT->HITStatus == "Disposed"){
+			expireHit($hitId);
 			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(':hit_Id' => $hitId));
@@ -170,6 +171,7 @@ foreach ($hits as $hit) {
 fwrite($debug, "Enter foreach " . $hitId . "\n");
 	$hitInfo = turk50_getHit($hitId);
 	if(!property_exists($hitInfo->HIT, "HITStatus") || $hitInfo->HIT->HITStatus == "Disposed"){
+		expireHit($hitId);
 		$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
 		$sth = $dbh->prepare($sql);
 fwrite($debug, "Prepared " . $hitId . "\n");

@@ -98,7 +98,7 @@ if (isset($_REQUEST['action'])) {
 			//echo "<tr><td><input type='checkbox' class='hitBox' name='hitBox' value='".$data['Assignment']['AssignmentId']."' /> ".$data['Assignment']['WorkerId']."</td><td>".$data['Assignment']['AssignmentId']."</td>";
 			//echo "<td>Assignments: ".$data['TotalNumResults'];
 			//print_r($mt->FinalData);
-			if ($data['TotalNumResults'] >0)
+			if ($data['TotalNumResults'] > 0)
 				if ($data['Assignment']['AssignmentStatus']=='Approved') {
 					?>
 					<td>
