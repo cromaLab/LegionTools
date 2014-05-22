@@ -20,15 +20,23 @@
 
     <div class="row">
       <div class="col-md-6" style = "border-right: 1px #ccc solid;">
-        <h3>Manage task (HIT)</h3>
+        <h3>Load an old session</h3>
+        <form class="form-inline" role="form" style = "text-align: right;">
+          <div class="form-group">
+            <label class="sr-only" for="taskSessionLoad">Load an old session</label>
+            <input type="text" class="form-control" id="taskSessionLoad" placeholder="Task session">
+          </div>
+          <button type="submit" id="loadTask" class="btn btn-default">Load</button>
+        </form>
+
+        <h3>OR create a new session</h3>
         <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label for="taskSession" class="col-sm-5 control-label">Task session name (remember this)</label>
+            <label for="taskSession" class="col-sm-5 control-label">Remember this: session name</label>
             <div class="col-sm-7">
               <input type="text" class="form-control" id="taskSession" placeholder="Enter a task session name">
             </div>
           </div>
-          </br>
           <div class="form-group">
             <label for="hitTitle" class="col-sm-3 control-label">HIT Title</label>
             <div class="col-sm-9">
@@ -92,14 +100,14 @@
           </div> -->
 
           <button type="submit" id="addNewTask" class="btn btn-primary">Add new task</button>
-          <button type="submit" id="loadTask" class="btn btn-default">Load task via task session</button>
-          <button type="submit" id="updateTask" class="btn btn-default">Update task via task session</button>
+          <button disabled = "disabled" type="submit" id="updateTask" class="btn btn-default">Update</button>
         </form>
         </br>
       </div>
 
       <div class="col-md-5">
-          <h3>Target number of workers</h3>
+          <h3>Recruiting</h3>
+                Target number of workers:
                 <input id="currentTarget" type="text" value="0" name="currentTarget">
                 <script>
                     $("input[name='currentTarget']").TouchSpin();

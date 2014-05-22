@@ -13,7 +13,12 @@ var retainerLocation = "Retainer/";
             data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
             dataType: "text",
             success: function(d) {
-                
+                $('#loadTask').attr('disabled','disabled');
+                $('#addNewTask').attr('disabled','disabled');
+                $('#updateTask').removeAttr('disabled');
+                $("#taskSessionLoad").val($("#taskSession").val());
+                $('#taskSessionLoad').attr('disabled','disabled');
+                $('#taskSession').attr('disabled','disabled');
             },
             fail: function() {
                 alert("Sending number of workers failed");
@@ -124,7 +129,7 @@ alert(d);
             url: retainerLocation + "php/loadTask.php",
             type: "POST",
             async: false,
-            data: {task: $("#taskSession").val()},
+            data: {task: $("#taskSessionLoad").val()},
             dataType: "json",
             success: function(d) {
                 taskData = d;
@@ -134,6 +139,7 @@ alert(d);
             }
         });
 
+        $("#taskSession").val(taskData.task);
         $("#hitTitle").val(taskData.task_title);
         $("#hitDescription").val(taskData.task_description);
         $("#hitKeywords").val(taskData.task_keywords);
@@ -142,6 +148,12 @@ alert(d);
         $("#currentTarget").val(taskData.target_workers);
         $("#country").val(taskData.country);
         $("#percentApproved").val(taskData.percentApproved);
+
+        $('#addNewTask').attr('disabled','disabled');
+        $('#loadTask').attr('disabled','disabled');
+        $('#taskSessionLoad').attr('disabled','disabled');
+        $('#taskSession').attr('disabled','disabled');
+        $('#updateTask').removeAttr('disabled');
 
         if(taskData.done == "1"){
             $('#stopRecruiting').attr('disabled','disabled');
@@ -164,7 +176,7 @@ alert(d);
             data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
             dataType: "text",
             success: function(d) {
-                
+                alert("Update success");
             },
             fail: function() {
                 alert("Sending number of workers failed");

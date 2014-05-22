@@ -25,6 +25,847 @@ Property exist test: 1
 Hit status: Assignable
 Property exist test: 1
 6 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Post HIT
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+6 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Post HIT
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+9 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+10 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+10 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+10 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+10 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Post HIT
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+10 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+10 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+10 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+11 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+12 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 371QPA24C2ZXKN0RKW4FKLIS5XHT14
+Expire done 371QPA24C2ZXKN0RKW4FKLIS5XHT14
+Dispose done 371QPA24C2ZXKN0RKW4FKLIS5XHT14
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3MQY1YVHS3V4DMO63ED8PAMBRWVB2D
+Expire done 3MQY1YVHS3V4DMO63ED8PAMBRWVB2D
+Dispose done 3MQY1YVHS3V4DMO63ED8PAMBRWVB2D
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3BPP3MA3TCV8LBMYNBX35ER50T0EL6
+Expire done 3BPP3MA3TCV8LBMYNBX35ER50T0EL6
+Dispose done 3BPP3MA3TCV8LBMYNBX35ER50T0EL6
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 37SOB9Z0SS85BD61YRG7MNN894A3L4
+Expire done 37SOB9Z0SS85BD61YRG7MNN894A3L4
+Dispose done 37SOB9Z0SS85BD61YRG7MNN894A3L4
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3FJ2RVH25ZHLPT995UZCY4RL3WT922
+Expire done 3FJ2RVH25ZHLPT995UZCY4RL3WT922
+Dispose done 3FJ2RVH25ZHLPT995UZCY4RL3WT922
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3EHIMLB7F7APQETHJNW5LC2C89TH83
+Expire done 3EHIMLB7F7APQETHJNW5LC2C89TH83
+Dispose done 3EHIMLB7F7APQETHJNW5LC2C89TH83
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3FI30CQHVKUSVN77QGPBFN3N71Y6BQ
+Expire done 3FI30CQHVKUSVN77QGPBFN3N71Y6BQ
+Dispose done 3FI30CQHVKUSVN77QGPBFN3N71Y6BQ
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+10 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+11 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3L2OEKSTW9LBC9J6TN0T7CXFY55Y8I
+Expire done 3L2OEKSTW9LBC9J6TN0T7CXFY55Y8I
+Dispose done 3L2OEKSTW9LBC9J6TN0T7CXFY55Y8I
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 35O6H0UNLSR2U2559PSNL580JBV5JT
+Expire done 35O6H0UNLSR2U2559PSNL580JBV5JT
+Dispose done 35O6H0UNLSR2U2559PSNL580JBV5JT
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3Q2T3FD0ONJPHVOMY3HMM02X9903M6
+Expire done 3Q2T3FD0ONJPHVOMY3HMM02X9903M6
+Dispose done 3Q2T3FD0ONJPHVOMY3HMM02X9903M6
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3IHWR4LC7DOPM941P5EQLO3R8M78IM
+Expire done 3IHWR4LC7DOPM941P5EQLO3R8M78IM
+Dispose done 3IHWR4LC7DOPM941P5EQLO3R8M78IM
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 35A1YQPVFER6ZRLZR77N94T06W65IH
+Expire done 35A1YQPVFER6ZRLZR77N94T06W65IH
+Dispose done 35A1YQPVFER6ZRLZR77N94T06W65IH
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+10 - num Assignable hits
+Start loop
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 30U1YOGZGA7QXI3OBPJKBINFSB6DSP
+Expire done 30U1YOGZGA7QXI3OBPJKBINFSB6DSP
+Dispose done 30U1YOGZGA7QXI3OBPJKBINFSB6DSP
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+9 - num Assignable hits
+Start loop
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
 Hit status: Assignable
 Property exist test: 1
 7 - num Assignable hits
@@ -156,44 +997,159 @@ Property exist test: 1
 Hit status: Assignable
 Property exist test: 1
 8 - num Assignable hits
-Expire 3P7RGTLO6EOUBSN4M6FT7K7L7IMAKM
-Expire done 3P7RGTLO6EOUBSN4M6FT7K7L7IMAKM
-Dispose done 3P7RGTLO6EOUBSN4M6FT7K7L7IMAKM
-Expire 3XEDXEGFX3ZYAFPMU4I0IEV8YWA0KL
-Expire done 3XEDXEGFX3ZYAFPMU4I0IEV8YWA0KL
-Dispose done 3XEDXEGFX3ZYAFPMU4I0IEV8YWA0KL
-Expire 3D0LPO3EABAEX16M04L2HN61UEYYO3
-Expire done 3D0LPO3EABAEX16M04L2HN61UEYYO3
-Dispose done 3D0LPO3EABAEX16M04L2HN61UEYYO3
-Expire 3XU9MCX6VONRTT5VZBVB2EA1QMO2R0
-Expire done 3XU9MCX6VONRTT5VZBVB2EA1QMO2R0
-Dispose done 3XU9MCX6VONRTT5VZBVB2EA1QMO2R0
-Expire 3PA41K45VNFD3HMMSV8HTARU0KM7PT
-Expire done 3PA41K45VNFD3HMMSV8HTARU0KM7PT
-Dispose done 3PA41K45VNFD3HMMSV8HTARU0KM7PT
-Expire 3UQ1LLR26AJ5VY5M76RUMKK0WIRALP
-Expire done 3UQ1LLR26AJ5VY5M76RUMKK0WIRALP
-Dispose done 3UQ1LLR26AJ5VY5M76RUMKK0WIRALP
-Expire 3VO4XFFP15XY3TN1S8N6TFH45G87QK
-Expire done 3VO4XFFP15XY3TN1S8N6TFH45G87QK
-Dispose done 3VO4XFFP15XY3TN1S8N6TFH45G87QK
-Expire 32XN26MTXZU9UL74F4U1XE8NNWF0LO
-Expire done 32XN26MTXZU9UL74F4U1XE8NNWF0LO
-Dispose done 32XN26MTXZU9UL74F4U1XE8NNWF0LO
-Enter foreach 3P7RGTLO6EOUBSN4M6FT7K7L7IMAKM
+Start loop
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3IV1AEQ4DROLHKO77NZQXPIRL1WJ89
+Expire done 3IV1AEQ4DROLHKO77NZQXPIRL1WJ89
+Dispose done 3IV1AEQ4DROLHKO77NZQXPIRL1WJ89
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 31ODACBENUQKMR7TGBP4BHUEBQVQS7
+Expire done 31ODACBENUQKMR7TGBP4BHUEBQVQS7
+Dispose done 31ODACBENUQKMR7TGBP4BHUEBQVQS7
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 379OL9DBSSPBQE2GYF6778SQIBNY97
+Expire done 379OL9DBSSPBQE2GYF6778SQIBNY97
+Dispose done 379OL9DBSSPBQE2GYF6778SQIBNY97
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 388CL5C1RJYK5LD0DC59QHOIS9RLHS
+Expire done 388CL5C1RJYK5LD0DC59QHOIS9RLHS
+Dispose done 388CL5C1RJYK5LD0DC59QHOIS9RLHS
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3M7OI89LVYZB5SZD4GL6Q795PMY6CX
+Expire done 3M7OI89LVYZB5SZD4GL6Q795PMY6CX
+Dispose done 3M7OI89LVYZB5SZD4GL6Q795PMY6CX
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3421H3BM9ASLVP7HCF54XLD257EJ9Y
+Expire done 3421H3BM9ASLVP7HCF54XLD257EJ9Y
+Dispose done 3421H3BM9ASLVP7HCF54XLD257EJ9Y
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3R0WOCG21MK6CVVS0UEKQJ53D8RDU5
+Expire done 3R0WOCG21MK6CVVS0UEKQJ53D8RDU5
+Dispose done 3R0WOCG21MK6CVVS0UEKQJ53D8RDU5
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3IV1AEQ4DROLHKO77NZQXPIRL1W8JY
+Expire done 3IV1AEQ4DROLHKO77NZQXPIRL1W8JY
+Dispose done 3IV1AEQ4DROLHKO77NZQXPIRL1W8JY
+8 - num Assignable hits
+Start loop
 Hit status: Disposed
-Enter foreach 3XEDXEGFX3ZYAFPMU4I0IEV8YWA0KL
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 3D0LPO3EABAEX16M04L2HN61UEYYO3
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 3XU9MCX6VONRTT5VZBVB2EA1QMO2R0
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 3PA41K45VNFD3HMMSV8HTARU0KM7PT
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 3UQ1LLR26AJ5VY5M76RUMKK0WIRALP
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 3VO4XFFP15XY3TN1S8N6TFH45G87QK
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 32XN26MTXZU9UL74F4U1XE8NNWF0LO
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Expire 3JTPR5MTZSNX5MBNRASZMK8DY0V5KS
+Expire done 3JTPR5MTZSNX5MBNRASZMK8DY0V5KS
+Dispose done 3JTPR5MTZSNX5MBNRASZMK8DY0V5KS
+Expire 3JY0Q5X05JHQJX4OIFQBSP79HSSGGI
+Expire done 3JY0Q5X05JHQJX4OIFQBSP79HSSGGI
+Dispose done 3JY0Q5X05JHQJX4OIFQBSP79HSSGGI
+Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
+Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
+Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
+Expire 3MQKOF1EE2ZJ4ZKXVUTL87Q0YO2DW4
+Expire done 3MQKOF1EE2ZJ4ZKXVUTL87Q0YO2DW4
+Dispose done 3MQKOF1EE2ZJ4ZKXVUTL87Q0YO2DW4
+Expire 307L9TDWJY3VZD9MA4WMZFRXEZA3N6
+Expire done 307L9TDWJY3VZD9MA4WMZFRXEZA3N6
+Dispose done 307L9TDWJY3VZD9MA4WMZFRXEZA3N6
+Expire 31KPKEKW4AOXHCLSOR9U6MTWUYB0BI
+Expire done 31KPKEKW4AOXHCLSOR9U6MTWUYB0BI
+Dispose done 31KPKEKW4AOXHCLSOR9U6MTWUYB0BI
+Expire 3S829FDFT2CYTZPN5ZP7AQ477Q8DXX
+Expire done 3S829FDFT2CYTZPN5ZP7AQ477Q8DXX
+Dispose done 3S829FDFT2CYTZPN5ZP7AQ477Q8DXX
+Expire 3SU800BH863014ZX5GK4QIC2WNGQUN
+Expire done 3SU800BH863014ZX5GK4QIC2WNGQUN
+Dispose done 3SU800BH863014ZX5GK4QIC2WNGQUN
+Enter foreach 3JTPR5MTZSNX5MBNRASZMK8DY0V5KS
+Hit status: Disposed
+Enter foreach 3JY0Q5X05JHQJX4OIFQBSP79HSSGGI
+Hit status: Disposed
+Enter foreach 32K26U12DNZ6PAKS5KOPM57MRF0DVU
+Hit status: Unassignable
+Enter foreach 3MQKOF1EE2ZJ4ZKXVUTL87Q0YO2DW4
+Hit status: Disposed
+Enter foreach 307L9TDWJY3VZD9MA4WMZFRXEZA3N6
+Hit status: Disposed
+Enter foreach 31KPKEKW4AOXHCLSOR9U6MTWUYB0BI
+Hit status: Disposed
+Enter foreach 3S829FDFT2CYTZPN5ZP7AQ477Q8DXX
+Hit status: Disposed
+Enter foreach 3SU800BH863014ZX5GK4QIC2WNGQUN
 Hit status: Disposed
 Exit

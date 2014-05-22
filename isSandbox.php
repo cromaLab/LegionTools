@@ -2,7 +2,7 @@
 
 
 //uncomment and comment as neccesary to determine sandbox usage
-// $SANDBOX=false;
+//$SANDBOX=false;
 $SANDBOX=true;
 
 //if a URL parameter is preset, override the previous variable
