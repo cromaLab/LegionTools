@@ -85,6 +85,9 @@ var retainerLocation = "Retainer/";
 
         $('#stopRecruiting').attr('disabled','disabled');
         $('#startRecruiting').removeAttr('disabled');
+
+        $('#yesSandbox').removeAttr('disabled');
+        $('#noSandbox').removeAttr('disabled');
     });
 
     $("#startRecruiting").on("click", function(event){
@@ -121,6 +124,9 @@ alert(d);
 
         $('#startRecruiting').attr('disabled','disabled');
         $('#stopRecruiting').removeAttr('disabled');
+
+        $('#yesSandbox').attr('disabled','disabled');
+        $('#noSandbox').attr('disabled','disabled');
     });
 
     $("#loadTask").on("click", function(event){
