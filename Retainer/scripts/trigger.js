@@ -20,6 +20,7 @@ function updateSessionsList(){
             for(var i = 0; i < d.length; i++) {
                 var obj = d[i];
                 var task = d[i].task;
+                $("#taskSessionLoad").empty();
                 $("#taskSessionLoad").append("<option>" + task + "</option>");
             }
         },
@@ -139,7 +140,7 @@ $("#startRecruiting").on("click", function(event){
         url: "Overview/turk/getAnswers.php",
         type: "POST",
         async: true,
-        data: {task: $("#taskSession").val(), useSandbox: sandbox},
+        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
 alert(d);
@@ -380,7 +381,6 @@ $("#waitingInstructionsUpdated").on("click", function(){
     $.ajax({
         url: retainerLocation + "php/updateWaitingInstructions.php",
         type: "POST",
-        async: false,
         data: {task: $("#taskSession").val(), instructions: $("#waitingInstructions").val()},
         dataType: "text",
         success: function(d) {

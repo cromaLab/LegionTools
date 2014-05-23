@@ -16,3 +16,7 @@ body{
     overflow-x: hidden;
     height: 21em;
 }
+
+.recruitingDiv button{
+	margin-bottom: 10px;
+}

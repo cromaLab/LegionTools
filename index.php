@@ -18,6 +18,24 @@
 </head>
 
 <body>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Edit waiting page instructions</h4>
+      </div>
+      <div class="modal-body">
+        <textarea id = "waitingInstructions" class="form-control" rows="5"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="waitingInstructionsUpdated" type="button" class="btn btn-primary" data-dismiss="modal">Save and close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
 
     <div class="row">
       <div class="col-md-6" style = "border-right: 1px #ccc solid;">
@@ -56,35 +74,32 @@
               <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (separated by a single space)">
             </div>
           </div>
-          <div class="form-group">
-            <label for="country" class="col-sm-3 control-label">Worker country</label>
-            <div class="col-sm-9">
-              <select id = "country" class="form-control">
-                <option>All</option>
-                <option>US</option>
-              </select>
-            </div>
+          <div class="form-group row">
+              <label for="country" class="col-sm-3 control-label">Worker country</label>
+              <div class="col-sm-3">
+                <select id = "country" class="form-control">
+                  <option>All</option>
+                  <option>US</option>
+                </select>
+              </div>
+              <label for="percentApproved" class="col-sm-3 control-label">Min % approved</label>
+              <div class="col-sm-3">
+                  <input type="number" min = "0" max = "100" class="form-control" id="percentApproved" value = "0">
+              </div>
           </div>
-          <div class="form-group">
-            <label for="percentApproved" class="col-sm-5 control-label">Worker minimum percent HITs approved</label>
-            <div class="col-sm-7">
-              <input type="number" min = "0" max = "100" class="form-control" id="percentApproved" value = "0">
-            </div>
-          </div>
-
           <button type="submit" id="addNewTask" class="btn btn-primary">Add new task</button>
           <button disabled = "disabled" type="submit" id="updateTask" class="btn btn-default">Update</button>
         </form>
         </br>
       </div>
 
-      <div class="col-md-5">
+      <div class="col-md-4 recruitingDiv">
           <h3>Recruiting</h3>
                 Target number of workers:
                 <input id="currentTarget" type="text" value="0" name="currentTarget">
                 <script>
                     $("input[name='currentTarget']").TouchSpin();
-                </script> </br>
+                </script>
 
                 <form class="form-inline" role="form">
                   <div class="form-group">
@@ -97,30 +112,17 @@
                   </div>
                   <button type="submit" id="updatePrice" class="btn btn-default">Update price</button>
                 </form>
-                <br/>
 
                 <!-- Button trigger modal -->
-                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                  Edit waiting page instructions  
-                </button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Edit waiting page instructions</h4>
-                      </div>
-                      <div class="modal-body">
-                        <textarea id = "waitingInstructions" class="form-control" rows="5"></textarea>
-                      </div>
-                      <div class="modal-footer">
-                        <button id="waitingInstructionsUpdated" type="button" class="btn btn-primary" data-dismiss="modal">Save and close</button>
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                      </div>
-                    </div>
-                  </div>
+                <div class="input-group">
+                  <span class="input-group-addon">Access key</span>
+                  <input id="accessKey" type="text" class="form-control" placeholder="OPTIONAL. Can also edit amtKeys.php">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon">Secret key</span>
+                  <input id="secretKey" type="text" class="form-control" placeholder="OPTIONAL. Can also edit amtKeys.php">
                 </div>
 
                 <p><div class="btn-group btn-group-lg">
@@ -128,7 +130,6 @@
                   <button id="noSandbox" type="button" class="btn btn-default">Live</button>
                 </div>
                 </p>
-                <br/>
                 <button type="submit" id="startRecruiting" class="btn btn-primary">Start recruiting</button>
                 <button type="submit" id="stopRecruiting" class="btn btn-danger">Stop recruiting</button>
       </div>
@@ -147,7 +148,7 @@
         </ul>
 
       </div>
-      <div class="col-md-5" style = "border-top: 1px #ccc solid;">
+      <div class="col-md-4" style = "border-top: 1px #ccc solid;">
           <h3>Workers ready</h3>
           <p id = "numOnlineText"><span id="numOnline">x</span></p>
 
