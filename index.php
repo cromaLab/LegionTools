@@ -24,7 +24,7 @@
         <form class="form-inline" role="form" style = "text-align: right;">
           <div class="form-group">
             <label class="sr-only" for="taskSessionLoad">Load an old session</label>
-            <input type="text" class="form-control" id="taskSessionLoad" placeholder="Task session">
+            <select id = "taskSessionLoad" class="form-control"></select>
           </div>
           <button type="submit" id="loadTask" class="btn btn-default">Load</button>
         </form>

@@ -2,213 +2,240 @@ var sandbox = true;
 
 $(document).ready( function() {
 var retainerLocation = "Retainer/";
-    // $('#send_to_tutorial_button').click(function() {
-    //     clearQueue('https://roc.cs.rochester.edu/convInterface/videocoding/tutorial/tutorial.php?justTutorial=true');
-    // });
+// $('#send_to_tutorial_button').click(function() {
+//     clearQueue('https://roc.cs.rochester.edu/convInterface/videocoding/tutorial/tutorial.php?justTutorial=true');
+// });
 
-    $("#addNewTask").on("click", function(event){
-        event.preventDefault();
-        $.ajax({
-            url: retainerLocation + "php/addNewTask.php",
-            type: "POST",
-            async: false,
-            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
-            dataType: "text",
-            success: function(d) {
-                $('#loadTask').attr('disabled','disabled');
-                $('#addNewTask').attr('disabled','disabled');
-                $('#updateTask').removeAttr('disabled');
-                $("#taskSessionLoad").val($("#taskSession").val());
-                $('#taskSessionLoad').attr('disabled','disabled');
-                $('#taskSession').attr('disabled','disabled');
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
+updateSessionsList();
+setInterval(function(){updateSessionsList()},30000);
+
+function updateSessionsList(){
+    $.ajax({
+        url: retainerLocation + "php/getSessionsList.php",
+        type: "POST",
+        data: {},
+        dataType: "json",
+        success: function(d) {
+            // console.log(d);
+            for(var i = 0; i < d.length; i++) {
+                var obj = d[i];
+                var task = d[i].task;
+                $("#taskSessionLoad").append("<option>" + task + "</option>");
             }
-        });
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
+}
+
+
+$("#addNewTask").on("click", function(event){
+    event.preventDefault();
+    $.ajax({
+        url: retainerLocation + "php/addNewTask.php",
+        type: "POST",
+        async: false,
+        data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
+        dataType: "text",
+        success: function(d) {
+            // $('#loadTask').attr('disabled','disabled');
+            $('#addNewTask').attr('disabled','disabled');
+            $('#updateTask').removeAttr('disabled');
+            // $("#taskSessionLoad").val($("#taskSession").val());
+            // $('#taskSessionLoad').attr('disabled','disabled');
+            $('#taskSession').attr('disabled','disabled');
+
+            $("#taskSessionLoad").append("<option>" + $("#taskSession").val() + "</option>");
+            $("#taskSessionLoad").val($("#taskSession").val());
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
+});
+
+$("#updatePrice").on("click", function(event){
+    event.preventDefault();
+    $.ajax({
+        url: retainerLocation + "php/updatePrice.php",
+        type: "POST",
+        async: false,
+        data: {task: $("#taskSession").val(), min_price: $("#minPrice").val(), max_price: $("#maxPrice").val()},
+        dataType: "text",
+        success: function(d) {
+            
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
+});
+
+$("#currentTarget").change(function(){
+
+    $.ajax({
+        url: retainerLocation + "php/updateTargetNumWorkers.php",
+        type: "POST",
+        async: false,
+        data: {task: $("#taskSession").val(), target_workers: $("#currentTarget").val()},
+        dataType: "text",
+        success: function(d) {
+            
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
     });
 
-    $("#updatePrice").on("click", function(event){
-        event.preventDefault();
-        $.ajax({
-            url: retainerLocation + "php/updatePrice.php",
-            type: "POST",
-            async: false,
-            data: {task: $("#taskSession").val(), min_price: $("#minPrice").val(), max_price: $("#maxPrice").val()},
-            dataType: "text",
-            success: function(d) {
-                
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
-            }
-        });
+    // if($("#currentTarget").val() <= 0){
+    //     $('#stopRecruiting').attr('disabled','disabled');
+    //     $('#startRecruiting').removeAttr('disabled');
+    // }
+});
+
+$("#stopRecruiting").on("click", function(event){
+    event.preventDefault();
+    $.ajax({
+        url: retainerLocation + "php/stopRecruiting.php",
+        type: "POST",
+        async: false,
+        data: {task: $("#taskSession").val()},
+        dataType: "text",
+        success: function(d) {
+            
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
     });
 
-    $("#currentTarget").change(function(){
+    $('#stopRecruiting').attr('disabled','disabled');
+    $('#startRecruiting').removeAttr('disabled');
 
-        $.ajax({
-            url: retainerLocation + "php/updateTargetNumWorkers.php",
-            type: "POST",
-            async: false,
-            data: {task: $("#taskSession").val(), target_workers: $("#currentTarget").val()},
-            dataType: "text",
-            success: function(d) {
-                
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
-            }
-        });
+    $('#yesSandbox').removeAttr('disabled');
+    $('#noSandbox').removeAttr('disabled');
+});
 
-        // if($("#currentTarget").val() <= 0){
-        //     $('#stopRecruiting').attr('disabled','disabled');
-        //     $('#startRecruiting').removeAttr('disabled');
-        // }
+$("#startRecruiting").on("click", function(event){
+    event.preventDefault();
+
+    $.ajax({
+        url: retainerLocation + "php/startRecruiting.php",
+        type: "POST",
+        async: false,
+        data: {task: $("#taskSession").val()},
+        dataType: "text",
+        success: function(d) {
+            
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
     });
 
-    $("#stopRecruiting").on("click", function(event){
-        event.preventDefault();
-        $.ajax({
-            url: retainerLocation + "php/stopRecruiting.php",
-            type: "POST",
-            async: false,
-            data: {task: $("#taskSession").val()},
-            dataType: "text",
-            success: function(d) {
-                
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
-            }
-        });
+    // Start the recruiting tool
+    $.ajax({
+        url: "Overview/turk/getAnswers.php",
+        type: "POST",
+        async: true,
+        data: {task: $("#taskSession").val(), useSandbox: sandbox},
+        dataType: "text",
+        success: function(d) {
+alert(d);
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
 
+    $('#startRecruiting').attr('disabled','disabled');
+    $('#stopRecruiting').removeAttr('disabled');
+
+    $('#yesSandbox').attr('disabled','disabled');
+    $('#noSandbox').attr('disabled','disabled');
+});
+
+$("#loadTask").on("click", function(event){
+    event.preventDefault();
+
+    var taskData;
+    $.ajax({
+        url: retainerLocation + "php/loadTask.php",
+        type: "POST",
+        async: false,
+        data: {task: $("#taskSessionLoad").val()},
+        dataType: "json",
+        success: function(d) {
+            taskData = d;
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
+
+    $("#taskSession").val(taskData.task);
+    $("#hitTitle").val(taskData.task_title);
+    $("#hitDescription").val(taskData.task_description);
+    $("#hitKeywords").val(taskData.task_keywords);
+    $("#minPrice").val(taskData.min_price);
+    $("#maxPrice").val(taskData.max_price);
+    $("#currentTarget").val(taskData.target_workers);
+    $("#country").val(taskData.country);
+    $("#percentApproved").val(taskData.percentApproved);
+
+    $('#addNewTask').attr('disabled','disabled');
+    // $('#loadTask').attr('disabled','disabled');
+    // $('#taskSessionLoad').attr('disabled','disabled');
+    $('#taskSession').attr('disabled','disabled');
+    $('#updateTask').removeAttr('disabled');
+
+    if(taskData.done == "1"){
         $('#stopRecruiting').attr('disabled','disabled');
         $('#startRecruiting').removeAttr('disabled');
-
-        $('#yesSandbox').removeAttr('disabled');
-        $('#noSandbox').removeAttr('disabled');
-    });
-
-    $("#startRecruiting").on("click", function(event){
-        event.preventDefault();
-
-        $.ajax({
-            url: retainerLocation + "php/startRecruiting.php",
-            type: "POST",
-            async: false,
-            data: {task: $("#taskSession").val()},
-            dataType: "text",
-            success: function(d) {
-                
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
-            }
-        });
-
-        // Start the recruiting tool
-        $.ajax({
-            url: "Overview/turk/getAnswers.php",
-            type: "POST",
-            async: true,
-            data: {task: $("#taskSession").val(), useSandbox: sandbox},
-            dataType: "text",
-            success: function(d) {
-alert(d);
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
-            }
-        });
-
+    }
+    else if(taskData.done == "0"){
         $('#startRecruiting').attr('disabled','disabled');
         $('#stopRecruiting').removeAttr('disabled');
-
-        $('#yesSandbox').attr('disabled','disabled');
-        $('#noSandbox').attr('disabled','disabled');
-    });
-
-    $("#loadTask").on("click", function(event){
-        event.preventDefault();
-
-        var taskData;
-        $.ajax({
-            url: retainerLocation + "php/loadTask.php",
-            type: "POST",
-            async: false,
-            data: {task: $("#taskSessionLoad").val()},
-            dataType: "json",
-            success: function(d) {
-                taskData = d;
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
-            }
-        });
-
-        $("#taskSession").val(taskData.task);
-        $("#hitTitle").val(taskData.task_title);
-        $("#hitDescription").val(taskData.task_description);
-        $("#hitKeywords").val(taskData.task_keywords);
-        $("#minPrice").val(taskData.min_price);
-        $("#maxPrice").val(taskData.max_price);
-        $("#currentTarget").val(taskData.target_workers);
-        $("#country").val(taskData.country);
-        $("#percentApproved").val(taskData.percentApproved);
-
-        $('#addNewTask').attr('disabled','disabled');
-        $('#loadTask').attr('disabled','disabled');
-        $('#taskSessionLoad').attr('disabled','disabled');
-        $('#taskSession').attr('disabled','disabled');
-        $('#updateTask').removeAttr('disabled');
-
-        if(taskData.done == "1"){
-            $('#stopRecruiting').attr('disabled','disabled');
-            $('#startRecruiting').removeAttr('disabled');
-        }
-        else if(taskData.done == "0"){
-            $('#startRecruiting').attr('disabled','disabled');
-            $('#stopRecruiting').removeAttr('disabled');
-        }
+    }
 
 
-    });
+});
 
-    $("#updateTask").on("click", function(event){
-        event.preventDefault();
-        $.ajax({
-            url: retainerLocation + "php/updateTask.php",
-            type: "POST",
-            async: false,
-            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
-            dataType: "text",
-            success: function(d) {
-                alert("Update success");
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
-            }
-        });
-    });
-
-    $("#reloadHits").on("click", function(event){
-        event.preventDefault();
-        var hits = getHits($("#taskSession").val());
-        $("#hitsList").empty();
-        var counter = 0;
-        for (var request in hits) {
-            var hitInfo = hits[request];
-            var listId = "hit" + counter;
-            // alert(obj.Title);
-            if(hitInfo.Assignment.AssignmentStatus == "Submitted")
-                $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
-
-            else
-                $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
-            counter++;
+$("#updateTask").on("click", function(event){
+    event.preventDefault();
+    $.ajax({
+        url: retainerLocation + "php/updateTask.php",
+        type: "POST",
+        async: false,
+        data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
+        dataType: "text",
+        success: function(d) {
+            alert("Update success");
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
         }
     });
+});
+
+$("#reloadHits").on("click", function(event){
+    event.preventDefault();
+    var hits = getHits($("#taskSession").val());
+    $("#hitsList").empty();
+    var counter = 0;
+    for (var request in hits) {
+        var hitInfo = hits[request];
+        var listId = "hit" + counter;
+        // alert(obj.Title);
+        if(hitInfo.Assignment.AssignmentStatus == "Submitted")
+            $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
+
+        else
+            $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
+        counter++;
+    }
+});
 
 $("#approveAll").on("click", function(event){
     event.preventDefault();
@@ -347,6 +374,5 @@ $("#yesSandbox, #noSandbox").on("click", function(){
         sandbox = false;
     }
 });
-
 
 });
