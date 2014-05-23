@@ -32,7 +32,7 @@
         <h3>OR create a new session</h3>
         <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label for="taskSession" class="col-sm-5 control-label">Remember this: session name</label>
+            <label for="taskSession" class="col-sm-5 control-label">Session name (remember this):</label>
             <div class="col-sm-7">
               <input type="text" class="form-control" id="taskSession" placeholder="Enter a task session name">
             </div>
@@ -70,34 +70,6 @@
               <input type="number" min = "0" max = "100" class="form-control" id="percentApproved" value = "0">
             </div>
           </div>
-<!--         <form role="form">
-          <div class="form-group">
-            <label for="hitTitle">Task Title</label>
-            <input type="text" class="form-control" id="hitTitle" placeholder="Enter HIT title">
-          </div>
-          <div class="form-group">
-            <label for="hitDescription">Task Description</label>
-            <input type="text" class="form-control" id="hitDescription" placeholder="Enter HIT description">
-          </div>
-          <div class="form-group">
-            <label for="hitKeywords">Task Keywords</label>
-            <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (separated by a single space)">
-          </div>
-          <div class="form-group">
-            <label for="taskSession">Task session name</label>
-            <input type="text" class="form-control" id="taskSession" placeholder="Enter a task session name">
-          </div>
-          <div class="form-group">
-            <label for="country">What country must workers reside in?</label>
-            <select id = "country" class="form-control">
-              <option>All</option>
-              <option>US</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="percentApproved">What percent of a workers HITs must have been approved?</label>
-            <input type="number" min = "0" max = "100" class="form-control" id="percentApproved" value = "0">
-          </div> -->
 
           <button type="submit" id="addNewTask" class="btn btn-primary">Add new task</button>
           <button disabled = "disabled" type="submit" id="updateTask" class="btn btn-default">Update</button>
@@ -124,7 +96,14 @@
                   </div>
                   <button type="submit" id="updatePrice" class="btn btn-default">Update price</button>
                 </form>
-                </br>
+                <br/>
+
+                <p><div class="btn-group btn-group-lg">
+                  <button id="yesSandbox" type="button" class="btn btn-default active">Sandbox</button>
+                  <button id="noSandbox" type="button" class="btn btn-default">Live</button>
+                </div>
+                </p>
+                <br/>
                 <button type="submit" id="startRecruiting" class="btn btn-primary">Start recruiting</button>
                 <button type="submit" id="stopRecruiting" class="btn btn-danger">Stop recruiting</button>
       </div>

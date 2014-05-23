@@ -5,7 +5,7 @@ function getHits(task){
 	    url: "Retainer/php/getHits.php",
 	    type: "POST",
 	    async: false,
-	    data: {task: task},
+	    data: {task: task, useSandbox: sandbox},
 	    dataType: "json",
 	    success: function(d) {
 	        hits = d;
@@ -23,7 +23,7 @@ function approveHit(assignmentId, hitId, id){
 	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
 	    async: false,
-	    data: {id: assignmentId, operation: "Approve"},
+	    data: {id: assignmentId, operation: "Approve", useSandbox: sandbox},
 	    success: function(d) {
 	        // alert(d);
 	    },
@@ -41,7 +41,7 @@ function rejectHit(assignmentId, hitId, id){
 	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
 	    async: false,
-	    data: {id: assignmentId, operation: "Reject"},
+	    data: {id: assignmentId, operation: "Reject", useSandbox: sandbox},
 	    success: function(d) {
 	        // alert(d);
 	    },
@@ -58,7 +58,7 @@ function disposeHit(hitId, id){
 	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
 	    async: false,
-	    data: {id: hitId, operation: "Dispose"},
+	    data: {id: hitId, operation: "Dispose", useSandbox: sandbox},
 	    success: function(d) {
 	        $(id).remove();
 	    },

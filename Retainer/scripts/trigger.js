@@ -1,3 +1,5 @@
+var sandbox = true;
+
 $(document).ready( function() {
 var retainerLocation = "Retainer/";
     // $('#send_to_tutorial_button').click(function() {
@@ -107,7 +109,7 @@ var retainerLocation = "Retainer/";
             url: "Overview/turk/getAnswers.php",
             type: "POST",
             async: true,
-            data: {task: $("#taskSession").val()},
+            data: {task: $("#taskSession").val(), useSandbox: sandbox},
             dataType: "text",
             success: function(d) {
 alert(d);
@@ -323,6 +325,20 @@ $("#fireWorkers").on("click", function(){
                 alert("Sending number of workers failed");
             }
         });
+    }
+});
+
+$("#yesSandbox, #noSandbox").on("click", function(){
+    var id = $(this).attr('id');
+    if(id == "yesSandbox"){
+        $("#yesSandbox").addClass("active");
+        $("#noSandbox").removeClass("active");
+        sandbox = true;
+    }
+    else if (id == "noSandbox"){
+        $("#noSandbox").addClass("active");
+        $("#yesSandbox").removeClass("active");
+        sandbox = false;
     }
 });
 
