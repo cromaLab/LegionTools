@@ -8,6 +8,7 @@
     <script type="text/javascript" src="Retainer/scripts/writeNumOnline.js"></script>
     <script type="text/javascript" src="Retainer/scripts/bootstrap.touchspin.js"></script>
     <script type="text/javascript" src="Retainer/scripts/hitsOverview.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <script> var baseURL = "<?php include('baseURL.php'); echo $baseURL; ?>"; </script>
 
@@ -97,6 +98,30 @@
                   <button type="submit" id="updatePrice" class="btn btn-default">Update price</button>
                 </form>
                 <br/>
+
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                  Edit waiting page instructions  
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Edit waiting page instructions</h4>
+                      </div>
+                      <div class="modal-body">
+                        <textarea id = "waitingInstructions" class="form-control" rows="5"></textarea>
+                      </div>
+                      <div class="modal-footer">
+                        <button id="waitingInstructionsUpdated" type="button" class="btn btn-primary" data-dismiss="modal">Save and close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <p><div class="btn-group btn-group-lg">
                   <button id="yesSandbox" type="button" class="btn btn-default active">Sandbox</button>

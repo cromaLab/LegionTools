@@ -183,6 +183,7 @@ $("#loadTask").on("click", function(event){
     $("#currentTarget").val(taskData.target_workers);
     $("#country").val(taskData.country);
     $("#percentApproved").val(taskData.percentApproved);
+    $("#waitingInstructions").val(taskData.instructions);
 
     $('#addNewTask').attr('disabled','disabled');
     // $('#loadTask').attr('disabled','disabled');
@@ -373,6 +374,22 @@ $("#yesSandbox, #noSandbox").on("click", function(){
         $("#yesSandbox").removeClass("active");
         sandbox = false;
     }
+});
+
+$("#waitingInstructionsUpdated").on("click", function(){
+    $.ajax({
+        url: retainerLocation + "php/updateWaitingInstructions.php",
+        type: "POST",
+        async: false,
+        data: {task: $("#taskSession").val(), instructions: $("#waitingInstructions").val()},
+        dataType: "text",
+        success: function(d) {
+            
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
 });
 
 });
