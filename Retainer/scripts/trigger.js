@@ -22,6 +22,7 @@ function updateSessionsList(){
                 var task = d[i].task;
                 $("#taskSessionLoad").append("<option>" + task + "</option>");
             }
+            $("#taskSessionLoad").val($("#taskSession").val());
         },
         fail: function() {
             alert("Sending number of workers failed");
