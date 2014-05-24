@@ -5,181 +5,9 @@ Post HIT
 Post HIT
 Post HIT
 Post HIT
-Hit status: 
-Property exist test: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-0 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-1 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-2 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-3 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-4 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-5 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-6 - num Assignable hits
-Start loop
-Hit status: 
-Property exist test: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-0 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-1 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-2 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-3 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-4 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-5 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-6 - num Assignable hits
-Start loop
-Hit status: 
-Property exist test: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-0 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-1 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-2 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-3 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-4 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-5 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-6 - num Assignable hits
-Start loop
-Hit status: 
-Property exist test: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-0 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-1 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-2 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-3 - num Assignable hits
-Hit status: Unassignable
-Property exist test: 1
-3 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-4 - num Assignable hits
-Hit status: Assignable
-Property exist test: 1
-5 - num Assignable hits
-Start loop
-Target number of workers reached
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire 3HUR21WDDU01RAKE1V8Y00XU6KUYX3
-Expire done 3HUR21WDDU01RAKE1V8Y00XU6KUYX3
-Dispose done 3HUR21WDDU01RAKE1V8Y00XU6KUYX3
-Expire 3KI0JD2ZU1T5TB4HDZ98NA0D5HN67H
-Expire done 3KI0JD2ZU1T5TB4HDZ98NA0D5HN67H
-Dispose done 3KI0JD2ZU1T5TB4HDZ98NA0D5HN67H
-Expire 31JUPBOORNFRCAC7A87GQTE56WI8LE
-Expire done 31JUPBOORNFRCAC7A87GQTE56WI8LE
-Dispose done 31JUPBOORNFRCAC7A87GQTE56WI8LE
-Expire 3M47JKRKCXC9TP90N41E1AW8G1T684
-Expire done 3M47JKRKCXC9TP90N41E1AW8G1T684
-Dispose done 3M47JKRKCXC9TP90N41E1AW8G1T684
-Expire 38B7Q9C28GG97USASW7S16RJ07B69T
-Expire done 38B7Q9C28GG97USASW7S16RJ07B69T
-Dispose done 38B7Q9C28GG97USASW7S16RJ07B69T
-Expire 3OQQD2WO8IH3LCYVDOF77WE296W3I3
-Expire done 3OQQD2WO8IH3LCYVDOF77WE296W3I3
-Dispose done 3OQQD2WO8IH3LCYVDOF77WE296W3I3
-Hit status: 
-Property exist test: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-0 - num Assignable hits
-Hit status: Disposed
-Property exist test: 1
-0 - num Assignable hits
-Hit status: Disposed
-Property exist test: 1
-0 - num Assignable hits
-Hit status: Disposed
-Property exist test: 1
-0 - num Assignable hits
-Hit status: Unassignable
-Property exist test: 1
-0 - num Assignable hits
-Hit status: Disposed
-Property exist test: 1
-0 - num Assignable hits
-Hit status: Disposed
-Property exist test: 1
-0 - num Assignable hits
-Start loop
-Target number of workers reached
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire 3M47JKRKCXC9TP90N41E1AW8G1T684
-Expire done 3M47JKRKCXC9TP90N41E1AW8G1T684
-Dispose done 3M47JKRKCXC9TP90N41E1AW8G1T684
-Hit status: 
-Property exist test: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-0 - num Assignable hits
-Hit status: Unassignable
-Property exist test: 1
-0 - num Assignable hits
-Start loop
 Post HIT
-Post HIT
-Post HIT
-Post HIT
-Post HIT
-Post HIT
-Hit status: 
-Property exist test: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
+Hit status: Reviewable
+Property exist test: 1
 0 - num Assignable hits
 Hit status: Reviewable
 Property exist test: 1
@@ -202,12 +30,292 @@ Property exist test: 1
 Hit status: Assignable
 Property exist test: 1
 6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
 Start loop
-Hit status: 
-Property exist test: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Start loop
+Post HIT
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
 0 - num Assignable hits
 Hit status: Assignable
 Property exist test: 1
@@ -227,42 +335,2542 @@ Property exist test: 1
 Hit status: Assignable
 Property exist test: 1
 6 - num Assignable hits
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire 31GN6YMHLP3P6O3FSKKNGVVMGXSWSU
-Expire done 31GN6YMHLP3P6O3FSKKNGVVMGXSWSU
-Dispose done 31GN6YMHLP3P6O3FSKKNGVVMGXSWSU
-Expire 3BA7SXOG1J12F87KFS4CC5N4CO78R4
-Expire done 3BA7SXOG1J12F87KFS4CC5N4CO78R4
-Dispose done 3BA7SXOG1J12F87KFS4CC5N4CO78R4
-Expire 329E6HTMSWDUR7OJDR0JKCTF1AL3KE
-Expire done 329E6HTMSWDUR7OJDR0JKCTF1AL3KE
-Dispose done 329E6HTMSWDUR7OJDR0JKCTF1AL3KE
-Expire 3B623HUYJ41EGN7XUH4H2FS0YQQ8SS
-Expire done 3B623HUYJ41EGN7XUH4H2FS0YQQ8SS
-Dispose done 3B623HUYJ41EGN7XUH4H2FS0YQQ8SS
-Expire 3HXCEECSQM4QW5KT2DWJXLD5EKSYZ0
-Expire done 3HXCEECSQM4QW5KT2DWJXLD5EKSYZ0
-Dispose done 3HXCEECSQM4QW5KT2DWJXLD5EKSYZ0
-Expire 371DNNCG44DFVNKCJH97CKOM0948TH
-Expire done 371DNNCG44DFVNKCJH97CKOM0948TH
-Dispose done 371DNNCG44DFVNKCJH97CKOM0948TH
-Enter foreach 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Hit status: 
-Expire 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Expire done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Dispose done 32K26U12DNZ6PAKS5KOPM57MRF0DVU
-Enter foreach 31GN6YMHLP3P6O3FSKKNGVVMGXSWSU
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3HEM8MA6H9NN9ZR1OUHNT18P5C8QP8
+Expire done 3HEM8MA6H9NN9ZR1OUHNT18P5C8QP8
+Dispose done 3HEM8MA6H9NN9ZR1OUHNT18P5C8QP8
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3NSM4HLQNR589BSGO7WCT6YZA8UQQZ
+Expire done 3NSM4HLQNR589BSGO7WCT6YZA8UQQZ
+Dispose done 3NSM4HLQNR589BSGO7WCT6YZA8UQQZ
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 37NXA7GVSTHPNM8KI1IQI7YDHUMVL9
+Expire done 37NXA7GVSTHPNM8KI1IQI7YDHUMVL9
+Dispose done 37NXA7GVSTHPNM8KI1IQI7YDHUMVL9
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3V8JSVE8YY1SLATX6QI6CBCNQENYEY
+Expire done 3V8JSVE8YY1SLATX6QI6CBCNQENYEY
+Dispose done 3V8JSVE8YY1SLATX6QI6CBCNQENYEY
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 31SIZS5W59Q8LC7G1MLCYW846UWQR0
+Expire done 31SIZS5W59Q8LC7G1MLCYW846UWQR0
+Dispose done 31SIZS5W59Q8LC7G1MLCYW846UWQR0
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3D42WVSDH86KROTT112CUTXN2F2YFG
+Expire done 3D42WVSDH86KROTT112CUTXN2F2YFG
+Dispose done 3D42WVSDH86KROTT112CUTXN2F2YFG
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Start loop
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Reviewable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 3BA7SXOG1J12F87KFS4CC5N4CO78R4
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 329E6HTMSWDUR7OJDR0JKCTF1AL3KE
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 3B623HUYJ41EGN7XUH4H2FS0YQQ8SS
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 3HXCEECSQM4QW5KT2DWJXLD5EKSYZ0
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Enter foreach 371DNNCG44DFVNKCJH97CKOM0948TH
+Property exist test: 1
+0 - num Assignable hits
 Hit status: Disposed
-Exit
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 31ODACBENUQKMR7TGBLHO6D0SWFQSO
+Expire done 31ODACBENUQKMR7TGBLHO6D0SWFQSO
+Dispose done 31ODACBENUQKMR7TGBLHO6D0SWFQSO
+1 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 34ZTTGSNJXZVWITD5H9IKS6YJLYQH3
+Expire done 34ZTTGSNJXZVWITD5H9IKS6YJLYQH3
+Dispose done 34ZTTGSNJXZVWITD5H9IKS6YJLYQH3
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3DA79LNS596TUQE670EBL3GBKNFT3D
+Expire done 3DA79LNS596TUQE670EBL3GBKNFT3D
+Dispose done 3DA79LNS596TUQE670EBL3GBKNFT3D
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 38Z7YZ2SB3DVSD4XBZR3K47DJYDQIW
+Expire done 38Z7YZ2SB3DVSD4XBZR3K47DJYDQIW
+Dispose done 38Z7YZ2SB3DVSD4XBZR3K47DJYDQIW
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 38DCH97KHHDRNOO3THC3W5MDWD2QJ8
+Expire done 38DCH97KHHDRNOO3THC3W5MDWD2QJ8
+Dispose done 38DCH97KHHDRNOO3THC3W5MDWD2QJ8
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 38VTL6WC4AOSPR04VPP38H6ADLOY5X
+Expire done 38VTL6WC4AOSPR04VPP38H6ADLOY5X
+Dispose done 38VTL6WC4AOSPR04VPP38H6ADLOY5X
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 30EV7DWJTV6O8V0I08Z80NKA9GZY6D
+Expire done 30EV7DWJTV6O8V0I08Z80NKA9GZY6D
+Dispose done 30EV7DWJTV6O8V0I08Z80NKA9GZY6D
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3KTCJ4SCVGCT7SA7BZZGBW6MSV5M1D
+Expire done 3KTCJ4SCVGCT7SA7BZZGBW6MSV5M1D
+Dispose done 3KTCJ4SCVGCT7SA7BZZGBW6MSV5M1D
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3T8DUCXY0NHF9S3MO9FLCGJXKFPT9U
+Expire done 3T8DUCXY0NHF9S3MO9FLCGJXKFPT9U
+Dispose done 3T8DUCXY0NHF9S3MO9FLCGJXKFPT9U
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 35U0MRQMUJIXT7BHVTYIAO27CZRVOQ
+Expire done 35U0MRQMUJIXT7BHVTYIAO27CZRVOQ
+Dispose done 35U0MRQMUJIXT7BHVTYIAO27CZRVOQ
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3KTZHH2ONIQBISUSAK8VQ6TU61BM8X
+Expire done 3KTZHH2ONIQBISUSAK8VQ6TU61BM8X
+Dispose done 3KTZHH2ONIQBISUSAK8VQ6TU61BM8X
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 33EEIIWHK7I0EJOXA6QMZTX7R09QVT
+Expire done 33EEIIWHK7I0EJOXA6QMZTX7R09QVT
+Dispose done 33EEIIWHK7I0EJOXA6QMZTX7R09QVT
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3NKW03WTLMIDT8O20GVILVGLY9BQW3
+Expire done 3NKW03WTLMIDT8O20GVILVGLY9BQW3
+Dispose done 3NKW03WTLMIDT8O20GVILVGLY9BQW3
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3X0EMNLXEP0FE7NIATBXZO7XM4NVP7
+Expire done 3X0EMNLXEP0FE7NIATBXZO7XM4NVP7
+Dispose done 3X0EMNLXEP0FE7NIATBXZO7XM4NVP7
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 360ZO6N6J1UBWXD2FCE9Q2O5Q7TM9M
+Expire done 360ZO6N6J1UBWXD2FCE9Q2O5Q7TM9M
+Dispose done 360ZO6N6J1UBWXD2FCE9Q2O5Q7TM9M
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3D06DR5225UP1GN77IS9MXZPWPBMA1
+Expire done 3D06DR5225UP1GN77IS9MXZPWPBMA1
+Dispose done 3D06DR5225UP1GN77IS9MXZPWPBMA1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3T2EL38U0MVSI8TSALR4NEUS7BHQXW
+Expire done 3T2EL38U0MVSI8TSALR4NEUS7BHQXW
+Dispose done 3T2EL38U0MVSI8TSALR4NEUS7BHQXW
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3EKTG13IZUE6XZEB49HZVBF0Q1AMLJ
+Expire done 3EKTG13IZUE6XZEB49HZVBF0Q1AMLJ
+Dispose done 3EKTG13IZUE6XZEB49HZVBF0Q1AMLJ
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 336OE47KI2V5YGKJMFPSRIFTF1QVW2
+Expire done 336OE47KI2V5YGKJMFPSRIFTF1QVW2
+Dispose done 336OE47KI2V5YGKJMFPSRIFTF1QVW2
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3XUY87HIVPPQ3HWW4LIEVOUPQ60MML
+Expire done 3XUY87HIVPPQ3HWW4LIEVOUPQ60MML
+Dispose done 3XUY87HIVPPQ3HWW4LIEVOUPQ60MML
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3XH7ZM9YX252TDQUKKAQC1IFWUSR9F
+Expire done 3XH7ZM9YX252TDQUKKAQC1IFWUSR9F
+Dispose done 3XH7ZM9YX252TDQUKKAQC1IFWUSR9F
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3XJOUITW8U2L1RK85BQ7YB9MUFTTQG
+Expire done 3XJOUITW8U2L1RK85BQ7YB9MUFTTQG
+Dispose done 3XJOUITW8U2L1RK85BQ7YB9MUFTTQG
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3P888QFVX355OZF09U48413ZV7COQP
+Expire done 3P888QFVX355OZF09U48413ZV7COQP
+Dispose done 3P888QFVX355OZF09U48413ZV7COQP
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 338431Z1FLQ500U0M9T89RD4RTEORQ
+Expire done 338431Z1FLQ500U0M9T89RD4RTEORQ
+Dispose done 338431Z1FLQ500U0M9T89RD4RTEORQ
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3BJKPTD2QCNLDSZ8IQF731JRQ1VTRH
+Expire done 3BJKPTD2QCNLDSZ8IQF731JRQ1VTRH
+Dispose done 3BJKPTD2QCNLDSZ8IQF731JRQ1VTRH
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 35U0MRQMUJIXT7BHVTYIAO27CZROVJ
+Expire done 35U0MRQMUJIXT7BHVTYIAO27CZROVJ
+Dispose done 35U0MRQMUJIXT7BHVTYIAO27CZROVJ
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3OB6JN3A9Q0H0X9O9TEVHNOZWTZMR9
+Expire done 3OB6JN3A9Q0H0X9O9TEVHNOZWTZMR9
+Dispose done 3OB6JN3A9Q0H0X9O9TEVHNOZWTZMR9
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3LB1BGHFL27UATBUWL71BXCOTOAYTO
+Expire done 3LB1BGHFL27UATBUWL71BXCOTOAYTO
+Dispose done 3LB1BGHFL27UATBUWL71BXCOTOAYTO
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3YO4AH2FPDVKLINH792XE07HX4X0QC
+Expire done 3YO4AH2FPDVKLINH792XE07HX4X0QC
+Dispose done 3YO4AH2FPDVKLINH792XE07HX4X0QC
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3MZ3TAMYTLYV4EJXOEG3PUHIFKFRIY
+Expire done 3MZ3TAMYTLYV4EJXOEG3PUHIFKFRIY
+Dispose done 3MZ3TAMYTLYV4EJXOEG3PUHIFKFRIY
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3MD8CKRQZZYRZP336W131VWISZ4RJA
+Expire done 3MD8CKRQZZYRZP336W131VWISZ4RJA
+Dispose done 3MD8CKRQZZYRZP336W131VWISZ4RJA
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3CO05SML7VGKXJ2HKORXJQHMTQZ0RD
+Expire done 3CO05SML7VGKXJ2HKORXJQHMTQZ0RD
+Dispose done 3CO05SML7VGKXJ2HKORXJQHMTQZ0RD
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 30IRMPJWDZUMA99LOH1F2AWV7O4RK9
+Expire done 30IRMPJWDZUMA99LOH1F2AWV7O4RK9
+Dispose done 30IRMPJWDZUMA99LOH1F2AWV7O4RK9
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 31SIZS5W59Q8LC7G1MLCYW846UWRQ1
+Expire done 31SIZS5W59Q8LC7G1MLCYW846UWRQ1
+Dispose done 31SIZS5W59Q8LC7G1MLCYW846UWRQ1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 33BFF6QPI1MLM7I025JM8NNAOHXW36
+Expire done 33BFF6QPI1MLM7I025JM8NNAOHXW36
+Dispose done 33BFF6QPI1MLM7I025JM8NNAOHXW36
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3S37Y8CWI8B643142JO5ISFG2HTW4R
+Expire done 3S37Y8CWI8B643142JO5ISFG2HTW4R
+Dispose done 3S37Y8CWI8B643142JO5ISFG2HTW4R
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3VLL1PIENQZE2RGRWQNLVUF30AXOZJ
+Expire done 3VLL1PIENQZE2RGRWQNLVUF30AXOZJ
+Dispose done 3VLL1PIENQZE2RGRWQNLVUF30AXOZJ
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3FSEU3P2NRB8XDMGE1AC3MI92GYRR2
+Expire done 3FSEU3P2NRB8XDMGE1AC3MI92GYRR2
+Dispose done 3FSEU3P2NRB8XDMGE1AC3MI92GYRR2
+5 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3MGHRFQY2L0TUKE3YJJRRMAJWDE0YF
+Expire done 3MGHRFQY2L0TUKE3YJJRRMAJWDE0YF
+Dispose done 3MGHRFQY2L0TUKE3YJJRRMAJWDE0YF
+6 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3D5G8J4N5AFD6ZGPRAKH4Y8UB78TVA
+Expire done 3D5G8J4N5AFD6ZGPRAKH4Y8UB78TVA
+Dispose done 3D5G8J4N5AFD6ZGPRAKH4Y8UB78TVA
+7 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+Expire old hit
+Expire 3FO95NVK5CBKYSMTTQAHTWN5OIHRSQ
+Expire done 3FO95NVK5CBKYSMTTQAHTWN5OIHRSQ
+Dispose done 3FO95NVK5CBKYSMTTQAHTWN5OIHRSQ
+8 - num Assignable hits
+Start loop
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Disposed
+Property exist test: 1
+0 - num Assignable hits
+Start loop
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Post HIT
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Unassignable
+Property exist test: 1
+0 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+1 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+2 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+3 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+4 - num Assignable hits
+Hit status: Assignable
+Property exist test: 1
+5 - num Assignable hits

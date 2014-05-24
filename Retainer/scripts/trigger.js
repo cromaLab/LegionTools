@@ -16,11 +16,10 @@ function updateSessionsList(){
         data: {},
         dataType: "json",
         success: function(d) {
-            // console.log(d);
+            $("#taskSessionLoad").empty();
             for(var i = 0; i < d.length; i++) {
                 var obj = d[i];
                 var task = d[i].task;
-                $("#taskSessionLoad").empty();
                 $("#taskSessionLoad").append("<option>" + task + "</option>");
             }
         },
@@ -326,8 +325,9 @@ $("#fireWorkers").on("click", function(){
     var link  = $("#fireToURL").val();
     var numFire  = $("#numFire").val();
 
-    if( link.substring(0, 7) != "http://" && link.substring(0, 8) != "https://"  && link.substring(0,3) != "../" ) {
-        link = "https://" + link;
+    if( link.substring(0, 8) != "https://") {
+        alert('ERROR: link must begin with "https://". No workers will be fired.');
+        return;
     }
 
     var r = confirm("Fire " + numFire + " workers to: " + link + " ?");

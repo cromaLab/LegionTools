@@ -96,25 +96,39 @@
       <div class="col-md-4 recruitingDiv">
           <h3>Recruiting</h3>
                 Target number of workers:
+                <!-- <div class="col-sm-6"> -->
                 <input id="currentTarget" type="text" value="0" name="currentTarget">
                 <script>
                     $("input[name='currentTarget']").TouchSpin();
                 </script>
+                <!-- </div> -->
 
-                <form class="form-inline" role="form">
+   <!--              <div class="row">
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
+                  </div>
+                  <div class="col-md-4">
+                    <button type="submit" id="updatePrice" class="btn btn-default">Update price</button>
+                  </div>
+                </div> -->
+
+                <p><form class="form-inline" role="form">
                   <div class="form-group">
                     <label class="sr-only" for="minPrice">Min task price</label>
-                    <input type="text" class="form-control" id="minPrice" placeholder="Min task price in cents"> -
+                    <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents"> -
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="maxPrice">Max task price</label>
-                    <input type="text" class="form-control" id="maxPrice" placeholder="Max task price in cents">
+                    <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
                   </div>
-                  <button type="submit" id="updatePrice" class="btn btn-default">Update price</button>
-                </form>
+                  <button type="submit" id="updatePrice" class="btn btn-default">Update</button>
+                </form></p>
 
                 <!-- Button trigger modal -->
-                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button>
+                <p><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button></p>
 
                 <div class="input-group">
                   <span class="input-group-addon">Access key</span>
@@ -130,8 +144,8 @@
                   <button id="noSandbox" type="button" class="btn btn-default">Live</button>
                 </div>
                 </p>
-                <button type="submit" id="startRecruiting" class="btn btn-primary">Start recruiting</button>
-                <button type="submit" id="stopRecruiting" class="btn btn-danger">Stop recruiting</button>
+                <button type="submit" id="startRecruiting" class="btn btn-primary btn-lg">Start recruiting</button>
+                <button type="submit" id="stopRecruiting" class="btn btn-danger btn-lg">Stop recruiting</button>
       </div>
     </div>
     <div class="row">
