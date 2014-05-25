@@ -330,6 +330,10 @@ $("#fireWorkers").on("click", function(){
         alert('ERROR: link must begin with "https://". No workers will be fired.');
         return;
     }
+    else if( numFire == "" ) {
+        alert('ERROR: number of workers to fire must be specified. No workers will be fired.');
+        return;
+    }
 
     var r = confirm("Fire " + numFire + " workers to: " + link + " ?");
     if(r == true){
@@ -385,12 +389,31 @@ $("#waitingInstructionsUpdated").on("click", function(){
         data: {task: $("#taskSession").val(), instructions: $("#waitingInstructions").val()},
         dataType: "text",
         success: function(d) {
-            
+          //
         },
         fail: function() {
-            alert("Sending number of workers failed");
+          alert("Sending number of workers failed");
         }
     });
+});
+
+$('#fireToURL').blur( function() {
+  $('#url-alert').remove();
+
+  $.ajax({
+    type: 'HEAD',
+    url: $('#fireToURL').val(),
+    success: function() {
+      // page exists
+      $('#fireToURL').css("color", "black");
+    },
+    error: function() {
+      // page does not exist
+      //alert("Invalid URL");
+      $('#fireToURL').after("<div id='url-alert' style='color: red; opacity: 0.6'><i>(Invalid URL)</i></div>");
+      $('#fireToURL').css("color", "red");
+    }
+  });
 });
 
 });
