@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-if(isset($_REQUEST['assignmentId']) && $_REQUEST['assignmentId'] != "ASSIGNMENT_ID_NOT_AVAILABLE"){
+if(isset($_REQUEST['task']) && $_REQUEST['task'] != ""){
   include('php/_db.php');
 
     try {
