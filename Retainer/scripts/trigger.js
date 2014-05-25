@@ -397,6 +397,8 @@ $("#waitingInstructionsUpdated").on("click", function(){
     });
 });
 
+/*
+// WSL: Can't work with ajax directly because of XSS issues. To fix, use a php script that calls 'ping'.
 $('#fireToURL').blur( function() {
   $('#url-alert').remove();
 
@@ -415,5 +417,6 @@ $('#fireToURL').blur( function() {
     }
   });
 });
+*/
 
 });
