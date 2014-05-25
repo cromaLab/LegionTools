@@ -164,10 +164,10 @@ fwrite($debug, "Post HIT\n");
 		$hitId = $hit['hit_Id'];
 		$hitInfo = turk50_getHit($hitId);
 // print_r($hitInfo);
-fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
 $propExist = property_exists($hitInfo->HIT, "HITStatus");
 fwrite($debug, "Property exist test: " . $propExist . "\n");
 		if(property_exists($hitInfo->HIT, "HITStatus")){
+fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
 			if($hitInfo->HIT->HITStatus == "Disposed"){
 				// expireHit($hitId);
 				$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
