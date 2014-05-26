@@ -9,8 +9,8 @@ LegionTools provides three key features for requesters:
 
 # Getting Started
 ## Installation
-1. Clone LegionTools to a public web server with PHP 5.1.2 or higher.
-2. Install PHP’s SOAP extension, if not already installed. Odds are, if you’re running PHP on Mac OS or Windows, the extension’s already installed.
+1. Clone LegionTools to a public web server with PHP 5.3 or higher.
+2. Install PHP’s SOAP extension. If you’re running PHP on Mac OS X or Windows, the extension is likely already installed.
 	* CentOS/RedHat: `yum install php-soap`
 	* Debian/Ubuntu: `apt-get install php5-soap`
 3. Modify `LegionTools/baseURL.php` to contain the public URL of your LegionTools installation.
@@ -20,18 +20,17 @@ LegionTools provides three key features for requesters:
 
 
 ## Usage
-* Modify `isSandbox.php` to determine whether you post HITs on the sandbox.
 * Navigate to `LegionTools/index.php` in your browser (confirmed to work with the latest version of Chrome) to pull up the control UI.
 
 ### Recruiting workers
 * Add a new task by typing a unique session name, title, description, keywords, and clicking `Add new task`. Remember your session name, you can use it to pull up your session later on.
 * Set the target number of workers. Set the price range and click "Update price".
-* Click `Start recruiting` to beging recruiting. **You must click `Stop recruiting` to end the recruiting process**.
+* Click `Change waiting page instructions` to edit the text that workers will be shown while waiting for your task.
+* Click `Start recruiting` to beging recruiting. **You must click `Stop recruiting` to end the recruiting process**. Note that stopping recruitment will take some time, depending on your target number of workers.
 * Pull up a previous task using just your task session name. If you closed the UI page and left the recruiting tool running, you may stop that recruiting process by loading the associated session and clicking `Stop recruiting`.
-* Modify task title, description, and keywords with `Update task via task session`.
+* Modify task title, description, and keywords with `Update`. Changes automatically affect all new HITs posted by the recruiting tool.
 * Send workers to a URL with the Fire button. **Your chosen URL must be `HTTPS`**. 
-* When you are ready to review HITs, click `Reload` in the `Overview` section to load all reviewable HITs associated with a given task session.
-* Modify `LegionTools/Retainer/instructions.php` to change what workers will see while they are being staged.
+* When you are ready to review completed HITs, click `Reload` in the `Overview` section to load all reviewable HITs associated with a given task session.
 
 # Authors
 * [Mitchell Gordon](http://mgordon.me/ "Mitchell Gordon")
