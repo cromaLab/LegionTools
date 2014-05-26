@@ -95,57 +95,57 @@
 
       <div class="col-md-4 recruitingDiv">
           <h3>Recruiting</h3>
-                Target number of workers:
-                <!-- <div class="col-sm-6"> -->
-                <input id="currentTarget" type="text" value="0" name="currentTarget">
-                <script>
-                    $("input[name='currentTarget']").TouchSpin();
-                </script>
-                <!-- </div> -->
+          <p><div class="btn-group btn-group-lg">
+            <button id="useRetainerMode" type="button" class="btn btn-default active">Retainer</button>
+            <button id="useDirectMode" type="button" class="btn btn-default">Classic (direct)</button>
+          </div>
+          </p>
+          <!-- <div class="col-sm-6"> -->
+          <div id="touchSpinDiv">
+          Target number of workers:
+          <input id="currentTarget" type="text" value="0" name="currentTarget">
+          <script>
+              $("input[name='currentTarget']").TouchSpin();
+          </script>
+          </div>
 
-   <!--              <div class="row">
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents">
-                  </div>
-                  <div class="col-md-4">
-                    <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
-                  </div>
-                  <div class="col-md-4">
-                    <button type="submit" id="updatePrice" class="btn btn-default">Update price</button>
-                  </div>
-                </div> -->
+          <p><form class="form-inline" role="form">
+            <div class="form-group">
+              <label class="sr-only" for="minPrice">Min task price</label>
+              <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents"> -
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="maxPrice">Max task price</label>
+              <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
+            </div>
+            <button type="submit" id="updatePrice" class="btn btn-default">Update</button>
+          </form></p>
 
-                <p><form class="form-inline" role="form">
-                  <div class="form-group">
-                    <label class="sr-only" for="minPrice">Min task price</label>
-                    <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents"> -
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="maxPrice">Max task price</label>
-                    <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
-                  </div>
-                  <button type="submit" id="updatePrice" class="btn btn-default">Update</button>
-                </form></p>
+          <!-- Button trigger modal -->
+          <p><button id="openInstructionsModal" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button></p>
 
-                <!-- Button trigger modal -->
-                <p><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button></p>
+          <div class="input-group">
+            <span class="input-group-addon">Access key</span>
+            <input id="accessKey" type="text" class="form-control" placeholder="OPTIONAL. Can also edit amtKeys.php">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">Secret key</span>
+            <input id="secretKey" type="text" class="form-control" placeholder="OPTIONAL. Can also edit amtKeys.php">
+          </div>
 
-                <div class="input-group">
-                  <span class="input-group-addon">Access key</span>
-                  <input id="accessKey" type="text" class="form-control" placeholder="OPTIONAL. Can also edit amtKeys.php">
-                </div>
-                <div class="input-group">
-                  <span class="input-group-addon">Secret key</span>
-                  <input id="secretKey" type="text" class="form-control" placeholder="OPTIONAL. Can also edit amtKeys.php">
-                </div>
+          <p><form class="form" role="form">
+            <div class="form-group">
+              <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
+            </div>
+          </form></p>
 
-                <p><div class="btn-group btn-group-lg">
-                  <button id="yesSandbox" type="button" class="btn btn-default active">Sandbox</button>
-                  <button id="noSandbox" type="button" class="btn btn-default">Live</button>
-                </div>
-                </p>
-                <button type="submit" id="startRecruiting" class="btn btn-primary btn-lg">Start recruiting</button>
-                <button type="submit" id="stopRecruiting" class="btn btn-danger btn-lg">Stop recruiting</button>
+          <p><div class="btn-group btn-group-lg">
+            <button id="yesSandbox" type="button" class="btn btn-default active">Sandbox</button>
+            <button id="noSandbox" type="button" class="btn btn-default">Live</button>
+          </div>
+          </p>
+          <button type="submit" id="startRecruiting" class="btn btn-primary btn-lg">Start recruiting</button>
+          <button type="submit" id="stopRecruiting" class="btn btn-danger btn-lg">Stop recruiting</button>
       </div>
     </div>
     <div class="row">
@@ -162,7 +162,7 @@
         </ul>
 
       </div>
-      <div class="col-md-4" style = "border-top: 1px #ccc solid;">
+      <div id = "triggerDiv" class="col-md-4" style = "border-top: 1px #ccc solid;">
           <h3>Workers ready</h3>
           <p id = "numOnlineText"><span id="numOnline">x</span></p>
 

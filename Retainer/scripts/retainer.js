@@ -32,10 +32,11 @@ $(document).ready(function() {
     	data: {workerId: worker},
     	dataType: "text",
     	success: function(d){
-            alert(d);
+            // alert(d);
     		if(d == 1){
 			isAllowed = false;
     			alert("You are already waiting for another task.");
+                $("body").html("<h3>Sorry, you cannot wait for multiple tasks at the same time.</h3>")
     		}
     		else{
 			 isAllowed = true;

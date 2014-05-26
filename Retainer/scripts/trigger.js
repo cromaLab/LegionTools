@@ -1,4 +1,5 @@
 var sandbox = true;
+var mode;
 
 $(document).ready( function() {
 var retainerLocation = "Retainer/";
@@ -129,6 +130,7 @@ $("#startRecruiting").on("click", function(event){
         alert("ERROR: please update " + problem);
     }
     else {
+        // Update db, mark ok to recruit
         $.ajax({
             url: retainerLocation + "php/startRecruiting.php",
             type: "POST",
@@ -143,20 +145,38 @@ $("#startRecruiting").on("click", function(event){
             }
         });
 
-        // Start the recruiting tool
-        $.ajax({
-            url: "Overview/turk/getAnswers.php",
-            type: "POST",
-            async: true,
-            data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
-            dataType: "text",
-            success: function(d) {
-                alert(d);
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
-            }
-        });
+        if(mode == "retainer"){
+            // Start the recruiting tool
+            $.ajax({
+                url: "Overview/turk/getAnswers.php",
+                type: "POST",
+                async: true,
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), retainer: "true"},
+                dataType: "text",
+                success: function(d) {
+                    alert(d);
+                },
+                fail: function() {
+                    alert("Sending number of workers failed");
+                }
+            });
+        }
+        else if(mode == "direct"){
+            // Start the recruiting tool
+            $.ajax({
+                url: "Overview/turk/getAnswers.php",
+                type: "POST",
+                async: true,
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), retainer: "false", URL: $("#sendToURL").val()},
+                dataType: "text",
+                success: function(d) {
+                    alert(d);
+                },
+                fail: function() {
+                    alert("Sending number of workers failed");
+                }
+            });
+        }
 
         $('#startRecruiting').attr('disabled','disabled');
         $('#stopRecruiting').removeAttr('disabled');
@@ -409,6 +429,33 @@ $("#waitingInstructionsUpdated").on("click", function(){
     });
 });
 
+$("#useRetainerMode").on("click", function(){
+    mode = "retainer";
+
+    $("#useDirectMode").removeClass("active");
+    $("#useRetainerMode").addClass("active");
+
+    $("#touchSpinDiv").show();
+    $("#openInstructionsModal").show();
+    $("#sendToURL").hide();
+
+    $("#triggerDiv").show();
+});
+
+$("#useDirectMode").on("click", function(){
+    mode = "direct";
+
+    $("#useDirectMode").addClass("active");
+    $("#useRetainerMode").removeClass("active");
+
+    $("#touchSpinDiv").hide();
+    $("#openInstructionsModal").hide();
+    $("#sendToURL").show();
+
+    $("#triggerDiv").hide();
+
+});
+
 function validateTaskInfo(){
     var taskData;
     $.ajax({
@@ -441,6 +488,12 @@ function validateTaskInfo(){
     if(taskData.task_keywords == ""){
         return "keywords";
     }
+    if(mode == "direct"){
+        var link  = $("#sendToURL").val();
+        if( link.substring(0, 8) != "https://") {
+            return('URL, must begin with "https://".');
+        }
+    }
     return "";
 }
 
@@ -465,5 +518,7 @@ $('#fireToURL').blur( function() {
   });
 });
 */
+
+$("#useRetainerMode").trigger("click");
 
 });
