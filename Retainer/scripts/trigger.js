@@ -6,6 +6,8 @@ var retainerLocation = "Retainer/";
 //     clearQueue('https://roc.cs.rochester.edu/convInterface/videocoding/tutorial/tutorial.php?justTutorial=true');
 // });
 
+var sessionLoaded = false;
+
 updateSessionsList();
 setInterval(function(){updateSessionsList()},30000);
 
@@ -33,6 +35,7 @@ function updateSessionsList(){
 
 $("#addNewTask").on("click", function(event){
     event.preventDefault();
+    sessionLoaded = true;
     $.ajax({
         url: retainerLocation + "php/addNewTask.php",
         type: "POST",
@@ -121,44 +124,53 @@ $("#stopRecruiting").on("click", function(event){
 $("#startRecruiting").on("click", function(event){
     event.preventDefault();
 
-    $.ajax({
-        url: retainerLocation + "php/startRecruiting.php",
-        type: "POST",
-        async: false,
-        data: {task: $("#taskSession").val()},
-        dataType: "text",
-        success: function(d) {
-            
-        },
-        fail: function() {
-            alert("Sending number of workers failed");
-        }
-    });
+    var problem = validateTaskInfo();
+    if(problem != ""){
+        alert("ERROR: please update " + problem);
+    }
+    else {
+        $.ajax({
+            url: retainerLocation + "php/startRecruiting.php",
+            type: "POST",
+            async: false,
+            data: {task: $("#taskSession").val()},
+            dataType: "text",
+            success: function(d) {
+                
+            },
+            fail: function() {
+                alert("Sending number of workers failed");
+            }
+        });
 
-    // Start the recruiting tool
-    $.ajax({
-        url: "Overview/turk/getAnswers.php",
-        type: "POST",
-        async: true,
-        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
-        dataType: "text",
-        success: function(d) {
-alert(d);
-        },
-        fail: function() {
-            alert("Sending number of workers failed");
-        }
-    });
+        // Start the recruiting tool
+        $.ajax({
+            url: "Overview/turk/getAnswers.php",
+            type: "POST",
+            async: true,
+            data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+            dataType: "text",
+            success: function(d) {
+                alert(d);
+            },
+            fail: function() {
+                alert("Sending number of workers failed");
+            }
+        });
 
-    $('#startRecruiting').attr('disabled','disabled');
-    $('#stopRecruiting').removeAttr('disabled');
+        $('#startRecruiting').attr('disabled','disabled');
+        $('#stopRecruiting').removeAttr('disabled');
 
-    $('#yesSandbox').attr('disabled','disabled');
-    $('#noSandbox').attr('disabled','disabled');
+        $('#yesSandbox').attr('disabled','disabled');
+        $('#noSandbox').attr('disabled','disabled');
+    }
+
 });
 
 $("#loadTask").on("click", function(event){
     event.preventDefault();
+
+    sessionLoaded = true;
 
     var taskData;
     $.ajax({
@@ -396,6 +408,41 @@ $("#waitingInstructionsUpdated").on("click", function(){
         }
     });
 });
+
+function validateTaskInfo(){
+    var taskData;
+    $.ajax({
+        url: retainerLocation + "php/loadTask.php",
+        type: "POST",
+        async: false,
+        data: {task: $("#taskSessionLoad").val()},
+        dataType: "json",
+        success: function(d) {
+            taskData = d;
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
+
+    // console.log(taskData);
+    if(taskData.min_price == ""){
+        return "min price";
+    }
+    if(taskData.max_price == ""){
+        return "max price";
+    }
+    if(taskData.task_title == ""){
+        return "title";
+    }
+    if(taskData.task_description == ""){
+        return "description";
+    }
+    if(taskData.task_keywords == ""){
+        return "keywords";
+    }
+    return "";
+}
 
 /*
 // WSL: Can't work with ajax directly because of XSS issues. To fix, use a php script that calls 'ping'.
