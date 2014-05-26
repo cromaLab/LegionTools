@@ -24,8 +24,8 @@ if(isset($_REQUEST['retainer']) && $_REQUEST['retainer'] == "true"){
 else{
 	$retainer = false;
 	$url = $_REQUEST['URL'];
-	
-	$sql = "UPDATE retainer WHERE task = :task SET target_workers = 10";
+
+	$sql = "UPDATE retainer SET target_workers = 10 WHERE task = :task";
 	$sth = $dbh->prepare($sql);
 	$sth->execute(array(':task' => $_REQUEST['task']));
 }
