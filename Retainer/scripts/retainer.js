@@ -32,6 +32,7 @@ $(document).ready(function() {
     	data: {workerId: worker},
     	dataType: "text",
     	success: function(d){
+            alert(d);
     		if(d == 1){
 			isAllowed = false;
     			alert("You are already waiting for another task.");
