@@ -415,7 +415,7 @@ function validateTaskInfo(){
         url: retainerLocation + "php/loadTask.php",
         type: "POST",
         async: false,
-        data: {task: $("#taskSessionLoad").val()},
+        data: {task: $("#taskSession").val()},
         dataType: "json",
         success: function(d) {
             taskData = d;
