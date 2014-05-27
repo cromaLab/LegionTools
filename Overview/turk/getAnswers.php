@@ -17,19 +17,6 @@ try {
     echo $e->getMessage();
   }
 
-if(isset($_REQUEST['retainer']) && $_REQUEST['retainer'] == "true"){
-	$retainer = true;
-	$url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'];
-}
-else{
-	$retainer = false;
-	$url = $_REQUEST['URL'];
-
-	$sql = "UPDATE retainer SET target_workers = 10 WHERE task = :task";
-	$sth = $dbh->prepare($sql);
-	$sth->execute(array(':task' => $_REQUEST['task']));
-}
-
 function getTaskRowInDb(){
 	global $dbh;
 	$sql = "SELECT * FROM retainer WHERE task = :task";
@@ -134,6 +121,13 @@ fwrite($debug, "Target number of workers reached\n");
 
 $task = $_REQUEST['task'];
 
+if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer"){
+	$url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'];
+}
+else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
+	$url = urlencode($_REQUEST['URL']);
+}
+
 $debugFile = "debugFile.txt";
 $debug = fopen($debugFile, 'w');
 
@@ -218,6 +212,8 @@ foreach ($hits as $hit) {
 fwrite($debug, "Enter foreach " . $hitId . "\n");
 	$hitInfo = turk50_getHit($hitId);
 	if(property_exists($hitInfo->HIT, "HITStatus")){
+		expireHit($hitId);
+		sleep(.25);
 		fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
 		if($hitInfo->HIT->HITStatus == "Disposed"){
 			// expireHit($hitId);
@@ -227,9 +223,11 @@ fwrite($debug, "Enter foreach " . $hitId . "\n");
 		}
 	}
 	else{
-		expireHit($hitId);
+		$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+		$sth = $dbh->prepare($sql);
+		$sth->execute(array(':hit_Id' => $hitId));
 	}
-	sleep(1); //Don't overload mturk with getHit
+	sleep(.75); //Don't overload mturk with getHit
 }
 
 fwrite($debug, "Exit\n");

@@ -151,7 +151,7 @@ $("#startRecruiting").on("click", function(event){
                 url: "Overview/turk/getAnswers.php",
                 type: "POST",
                 async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), retainer: "true"},
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer"},
                 dataType: "text",
                 success: function(d) {
                     alert(d);
@@ -167,7 +167,7 @@ $("#startRecruiting").on("click", function(event){
                 url: "Overview/turk/getAnswers.php",
                 type: "POST",
                 async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), retainer: "false", URL: $("#sendToURL").val()},
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: $("#sendToURL").val()},
                 dataType: "text",
                 success: function(d) {
                     alert(d);
@@ -520,5 +520,7 @@ $('#fireToURL').blur( function() {
 */
 
 $("#useRetainerMode").trigger("click");
+
+
 
 });
