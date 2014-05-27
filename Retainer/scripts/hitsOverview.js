@@ -1,24 +1,3 @@
-function getHits(task){
-	var hits;
-
-	$.ajax({
-	    url: "Retainer/php/getHits.php",
-	    type: "POST",
-	    async: false,
-	    data: {task: task, useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
-	    dataType: "json",
-	    success: function(d) {
-	        hits = d;
-	    },
-	    fail: function() {
-	        alert("Sending number of workers failed");
-	    }
-	});
-
-	return hits;
-
-}
-
 function approveHit(assignmentId, hitId, id){
 	$.ajax({
 	    url: "Retainer/php/approveOrRejectHit.php",
