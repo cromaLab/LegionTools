@@ -162,12 +162,13 @@ $("#startRecruiting").on("click", function(event){
             });
         }
         else if(mode == "direct"){
+            var urlEscaped = $("#sendToURL").val().replace("&", "&amp;&amp;");
             // Start the recruiting tool
             $.ajax({
                 url: "Overview/turk/getAnswers.php",
                 type: "POST",
                 async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: $("#sendToURL").val()},
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: urlEscaped},
                 dataType: "text",
                 success: function(d) {
                     alert(d);

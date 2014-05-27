@@ -70,19 +70,11 @@ function expireAllHits(){
 }
 
 function expireHit($hitId){
-		global $dbh, $debug, $numAssignableHits;
-
-fwrite($debug, "Expire " . $hitId . "\n");
-		turk_easyExpireHit($hitId);
-fwrite($debug, "Expire done " . $hitId . "\n");
-		sleep(.25); //Give the HIT a moment to expire
-		$mt = turk_easyDispose($hitId);
-fwrite($debug, "Dispose done " . $hitId . "\n");
-		sleep(.25); //Give the HIT a moment to dispose
-		// print_r($mt);
-		if(is_array($mt)){
-write($debug, "Expiration process valid\n");
-		}
+	global $dbh, $debug, $numAssignableHits;
+	turk_easyExpireHit($hitId);
+	sleep(.25); //Give the HIT a moment to expire
+	$mt = turk_easyDispose($hitId);
+	sleep(.25); //Give the HIT a moment to dispose
 }
 
 function iShouldQuit(){
@@ -125,7 +117,7 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer"){
 	$url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'];
 }
 else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
-	$url = urlencode($_REQUEST['URL']);
+	$url = $_REQUEST['URL'];
 }
 
 $debugFile = "debugFile.txt";
@@ -153,8 +145,7 @@ fwrite($debug, "Start loop\n");
 		$sth = $dbh->prepare($sql);
 		$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime));
 		$numAssignableHits++;
-fwrite($debug, "Post HIT\n");
-
+		fwrite($debug, "Post HIT\n");
 		sleep(1);
 	}
 
@@ -167,16 +158,10 @@ fwrite($debug, "Post HIT\n");
 	$numAssignableHits = 0;
 
 	foreach ($hits as $hit) {
-		//Is assignable?
 		$hitId = $hit['hit_Id'];
 		$hitInfo = turk50_getHit($hitId);
-// print_r($hitInfo);
-$propExist = property_exists($hitInfo->HIT, "HITStatus");
-fwrite($debug, "Property exist test: " . $propExist . "\n");
 		if(property_exists($hitInfo->HIT, "HITStatus")){
-fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
 			if($hitInfo->HIT->HITStatus == "Disposed"){
-				// expireHit($hitId);
 				$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
 				$sth = $dbh->prepare($sql);
 				$sth->execute(array(':hit_Id' => $hitId));
@@ -184,15 +169,16 @@ fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
 			else if($hitInfo->HIT->HITStatus == "Assignable"){
 				$numAssignableHits++;
 				if((time() - $hit['time']) > 200){
-fwrite($debug, "Expire old hit\n");
-					sleep(1);
+					sleep(.25);
 					expireHit($hitId);
 				}
 			}
 		}
-		else{
-			expireHit($hitId);
-		}
+		// else{
+		// 	$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+		// 	$sth = $dbh->prepare($sql);
+		// 	$sth->execute(array(':hit_Id' => $hitId));
+		// }
 fwrite($debug, $numAssignableHits . " - num Assignable hits\n");
 		// echo $hit['time'] . "</br>";
 		// echo time() . "</br>";
@@ -209,7 +195,6 @@ $hits = $sth->fetchAll();
 
 foreach ($hits as $hit) {
 	$hitId = $hit['hit_Id'];
-fwrite($debug, "Enter foreach " . $hitId . "\n");
 	$hitInfo = turk50_getHit($hitId);
 	if(property_exists($hitInfo->HIT, "HITStatus")){
 		expireHit($hitId);
@@ -222,11 +207,11 @@ fwrite($debug, "Enter foreach " . $hitId . "\n");
 			$sth->execute(array(':hit_Id' => $hitId));
 		}
 	}
-	else{
-		$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
-		$sth = $dbh->prepare($sql);
-		$sth->execute(array(':hit_Id' => $hitId));
-	}
+	// else{
+	// 	$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+	// 	$sth = $dbh->prepare($sql);
+	// 	$sth->execute(array(':hit_Id' => $hitId));
+	// }
 	sleep(.75); //Don't overload mturk with getHit
 }
 
