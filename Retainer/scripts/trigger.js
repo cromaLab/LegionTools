@@ -299,9 +299,8 @@ $("#approveAll").on("click", function(event){
     });
 });
 
-$("#diposeAll").on("click", function(event){
-    event.preventDefault();
-    
+$("#disposeAll").on("click", function(event){
+    event.preventDefault();    
     $('#hitsList li').each(function() {
         var id = this.id;
         setTimeout(function(){
