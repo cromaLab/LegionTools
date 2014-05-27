@@ -16,6 +16,7 @@ function getHits(task){
 	});
 
 	return hits;
+
 }
 
 function approveHit(assignmentId, hitId, id){

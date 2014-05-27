@@ -65,7 +65,7 @@ $("#updatePrice").on("click", function(event){
     $.ajax({
         url: retainerLocation + "php/updatePrice.php",
         type: "POST",
-        async: false,
+        async: true,
         data: {task: $("#taskSession").val(), min_price: $("#minPrice").val(), max_price: $("#maxPrice").val()},
         dataType: "text",
         success: function(d) {
@@ -82,7 +82,7 @@ $("#currentTarget").change(function(){
     $.ajax({
         url: retainerLocation + "php/updateTargetNumWorkers.php",
         type: "POST",
-        async: false,
+        async: true,
         data: {task: $("#taskSession").val(), target_workers: $("#currentTarget").val()},
         dataType: "text",
         success: function(d) {
@@ -104,7 +104,7 @@ $("#stopRecruiting").on("click", function(event){
     $.ajax({
         url: retainerLocation + "php/stopRecruiting.php",
         type: "POST",
-        async: false,
+        async: true,
         data: {task: $("#taskSession").val()},
         dataType: "text",
         success: function(d) {
@@ -255,20 +255,37 @@ $("#updateTask").on("click", function(event){
 
 $("#reloadHits").on("click", function(event){
     event.preventDefault();
-    var hits = getHits($("#taskSession").val());
-    $("#hitsList").empty();
-    var counter = 0;
-    for (var request in hits) {
-        var hitInfo = hits[request];
-        var listId = "hit" + counter;
-        // alert(obj.Title);
-        if(hitInfo.Assignment.AssignmentStatus == "Submitted")
-            $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
+    var hits;
+    $.ajax({
+        url: "Retainer/php/getHits.php",
+        type: "POST",
+        async: true,
+        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+        dataType: "json",
+        success: function(d) {
+            hits = d;
 
-        else
-            $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
-        counter++;
-    }
+            //Fade out all the old hits, then add the new ones.
+            $('#hitsList').children().fadeOut(500).promise().then(function() {
+                $('#hitsList').empty();
+                var counter = 0;
+                for (var request in hits) {
+                    var hitInfo = hits[request];
+                    var listId = "hit" + counter;
+                    // alert(obj.Title);
+                    if(hitInfo.Assignment.AssignmentStatus == "Submitted")
+                        $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
+
+                    else
+                        $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
+                    counter++;
+                }
+            });
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
 });
 
 $("#approveAll").on("click", function(event){
@@ -372,29 +389,26 @@ $("#fireWorkers").on("click", function(){
         $.ajax({
             url: retainerLocation + "php/setFire.php",
             type: "POST",
-            async: false,
+            async: true,
             data: {url: link, task: task},
             dataType: "text",
             success: function(d) {
-                //
-                //alert("Fire successful");
+                $.ajax({
+                    url: retainerLocation + "php/updateReleased.php",
+                    type: "POST",
+                    async: true,
+                    data: {url: link, max: numFire, task: task},
+                    dataType: "text",
+                    success: function(d) {
+                        
+                    },
+                    fail: function() {
+                        alert("Sending number of workers failed");
+                    }
+                });
             },
             fail: function() {
                 alert("Clear queue failed!");
-            }
-        });
-        
-        $.ajax({
-            url: retainerLocation + "php/updateReleased.php",
-            type: "POST",
-            async: false,
-            data: {url: link, max: numFire, task: task},
-            dataType: "text",
-            success: function(d) {
-                
-            },
-            fail: function() {
-                alert("Sending number of workers failed");
             }
         });
     }

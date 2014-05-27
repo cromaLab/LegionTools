@@ -49,60 +49,259 @@ Hit status: Assignable
 Property exist test: 1
 Hit status: Assignable
 7 - num Assignable hits
-Expire 3NZ1E5QA6ZCWCJ7TLXBJ0689SDX5BI
-Expire done 3NZ1E5QA6ZCWCJ7TLXBJ0689SDX5BI
-Dispose done 3NZ1E5QA6ZCWCJ7TLXBJ0689SDX5BI
-Expire 3UYRNV2KITAH0AFSMLNV3LIUBSC8NC
-Expire done 3UYRNV2KITAH0AFSMLNV3LIUBSC8NC
-Dispose done 3UYRNV2KITAH0AFSMLNV3LIUBSC8NC
-Expire 3L60IFZKF3TIJPUAMRMOBEEXSZTHHR
-Expire done 3L60IFZKF3TIJPUAMRMOBEEXSZTHHR
-Dispose done 3L60IFZKF3TIJPUAMRMOBEEXSZTHHR
-Expire 3J94SKDEKI0PRG5DZT2PVWW9VY9D5X
-Expire done 3J94SKDEKI0PRG5DZT2PVWW9VY9D5X
-Dispose done 3J94SKDEKI0PRG5DZT2PVWW9VY9D5X
-Expire 3ZQX1VYFTDGZIVF4N0N8IAIZ12H8OR
-Expire done 3ZQX1VYFTDGZIVF4N0N8IAIZ12H8OR
-Dispose done 3ZQX1VYFTDGZIVF4N0N8IAIZ12H8OR
-Expire 3RWB1RTQDJYH3VR5200N7ANPB7D8P8
-Expire done 3RWB1RTQDJYH3VR5200N7ANPB7D8P8
-Dispose done 3RWB1RTQDJYH3VR5200N7ANPB7D8P8
-Expire 3MNJFORX8BFMP0J9QZXFJWZU7BPF5A
-Expire done 3MNJFORX8BFMP0J9QZXFJWZU7BPF5A
-Dispose done 3MNJFORX8BFMP0J9QZXFJWZU7BPF5A
-Enter foreach 3NZ1E5QA6ZCWCJ7TLXBJ0689SDX5BI
-Expire 3NZ1E5QA6ZCWCJ7TLXBJ0689SDX5BI
-Expire done 3NZ1E5QA6ZCWCJ7TLXBJ0689SDX5BI
-Dispose done 3NZ1E5QA6ZCWCJ7TLXBJ0689SDX5BI
+Start loop
+Property exist test: 1
+Hit status: Assignable
+1 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+3 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+4 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+6 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+7 - num Assignable hits
+Start loop
+Property exist test: 1
+Hit status: Assignable
+1 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Unassignable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+3 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+4 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+6 - num Assignable hits
+Start loop
+Post HIT
+Property exist test: 1
+Hit status: Assignable
+1 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Reviewable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+3 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+4 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Unassignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+6 - num Assignable hits
+Start loop
+Post HIT
+Property exist test: 1
+Hit status: Assignable
+1 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Reviewable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+3 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+4 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Unassignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+6 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+7 - num Assignable hits
+Start loop
+Property exist test: 1
+Hit status: Assignable
+1 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Reviewable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+3 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+4 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Unassignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+6 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+7 - num Assignable hits
+Start loop
+Property exist test: 1
+Hit status: Assignable
+1 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Reviewable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+3 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+4 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Unassignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+6 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+7 - num Assignable hits
+Start loop
+Property exist test: 1
+Hit status: Assignable
+1 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Reviewable
+2 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+3 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+4 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Unassignable
+5 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+6 - num Assignable hits
+Property exist test: 1
+Hit status: Assignable
+7 - num Assignable hits
+Expire 3HFWPF5AK9USFQ1RI09LBYKPI5Y3SX
+Expire done 3HFWPF5AK9USFQ1RI09LBYKPI5Y3SX
+Dispose done 3HFWPF5AK9USFQ1RI09LBYKPI5Y3SX
+Expire 3Z33IC0JC0XUMK7BT4F0DY7IH129VP
+Expire done 3Z33IC0JC0XUMK7BT4F0DY7IH129VP
+Dispose done 3Z33IC0JC0XUMK7BT4F0DY7IH129VP
+Expire 3W5PY7V3UPI0WQFPKRTX9RPFVNFYJH
+Expire done 3W5PY7V3UPI0WQFPKRTX9RPFVNFYJH
+Dispose done 3W5PY7V3UPI0WQFPKRTX9RPFVNFYJH
+Expire 3YGE63DIN88P5FJ3JI136PP3L6A0WE
+Expire done 3YGE63DIN88P5FJ3JI136PP3L6A0WE
+Dispose done 3YGE63DIN88P5FJ3JI136PP3L6A0WE
+Expire 38B7Q9C28GG97USASW7S16RJ08B69V
+Expire done 38B7Q9C28GG97USASW7S16RJ08B69V
+Dispose done 38B7Q9C28GG97USASW7S16RJ08B69V
+Expire 3AA88CN98PEV7AL72CT9A6PSACFYKG
+Expire done 3AA88CN98PEV7AL72CT9A6PSACFYKG
+Dispose done 3AA88CN98PEV7AL72CT9A6PSACFYKG
+Expire 3DA79LNS596TUQE670EBL3GBKOC3TM
+Expire done 3DA79LNS596TUQE670EBL3GBKOC3TM
+Dispose done 3DA79LNS596TUQE670EBL3GBKOC3TM
+Expire 3Y3N5A7N4GKQXYLANO6PPJHWZHAYML
+Expire done 3Y3N5A7N4GKQXYLANO6PPJHWZHAYML
+Dispose done 3Y3N5A7N4GKQXYLANO6PPJHWZHAYML
+Expire 3PR3LXCWSFAMQ9C6TJGI1J43XCA9XS
+Expire done 3PR3LXCWSFAMQ9C6TJGI1J43XCA9XS
+Dispose done 3PR3LXCWSFAMQ9C6TJGI1J43XCA9XS
+Enter foreach 3HFWPF5AK9USFQ1RI09LBYKPI5Y3SX
+Expire 3HFWPF5AK9USFQ1RI09LBYKPI5Y3SX
+Expire done 3HFWPF5AK9USFQ1RI09LBYKPI5Y3SX
+Dispose done 3HFWPF5AK9USFQ1RI09LBYKPI5Y3SX
 Hit status: Disposed
-Enter foreach 3UYRNV2KITAH0AFSMLNV3LIUBSC8NC
-Expire 3UYRNV2KITAH0AFSMLNV3LIUBSC8NC
-Expire done 3UYRNV2KITAH0AFSMLNV3LIUBSC8NC
-Dispose done 3UYRNV2KITAH0AFSMLNV3LIUBSC8NC
+Enter foreach 3Z33IC0JC0XUMK7BT4F0DY7IH129VP
+Expire 3Z33IC0JC0XUMK7BT4F0DY7IH129VP
+Expire done 3Z33IC0JC0XUMK7BT4F0DY7IH129VP
+Dispose done 3Z33IC0JC0XUMK7BT4F0DY7IH129VP
 Hit status: Disposed
-Enter foreach 3L60IFZKF3TIJPUAMRMOBEEXSZTHHR
-Expire 3L60IFZKF3TIJPUAMRMOBEEXSZTHHR
-Expire done 3L60IFZKF3TIJPUAMRMOBEEXSZTHHR
-Dispose done 3L60IFZKF3TIJPUAMRMOBEEXSZTHHR
+Enter foreach 3W5PY7V3UPI0WQFPKRTX9RPFVNFYJH
+Expire 3W5PY7V3UPI0WQFPKRTX9RPFVNFYJH
+Expire done 3W5PY7V3UPI0WQFPKRTX9RPFVNFYJH
+Dispose done 3W5PY7V3UPI0WQFPKRTX9RPFVNFYJH
+Hit status: Reviewable
+Enter foreach 3YGE63DIN88P5FJ3JI136PP3L6A0WE
+Expire 3YGE63DIN88P5FJ3JI136PP3L6A0WE
+Expire done 3YGE63DIN88P5FJ3JI136PP3L6A0WE
+Dispose done 3YGE63DIN88P5FJ3JI136PP3L6A0WE
 Hit status: Disposed
-Enter foreach 3J94SKDEKI0PRG5DZT2PVWW9VY9D5X
-Expire 3J94SKDEKI0PRG5DZT2PVWW9VY9D5X
-Expire done 3J94SKDEKI0PRG5DZT2PVWW9VY9D5X
-Dispose done 3J94SKDEKI0PRG5DZT2PVWW9VY9D5X
+Enter foreach 38B7Q9C28GG97USASW7S16RJ08B69V
+Expire 38B7Q9C28GG97USASW7S16RJ08B69V
+Expire done 38B7Q9C28GG97USASW7S16RJ08B69V
+Dispose done 38B7Q9C28GG97USASW7S16RJ08B69V
 Hit status: Disposed
-Enter foreach 3ZQX1VYFTDGZIVF4N0N8IAIZ12H8OR
-Expire 3ZQX1VYFTDGZIVF4N0N8IAIZ12H8OR
-Expire done 3ZQX1VYFTDGZIVF4N0N8IAIZ12H8OR
-Dispose done 3ZQX1VYFTDGZIVF4N0N8IAIZ12H8OR
+Enter foreach 3AA88CN98PEV7AL72CT9A6PSACFYKG
+Expire 3AA88CN98PEV7AL72CT9A6PSACFYKG
+Expire done 3AA88CN98PEV7AL72CT9A6PSACFYKG
+Dispose done 3AA88CN98PEV7AL72CT9A6PSACFYKG
 Hit status: Disposed
-Enter foreach 3RWB1RTQDJYH3VR5200N7ANPB7D8P8
-Expire 3RWB1RTQDJYH3VR5200N7ANPB7D8P8
-Expire done 3RWB1RTQDJYH3VR5200N7ANPB7D8P8
-Dispose done 3RWB1RTQDJYH3VR5200N7ANPB7D8P8
+Enter foreach 3DA79LNS596TUQE670EBL3GBKOC3TM
+Expire 3DA79LNS596TUQE670EBL3GBKOC3TM
+Expire done 3DA79LNS596TUQE670EBL3GBKOC3TM
+Dispose done 3DA79LNS596TUQE670EBL3GBKOC3TM
 Hit status: Disposed
-Enter foreach 3MNJFORX8BFMP0J9QZXFJWZU7BPF5A
-Expire 3MNJFORX8BFMP0J9QZXFJWZU7BPF5A
-Expire done 3MNJFORX8BFMP0J9QZXFJWZU7BPF5A
-Dispose done 3MNJFORX8BFMP0J9QZXFJWZU7BPF5A
+Enter foreach 3Y3N5A7N4GKQXYLANO6PPJHWZHAYML
+Expire 3Y3N5A7N4GKQXYLANO6PPJHWZHAYML
+Expire done 3Y3N5A7N4GKQXYLANO6PPJHWZHAYML
+Dispose done 3Y3N5A7N4GKQXYLANO6PPJHWZHAYML
+Hit status: Disposed
+Enter foreach 3PR3LXCWSFAMQ9C6TJGI1J43XCA9XS
+Expire 3PR3LXCWSFAMQ9C6TJGI1J43XCA9XS
+Expire done 3PR3LXCWSFAMQ9C6TJGI1J43XCA9XS
+Dispose done 3PR3LXCWSFAMQ9C6TJGI1J43XCA9XS
 Hit status: Disposed
 Exit
