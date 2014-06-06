@@ -9,7 +9,7 @@
     <script type="text/javascript" src="scripts/bootstrap.touchspin.js"></script>
     <script type="text/javascript" src="scripts/hitsOverview.js"></script>
 
-    <script> var baseURL = "<?php include('../baseURL.php'); echo $baseURL; ?>"; </script>
+    <script> var baseURL = "<?php include('../config.php'); echo $baseURL; ?>"; </script>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/trigger.css">

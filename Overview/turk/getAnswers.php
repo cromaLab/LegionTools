@@ -5,7 +5,7 @@ ini_set('max_execution_time', 10000);
 set_time_limit ( 10000);
 
 include("../../amtKeys.php");
-include("../../baseURL.php");
+include("../../config.php");
 include("../../isSandbox.php");
 include("../../getDB.php");
 include 'turk_functions.php';

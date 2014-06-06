@@ -53,5 +53,12 @@ $(document).ready( function() {
         });
     }
 
+	// This file appears to do nothing?
+	// If these are meant to be global functions it is best to namespace them, for example
+	window.legion = {
+		call : call,
+		query_available : query_available
+	};
+
 
 });

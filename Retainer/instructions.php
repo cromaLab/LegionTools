@@ -1,5 +1,7 @@
 <h2 class="instructions" style="margin-left:15px"><u>Instructions</u></h2>
 <?php
+// This should be surrounded by something like
+//   if (isDebugMode()) {
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
