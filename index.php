@@ -11,7 +11,7 @@
     <script type="text/javascript" src="Retainer/scripts/jquery.blockUI.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <script> var baseURL = "<?php include('baseURL.php'); echo $baseURL; ?>"; </script>
+    <script> var baseURL = "<?php include('config.php'); echo $baseURL; ?>"; </script>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="Retainer/style/trigger.css">

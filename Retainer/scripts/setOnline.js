@@ -1,20 +1,29 @@
 $(document).ready(function() {
-setInterval( function() {
-    var worker = gup("workerId");
-    var assignment = gup("assignmentId");
-    var task = gup('task') ? gup('task') : "default";
-    //if( assignment != "ASSIGNMENT_ID_NOT_AVAILABLE" ) {
-        $.ajax({
-            url: "php/ajax_whosonline.php",
-            data: {task: task, worker: worker, role: "crowd"},
-            dataType: "text",
-            success: function(d) {
-                //
-            },
-            fail: function() {
-                alert("setOnline failed!")
-            },
-        });
-    //}
-}, 3000);
+	setInterval( function() {
+		var worker     = gup("workerId"),
+			assignment = gup("assignmentId"),
+			task       = gup('task') ? gup('task') : "default";
+
+		//if( assignment === "ASSIGNMENT_ID_NOT_AVAILABLE" ) {
+		// 		return;
+	    // }
+		$.ajax({
+			url: "php/ajax_whosonline.php",
+			dataType: "text",
+			data: {
+				task       : task,
+				worker     : worker,
+				assignment : assignment,
+				role       : "crowd"
+			},
+			success: function() { },
+			fail: function() {
+				throw {
+					name: 'counterfailed',
+					message:'something important here'
+				}
+			}
+		});
+	}, 3000);
 });
+// Wow i think i wrote this one???

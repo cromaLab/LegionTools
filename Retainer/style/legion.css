@@ -34,12 +34,12 @@
 
 .legion-score-display-r {
   z-index: 100;
-  background: none !important;
+  background: none !important; // !important should be avoided as much as possible
   border: none !important;
   color: #F00 !important;
   font-weight: bold;
   overflow: hidden;
-  font-size: 1.2em;
+  font-size: 1.2em; // industry seems to prefer px lately
 }
 
 .legion-score-display-a {
