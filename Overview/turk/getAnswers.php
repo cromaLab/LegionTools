@@ -188,7 +188,7 @@ fwrite($debug, $numAssignableHits . " - num Assignable hits\n");
 		// echo $hit['time'] . "</br>";
 		// echo time() . "</br>";
 // fwrite($debug, time() . " " . $hit['time'] . "\n");
-		sleep(.75); //Don't overload mturk with getHit
+		sleep(1); //Don't overload mturk with getHit
 	}
 	sleep(2);
 }
@@ -222,7 +222,7 @@ foreach ($hits as $hit) {
 	// 	$sth = $dbh->prepare($sql);
 	// 	$sth->execute(array(':hit_Id' => $hitId));
 	// }
-	sleep(.75); //Don't overload mturk with getHit
+	sleep(1); //Don't overload mturk with getHit
 }
 
 fwrite($debug, "Exit\n");

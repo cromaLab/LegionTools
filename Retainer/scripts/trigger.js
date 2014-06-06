@@ -155,7 +155,7 @@ $("#startRecruiting").on("click", function(event){
                 data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer"},
                 dataType: "text",
                 success: function(d) {
-                    // alert(d);
+                    alert(d);
                     alert("Recruiting stopped");
                     $('#startRecruiting').removeAttr('disabled');
                     $('#startRecruiting').html('Start recruiting');
@@ -175,7 +175,7 @@ $("#startRecruiting").on("click", function(event){
                 data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: urlEscaped},
                 dataType: "text",
                 success: function(d) {
-                    // alert(d);
+                    alert(d);
                     alert("Recruiting stopped");
                     $('#startRecruiting').removeAttr('disabled');
                     $('#startRecruiting').html('Start recruiting');
