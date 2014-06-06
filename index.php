@@ -8,6 +8,7 @@
     <script type="text/javascript" src="Retainer/scripts/writeNumOnline.js"></script>
     <script type="text/javascript" src="Retainer/scripts/bootstrap.touchspin.js"></script>
     <script type="text/javascript" src="Retainer/scripts/hitsOverview.js"></script>
+    <script type="text/javascript" src="Retainer/scripts/jquery.blockUI.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <script> var baseURL = "<?php include('baseURL.php'); echo $baseURL; ?>"; </script>
@@ -149,7 +150,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6" style = "border-right: 1px #ccc solid; border-top: 1px #ccc solid;">
+      <div id = "overview" class="col-md-6" style = "border-right: 1px #ccc solid; border-top: 1px #ccc solid;">
         <h3>Overview</h3>
         <form role="form">
           <button type="submit" id="approveAll" class="btn btn-success">Approve all</button>

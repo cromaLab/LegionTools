@@ -365,5 +365,20 @@
         return $turk50->GetHIT($Request);
     }
 
+    function turk50_getAccountBalance(){
+        global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+        
+        if($SANDBOX)
+            $turk50 = new Turk50($AccessKey, $SecretKey);
+        else
+            $turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
+
+        $Request = array(
+            "HITId" => $hitId
+        );
+
+        return $turk50->GetAccountBalance();
+    }
+
 
 ?>

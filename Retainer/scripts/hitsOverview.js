@@ -2,7 +2,7 @@ function approveHit(assignmentId, hitId, id){
 	$.ajax({
 	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
-	    async: false,
+	    async: true,
 	    data: {id: assignmentId, operation: "Approve", useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
 	    success: function(d) {
 	        // alert(d);
@@ -20,7 +20,7 @@ function rejectHit(assignmentId, hitId, id){
 	$.ajax({
 	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
-	    async: false,
+	    async: true,
 	    data: {id: assignmentId, operation: "Reject", useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
 	    success: function(d) {
 	        // alert(d);
@@ -37,18 +37,16 @@ function disposeHit(hitId, id){
 	$.ajax({
 	    url: "Retainer/php/approveOrRejectHit.php",
 	    type: "POST",
-	    async: false,
+	    async: true,
 	    data: {id: hitId, operation: "Dispose", useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
 	    success: function(d) {
 	        $(id).remove();
+	        $("#" + id).fadeOut( function() { $(this).remove(); });
 	    },
 	    fail: function() {
 	        alert("Sending number of workers failed");
 	    }
 	});
-
-	$("#" + id).fadeOut( function() { $(this).remove(); });
-
 
 }
 

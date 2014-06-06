@@ -115,8 +115,9 @@ $("#stopRecruiting").on("click", function(event){
         }
     });
 
+    $('#startRecruiting').html('Please wait while recruiting is stopped');
     $('#stopRecruiting').attr('disabled','disabled');
-    $('#startRecruiting').removeAttr('disabled');
+    // $('#startRecruiting').removeAttr('disabled');
 
     $('#yesSandbox').removeAttr('disabled');
     $('#noSandbox').removeAttr('disabled');
@@ -154,7 +155,10 @@ $("#startRecruiting").on("click", function(event){
                 data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer"},
                 dataType: "text",
                 success: function(d) {
-                    alert(d);
+                    // alert(d);
+                    alert("Recruiting stopped");
+                    $('#startRecruiting').removeAttr('disabled');
+                    $('#startRecruiting').html('Start recruiting');
                 },
                 fail: function() {
                     alert("Sending number of workers failed");
@@ -171,7 +175,10 @@ $("#startRecruiting").on("click", function(event){
                 data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: urlEscaped},
                 dataType: "text",
                 success: function(d) {
-                    alert(d);
+                    // alert(d);
+                    alert("Recruiting stopped");
+                    $('#startRecruiting').removeAttr('disabled');
+                    $('#startRecruiting').html('Start recruiting');
                 },
                 fail: function() {
                     alert("Sending number of workers failed");
@@ -256,6 +263,11 @@ $("#updateTask").on("click", function(event){
 
 $("#reloadHits").on("click", function(event){
     event.preventDefault();
+    $('#hitsList').block({ 
+        message: '<h1>Loading</h1>', 
+        css: { border: '3px solid #a00' } 
+    }); 
+
     var hits;
     $.ajax({
         url: "Retainer/php/getHits.php",
@@ -264,6 +276,7 @@ $("#reloadHits").on("click", function(event){
         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
+        	$('#hitsList').unblock(); 
             hits = d;
 
             //Fade out all the old hits, then add the new ones.
@@ -274,12 +287,16 @@ $("#reloadHits").on("click", function(event){
                     var hitInfo = hits[request];
                     var listId = "hit" + counter;
                     // alert(obj.Title);
-                    if(hitInfo.Assignment.AssignmentStatus == "Submitted")
-                        $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
+                    if(hitInfo.hasOwnProperty("Assignment")){
+                    	if(hitInfo.Assignment.hasOwnProperty("AssignmentStatus")){
+                    		if(hitInfo.Assignment.AssignmentStatus == "Submitted")
+                    		    $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
 
-                    else
-                        $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
-                    counter++;
+                    		else
+                    		    $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
+                    		counter++;
+                    	}
+                    }
                 }
             });
         },
@@ -291,23 +308,33 @@ $("#reloadHits").on("click", function(event){
 
 $("#approveAll").on("click", function(event){
     event.preventDefault();
-    
+    $('#hitsList').block({ 
+        message: '<h1>Working</h1>', 
+        css: { border: '3px solid #a00' } 
+    }); 
     $('#hitsList li').each(function() {
         var id = this.id;
         setTimeout(function(){
             $("#" + id + " .approveButton").trigger("click");
-        },250);
+        },2500);
     });
+    // alert("here");
+    $('#hitsList').unblock(); 
 });
 
 $("#disposeAll").on("click", function(event){
-    event.preventDefault();    
+    event.preventDefault();
+    $('#hitsList').block({ 
+        message: '<h1>Working</h1>', 
+        css: { border: '3px solid #a00' } 
+    }); 
     $('#hitsList li').each(function() {
         var id = this.id;
         setTimeout(function(){
             $("#" + id + " .disposeButton").trigger("click");
-        },250);
+        },2500);
     });
+    $('#hitsList').unblock(); 
 });
 
 

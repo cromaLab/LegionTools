@@ -58,7 +58,7 @@ function expireAllHits(){
 	global $dbh, $debug;
 
 	$task = $_REQUEST['task'];
-	$sql = "SELECT * FROM hits WHERE task = :task";
+	$sql = "SELECT * FROM hits WHERE task = :task AND assignable = 1";
 	$sth = $dbh->prepare($sql);
 	$sth->execute(array(':task' => $_REQUEST['task']));
 	$hits = $sth->fetchAll();
@@ -150,7 +150,7 @@ fwrite($debug, "Start loop\n");
 	}
 
 	// Delete old HITs and get num assignable
-	$sql = ("SELECT * from hits WHERE task = :task");
+	$sql = ("SELECT * from hits WHERE task = :task AND assignable = 1");
 	$sth = $dbh->prepare($sql);
 	$sth->execute(array(':task' => $_REQUEST['task']));
 	$hits = $sth->fetchAll();
@@ -167,11 +167,16 @@ fwrite($debug, "Start loop\n");
 				$sth->execute(array(':hit_Id' => $hitId));
 			}
 			else if($hitInfo->HIT->HITStatus == "Assignable"){
-				$numAssignableHits++;
 				if((time() - $hit['time']) > 200){
 					sleep(.25);
 					expireHit($hitId);
 				}
+				else $numAssignableHits++;
+			}
+			else if($hitInfo->HIT->HITStatus == "Reviewable"){
+				$sql = ("UPDATE hits SET assignable = 0 WHERE hit_Id = :hit_Id");
+				$sth = $dbh->prepare($sql);
+				$sth->execute(array(':hit_Id' => $hitId));
 			}
 		}
 		// else{
@@ -183,12 +188,12 @@ fwrite($debug, $numAssignableHits . " - num Assignable hits\n");
 		// echo $hit['time'] . "</br>";
 		// echo time() . "</br>";
 // fwrite($debug, time() . " " . $hit['time'] . "\n");
-		sleep(1); //Don't overload mturk with getHit
+		sleep(.75); //Don't overload mturk with getHit
 	}
 	sleep(2);
 }
 
-$sql = ("SELECT * from hits WHERE task = :task");
+$sql = ("SELECT * from hits WHERE task = :task AND assignable = 1");
 $sth = $dbh->prepare($sql);
 $sth->execute(array(':task' => $_REQUEST['task']));
 $hits = $sth->fetchAll();
@@ -203,6 +208,11 @@ foreach ($hits as $hit) {
 		if($hitInfo->HIT->HITStatus == "Disposed"){
 			// expireHit($hitId);
 			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(':hit_Id' => $hitId));
+		}
+		else if($hitInfo->HIT->HITStatus == "Reviewable"){
+			$sql = ("UPDATE hits SET assignable = 0 WHERE hit_Id = :hit_Id");
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(':hit_Id' => $hitId));
 		}
