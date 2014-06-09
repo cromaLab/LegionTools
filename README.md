@@ -13,7 +13,7 @@ LegionTools provides three key features for requesters:
 2. Install PHP’s SOAP extension. If you’re running PHP on Mac OS X or Windows, the extension is likely already installed.
 	* CentOS/RedHat: `yum install php-soap`
 	* Debian/Ubuntu: `apt-get install php5-soap`
-3. Modify `LegionTools/baseURL.php` to contain the public URL of your LegionTools installation.
+3. Modify `LegionTools/config.php` to contain the public URL of your LegionTools installation.
 4. Add your Amazon Mechanical Turk keys in `LegionTools/amtKeys.php`
 5. Ensure that `LegionTools/db` and its contents has permissions `777`.
 6. To allow workers to submit HITs, import `LegionTools/mturk.js` to your task page. This will look for a form element with id="mturk_form". All that the task page needs to do is submit the form element when its time to submit the HIT.

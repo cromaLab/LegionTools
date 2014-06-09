@@ -9,6 +9,52 @@ Post HIT
 0 - num Assignable hits
 0 - num Assignable hits
 0 - num Assignable hits
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
 1 - num Assignable hits
 2 - num Assignable hits
 3 - num Assignable hits
@@ -16,163 +62,108 @@ Post HIT
 5 - num Assignable hits
 5 - num Assignable hits
 6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-14 - num Assignable hits
-15 - num Assignable hits
-16 - num Assignable hits
-17 - num Assignable hits
-18 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-14 - num Assignable hits
-15 - num Assignable hits
-16 - num Assignable hits
-17 - num Assignable hits
-18 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-14 - num Assignable hits
-15 - num Assignable hits
-16 - num Assignable hits
-17 - num Assignable hits
-18 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-14 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
 Start loop
 Post HIT
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+Start loop
 Post HIT
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+Start loop
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+3 - num Assignable hits
+4 - num Assignable hits
+5 - num Assignable hits
+6 - num Assignable hits
+7 - num Assignable hits
+8 - num Assignable hits
+Start loop
+0 - num Assignable hits
+0 - num Assignable hits
+0 - num Assignable hits
+0 - num Assignable hits
+0 - num Assignable hits
+0 - num Assignable hits
+0 - num Assignable hits
+1 - num Assignable hits
+2 - num Assignable hits
+Start loop
 Post HIT
 Post HIT
 Post HIT
@@ -182,6 +173,9 @@ Post HIT
 0 - num Assignable hits
 0 - num Assignable hits
 0 - num Assignable hits
+0 - num Assignable hits
+0 - num Assignable hits
+0 - num Assignable hits
 1 - num Assignable hits
 2 - num Assignable hits
 3 - num Assignable hits
@@ -189,16 +183,8 @@ Post HIT
 5 - num Assignable hits
 6 - num Assignable hits
 7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
 Start loop
 0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
 1 - num Assignable hits
 2 - num Assignable hits
 3 - num Assignable hits
@@ -206,175 +192,11 @@ Start loop
 5 - num Assignable hits
 6 - num Assignable hits
 7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-14 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-14 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num3 - num Assignabl9 - num4 - num Assignabl10 - nu5 - num Assignable11 - n6 - num Assignable 12 - 6 - num Assignable h13 -7 - num Assignable hiStart loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hStart loop
-0 - num Assignabl5 - num0 - num Assignabl6 - num0 - num Assignabl6 - num1 - num Assignabl7 - num2 - num Assignabl8 - num3 - num Assignabl9 - num4 - num Assignabl10 - nu5 - num Assignable11 - n6 - num Assignable 12 - 6 - num Assignable h13 -7 - num Assignable hiStart loop
-0 - num Assignab9 - num 0 - num Assignab10 - num0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hStart loop
-0 - num Assignabl4 - num0 - num Assignabl4 - num Assignable hits
-4 - num0 - num Assignabl4 - num0 - num Assignabl4 - num0 - num Assignabl4 - num0 - num Assignabl4 - num0 - num Assignabl4 - num Assignable hits
-4 - num Assignable hits
-4 - num Assignable hits
-Start loop
-Post HIT
-Post HIT
-Post HIT
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num AssignabPost HIT0Post HIT
-Post HIT
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1Post HIT
-Post HIT
-Post HIT
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-Start loop
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
-its
-6 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-8 - num Assignable hits
-9 - num Assignable hits
-10 - num Assignable hits
-11 - num Assignable hits
-12 - num Assignable hits
-13 - num Assignable hits
+Hit status: Disposed
+Hit status: Disposed
+Hit status: Disposed
+Hit status: Disposed
+Hit status: Disposed
+Hit status: Disposed
+Hit status: Disposed
+Exit

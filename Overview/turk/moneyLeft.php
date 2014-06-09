@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 
 include("../../amtKeys.php");
-include("../../baseURL.php");
+include("../../config.php");
 include("../../isSandbox.php");
 include 'turk_functions.php';
 
