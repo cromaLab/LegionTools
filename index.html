@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>LegionTools by RocHCI</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>LegionTools</h1>
+        <p>LegionTools is a toolkit + UI that provides an easy way to recruit and route workers from Amazon Mechanical Turk to real-time and synchronous tasks.</p>
+
+        <p class="view"><a href="https://github.com/RocHCI/LegionTools">View the Project on GitHub <small>RocHCI/LegionTools</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/RocHCI/LegionTools/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/RocHCI/LegionTools/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/RocHCI/LegionTools">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="legiontools" class="anchor" href="#legiontools"><span class="octicon octicon-link"></span></a>LegionTools</h1>
+
+<p>LegionTools is a toolkit + UI that provides an easy way to recruit and route workers from Amazon Mechanical Turk to real-time and synchronous tasks.</p>
+
+<p>LegionTools provides three key features for requesters:</p>
+
+<ul>
+<li>
+<strong>Optimized automatic HIT posting</strong> - LegionTools makes it easy to automatically post HITs to AMT. To ensure your HITs are seen by workers, LegionTools uses an optimized algorithm to post and expire a steady stream of HITs. Additionally, you can easily change HIT title, price, and other values on the fly. These changes are reflected in subsequent posted HITs.</li>
+<li>
+<strong>Worker staging</strong> - LegionTools allows you to pool workers prior to forwarding them to a task that require many workers to all begin at the same time. LegionTools lets you select the number of workers you need, then send them all to a single URL at the same time with the push of a button. </li>
+<li>
+<strong>Completed-HIT management</strong> - LegionTools allows you to easily approve, reject, and dispose all the HITs that workers have completed.</li>
+</ul><h1>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h1>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol>
+<li>Clone LegionTools to a public web server with PHP 5.3 or higher.</li>
+<li>Install PHP’s SOAP extension. If you’re running PHP on Mac OS X or Windows, the extension is likely already installed.
+
+<ul>
+<li>CentOS/RedHat: <code>yum install php-soap</code>
+</li>
+<li>Debian/Ubuntu: <code>apt-get install php5-soap</code>
+</li>
+</ul>
+</li>
+<li>Modify <code>LegionTools/config.php</code> to contain the public URL of your LegionTools installation.</li>
+<li>Add your Amazon Mechanical Turk keys in <code>LegionTools/amtKeys.php</code>
+</li>
+<li>Ensure that <code>LegionTools/db</code> and its contents has permissions <code>777</code>.</li>
+<li>To allow workers to submit HITs, import <code>LegionTools/mturk.js</code> to your task page. This will look for a form element with id="mturk_form". All that the task page needs to do is submit the form element when its time to submit the HIT.</li>
+</ol><h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<ul>
+<li>Navigate to <code>LegionTools/index.php</code> in your browser (confirmed to work with the latest version of Chrome) to pull up the control UI.</li>
+</ul><h3>
+<a name="recruiting-workers" class="anchor" href="#recruiting-workers"><span class="octicon octicon-link"></span></a>Recruiting workers</h3>
+
+<ul>
+<li>Add a new task by typing a unique session name, title, description, keywords, and clicking <code>Add new task</code>. Remember your session name, you can use it to pull up your session later on.</li>
+<li>Set the target number of workers. Set the price range and click "Update price".</li>
+<li>Click <code>Change waiting page instructions</code> to edit the text that workers will be shown while waiting for your task.</li>
+<li>Click <code>Start recruiting</code> to beging recruiting. <strong>You must click <code>Stop recruiting</code> to end the recruiting process</strong>. Note that stopping recruitment will take some time, depending on your target number of workers.</li>
+<li>Pull up a previous task using just your task session name. If you closed the UI page and left the recruiting tool running, you may stop that recruiting process by loading the associated session and clicking <code>Stop recruiting</code>.</li>
+<li>Modify task title, description, and keywords with <code>Update</code>. Changes automatically affect all new HITs posted by the recruiting tool.</li>
+<li>Send workers to a URL with the Fire button. <strong>Your chosen URL must be <code>HTTPS</code></strong>. </li>
+<li>When you are ready to review completed HITs, click <code>Reload</code> in the <code>Overview</code> section to load all reviewable HITs associated with a given task session.</li>
+</ul><h1>
+<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h1>
+
+<ul>
+<li><a href="http://mgordon.me/" title="Mitchell Gordon">Mitchell Gordon</a></li>
+<li><a href="http://wslasecki.com/" title="Walter S. Lasecki">Walter S. Lasecki</a></li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/RocHCI">RocHCI</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
