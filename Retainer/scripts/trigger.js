@@ -166,7 +166,8 @@ $("#startRecruiting").on("click", function(event){
             });
         }
         else if(mode == "direct"){
-            var urlEscaped = $("#sendToURL").val().replace("&", "&amp;&amp;");
+            var urlEscaped = $("#sendToURL").val().split("&").join("&amp;&amp;");
+            // alert(urlEscaped);
             // Start the recruiting tool
             $.ajax({
                 url: "Overview/turk/getAnswers.php",
