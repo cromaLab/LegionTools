@@ -189,6 +189,7 @@ $("#postHITs").on("click", function(event){
             // Start the recruiting tool
 
             $('#postHITs').attr('disabled','disabled');
+            $('#postHITs').text("Posting...");
             $('#expireHITs').attr('disabled','disabled');
 
             $.ajax({
@@ -200,6 +201,7 @@ $("#postHITs").on("click", function(event){
                 success: function(d) {
                     // alert(d);
                     alert("HITs posted");
+                    $('#postHITs').text("Post HITs");
                     $('#postHITs').removeAttr('disabled');
                     $('#expireHITs').removeAttr('disabled');
                 },
@@ -220,6 +222,7 @@ $("#expireHITs").on("click", function(event){
 
     $('#postHITs').attr('disabled','disabled');
     $('#expireHITs').attr('disabled','disabled');
+    $('#expireHITs').text("Expiring...");
 
     $.ajax({
         url: "Overview/turk/expireHITs.php",
@@ -230,6 +233,7 @@ $("#expireHITs").on("click", function(event){
         success: function(d) {
             // alert(d);
             alert("HITs expired");
+            $('#expireHITs').text("Expire All HITs");
             $('#postHITs').removeAttr('disabled');
             $('#expireHITs').removeAttr('disabled');
         },
