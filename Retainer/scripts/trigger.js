@@ -10,8 +10,12 @@ var retainerLocation = "Retainer/";
 var sessionLoaded = false;
 
 updateSessionsList();
-$("#updateTask").hide();
 setInterval(function(){updateSessionsList()},30000);
+
+$("#updateTask").hide();
+$('#overview').block({ message: null }); 
+$('#recruitingDiv').block({ message: null }); 
+$('#triggerDiv').block({ message: null }); 
 
 function updateSessionsList(){
     $.ajax({
@@ -57,6 +61,10 @@ $("#addNewTask").on("click", function(event){
 
             $("#updateTask").show();
             $('#addNewTask').hide();
+
+            $('#overview').unblock(); 
+            $('#recruitingDiv').unblock(); 
+            $('#triggerDiv').unblock(); 
 
         },
         fail: function() {
@@ -290,6 +298,10 @@ $("#taskSessionLoad").on("change", function(event){
 
     $("#updateTask").show();
     $('#addNewTask').hide();
+
+    $('#overview').unblock(); 
+    $('#recruitingDiv').unblock(); 
+    $('#triggerDiv').unblock(); 
 
     if(taskData.done == "1"){
         $('#stopRecruiting').attr('disabled','disabled');

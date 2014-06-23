@@ -94,7 +94,7 @@
         </br>
       </div>
 
-      <div class="col-md-4 recruitingDiv">
+      <div id = "recruitingDiv" class="col-md-4">
           <h3>Recruiting</h3>
           <div class="btn-group btn-group-lg">
             <button id="useRetainerMode" type="button" class="btn btn-default active">Retainer</button>
