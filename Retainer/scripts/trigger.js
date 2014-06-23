@@ -242,7 +242,7 @@ $("#expireHITs").on("click", function(event){
         // $('#noSandbox').attr('disabled','disabled');
 });
 
-$("#loadTask").on("click", function(event){
+$("#taskSessionLoad").on("change", function(event){
     event.preventDefault();
 
     sessionLoaded = true;

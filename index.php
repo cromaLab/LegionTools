@@ -46,7 +46,7 @@
             <label class="sr-only" for="taskSessionLoad">Load an old experiment</label>
             <select id = "taskSessionLoad" class="form-control"></select>
           </div>
-          <button type="submit" id="loadTask" class="btn btn-default">Load</button>
+          <!-- <button type="submit" id="loadTask" class="btn btn-default">Load</button> -->
         </form>
 
         <h3>OR create a new experiment</h3>
