@@ -149,7 +149,7 @@
               </div>
             </div>
 
-            <div class="form-group">
+            <div style = "margin-bottom:-15px;" class="form-group">
               <div class="col-sm-12">
                 <div class="form-group row">
                   <label for="numHITs" class="col-sm-3 control-label">Num HITs</label>
