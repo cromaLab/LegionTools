@@ -165,27 +165,6 @@ $("#startRecruiting").on("click", function(event){
                 }
             });
         }
-        else if(mode == "direct"){
-            var urlEscaped = $("#sendToURL").val().split("&").join("&amp;&amp;");
-            // alert(urlEscaped);
-            // Start the recruiting tool
-            $.ajax({
-                url: "Overview/turk/getAnswers.php",
-                type: "POST",
-                async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: urlEscaped},
-                dataType: "text",
-                success: function(d) {
-                    alert(d);
-                    alert("Recruiting stopped");
-                    $('#startRecruiting').removeAttr('disabled');
-                    $('#startRecruiting').html('Start recruiting');
-                },
-                fail: function() {
-                    alert("Sending number of workers failed");
-                }
-            });
-        }
 
         $('#startRecruiting').attr('disabled','disabled');
         $('#stopRecruiting').removeAttr('disabled');
@@ -194,6 +173,73 @@ $("#startRecruiting").on("click", function(event){
         $('#noSandbox').attr('disabled','disabled');
     }
 
+});
+
+$("#postHITs").on("click", function(event){
+    event.preventDefault();
+
+    var problem = validateTaskInfo();
+    if(problem != ""){
+        alert("ERROR: please update " + problem);
+    }
+    else {
+        if(mode == "direct"){
+            var urlEscaped = $("#sendToURL").val().split("&").join("&amp;&amp;");
+            // alert(urlEscaped);
+            // Start the recruiting tool
+
+            $('#postHITs').attr('disabled','disabled');
+            $('#expireHITs').attr('disabled','disabled');
+
+            $.ajax({
+                url: "Overview/turk/getAnswers.php",
+                type: "POST",
+                async: true,
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: urlEscaped, price: $("#price").val(), numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val()},
+                dataType: "text",
+                success: function(d) {
+                    // alert(d);
+                    alert("HITs posted");
+                    $('#postHITs').removeAttr('disabled');
+                    $('#expireHITs').removeAttr('disabled');
+                },
+                fail: function() {
+                    alert("Sending number of workers failed");
+                }
+            });
+        }
+
+        // $('#yesSandbox').attr('disabled','disabled');
+        // $('#noSandbox').attr('disabled','disabled');
+    }
+
+});
+
+$("#expireHITs").on("click", function(event){
+    event.preventDefault();
+
+    $('#postHITs').attr('disabled','disabled');
+    $('#expireHITs').attr('disabled','disabled');
+
+    $.ajax({
+        url: "Overview/turk/expireHITs.php",
+        type: "POST",
+        async: true,
+        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+        dataType: "text",
+        success: function(d) {
+            // alert(d);
+            alert("HITs expired");
+            $('#postHITs').removeAttr('disabled');
+            $('#expireHITs').removeAttr('disabled');
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
+
+        // $('#yesSandbox').attr('disabled','disabled');
+        // $('#noSandbox').attr('disabled','disabled');
 });
 
 $("#loadTask").on("click", function(event){
@@ -479,7 +525,11 @@ $("#useRetainerMode").on("click", function(){
 
     $("#touchSpinDiv").show();
     $("#openInstructionsModal").show();
-    $("#sendToURL").hide();
+    $("#directModeForms").hide();
+    $("#priceRangeDiv").show();
+
+    $("#startStopButtons").show();
+    $("#postExpireButtons").hide();
 
     $("#triggerDiv").show();
 });
@@ -492,7 +542,11 @@ $("#useDirectMode").on("click", function(){
 
     $("#touchSpinDiv").hide();
     $("#openInstructionsModal").hide();
-    $("#sendToURL").show();
+    $("#directModeForms").show();
+    $("#priceRangeDiv").hide();
+
+    $("#startStopButtons").hide();
+    $("#postExpireButtons").show();
 
     $("#triggerDiv").hide();
 

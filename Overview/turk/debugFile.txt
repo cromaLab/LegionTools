@@ -1,20 +1,3 @@
-Start loop
 Post HIT
 Post HIT
-Post HIT
-Post HIT
-Post HIT
-Post HIT
-Post HIT
-1 - num Assignable hits
-2 - num Assignable hits
-3 - num Assignable hits
-4 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
-7 - num Assignable hits
-Hit status: Disposed
-Hit status: Disposed
-Hit status: Disposed
-Hit status: Disposed
-Hit status: Disposed
+Exit
