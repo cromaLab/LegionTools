@@ -88,7 +88,7 @@
                   <input type="number" min = "0" max = "100" class="form-control" id="percentApproved" value = "0">
               </div>
           </div>
-          <button type="submit" id="addNewTask" class="btn btn-primary">Add new task</button>
+          <button type="submit" id="addNewTask" class="btn btn-primary">Add new experiment</button>
           <button disabled = "disabled" type="submit" id="updateTask" class="btn btn-default">Update</button>
         </form>
         </br>
@@ -119,7 +119,7 @@
               <label class="sr-only" for="maxPrice">Max task price</label>
               <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
             </div>
-            <button type="submit" id="updatePrice" class="btn btn-default">Update</button>
+            <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->
           </form></p></div>
 
           <!-- Button trigger modal -->

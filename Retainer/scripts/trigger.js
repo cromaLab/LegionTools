@@ -10,6 +10,7 @@ var retainerLocation = "Retainer/";
 var sessionLoaded = false;
 
 updateSessionsList();
+$("#updateTask").hide();
 setInterval(function(){updateSessionsList()},30000);
 
 function updateSessionsList(){
@@ -53,6 +54,10 @@ $("#addNewTask").on("click", function(event){
 
             $("#taskSessionLoad").append("<option>" + $("#taskSession").val() + "</option>");
             $("#taskSessionLoad").val($("#taskSession").val());
+
+            $("#updateTask").show();
+            $('#addNewTask').hide();
+
         },
         fail: function() {
             alert("Sending number of workers failed");
@@ -60,7 +65,7 @@ $("#addNewTask").on("click", function(event){
     });
 });
 
-$("#updatePrice").on("click", function(event){
+$("#minPrice,#maxPrice").on("change", function(event){
     event.preventDefault();
     $.ajax({
         url: retainerLocation + "php/updatePrice.php",
@@ -282,6 +287,9 @@ $("#taskSessionLoad").on("change", function(event){
     // $('#taskSessionLoad').attr('disabled','disabled');
     $('#taskSession').attr('disabled','disabled');
     $('#updateTask').removeAttr('disabled');
+
+    $("#updateTask").show();
+    $('#addNewTask').hide();
 
     if(taskData.done == "1"){
         $('#stopRecruiting').attr('disabled','disabled');
