@@ -44,7 +44,7 @@
 	// 	  turk_debug($mt);
 	// }
 
-    function turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments) {
+    function turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments,$keywords) {
     	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
     	
     	if($SANDBOX)
@@ -68,7 +68,8 @@
     	 "AssignmentDurationInSeconds" => $duration,
     	 "LifetimeInSeconds" => $lifetime,
          "QualificationRequirement" => $qualification,
-         "MaxAssignments" => $maxAssignments
+         "MaxAssignments" => $maxAssignments,
+         "Keywords" => $keywords
     	);
 
     	// invoke CreateHIT
