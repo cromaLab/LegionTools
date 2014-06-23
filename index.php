@@ -132,7 +132,7 @@
           <div class="input-group">
             <span class="input-group-addon">Secret key</span>
             <input id="secretKey" type="text" class="form-control" placeholder="OPTIONAL. Can also edit amtKeys.php">
-          </div></p>
+          </div>For account balance, visit <a href="https://requester.mturk.com/mturk/youraccount">here</a>.</p>
 
           <form id = "directModeForms" class="form-horizontal" role="form">
             <div class="form-group">

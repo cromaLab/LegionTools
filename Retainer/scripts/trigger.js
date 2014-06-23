@@ -201,7 +201,7 @@ $("#postHITs").on("click", function(event){
                 success: function(d) {
                     // alert(d);
                     alert("HITs posted");
-                    $('#postHITs').text("Post HITs");
+                    $('#postHITs').text("Posted " + $("#numHITs").val() + " HITs");
                     $('#postHITs').removeAttr('disabled');
                     $('#expireHITs').removeAttr('disabled');
                 },
