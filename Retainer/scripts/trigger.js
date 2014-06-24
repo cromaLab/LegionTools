@@ -213,8 +213,8 @@ $("#postHITs").on("click", function(event){
                 dataType: "text",
                 success: function(d) {
                     // alert(d);
-                    alert("HITs posted");
-                    $('#postHITs').text("Posted " + $("#numHITs").val() + " HITs");
+                    alert("Posted " + $("#numHITs").val() + " HITs");
+                    $('#postHITs').text("Post HITs");
                     $('#postHITs').removeAttr('disabled');
                     $('#expireHITs').removeAttr('disabled');
                 },
