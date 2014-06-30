@@ -543,37 +543,13 @@ $("#waitingInstructionsUpdated").on("click", function(){
 
 $("#useRetainerMode").on("click", function(){
     mode = "retainer";
-
-    $("#useDirectMode").removeClass("active");
-    $("#useRetainerMode").addClass("active");
-
-    $("#touchSpinDiv").show();
-    $("#openInstructionsModal").show();
-    $("#directModeForms").hide();
-    $("#priceRangeDiv").show();
-
-    $("#startStopButtons").show();
-    $("#postExpireButtons").hide();
-
     $("#triggerDiv").show();
+
 });
 
 $("#useDirectMode").on("click", function(){
     mode = "direct";
-
-    $("#useDirectMode").addClass("active");
-    $("#useRetainerMode").removeClass("active");
-
-    $("#touchSpinDiv").hide();
-    $("#openInstructionsModal").hide();
-    $("#directModeForms").show();
-    $("#priceRangeDiv").hide();
-
-    $("#startStopButtons").hide();
-    $("#postExpireButtons").show();
-
     $("#triggerDiv").hide();
-
 });
 
 function validateTaskInfo(){

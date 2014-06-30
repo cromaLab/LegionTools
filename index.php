@@ -96,34 +96,12 @@
 
       <div id = "recruitingDiv" class="col-md-4">
           <h3>Recruiting</h3>
-          <div class="btn-group btn-group-lg">
-            <button id="useRetainerMode" type="button" class="btn btn-default active">Retainer</button>
-            <button id="useDirectMode" type="button" class="btn btn-default">Classic (direct)</button>
-          </div>
-          
-          <!-- <div class="col-sm-6"> -->
-          <div id="touchSpinDiv">
-          Target number of workers:
-          <input id="currentTarget" type="text" value="0" name="currentTarget">
-          <script>
-              $("input[name='currentTarget']").TouchSpin();
-          </script>
-          </div>
 
-          <div id="priceRangeDiv"><p><form class="form-inline" role="form">
-            <div class="form-group">
-              <label class="sr-only" for="minPrice">Min task price</label>
-              <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents"> -
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="maxPrice">Max task price</label>
-              <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
-            </div>
-            <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->
-          </form></p></div>
-
-          <!-- Button trigger modal -->
-          <p><button id="openInstructionsModal" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button></p>
+          <p><div class="btn-group btn-group-lg">
+            <button id="yesSandbox" type="button" class="btn btn-default active">Sandbox</button>
+            <button id="noSandbox" type="button" class="btn btn-default">Live</button>
+          </div>
+          </p>
 
           <p><div class="input-group">
             <span class="input-group-addon">Access key</span>
@@ -134,53 +112,84 @@
             <input id="secretKey" type="text" class="form-control" placeholder="OPTIONAL. Can also edit amtKeys.php">
           </div>For account balance, visit <a href="https://requester.mturk.com/mturk/youraccount">here</a>.</p>
 
-          <form id = "directModeForms" class="form-horizontal" role="form">
-            <div class="form-group">
-              <label for="sendToURL" class="col-sm-2 control-label">URL</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li id = "useRetainerMode" class="active"><a href="#retainerTab" role="tab" data-toggle="tab">Retainer</a></li>
+            <li id = "useDirectMode"><a href="#directTab" role="tab" data-toggle="tab">Direct (classic)</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="retainerTab">
+              <div id="touchSpinDiv">
+              Target number of workers:
+              <input id="currentTarget" type="text" value="0" name="currentTarget">
+              <script>
+                  $("input[name='currentTarget']").TouchSpin();
+              </script>
+              </div>
+
+              <div id="priceRangeDiv"><p><form class="form-inline" role="form">
+                <div class="form-group">
+                  <label class="sr-only" for="minPrice">Min task price</label>
+                  <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents"> -
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="maxPrice">Max task price</label>
+                  <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
+                </div>
+                <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->
+              </form></p></div>
+
+              <!-- Button trigger modal -->
+              <p><button id="openInstructionsModal" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button></p>
+              <div id = "startStopButtons">
+                <button type="submit" id="startRecruiting" class="btn btn-primary btn-lg">Start recruiting</button>
+                <button type="submit" id="stopRecruiting" class="btn btn-danger btn-lg">Stop recruiting</button>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="sendToURL" class="col-sm-2 control-label">Price</label>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" id="price" placeholder="Price in cents">
-              </div>
-            </div>
-
-            <div style = "margin-bottom:-15px;" class="form-group">
-              <div class="col-sm-12">
-                <div class="form-group row">
-                  <label for="numHITs" class="col-sm-3 control-label">Num HITs</label>
-                  <div class="col-sm-2">
-                    <input type="text" class="form-control" id="numHITs" placeholder="">
-                  </div>
-                  <label for="numAssignments" class="col-sm-4 control-label">Num Assignments</label>
-                  <div class="col-sm-2">
-                    <input type="text" class="form-control" id="numAssignments" placeholder="">
+            <div class="tab-pane" id="directTab">
+            <br/>
+              <form id = "directModeForms" class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label for="sendToURL" class="col-sm-2 control-label">URL</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
                   </div>
                 </div>
-              </div>
+
+                <div class="form-group">
+                  <label for="sendToURL" class="col-sm-2 control-label">Price</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="price" placeholder="Price in cents">
+                  </div>
+                </div>
+
+                <div style = "margin-bottom:-15px;" class="form-group">
+                  <div class="col-sm-12">
+                    <div class="form-group row">
+                      <label for="numHITs" class="col-sm-3 control-label">Num HITs</label>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="numHITs" placeholder="">
+                      </div>
+                      <label for="numAssignments" class="col-sm-4 control-label">Num Assignments</label>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="numAssignments" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <p><div id = "postExpireButtons">
+                <button type="submit" id="postHITs" class="btn btn-primary btn-lg">Post HITs</button>
+                <button type="submit" id="expireHITs" class="btn btn-danger btn-lg">Expire All HITs</button>
+              </div></p>
             </div>
 
-          </form>
-
-          <p><div class="btn-group btn-group-lg">
-            <button id="yesSandbox" type="button" class="btn btn-default active">Sandbox</button>
-            <button id="noSandbox" type="button" class="btn btn-default">Live</button>
           </div>
-          </p>
-
-          <div id = "startStopButtons">
-            <button type="submit" id="startRecruiting" class="btn btn-primary btn-lg">Start recruiting</button>
-            <button type="submit" id="stopRecruiting" class="btn btn-danger btn-lg">Stop recruiting</button>
-          </div>
-
-          <div id = "postExpireButtons">
-            <button type="submit" id="postHITs" class="btn btn-primary btn-lg">Post HITs</button>
-            <button type="submit" id="expireHITs" class="btn btn-danger btn-lg">Expire All HITs</button>
-          </div>
+          
+          <!-- <div class="col-sm-6"> -->
       </div>
     </div>
     <div class="row">
