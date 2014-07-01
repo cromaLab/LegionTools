@@ -123,7 +123,7 @@
           <div class="tab-content">
             <div class="tab-pane active" id="retainerTab">
               <div id="touchSpinDiv">
-              Target number of workers in retainer pool:
+              Target number of assignable HITs:
               <input id="currentTarget" type="text" value="0" name="currentTarget">
               <script>
                   $("input[name='currentTarget']").TouchSpin();
@@ -215,7 +215,7 @@
         </ul>
 
       </div>
-      <div id = "triggerDiv" class="col-md-4" style = "border-top: 1px #ccc solid;">
+      <div id = "triggerDiv" class="col-md-4">
           <h3>Workers ready</h3>
           <p id = "numOnlineText"><span id="numOnline">x</span></p>
 

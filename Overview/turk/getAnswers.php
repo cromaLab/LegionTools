@@ -18,7 +18,7 @@ try {
   }
 
 function getTaskRowInDb(){
-	global $dbh;
+	global $dbh, $SANDBOX;
 	$sql = "SELECT * FROM retainer WHERE task = :task";
 	$sth = $dbh->prepare($sql);
 	$sth->execute(array(':task' => $_REQUEST['task']));
@@ -55,12 +55,12 @@ function createQualificationRequirement($row){
 
 //Expires all HITs for given task
 function expireAllHits(){
-	global $dbh, $debug;
+	global $dbh, $debug, $SANDBOX;
 
 	$task = $_REQUEST['task'];
-	$sql = "SELECT * FROM hits WHERE task = :task AND assignable = 1";
+	$sql = "SELECT * FROM hits WHERE task = :task AND assignable = 1 AND sandbox = :sandbox";
 	$sth = $dbh->prepare($sql);
-	$sth->execute(array(':task' => $_REQUEST['task']));
+	$sth->execute(array(':task' => $_REQUEST['task'], ':sandbox' => $SANDBOX));
 	$hits = $sth->fetchAll();
 // print_r($hits);
 	foreach ($hits as $hit) {
@@ -70,15 +70,16 @@ function expireAllHits(){
 }
 
 function expireHit($hitId){
-	global $dbh, $debug, $numAssignableHits;
+	global $dbh, $debug, $numAssignableHits, $SANDBOX;
 	turk_easyExpireHit($hitId);
 	sleep(.25); //Give the HIT a moment to expire
 	$mt = turk_easyDispose($hitId);
 	sleep(.25); //Give the HIT a moment to dispose
+	return $mt;
 }
 
 function iShouldQuit(){
-	global $dbh, $debug;
+	global $dbh, $debug, $SANDBOX;
 	$result = getTaskRowInDb();
 	if($result[0]['done'] == 1){
 		expireAllHits();
@@ -88,7 +89,7 @@ function iShouldQuit(){
 }
 
 function isTargetReached(){
-	global $dbh, $debug;
+	global $dbh, $debug, $SANDBOX;
 	// Get target number of workers
 	$result = getTaskRowInDb();
 	$numWorkersTarget = $result[0]["target_workers"];
@@ -109,12 +110,57 @@ fwrite($debug, "Target number of workers reached\n");
 	}
 }
 
+function removeOldHITs(){
+	global $dbh, $debug, $SANDBOX;
+	// Get target number of workers
+	// Delete old HITs and get num assignable
+	$sql = ("SELECT * from hits WHERE task = :task AND sandbox = :sandbox");
+	$sth = $dbh->prepare($sql);
+	$sth->execute(array(':task' => $_REQUEST['task'], ':sandbox' => $SANDBOX));
+	$hits = $sth->fetchAll();
+
+	foreach ($hits as $hit) {
+		$hitId = $hit['hit_Id'];
+		$hitInfo = turk50_getHit($hitId);
+		fwrite($debug,  $hitId . " " . $hitInfo->HIT->Request->IsValid . " IsValid?\n");
+		fwrite($debug,  $hitId . " " . $hitInfo->HIT->HITStatus . " HITStatus?\n");
+		if($hitInfo->HIT->Request->IsValid == "False"){
+			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(':hit_Id' => $hitId));
+		}
+		else if(property_exists($hitInfo->HIT, "HITStatus")){
+			if($hitInfo->HIT->HITStatus == "Disposed"){
+				$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+				$sth = $dbh->prepare($sql);
+				$sth->execute(array(':hit_Id' => $hitId));
+			}
+			else if($hitInfo->HIT->HITStatus == "Reviewable"){
+				$sql = ("UPDATE hits SET assignable = 0 WHERE hit_Id = :hit_Id");
+				$sth = $dbh->prepare($sql);
+				$sth->execute(array(':hit_Id' => $hitId));
+			}
+			else{
+				$expired = expireHit($hitId);
+				if($expired != "error with disposal"){
+					$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+					$sth = $dbh->prepare($sql);
+					$sth->execute(array(':hit_Id' => $hitId));
+				}
+			}
+		}
+		sleep(1); //Don't overload mturk with getHit
+	}
+}
+
 ////////MAIN/////////
 
 $task = $_REQUEST['task'];
 
 $debugFile = "debugFile.txt";
 $debug = fopen($debugFile, 'w');
+
+removeOldHITs();
 
 if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mode'] == "auto"){
 	if($_REQUEST['mode'] == "auto") $url = $_REQUEST['url'];
@@ -136,20 +182,22 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 
 			// turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments) 
 			$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 50000, 50000, $qualification, 1, $result[0]['task_keywords']);
-			$hitId = $hitResponse->HIT->HITId;
-			$currentTime = time();
-			$sql = "INSERT INTO hits (task, hit_Id, time) values (:task, :hit_Id, :time)";
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime));
-			$numAssignableHits++;
-			fwrite($debug, "Post HIT\n");
+			if($hitResponse->HIT->Request->IsValid == "True"){
+				$hitId = $hitResponse->HIT->HITId;
+				$currentTime = time();
+				$sql = "INSERT INTO hits (task, hit_Id, time, sandbox) values (:task, :hit_Id, :time, :sandbox)";
+				$sth = $dbh->prepare($sql);
+				$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime, ':sandbox' => $SANDBOX));
+				$numAssignableHits++;
+				fwrite($debug, "Post HIT\n");
+			}
 			sleep(1);
 		}
 
 		// Delete old HITs and get num assignable
-		$sql = ("SELECT * from hits WHERE task = :task AND assignable = 1");
+		$sql = ("SELECT * from hits WHERE task = :task AND assignable = 1 AND sandbox = :sandbox");
 		$sth = $dbh->prepare($sql);
-		$sth->execute(array(':task' => $_REQUEST['task']));
+		$sth->execute(array(':task' => $_REQUEST['task'], ':sandbox' => $SANDBOX));
 		$hits = $sth->fetchAll();
 
 		$numAssignableHits = 0;
@@ -157,7 +205,12 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 		foreach ($hits as $hit) {
 			$hitId = $hit['hit_Id'];
 			$hitInfo = turk50_getHit($hitId);
-			if(property_exists($hitInfo->HIT, "HITStatus")){
+			if($hitInfo->HIT->Request->IsValid == "False"){
+				$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+				$sth = $dbh->prepare($sql);
+				$sth->execute(array(':hit_Id' => $hitId));
+			}
+			else if(property_exists($hitInfo->HIT, "HITStatus")){
 				if($hitInfo->HIT->HITStatus == "Disposed"){
 					$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
 					$sth = $dbh->prepare($sql);
@@ -176,51 +229,14 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 					$sth->execute(array(':hit_Id' => $hitId));
 				}
 			}
-			// else{
-			// 	$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
-			// 	$sth = $dbh->prepare($sql);
-			// 	$sth->execute(array(':hit_Id' => $hitId));
-			// }
+
 	fwrite($debug, $numAssignableHits . " - num Assignable hits\n");
-			// echo $hit['time'] . "</br>";
-			// echo time() . "</br>";
-	// fwrite($debug, time() . " " . $hit['time'] . "\n");
 			sleep(1); //Don't overload mturk with getHit
 		}
 		sleep(2);
 	}
 
-	$sql = ("SELECT * from hits WHERE task = :task AND assignable = 1");
-	$sth = $dbh->prepare($sql);
-	$sth->execute(array(':task' => $_REQUEST['task']));
-	$hits = $sth->fetchAll();
-
-	foreach ($hits as $hit) {
-		$hitId = $hit['hit_Id'];
-		$hitInfo = turk50_getHit($hitId);
-		if(property_exists($hitInfo->HIT, "HITStatus")){
-			expireHit($hitId);
-			sleep(.25);
-			fwrite($debug, "Hit status: " . $hitInfo->HIT->HITStatus . "\n");
-			if($hitInfo->HIT->HITStatus == "Disposed"){
-				// expireHit($hitId);
-				$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
-				$sth = $dbh->prepare($sql);
-				$sth->execute(array(':hit_Id' => $hitId));
-			}
-			else if($hitInfo->HIT->HITStatus == "Reviewable"){
-				$sql = ("UPDATE hits SET assignable = 0 WHERE hit_Id = :hit_Id");
-				$sth = $dbh->prepare($sql);
-				$sth->execute(array(':hit_Id' => $hitId));
-			}
-		}
-		// else{
-		// 	$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
-		// 	$sth = $dbh->prepare($sql);
-		// 	$sth->execute(array(':hit_Id' => $hitId));
-		// }
-		sleep(1); //Don't overload mturk with getHit
-	}
+	removeOldHITs();
 }
 else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 	$url = $_REQUEST['URL'];
@@ -237,9 +253,9 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 		$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 50000, 50000, $qualification, $numAssignments, $result[0]['task_keywords']);
 		$hitId = $hitResponse->HIT->HITId;
 		$currentTime = time();
-		$sql = "INSERT INTO hits (task, hit_Id, time) values (:task, :hit_Id, :time)";
+		$sql = "INSERT INTO hits (task, hit_Id, time, sandbox) values (:task, :hit_Id, :time, :sandbox)";
 		$sth = $dbh->prepare($sql);
-		$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime));
+		$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime, ':sandbox' => $SANDBOX));
 		$numAssignableHits++;
 		fwrite($debug, "Post HIT\n");
 		sleep(1);

@@ -7,79 +7,28 @@ Post HIT
 Post HIT
 Post HIT
 Post HIT
-Post HIT
-Post HIT
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
 1 - num Assignable hits
 2 - num Assignable hits
 3 - num Assignable hits
 4 - num Assignable hits
 5 - num Assignable hits
-5 - num Assignable hits
-6 - num Assignable hits
 6 - num Assignable hits
 7 - num Assignable hits
 8 - num Assignable hits
-Start loop
-Post HIT
-Post HIT
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-0 - num Assignable hits
-Start loop
-Post HIT
-Post HIT
-Post HIT
-Post HIT
-Post HIT
-Post HIT
-Post HIT
-Post HIT
+3XBXDSS888JQJ3N6UGMHP8YINF3XLR True IsValid?
+3XBXDSS888JQJ3N6UGMHP8YINF3XLR Disposed HITStatus?
+3QX22DUVOOHILW0WUDME10GM79LVMO True IsValid?
+3QX22DUVOOHILW0WUDME10GM79LVMO Disposed HITStatus?
+3MDKGGG61QN1J1BF22FIBMVFKOQT6W True IsValid?
+3MDKGGG61QN1J1BF22FIBMVFKOQT6W Disposed HITStatus?
+3SV8KD29L4S44S53AYY17T1E6FWZKN True IsValid?
+3SV8KD29L4S44S53AYY17T1E6FWZKN Disposed HITStatus?
+3GL25Y6843UAPL5RUSNWPLD7NKTXMT True IsValid?
+3GL25Y6843UAPL5RUSNWPLD7NKTXMT Disposed HITStatus?
+3XEIP58NL0NFOYNLVYA2MTETVF1ZLQ True IsValid?
+3XEIP58NL0NFOYNLVYA2MTETVF1ZLQ Disposed HITStatus?
+3M0556243SKZ7HZ66ZWAWT20O57NFS True IsValid?
+3M0556243SKZ7HZ66ZWAWT20O57NFS Disposed HITStatus?
+302U8RURJZ1O3ELW6E1EEF5MCZVVNO True IsValid?
+302U8RURJZ1O3ELW6E1EEF5MCZVVNO Disposed HITStatus?
+Exit

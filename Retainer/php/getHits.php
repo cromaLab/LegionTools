@@ -22,9 +22,9 @@ if( $dbh ) {
 	$resultHitIds = array();
 	$resultHits = array();
 
-	$sql = "SELECT hit_Id FROM hits WHERE task = :task";
+	$sql = "SELECT hit_Id FROM hits WHERE task = :task AND sandbox = :sandbox";
 	$sth = $dbh->prepare($sql); 
-	$sth->execute(array(':task' => $task));
+	$sth->execute(array(':task' => $task, ':sandbox' => $SANDBOX));
 	$hitsForTask = $sth->fetchAll();
 	// print_r($result);
 
@@ -47,7 +47,14 @@ if( $dbh ) {
 		// print_r(turk_easyHitToAssn($hitId));
 		// echo "</br></br>";
 		$hitInfo = turk_easyHitToAssn($hitId);
-		array_push($resultHits, $hitInfo);
+		if($hitInfo["TotalNumResults"] <= 0){
+			$mt = turk_easyDispose($hitId);
+			// sleep(.25);
+			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(':hit_Id' => $hitId));
+		}
+		else array_push($resultHits, $hitInfo);
 	}
 	
 	echo json_encode($resultHits);
