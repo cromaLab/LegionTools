@@ -116,8 +116,9 @@ $task = $_REQUEST['task'];
 $debugFile = "debugFile.txt";
 $debug = fopen($debugFile, 'w');
 
-if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer"){
-	$url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'];
+if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mode'] == "auto"){
+	if($_REQUEST['mode'] == "auto") $url = $_REQUEST['url'];
+	else $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'];
 
 	$numAssignableHits = 0;
 	while(!iShouldQuit()){

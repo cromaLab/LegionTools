@@ -178,8 +178,29 @@ $("#startRecruiting").on("click", function(event){
                 }
             });
         }
+        else if (mode == "auto"){
+            // Start the recruiting tool
+            var urlEscaped = $("#autoSendToURL").val().split("&").join("&amp;&amp;");
+            $.ajax({
+                url: "Overview/turk/getAnswers.php",
+                type: "POST",
+                async: true,
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "auto", url: urlEscaped},
+                dataType: "text",
+                success: function(d) {
+                    alert(d);
+                    alert("Recruiting stopped");
+                    $('#startRecruiting').removeAttr('disabled');
+                    $('#startRecruiting').html('Start recruiting');
+                },
+                fail: function() {
+                    alert("Sending number of workers failed");
+                }
+            });
+        }
 
         $('#startRecruiting').attr('disabled','disabled');
+        $('#startRecruiting').html("Recruiting...");
         $('#stopRecruiting').removeAttr('disabled');
 
         $('#yesSandbox').attr('disabled','disabled');
@@ -349,6 +370,7 @@ $("#reloadHits").on("click", function(event){
         success: function(d) {
         	$('#hitsList').unblock(); 
             hits = d;
+            console.log(d);
 
             //Fade out all the old hits, then add the new ones.
             $('#hitsList').children().fadeOut(500).promise().then(function() {
@@ -544,12 +566,19 @@ $("#waitingInstructionsUpdated").on("click", function(){
 $("#useRetainerMode").on("click", function(){
     mode = "retainer";
     $("#triggerDiv").show();
+    $("#autoSendToURLForm").hide();
+    $("#openInstructionsModal").show();
 
 });
-
 $("#useDirectMode").on("click", function(){
     mode = "direct";
     $("#triggerDiv").hide();
+});
+$("#useAutoMode").on("click", function(){
+    mode = "auto";
+    $("#triggerDiv").hide();
+    $("#autoSendToURLForm").show();
+    $("#openInstructionsModal").hide();
 });
 
 function validateTaskInfo(){

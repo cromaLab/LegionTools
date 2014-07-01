@@ -115,6 +115,7 @@
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
             <li id = "useRetainerMode" class="active"><a href="#retainerTab" role="tab" data-toggle="tab">Retainer</a></li>
+            <li id = "useAutoMode"><a href="#retainerTab" role="tab" data-toggle="tab">Auto</a></li>
             <li id = "useDirectMode"><a href="#directTab" role="tab" data-toggle="tab">Direct (classic)</a></li>
           </ul>
 
@@ -122,7 +123,7 @@
           <div class="tab-content">
             <div class="tab-pane active" id="retainerTab">
               <div id="touchSpinDiv">
-              Target number of workers:
+              Target number of workers in retainer pool:
               <input id="currentTarget" type="text" value="0" name="currentTarget">
               <script>
                   $("input[name='currentTarget']").TouchSpin();
@@ -143,49 +144,57 @@
 
               <!-- Button trigger modal -->
               <p><button id="openInstructionsModal" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button></p>
+              <form id = "autoSendToURLForm" class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label for="autoSendToURL" class="col-sm-2 control-label">URL</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="autoSendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
+                  </div>
+                </div>
+              </form>
               <div id = "startStopButtons">
                 <button type="submit" id="startRecruiting" class="btn btn-primary btn-lg">Start recruiting</button>
                 <button type="submit" id="stopRecruiting" class="btn btn-danger btn-lg">Stop recruiting</button>
               </div>
-            </div>
+          </div>
 
-            <div class="tab-pane" id="directTab">
-            <br/>
-              <form id = "directModeForms" class="form-horizontal" role="form">
-                <div class="form-group">
-                  <label for="sendToURL" class="col-sm-2 control-label">URL</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
-                  </div>
+          <div class="tab-pane" id="directTab">
+          <br/>
+            <form id = "directModeForms" class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="sendToURL" class="col-sm-2 control-label">URL</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <label for="sendToURL" class="col-sm-2 control-label">Price</label>
-                  <div class="col-sm-4">
-                    <input type="text" class="form-control" id="price" placeholder="Price in cents">
-                  </div>
+              <div class="form-group">
+                <label for="sendToURL" class="col-sm-2 control-label">Price</label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" id="price" placeholder="Price in cents">
                 </div>
+              </div>
 
-                <div style = "margin-bottom:-15px;" class="form-group">
-                  <div class="col-sm-12">
-                    <div class="form-group row">
-                      <label for="numHITs" class="col-sm-3 control-label">Num HITs</label>
-                      <div class="col-sm-2">
-                        <input type="text" class="form-control" id="numHITs" placeholder="">
-                      </div>
-                      <label for="numAssignments" class="col-sm-4 control-label">Num Assignments</label>
-                      <div class="col-sm-2">
-                        <input type="text" class="form-control" id="numAssignments" placeholder="">
-                      </div>
+              <div style = "margin-bottom:-15px;" class="form-group">
+                <div class="col-sm-12">
+                  <div class="form-group row">
+                    <label for="numHITs" class="col-sm-3 control-label">Num HITs</label>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" id="numHITs" placeholder="">
+                    </div>
+                    <label for="numAssignments" class="col-sm-4 control-label">Num Assignments</label>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control" id="numAssignments" placeholder="">
                     </div>
                   </div>
                 </div>
-              </form>
-              <p><div id = "postExpireButtons">
-                <button type="submit" id="postHITs" class="btn btn-primary btn-lg">Post HITs</button>
-                <button type="submit" id="expireHITs" class="btn btn-danger btn-lg">Expire All HITs</button>
-              </div></p>
-            </div>
+              </div>
+            </form>
+            <p><div id = "postExpireButtons">
+              <button type="submit" id="postHITs" class="btn btn-primary btn-lg">Post HITs</button>
+              <button type="submit" id="expireHITs" class="btn btn-danger btn-lg">Expire All HITs</button>
+            </div></p>
+          </div>
 
           </div>
           
@@ -217,6 +226,7 @@
             </div>
             <div id = "fireButtonsGroup">
                 <button type="submit" id="fireWorkers" class="btn btn-primary">Fire!</button>
+                <!-- <button type="submit" id="autoFireWorkers" class="btn btn-warning">Auto-fire</button> -->
                 <button type="submit" id="clearQueue" class="btn btn-danger">Clear entire queue (pays workers)</button>
             </div>
           </form>
