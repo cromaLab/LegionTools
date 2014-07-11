@@ -368,9 +368,9 @@ $("#reloadHits").on("click", function(event){
         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
-        	$('#hitsList').unblock(); 
+            $('#hitsList').unblock(); 
             hits = d;
-            console.log(d);
+            // console.log(d);
 
             //Fade out all the old hits, then add the new ones.
             $('#hitsList').children().fadeOut(500).promise().then(function() {
@@ -381,20 +381,20 @@ $("#reloadHits").on("click", function(event){
                     var listId = "hit" + counter;
                     // alert(obj.Title);
                     if(hitInfo.hasOwnProperty("Assignment")){
-                    	if(hitInfo.Assignment.hasOwnProperty("AssignmentStatus")){
+                        if(hitInfo.Assignment.hasOwnProperty("AssignmentStatus")){
                             var answer = hitInfo.Assignment.Answer; // If legion.js was used, bonus will be stored in XML of assignment answer
-                            var bonus = $(answer).find("FreeText").text();
+                            var bonus = $(answer).find("FreeText").text().substring(1);
                             if(isNaN(bonus)) bonus = 0; //make sure bonus is a number
-                    		if(hitInfo.Assignment.AssignmentStatus == "Submitted")
-                    		    $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;, &quot;" + bonus + "&quot;, &quot;" + hitInfo.Assignment.WorkerId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
+                            if(hitInfo.Assignment.AssignmentStatus == "Submitted")
+                                $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;, &quot;" + bonus + "&quot;, &quot;" + hitInfo.Assignment.WorkerId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
 
-                    		else
-                    		    $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
+                            else
+                                $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
 
-                    		counter++;
+                            counter++;
                             // console.log(answer);
-                            // console.log($(answer).find("FreeText").text()); 
-                    	}
+                            // alert(Number($(answer).find("FreeText").text())); 
+                        }
                     }
                 }
             });
