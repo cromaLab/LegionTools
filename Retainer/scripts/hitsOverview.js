@@ -1,6 +1,6 @@
-function approveHit(assignmentId, hitId, id){
+function approveHit(assignmentId, hitId, id, bonus, workerId){
 	$.ajax({
-	    url: "Retainer/php/approveOrRejectHit.php",
+	    url: "Retainer/php/processHIT.php",
 	    type: "POST",
 	    async: true,
 	    data: {id: assignmentId, operation: "Approve", useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
@@ -12,13 +12,28 @@ function approveHit(assignmentId, hitId, id){
 	    }
 	});
 
+	if(bonus > 0){
+		$.ajax({
+		    url: "Retainer/php/processHIT.php",
+		    type: "POST",
+		    async: true,
+		    data: {id: assignmentId, operation: "Bonus", useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), amount: bonus, workerId: workerId},
+		    success: function(d) {
+		        // alert(d);
+		    },
+		    fail: function() {
+		        alert("Sending number of workers failed");
+		    }
+		});
+	}
+
 	replaceWithDisposeButton(hitId, id);
 	
 }
 
 function rejectHit(assignmentId, hitId, id){
 	$.ajax({
-	    url: "Retainer/php/approveOrRejectHit.php",
+	    url: "Retainer/php/processHIT.php",
 	    type: "POST",
 	    async: true,
 	    data: {id: assignmentId, operation: "Reject", useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
@@ -35,7 +50,7 @@ function rejectHit(assignmentId, hitId, id){
 
 function disposeHit(hitId, id){
 	$.ajax({
-	    url: "Retainer/php/approveOrRejectHit.php",
+	    url: "Retainer/php/processHIT.php",
 	    type: "POST",
 	    async: true,
 	    data: {id: hitId, operation: "Dispose", useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
