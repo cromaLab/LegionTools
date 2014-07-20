@@ -376,24 +376,27 @@ $("#reloadHits").on("click", function(event){
             $('#hitsList').children().fadeOut(500).promise().then(function() {
                 $('#hitsList').empty();
                 var counter = 0;
-                for (var request in hits) {
-                    var hitInfo = hits[request];
-                    var listId = "hit" + counter;
-                    // alert(obj.Title);
-                    if(hitInfo.hasOwnProperty("Assignment")){
-                        if(hitInfo.Assignment.hasOwnProperty("AssignmentStatus")){
-                            var answer = hitInfo.Assignment.Answer; // If legion.js was used, bonus will be stored in XML of assignment answer
-                            var bonus = $(answer).find("FreeText").text().substring(1);
-                            if(isNaN(bonus)) bonus = 0; //make sure bonus is a number
-                            if(hitInfo.Assignment.AssignmentStatus == "Submitted")
-                                $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;, &quot;" + bonus + "&quot;, &quot;" + hitInfo.Assignment.WorkerId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + hitInfo.Assignment.AssignmentId + "&quot;, &quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
+                console.log(hits);
+                for (var i in hits) {
+                    var hit = hits[i];
+                    var numAssignments = hit.NumResults;
+                    for(var j = 0; j < numAssignments; j++){
+                        if(hit.hasOwnProperty("Assignment")){
+                            if(numAssignments == 1) var assignment = hit.Assignment;
+                            else var assignment = hit.Assignment[j];
+                            var listId = "hit" + counter;
+                            if(assignment.hasOwnProperty("AssignmentStatus")){
+                                var answer = assignment.Answer; // If legion.js was used, bonus will be stored in XML of assignment answer
+                                var bonus = $(answer).find("FreeText").text().substring(1);
+                                if(isNaN(bonus)) bonus = 0; //make sure bonus is a number
+                                if(assignment.AssignmentStatus == "Submitted")
+                                    $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + assignment.WorkerId + " HITId: " + assignment.HITId + " <button type='button' onclick = 'approveHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;, &quot;" + bonus + "&quot;, &quot;" + assignment.WorkerId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
 
-                            else
-                                $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + hitInfo.Assignment.WorkerId + " HITId: " + hitInfo.Assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + hitInfo.Assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
+                                else
+                                    $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + assignment.WorkerId + " HITId: " + assignment.HITId + " <button type='button' onclick = 'disposeHit(&quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
 
-                            counter++;
-                            // console.log(answer);
-                            // alert(Number($(answer).find("FreeText").text())); 
+                                counter++;
+                            }
                         }
                     }
                 }
