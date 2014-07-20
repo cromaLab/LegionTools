@@ -113,7 +113,13 @@ fwrite($debug, "Target number of workers reached\n");
 function removeOldHITs(){
 	global $dbh, $debug, $SANDBOX;
 	// Get target number of workers
-	// Delete old HITs and get num assignable
+	// Delete old HITs and get num assignable	
+
+	// delete hits with no HITId
+	$sql = ("DELETE FROM hits WHERE task = :task AND hit_Id is null");
+	$sth = $dbh->prepare($sql);
+	$sth->execute(array(':task' => $_REQUEST['task']));
+
 	$sql = ("SELECT * from hits WHERE task = :task AND sandbox = :sandbox");
 	$sth = $dbh->prepare($sql);
 	$sth->execute(array(':task' => $_REQUEST['task'], ':sandbox' => $SANDBOX));
@@ -122,8 +128,8 @@ function removeOldHITs(){
 	foreach ($hits as $hit) {
 		$hitId = $hit['hit_Id'];
 		$hitInfo = turk50_getHit($hitId);
-		fwrite($debug,  $hitId . " " . $hitInfo->HIT->Request->IsValid . " IsValid?\n");
-		fwrite($debug,  $hitId . " " . $hitInfo->HIT->HITStatus . " HITStatus?\n");
+		// fwrite($debug,  $hitId . " " . $hitInfo->HIT->Request->IsValid . " IsValid?\n");
+		// fwrite($debug,  $hitId . " " . $hitInfo->HIT->HITStatus . " HITStatus?\n");
 		if($hitInfo->HIT->Request->IsValid == "False"){
 			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
 			$sth = $dbh->prepare($sql);
@@ -184,12 +190,14 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 			$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 50000, 50000, $qualification, 1, $result[0]['task_keywords']);
 			if($hitResponse->HIT->Request->IsValid == "True"){
 				$hitId = $hitResponse->HIT->HITId;
-				$currentTime = time();
-				$sql = "INSERT INTO hits (task, hit_Id, time, sandbox) values (:task, :hit_Id, :time, :sandbox)";
-				$sth = $dbh->prepare($sql);
-				$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime, ':sandbox' => $SANDBOX));
-				$numAssignableHits++;
-				fwrite($debug, "Post HIT\n");
+				if(!empty($hitId) && $hitId != ""){
+					$currentTime = time();
+					$sql = "INSERT INTO hits (task, hit_Id, time, sandbox) values (:task, :hit_Id, :time, :sandbox)";
+					$sth = $dbh->prepare($sql);
+					$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime, ':sandbox' => $SANDBOX));
+					$numAssignableHits++;
+					fwrite($debug, "Post HIT\n");
+				}
 			}
 			sleep(1);
 		}
