@@ -10,7 +10,7 @@ LegionTools provides three key features for requesters:
 
 # Getting Started
 ## Installation
-1. Clone LegionTools to a public web server with PHP 5.3 or higher.
+1. Clone LegionTools to a public web server with **PHP 5.3 or higher**.
 2. Install PHP’s SOAP extension. If you’re running PHP on Mac OS X or Windows, the extension is likely already installed.
 	* CentOS/RedHat: `yum install php-soap`
 	* Debian/Ubuntu: `apt-get install php5-soap`
