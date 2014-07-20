@@ -1,4 +1,4 @@
-<?
+<?php
 	require_once 'mturk.lib.php';
 
 	require_once("Turk50.php");

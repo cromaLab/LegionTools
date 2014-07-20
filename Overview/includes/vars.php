@@ -1,4 +1,4 @@
-<?
+<?php
 $BASE_URL = "http://roc.cs.rochester.edu/LegionJS/LegionTools/Overview/";
 $DEBUG=true;
 

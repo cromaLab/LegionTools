@@ -147,7 +147,7 @@ if( isset($_REQUEST['action'])) {
 
 </div>
 
-<?
+<?php
  //$array = turk_easySearchHits();
  $array = turk50_searchAllHits();
  //print_r($array);

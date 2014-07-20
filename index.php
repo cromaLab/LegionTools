@@ -205,9 +205,9 @@
       <div id = "overview" class="col-md-6" style = "border-right: 1px #ccc solid; border-top: 1px #ccc solid;">
         <h3>Overview</h3>
         <form role="form">
-          <button type="submit" id="approveAll" class="btn btn-success">Approve all</button>
-          <button type="submit" id="disposeAll" class="btn btn-warning">Dispose all</button>
-          <button type="submit" id="reloadHits" class="btn btn-default">Reload</button>
+          <button type="submit" id="reloadHits" class="btn btn-default">Load HITs</button>
+          <button type="submit" id="approveAll" class="btn btn-success">Approve all loaded HITs</button>
+          <button type="submit" id="disposeAll" class="btn btn-warning">Dispose all loaded HITs</button>
         </form>
         </br>
         <ul class="list-group" id="hitsList">
