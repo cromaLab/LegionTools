@@ -1,0 +1,218 @@
+/************************
+Designed by : Houdass Youness
+************************/
+
+/* Basic CSS starts */
+
+
+h1,h2,h3,h4{
+   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h5,h6{
+   font-family: 'Open Sans', sans-serif;
+}
+
+p {
+	margin:0;
+	padding:0;
+}
+
+.sep-bor {
+   border-top:1px dashed #ccc;
+   border-bottom:1px dashed #ccc;
+   margin:10px 0px;
+   height:5px;
+}
+
+
+
+.blocky {
+   margin:30px 0px;
+}
+
+
+/* Cool block */
+
+.cool-block{
+   background:#fff;
+   border:1px solid #bbb;
+   box-shadow:0px 0px 1px #999;
+   border-radius:3px;
+}
+
+.cool-block-bor{
+   margin:3px;
+   border:1px dashed #aaa;
+   box-shadow:0px 0px 1px #999;
+   border-radius:3px;
+   padding:15px;
+}
+
+
+/* CTA */
+
+.cta h5{
+   font-family: 'Open Sans', sans-serif;
+   font-size:22px;
+   font-weight:400;
+   line-height:44px;
+   margin:0px;
+   padding:0px;
+   color:#888;
+   text-transform:capitalize;
+}
+
+.cta .btn{
+   text-shadow:0px 0px 0px #333;
+   font-size:12px;
+   font-weight:bold !important;
+   text-transform:uppercase;
+   border-radius:4px;
+}
+
+.cta .btn-info{
+   border-bottom:3px solid #39a0bf !important;
+}
+
+.cta .btn-danger{
+   border-bottom:3px solid #b32722 !important;
+}
+
+.cta .btn-success{
+   border-bottom:3px solid #008000 !important;
+}
+
+.cta .btn-warning {
+   border-bottom:3px solid #FF8C00 !important;
+}
+
+.cta .btn-default {
+   border-bottom:3px solid #D3D3D3 !important;
+}
+   
+
+
+/* Catchy */
+
+.catchy{
+   margin:20px 0px;
+   background:#fff;
+}
+
+.catchy .catchy-inner1{
+   margin:3px 0px;
+   border-top:1px dashed #bbb;
+   border-bottom:1px dashed #bbb;   
+}
+
+.catchy .catchy-inner2{
+   padding:25px 0px;
+   color:#fff;
+   margin:3px 0px;
+   background:#333 url('../img/bgFooter.png') repeat center center;
+   border-top:1px solid #999;
+   border-bottom:1px solid #999;   
+}
+
+.catchy .catchy-subscribe h3{
+   font-size:40px;
+   line-height:65px;
+   margin:0px;
+   padding:0px;
+   font-family:"Open Sans", sans-serif;
+   text-shadow:1px 1px 2px #444;
+   text-transform:uppercase;
+}
+
+.catchy .catchy-subscribe p{
+   font-size:17px;
+   line-height:25px;
+   text-shadow:1px 1px 2px #222;
+}
+
+.catchy .catchy-subscribe form *{
+   font-size:14px !important;
+}
+
+.catchy .catchy-subscribe input[type="text"]{
+   border:1px solid #1d7faf !important;
+   padding:20px 15px !important;
+   box-shadow: 0 2px 0 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(255,255,255,0.7);
+   font-style:italic;
+}
+
+.catchy .catchy-subscribe button{
+   padding:10px 20px;
+   box-shadow: 0 2px 0 0 rgba(255,255,255,0.3) inset,0 2px 3px rgba(0,0,0,0.3);
+   font-weight:bold;
+   font-size:13px !important;
+   text-transform:uppercase;
+   text-shadow:0px 1px 1px #000;
+}
+
+.catchy .report{
+   background:#fff;
+   border:1px solid #229bd5;
+   box-shadow:0px 0px 1px #1e78a4;
+   border-radius:4px;
+   color:#bbb;
+   font-size:16px;
+   font-weight:bold;
+}
+
+.catchy .report-bor{
+   margin:3px;
+   border:1px dashed #aaa;
+   box-shadow:0px 0px 1px #999;
+   border-radius:3px;
+   padding:15px;
+}
+
+.catchy .report .report-data{
+   margin:10px 0px;
+}
+
+.catchy .report .report-icon{
+   text-align:center;
+   font-size:43px;
+}
+
+.catchy .report .report-icon i{
+   color:#989898;
+}
+
+.catchy .report .report-big{
+   font-size:28px;
+   font-weight:normal;
+}
+
+.catchy .report span{
+   display:block;
+}
+
+.form-horizontal .control-label {
+   text-align:left;
+}
+
+label {
+  font-size: 13px;
+}
+
+.grandTitre {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.bigNumber {
+  font-size: 50px;
+}
+
+.form-group {
+  margin: 4px;
+}
+
+.air {
+  margin: 15px;
+}
