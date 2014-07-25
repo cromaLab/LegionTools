@@ -1,353 +1,394 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Retainer trigger</title>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="Retainer/scripts/gup.js"></script>
-  <script type="text/javascript" src="Retainer/scripts/trigger.js"></script>
-  <script type="text/javascript" src="Retainer/scripts/writeNumOnline.js"></script>
-  <script type="text/javascript" src="Retainer/scripts/bootstrap.touchspin.js"></script>
-  <script type="text/javascript" src="Retainer/scripts/hitsOverview.js"></script>
-  <script type="text/javascript" src="Retainer/scripts/jquery.blockUI.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Retainer trigger</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="Retainer/scripts/gup.js"></script>
+        <script type="text/javascript" src="Retainer/scripts/trigger.js"></script>
+        <script type="text/javascript" src="Retainer/scripts/writeNumOnline.js"></script>
+        <script type="text/javascript" src="Retainer/scripts/bootstrap.touchspin.js"></script>
+        <script type="text/javascript" src="Retainer/scripts/hitsOverview.js"></script>
+        <script type="text/javascript" src="Retainer/scripts/jquery.blockUI.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  <script> var baseURL = "<?php include('config.php'); echo $baseURL; ?>"; </script>
+        <script> var baseURL = "<?php include('config.php'); echo $baseURL; ?>"; </script>
 
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="Retainer/style/trigger.css">
-  <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="Retainer/style/trigger.css">
+        <link href="css/style.css" rel="stylesheet">
 
-</head>
+      </head>
+      <body>
 
-<body>
-  <div class="blocky">
-    <div class="container">
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Edit waiting page instructions</h4>
+        <div class="blocky">
+          <div class="container">
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Edit waiting page instructions</h4>
+                  </div>
+                  <div class="modal-body">
+                    <textarea id = "waitingInstructions" class="form-control" rows="5"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button id="waitingInstructionsUpdated" type="button" class="btn btn-primary" data-dismiss="modal">Save and close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="modal-body">
-              <textarea id = "waitingInstructions" class="form-control" rows="5"></textarea>
-            </div>
-            <div class="modal-footer">
-              <button id="waitingInstructionsUpdated" type="button" class="btn btn-primary" data-dismiss="modal">Save and close</button>
-              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="cool-block">
-            <div class="cool-block-bor">
-              <span class="grandTitre text-primary">Load an old expriment</span>
-              <form class="form-horizontal" role="form">
-                <div class="form-group air">  
-                  <label class="sr-only" for="taskSessionLoad">Load an old experiment</label>
-                  <div class="col-lg-2 pull-right">
-                    <select id = "taskSessionLoad" class="form-control"></select>  
-                  </div>
-                </div>
-                <!-- <button type="submit" id="loadTask" class="btn btn-default">Load</button> -->
-              </form>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="cool-block">
+                  <div class="cool-block-bor">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a data-toggle="tab" href="#sectionA">Load Panel</a></li>
+                      <li><a data-toggle="tab" href="#sectionB">Recruiting Panel</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <!-- Load Panel -->
+                      <div id="sectionA" class="tab-pane fade in active">
+                        <br />
+                        <span class="grandTitre text-primary">Load an old expriment</span>
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group air">  
+                            <label class="sr-only" for="taskSessionLoad">Load an old experiment</label>
+                            <div class="col-lg-4 pull-right">
+                              <select id = "taskSessionLoad" class="form-control"></select>  
+                            </div>
+                          </div>
+                          <!-- <button type="submit" id="loadTask" class="btn btn-default">Load</button> -->
+                        </form>
 
-              <span class="grandTitre text-primary">Or create a new experiment</span>
-              <form class="form-horizontal" role="form">
-                <div class="form-group air">
-                  <label for="taskSession" class="col-sm-4 control-label">Experiment name (remember this):</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="taskSession" placeholder="Enter a task session name">
+                        <span class="grandTitre text-primary">Or create a new experiment</span>
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group air">
+                            <label for="taskSession" class="col-sm-4 control-label">Experiment name (remember this):</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" id="taskSession" placeholder="Enter a task session name">
+                            </div>
+                          </div>
+                          <div class="form-group air">
+                            <label for="hitTitle" class="col-sm-4 control-label">HIT Title</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" id="hitTitle" placeholder="Enter HIT title">
+                            </div>
+                          </div>
+                          <div class="form-group air">
+                            <label for="hitDescription" class="col-sm-4 control-label">HIT Description</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" id="hitDescription" placeholder="Enter HIT description">
+                            </div>
+                          </div>
+                          <div class="form-group air">
+                            <label for="hitKeywords" class="col-sm-4 control-label">HIT Keywords</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (separated by a single space)">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="country" class="col-sm-4 control-label">Worker country</label>
+                            <div class="col-sm-3">
+                              <select id = "country" class="form-control">
+                                <option>All</option>
+                                <option>US</option>
+                              </select>
+                            </div>
+                            <label for="percentApproved" class="col-sm-3 control-label">Min % approved</label>
+                            <div class="col-sm-2">
+                              <input type="number" min = "0" max = "100" class="form-control text-center" id="percentApproved" value = "0">
+                            </div>
+                          </div>
+
+                          <div class="form-group air">
+                            <div class="col-lg-offset-2 col-lg-10">
+                              <div class="cta">
+                                <div class="cta-buttons">
+                                  <button type="submit" id="addNewTask" class="btn btn-info btn-lg pull-right">Add new experiment</button>
+                                  <button disabled="disabled" type="submit" id="updateTask" class="btn btn-default btn-lg pull-right">Update</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!--/ End Load Panel-->
+
+                      <!-- Recruiting Panel -->
+                      <div id="sectionB" class="tab-pane fade">
+                        <div id = "recruitingDiv">
+                          <span class="grandTitre text-primary">Recruiting</span>
+                          <br /><br />
+                          <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                              <div class="btn-group col-lg-offset-1 col-lg-10">
+                                <button id="yesSandbox" type="button" class="btn btn-lg btn-default active">Sandbox</button>
+                                <button id="noSandbox" type="button" class="btn btn-lg btn-default">Live</button>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+
+                             <div class="col-lg-10 col-lg-offset-1">
+                               <div class="input-group">
+                                <span class="input-group-addon">Access Key</span>
+                                <input type="text" id="accessKey" class="form-control" placeholder="Optional, can also edit amtKeys.php">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                           <div class="col-lg-10 col-lg-offset-1">
+                             <div class="input-group">
+                              <span class="input-group-addon">Secret Key</span>
+                              <input type="text" id="secretKey" class="form-control" placeholder="Optional, can also edit amtKeys.php">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                         <label class=" col-lg-offset-1 col-lg-6 control-label">For account balance, visit <a href="https://requester.mturk.com/mturk/youraccount">here.</a></label>
+
+                       </div>
+                       <div class="form-group">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                          <li id = "useRetainerMode" class="active"><a href="#retainerTab" role="tab" data-toggle="tab">Retainer</a></li>
+                          <li id = "useAutoMode"><a href="#retainerTab" role="tab" data-toggle="tab">Auto</a></li>
+                          <li id = "useDirectMode"><a href="#directTab" role="tab" data-toggle="tab">Direct (classic)</a></li>
+                        </ul>
+                      </div>
+                    </form>
+                    <!-- Tab panes -->
+                    
+
+
+
+
+
+
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="retainerTab">
+                        <div id="touchSpinDiv">
+
+                          <form class="form-horizontal" role="form">
+                            <div class="form-group someAirForRecruitingPanel">
+                              <label class="col-lg-6 col-lg-offset-1 control-label">Target number of assignable HITs</label>
+                            </div>
+
+                            <div class="form-group someAirForRecruitingPanel">
+                              <div class="col-lg-10 col-lg-offset-1">
+                                <input id="currentTarget" class="text-center" type="text" value="0" name="currentTarget">
+                              </div> 
+
+                              <script>
+                              $("input[name='currentTarget']").TouchSpin();
+                              </script>
+                            </div>
+                          </form>
+                        </div>
+
+                        <div id="priceRangeDiv"><p><form class="form-horizontal" role="form">
+                          <div class="form-group someAirForRecruitingPanel">
+                            <div class="col-lg-5 col-lg-offset-1">
+                              <label class="sr-only" for="minPrice">Min task price</label>
+                              <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents">
+                            </div> 
+                            <div class="col-lg-5">
+                              <label class="sr-only" for="maxPrice">Max task price</label>
+                              <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
+                            </div>
+                          </div>
+                          <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->
+                        </form></p></div>
+
+                        <!-- Button trigger modal -->
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group someAirForRecruitingPanel">
+                           <div class="col-lg-offset-1 col-lg-10">
+                            <div class="cta">
+                              <div class="cta-buttons">
+                                <button id="openInstructionsModal" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button> &nbsp;
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <form id = "autoSendToURLForm" class="form-horizontal forAutoTab" role="form">
+                        <div class="form-group">
+                          <div class="col-lg-offset-1 col-lg-10">
+                            <label for="autoSendToURL" class="col-sm-2 control-label">URL</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="autoSendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+
+
+                      <form class="form-horizontal" role="form">
+                        <div id = "startStopButtons">
+                          <div class="form-group someAirForRecruitingPanel">
+                           <div class="col-lg-offset-1 col-lg-10">
+                             <div class="cta">
+                              <div class="cta-buttons">
+                                <button type="submit" id="startRecruiting" class="btn btn-info btn-lg">Start recruiting</button> &nbsp;
+                                <button type="submit" id="stopRecruiting" class="btn btn-danger btn-lg">Stop recruiting</button> 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
                   </div>
-                </div>
-                <div class="form-group air">
-                  <label for="hitTitle" class="col-sm-4 control-label">HIT Title</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="hitTitle" placeholder="Enter HIT title">
-                  </div>
-                </div>
-                <div class="form-group air">
-                  <label for="hitDescription" class="col-sm-4 control-label">HIT Description</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="hitDescription" placeholder="Enter HIT description">
-                  </div>
-                </div>
-                <div class="form-group air">
-                  <label for="hitKeywords" class="col-sm-4 control-label">HIT Keywords</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (separated by a single space)">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="country" class="col-sm-4 control-label">Worker country</label>
-                  <div class="col-sm-3">
-                    <select id = "country" class="form-control">
-                      <option>All</option>
-                      <option>US</option>
-                    </select>
-                  </div>
-                  <label for="percentApproved" class="col-sm-3 control-label">Min % approved</label>
-                  <div class="col-sm-2">
-                    <input type="number" min = "0" max = "100" class="form-control" id="percentApproved" value = "0">
-                  </div>
-                </div>
-                
-                <div class="form-group air">
-                  <div class="col-lg-offset-2 col-lg-10">
-                    <div class="cta">
-                      <div class="cta-buttons">
-                        <button type="submit" id="addNewTask" class="btn btn-info btn-lg pull-right">Add new experiment</button>
-                        <button disabled="disabled" type="submit" id="updateTask" class="btn btn-default btn-lg pull-right">Update</button>
+
+                  <div class="tab-pane" id="directTab">
+                    <br/>
+                    <form id = "directModeForms" class="form-horizontal" role="form">
+                      <div class="form-group someAirForRecruitingPanel">
+
+                       <div class="col-lg-offset-1 col-lg-10">
+                        <label for="sendToURL" class="col-sm-2 control-label">URL</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group someAirForRecruitingPanel">
+
+                     <div class="col-lg-offset-1 col-lg-10">
+                      <label for="sendToURL" class="col-sm-2 control-label">Price</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="price" placeholder="Price in cents">
                       </div>
                     </div>
                   </div>
-                </div>
-              </form>
-            </div>
-          </div>
 
-          <div id = "overview">
-            <div class="cool-block">
-              <div class="cool-block-bor">
-                <span class="grandTitre text-primary">Overview</span>
-                <br /><br />
-                <form role="form" class="form-horizontal">
-                  <div class="cta">
-                    <div class="cta-buttons">
-                      <button type="submit" id="reloadHits" class="btn btn-info btn-sm">Load HITs</button> &nbsp;
-                      <button type="submit" id="approveAll" class="btn btn-success btn-sm">Approve all loaded HITs</button> &nbsp;
-                      <button type="submit" id="disposeAll" class="btn btn-warning btn-sm">Dispose all loaded HITs</button>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <div class="form-group row someAirForRecruitingPanel">
+
+                        <div class="col-lg-offset-1 col-lg-10">
+                          <label for="numHITs" class="col-sm-3 control-label">Num HITs</label>
+                          <div class="col-sm-2">
+                            <input type="text" class="form-control" id="numHITs" placeholder="">
+                          </div>
+                          <label for="numAssignments" class="col-sm-5 control-label">Num Assignments</label>
+                          <div class="col-sm-2">
+                            <input type="text" class="form-control" id="numAssignments" placeholder="">
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
                 </form>
-              </br>
-              <ul class="list-group" id="hitsList">
-              </ul>
+                <form class="form-horizontal" role="form">
+                  <div id = "postExpireButtons">
+
+                    <div class="form-group someAirForRecruitingPanel">
+                      <div class="col-lg-offset-1 col-lg-8">
+                        <div class="cta">
+                          <div class="cta-buttons">
+                            <button type="submit" id="postHITs" class="btn btn-info btn-lg">Post HITs</button>
+                            <button type="submit" id="expireHITs" class="btn btn-danger btn-lg">Expire All HITs</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
         </div>
+        <!-- End Recruiting Panel -->
       </div>
-      <div class="col-md-6">
-        <div id = "recruitingDiv">
-          <div class="cool-block">
-            <div class="cool-block-bor">
-              <span class="grandTitre text-primary">Recruiting</span>
-              <br /><br />
-              <form class="form-horizontal" role="form">
-                <div class="form-group">
-                  <div class="btn-group col-lg-offset-1 col-lg-10">
-                    <button id="yesSandbox" type="button" class="btn btn-lg btn-default active">Sandbox</button>
-                    <button id="noSandbox" type="button" class="btn btn-lg btn-default">Live</button>
-                  </div>
-                </div>
-
-                <div class="form-group">
-
-                 <div class="col-lg-10 col-lg-offset-1">
-                   <div class="input-group">
-                    <span class="input-group-addon">Access Key</span>
-                    <input type="text" id="accessKey" class="form-control" placeholder="Optional, can also edit amtKeys.php">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-               <div class="col-lg-10 col-lg-offset-1">
-                 <div class="input-group">
-                  <span class="input-group-addon">Secret Key</span>
-                  <input type="text" id="secretKey" class="form-control" placeholder="Optional, can also edit amtKeys.php">
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-             <label class=" col-lg-offset-1 col-lg-6 control-label">For account balance, visit <a href="https://requester.mturk.com/mturk/youraccount">here.</a></label>
-
-           </div>
-           <div class="form-group">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-              <li id = "useRetainerMode" class="active"><a href="#retainerTab" role="tab" data-toggle="tab">Retainer</a></li>
-              <li id = "useAutoMode"><a href="#retainerTab" role="tab" data-toggle="tab">Auto</a></li>
-              <li id = "useDirectMode"><a href="#directTab" role="tab" data-toggle="tab">Direct (classic)</a></li>
-            </ul>
-          </div>
-        </form>
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div class="tab-pane active" id="retainerTab">
-            <div id="touchSpinDiv">
-              <div class="form-group">
-                <label class="col-lg-6 col-lg-offset-1 control-label">Target number of assignable HITs</label>
-                
-                <input id="currentTarget" type="text" value="0" name="currentTarget">
-                <script>
-                $("input[name='currentTarget']").TouchSpin();
-                </script>
-              </div>
-
-              <div id="priceRangeDiv"><p><form class="form-horizontal" role="form">
-                <div class="form-group">
-                  <div class="col-lg-10 col-lg-offset-1">
-                    <label class="sr-only" for="minPrice">Min task price</label>
-                    <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-lg-10 col-lg-offset-1">
-                    <label class="sr-only" for="maxPrice">Max task price</label>
-                    <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
-                  </div>
-                </div>
-                <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->
-              </form></p></div>
-
-              <!-- Button trigger modal -->
-              <form class="form-horizontal" role="form">
-                
-                <div class="form-group">
-                 <div class="col-lg-offset-1 col-lg-10">
-
-                  <div class="cta">
-                    <div class="cta-buttons">
-                      <button id="openInstructionsModal" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button> &nbsp;
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-            <form id = "autoSendToURLForm" class="form-horizontal" role="form">
-              <div class="form-group">
-                <div class="col-lg-offset-1 col-lg-10">
-                  <label for="autoSendToURL" class="col-sm-2 control-label">URL</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="autoSendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
-                  </div>
-                </div>
-              </div>
-
-
-            </form>
-            <form class="form-horizontal" role="form">
-              <div id = "startStopButtons">
-                <div class="form-group">
-                 <div class="col-lg-offset-1 col-lg-10">
-                   <div class="cta">
-                    <div class="cta-buttons">
-                      <button type="submit" id="startRecruiting" class="btn btn-info btn-lg">Start recruiting</button> &nbsp;
-                      <button type="submit" id="stopRecruiting" class="btn btn-danger btn-lg">Stop recruiting</button> 
-                    </div>
-                  </div>
-                </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-md-6">
+    <!-- Overview Tab -->
+    <div id = "overview">
+      <div class="cool-block">
+        <div class="cool-block-bor">
+          <span class="grandTitre text-primary">Overview</span>
+          <br /><br />
+          <form role="form" class="form-horizontal">
+            <div class="cta">
+              <div class="cta-buttons">
+                <button type="submit" id="reloadHits" class="btn btn-info btn-sm">Load HITs</button> &nbsp;
+                <button type="submit" id="approveAll" class="btn btn-success btn-sm">Approve all loaded HITs</button> &nbsp;
+                <button type="submit" id="disposeAll" class="btn btn-warning btn-sm">Dispose all loaded HITs</button>
               </div>
             </div>
           </form>
-        </div>
+        </br>
+        <ul class="list-group" id="hitsList">
+        </ul>
+      </div>
+      <!-- <div class="col-sm-6"> -->
+    </div>
+  </div>
+  <!--/ Overview Tab -->
 
-        <div class="tab-pane" id="directTab">
-          <br/>
-          <form id = "directModeForms" class="form-horizontal" role="form">
-            <div class="form-group">
 
-             <div class="col-lg-offset-1 col-lg-10">
-              <label for="sendToURL" class="col-sm-2 control-label">URL</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
-              </div>
+  <!-- Workers Tab -->
+  <div id = "triggerDiv">
+    <div class="cool-block">
+      <div class="cool-block-bor">
+        <span class="grandTitre text-primary">Workers ready</span>
+        <p id = "numOnlineText"><span id="numOnline">x</span></p>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-1">
+              <input type="text" class="form-control" id="fireToURL" placeholder="Use HTTPs enter URL to send workers to ...">
             </div>
           </div>
 
           <div class="form-group">
-
-           <div class="col-lg-offset-1 col-lg-10">
-            <label for="sendToURL" class="col-sm-2 control-label">Price</label>
-            <div class="col-sm-4">
-              <input type="text" class="form-control" id="price" placeholder="Price in cents">
+            <div class="col-lg-10 col-lg-offset-1">
+              <input type="text" class="form-control" id="numFire" placeholder="Number of workers to fire">
             </div>
-          </div>
-        </div>
+          </div>                          
 
-        <div class="form-group">
-          <div class="col-sm-12">
-            <div class="form-group row">
-
-              <div class="col-lg-offset-1 col-lg-10">
-                <label for="numHITs" class="col-sm-3 control-label">Num HITs</label>
-                <div class="col-sm-2">
-                  <input type="text" class="form-control" id="numHITs" placeholder="">
-                </div>
-                <label for="numAssignments" class="col-sm-5 control-label">Num Assignments</label>
-                <div class="col-sm-2">
-                  <input type="text" class="form-control" id="numAssignments" placeholder="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-
-
-      <form class="form-horizontal" role="form">
-        <div id = "postExpireButtons">
-
-          <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-10">
+          <div class="form-group" id = "fireButtonsGroup">
+            <div class="col-lg-offset-1 col-lg-10">
               <div class="cta">
-                <div class="cta-buttons">
-                  <button type="submit" id="postHITs" class="btn btn-info btn-lg">Post HITs</button>
-                  <button type="submit" id="expireHITs" class="btn btn-danger btn-lg">Expire All HITs</button>
+                <div class="cta-buttons pull-right">
+                  <button type="submit" id="fireWorkers" class="btn btn-info btn-sm">Fire!</button> &nbsp;
+                  <button type="submit" id="clearQueue" class="btn btn-danger btn-sm">Clear entire queue (pays workers)</button> 
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-</div>
-<!-- <div class="col-sm-6"> -->
-</div>
-</div>
-<div id = "triggerDiv">
-  <div class="cool-block">
-    <div class="cool-block-bor">
-      <span class="grandTitre text-primary">Workers ready</span>
-      <p id = "numOnlineText"><span id="numOnline">x</span></p>
 
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <div class="col-lg-10 col-lg-offset-1">
-            <input type="text" class="form-control" id="fireToURL" id="inputPassword1" placeholder="Use HTTPs enter URL to send workers to ...">
-          </div>
-        </div>
+  <!--/ End Workers Tab -->
 
-        <div class="form-group">
-          <div class="col-lg-10 col-lg-offset-1">
-            <input type="text" class="form-control" id="numFire" placeholder="Number of workers to fire">
-          </div>
-        </div>                          
-
-        <div class="form-group" id = "fireButtonsGroup">
-          <div class="col-lg-offset-1 col-lg-10">
-            <div class="cta">
-              <div class="cta-buttons pull-right">
-                <button type="submit" id="fireWorkers" class="btn btn-info btn-sm">Fire!</button> &nbsp;
-                <button type="submit" id="clearQueue" class="btn btn-danger btn-sm">Clear entire queue (pays workers)</button> 
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
   </div>
-</div>
-</div>
-</div>
-</body>
+  </div>
+  </body>
 
-</html>
+  </html>

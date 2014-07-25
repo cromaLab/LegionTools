@@ -214,5 +214,17 @@ label {
 }
 
 .air {
-  margin: 15px;
+  margin: 25px;
+}
+
+.someAirForRecruitingPanel {
+  margin-top: 15px;
+}
+
+#sectionA, #sectionB {
+   height: 530px;
+}
+
+.forAutoTab {
+   margin-top: -19px;
 }
