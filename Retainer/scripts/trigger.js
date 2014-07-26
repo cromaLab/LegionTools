@@ -12,10 +12,12 @@ var sessionLoaded = false;
 updateSessionsList();
 setInterval(function(){updateSessionsList()},30000);
 
+$.blockUI.defaults.overlayCSS.cursor = 'not-allowed'; 
+
 $("#updateTask").hide();
 $('#overview').block({ message: null }); 
 $('#recruitingDiv').block({ message: null }); 
-$('#triggerDiv').block({ message: null }); 
+$('#triggerDiv').block({ message: null });
 
 function updateSessionsList(){
     $.ajax({

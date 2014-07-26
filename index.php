@@ -16,7 +16,6 @@
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="Retainer/style/trigger.css">
       <link href="css/style.css" rel="stylesheet">
-
     </head>
     <body>
 
