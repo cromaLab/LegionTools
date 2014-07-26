@@ -47,7 +47,7 @@
                   <div class="cool-block-bor">
                     <ul class="nav nav-tabs">
                       <li class="active"><a data-toggle="tab" href="#sectionA">Load Panel</a></li>
-                      <li><a data-toggle="tab" href="#sectionB">Recruiting Panel</a></li>
+                      <li id = "recruitingTabLi" class = "disabled"><a data-toggle="tab" href="#sectionB">Recruiting Panel</a></li>
                     </ul>
                     <div class="tab-content">
                       <!-- Load Panel -->
@@ -194,11 +194,11 @@
                         <div id="priceRangeDiv"><p><form class="form-horizontal" role="form">
                           <div class="form-group someAirForRecruitingPanel">
                             <div class="col-lg-5 col-lg-offset-1">
-                              <label class="sr-only" for="minPrice">Min task price</label>
+                              <label for="minPrice">Min task price</label>
                               <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents">
                             </div> 
                             <div class="col-lg-5">
-                              <label class="sr-only" for="maxPrice">Max task price</label>
+                              <label for="maxPrice">Max task price</label>
                               <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
                             </div>
                           </div>

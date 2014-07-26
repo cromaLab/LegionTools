@@ -42,6 +42,10 @@ function updateSessionsList(){
 $("#addNewTask").on("click", function(event){
     event.preventDefault();
     sessionLoaded = true;
+    if($("#hitTitle").val() == ""){
+        alert("Please enter an experiment name.");
+        return;
+    }
     $.ajax({
         url: retainerLocation + "php/addNewTask.php",
         type: "POST",
@@ -61,6 +65,8 @@ $("#addNewTask").on("click", function(event){
 
             $("#updateTask").show();
             $('#addNewTask').hide();
+
+            $('#recruitingTabLi').removeClass("disabled"); 
 
             $('#overview').unblock(); 
             $('#recruitingDiv').unblock(); 
@@ -319,6 +325,8 @@ $("#taskSessionLoad").on("change", function(event){
 
     $("#updateTask").show();
     $('#addNewTask').hide();
+
+    $('#recruitingTabLi').removeClass("disabled"); 
 
     $('#overview').unblock(); 
     $('#recruitingDiv').unblock(); 
