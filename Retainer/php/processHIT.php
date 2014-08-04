@@ -18,6 +18,7 @@ if( $dbh ) {
 
 	$id = $_REQUEST['id']; //either AssignmentId or HITId
 	$operation = $_REQUEST['operation'];
+	// echo $operation;
 
 	// $assignmentInfo = turk_easyHitToAssn($hitId);
 	// $assignmentId = $assignmentInfo["Assignment"]["AssignmentId"];
@@ -29,7 +30,12 @@ if( $dbh ) {
 		$mt = turk_easyReject($id); //AssignmentId
 	}
 	else if($operation == "Bonus"){
-		$mt = turk_easyBonus($_REQUEST['workerId'], $id, $_REQUEST['amount'], "Did extra work.");
+		if(isset($_REQUEST['reason'])){
+			$reason = $_REQUEST['reason'];
+		}
+		else $reason = "Did extra work.";
+		$mt = turk_easyBonus($_REQUEST['workerId'], $id, $_REQUEST['amount'], $reason);
+		// print_r($mt);
 	}
 	else if($operation == "Dispose"){
 		$mt = turk_easyDispose($id); //HITId

@@ -146,6 +146,13 @@
                             <span class="input-group-addon">Secret Key</span>
                             <input type="text" id="secretKey" class="form-control" placeholder="Optional, can also edit amtKeys.php">
                           </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" value="">
+                              Require unique workers
+                            </label>&nbsp;
+                            <button type="submit" id="resetUniqueWorkers" class="btn btn-danger btn-xs">Reset</button>
+                          </div>
                         </div>
                       </div>
                       <div class="form-group">
