@@ -101,7 +101,7 @@ function isTargetReached(){
 
 	// If target has been reached
 	if($numWorkersOnline >= $numWorkersTarget){
-fwrite($debug, "Target number of workers reached\n");
+// fwrite($debug, "Target number of workers reached\n");
 		expireAllHits();
 		return true;
 	}
@@ -163,8 +163,8 @@ function removeOldHITs(){
 
 $task = $_REQUEST['task'];
 
-$debugFile = "debugFile.txt";
-$debug = fopen($debugFile, 'w');
+// $debugFile = "debugFile.txt";
+// $debug = fopen($debugFile, 'w');
 
 removeOldHITs();
 
@@ -174,7 +174,7 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 
 	$numAssignableHits = 0;
 	while(!iShouldQuit()){
-	fwrite($debug, "Start loop\n");
+	// fwrite($debug, "Start loop\n");
 
 	 	// Post HITs
 		$result = getTaskRowInDb();
@@ -196,7 +196,7 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 					$sth = $dbh->prepare($sql);
 					$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime, ':sandbox' => $SANDBOX));
 					$numAssignableHits++;
-					fwrite($debug, "Post HIT\n");
+					// fwrite($debug, "Post HIT\n");
 				}
 			}
 			sleep(1);
@@ -238,7 +238,7 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 				}
 			}
 
-	fwrite($debug, $numAssignableHits . " - num Assignable hits\n");
+	// fwrite($debug, $numAssignableHits . " - num Assignable hits\n");
 			sleep(1); //Don't overload mturk with getHit
 		}
 		sleep(2);
@@ -265,7 +265,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 		$sth = $dbh->prepare($sql);
 		$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime, ':sandbox' => $SANDBOX));
 		$numAssignableHits++;
-		fwrite($debug, "Post HIT\n");
+		// fwrite($debug, "Post HIT\n");
 		sleep(1);
 	}
 
@@ -273,7 +273,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 
 
 
-fwrite($debug, "Exit\n");
-fclose($debug);
+// fwrite($debug, "Exit\n");
+// fclose($debug);
 
 ?>

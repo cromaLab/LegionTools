@@ -156,56 +156,54 @@ $("#startRecruiting").on("click", function(event){
         $.ajax({
             url: retainerLocation + "php/startRecruiting.php",
             type: "POST",
-            async: false,
+            async: true,
             data: {task: $("#taskSession").val()},
             dataType: "text",
             success: function(d) {
-                
+                if(mode == "retainer"){
+                    // Start the recruiting tool
+                    $.ajax({
+                        url: "Overview/turk/getAnswers.php",
+                        type: "POST",
+                        async: true,
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer"},
+                        dataType: "text",
+                        success: function(d) {
+                            alert(d);
+                            alert("Recruiting stopped");
+                            $('#startRecruiting').removeAttr('disabled');
+                            $('#startRecruiting').html('Start recruiting');
+                        },
+                        fail: function() {
+                            alert("Sending number of workers failed");
+                        }
+                    });
+                }
+                else if (mode == "auto"){
+                    // Start the recruiting tool
+                    var urlEscaped = $("#autoSendToURL").val().split("&").join("&amp;&amp;");
+                    $.ajax({
+                        url: "Overview/turk/getAnswers.php",
+                        type: "POST",
+                        async: true,
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "auto", url: urlEscaped},
+                        dataType: "text",
+                        success: function(d) {
+                            alert(d);
+                            alert("Recruiting stopped");
+                            $('#startRecruiting').removeAttr('disabled');
+                            $('#startRecruiting').html('Start recruiting');
+                        },
+                        fail: function() {
+                            alert("Sending number of workers failed");
+                        }
+                    });
+                }
             },
             fail: function() {
                 alert("Sending number of workers failed");
             }
         });
-
-        if(mode == "retainer"){
-            // Start the recruiting tool
-            $.ajax({
-                url: "Overview/turk/getAnswers.php",
-                type: "POST",
-                async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer"},
-                dataType: "text",
-                success: function(d) {
-                    alert(d);
-                    alert("Recruiting stopped");
-                    $('#startRecruiting').removeAttr('disabled');
-                    $('#startRecruiting').html('Start recruiting');
-                },
-                fail: function() {
-                    alert("Sending number of workers failed");
-                }
-            });
-        }
-        else if (mode == "auto"){
-            // Start the recruiting tool
-            var urlEscaped = $("#autoSendToURL").val().split("&").join("&amp;&amp;");
-            $.ajax({
-                url: "Overview/turk/getAnswers.php",
-                type: "POST",
-                async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "auto", url: urlEscaped},
-                dataType: "text",
-                success: function(d) {
-                    alert(d);
-                    alert("Recruiting stopped");
-                    $('#startRecruiting').removeAttr('disabled');
-                    $('#startRecruiting').html('Start recruiting');
-                },
-                fail: function() {
-                    alert("Sending number of workers failed");
-                }
-            });
-        }
 
         $('#startRecruiting').attr('disabled','disabled');
         $('#startRecruiting').html("Recruiting...");
