@@ -603,10 +603,10 @@ $("#requireUniqueWorkers").change(function() {
        $.ajax({
            url: retainerLocation + "php/uniqueWorkers.php",
            type: "POST",
-           data: {task: $("#taskSession").val()},
+           data: {task: $("#taskSession").val(), useSandbox: sandbox},
            dataType: "text",
            success: function(d) {
-             //
+             alert(d);
            },
            fail: function() {
              alert("Sending number of workers failed");
@@ -621,7 +621,7 @@ $("#resetUniqueWorkers").on("click", function(event) {
          $.ajax({
             url: retainerLocation + "php/uniqueWorkers.php",
             type: "POST",
-            data: {task: $("#taskSession").val(), reset: true},
+            data: {task: $("#taskSession").val(), reset: true, useSandbox: sandbox},
             dataType: "text",
             success: function(d) {
               alert("Reset success");

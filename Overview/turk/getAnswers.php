@@ -28,6 +28,8 @@ function getTaskRowInDb(){
 }
 
 function createQualificationRequirement($row){
+	global $dbh, $SANDBOX;
+
 	$qualsArray = array();
 
 	$percentApproved = (string)$row[0]["percentApproved"];
@@ -54,8 +56,24 @@ function createQualificationRequirement($row){
 	}
 
 	if($_REQUEST['requireUniqueWorkers'] == "true"){
+		if($SANDBOX) $dbCol = "noRepeatQualIdSandbox";
+		else $dbCol = "noRepeatQualIdLive";
+
+		$noRepeatQualId = $row[0][$dbCol];
+
+		if($noRepeatQualId == null || $noRepeatQualId == ""){
+			$qual = turk50_createQualificationType(generateRandomString(), "This qualification is for people who have worked for me on this task before.", "Worked for me before", $SANDBOX);
+			// print_r($qual);
+			$noRepeatQualId = $qual->QualificationType->QualificationTypeId;
+
+			if($SANDBOX) $sql = ("UPDATE retainer set noRepeatQualIdSandbox = :noRepeatQualId WHERE task = :task");
+			else $sql = ("UPDATE retainer set noRepeatQualIdLive = :noRepeatQualId WHERE task = :task");
+			$sth = $dbh->prepare($sql); 
+			$sth->execute(array(":task"=>$_REQUEST['task'], ":noRepeatQualId"=>$noRepeatQualId));
+		}
+
 		$Unique_Workers_Qual = array(
-		 "QualificationTypeId" => (string)$row[0]["noRepeatQualId"],
+		 "QualificationTypeId" => (string)$noRepeatQualId,
 		 "Comparator" => "DoesNotExist"
 		);
 		array_push($qualsArray, $Unique_Workers_Qual);
@@ -283,6 +301,15 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 		sleep(1);
 	}
 
+}
+
+function generateRandomString($length = 50) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomString;
 }
 
 

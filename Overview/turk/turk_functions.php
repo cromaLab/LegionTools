@@ -382,10 +382,10 @@
         return $turk50->GetAccountBalance();
     }
 
-    function turk50_createQualificationType($name, $description, $keywords){
+    function turk50_createQualificationType($name, $description, $keywords, $qualSandbox){
         global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
         
-        if($SANDBOX)
+        if($qualSandbox)
             $turk50 = new Turk50($AccessKey, $SecretKey);
         else
             $turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
@@ -416,10 +416,10 @@
         return $turk50->DisposeQualificationType($Request);
     }
 
-    function turk50_assignQualification($workerId, $qualificationTypeId){
+    function turk50_assignQualification($workerId, $qualificationTypeId, $qualSandbox){
         global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
         
-        if($SANDBOX)
+        if($qualSandbox)
             $turk50 = new Turk50($AccessKey, $SecretKey);
         else
             $turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
