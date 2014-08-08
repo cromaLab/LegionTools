@@ -217,7 +217,7 @@
                          <div class="col-lg-offset-1 col-lg-10">
                           <div class="cta">
                             <div class="cta-buttons">
-                              <button id="openInstructionsModal" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button> &nbsp;
+                              <button type = "button" id="openInstructionsModal" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edit waiting page instructions</button> &nbsp;
                             </div>
                           </div>
                         </div>
