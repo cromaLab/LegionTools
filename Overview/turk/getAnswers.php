@@ -181,7 +181,7 @@ removeOldHITs();
 
 if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mode'] == "auto"){
 	// if($_REQUEST['mode'] == "auto") $url = $_REQUEST['url'];
-	if($_REQUEST['mode'] == "auto") $url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['URL']);
+	if($_REQUEST['mode'] == "auto") $url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']);
 	else $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'];
 
 	$numAssignableHits = 0;
@@ -262,7 +262,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 	// $url = $_REQUEST['URL'];
 	$result = getTaskRowInDb();
 
-	$url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['URL']);
+	$url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']);
 
 	$qualification = createQualificationRequirement($result);
 

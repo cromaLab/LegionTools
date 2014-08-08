@@ -236,7 +236,7 @@ $("#postHITs").on("click", function(event){
                 url: "Overview/turk/getAnswers.php",
                 type: "POST",
                 async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: urlEscaped, price: $("#price").val(), numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val(), requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", url: urlEscaped, price: $("#price").val(), numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val(), requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
                 dataType: "text",
                 success: function(d) {
                     alert(d);

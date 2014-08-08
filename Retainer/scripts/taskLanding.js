@@ -3,6 +3,8 @@ $(document).ready(function() {
     var url = decodeURIComponent(gup('url'));
     var requireUniqueWorkers = gup('requireUniqueWorkers');
 
+    alert(url + " " + requireUniqueWorkers);
+
     if(gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE" || requireUniqueWorkers != "true"){
         window.location.replace(url);
     }
