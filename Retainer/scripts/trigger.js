@@ -166,7 +166,7 @@ $("#startRecruiting").on("click", function(event){
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
                         async: true,
-                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer"},
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
                         dataType: "text",
                         success: function(d) {
                             alert(d);
@@ -186,7 +186,7 @@ $("#startRecruiting").on("click", function(event){
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
                         async: true,
-                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "auto", url: urlEscaped},
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "auto", url: urlEscaped, requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
                         dataType: "text",
                         success: function(d) {
                             alert(d);
@@ -236,10 +236,10 @@ $("#postHITs").on("click", function(event){
                 url: "Overview/turk/getAnswers.php",
                 type: "POST",
                 async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: urlEscaped, price: $("#price").val(), numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val()},
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", URL: urlEscaped, price: $("#price").val(), numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val(), requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
                 dataType: "text",
                 success: function(d) {
-                    // alert(d);
+                    alert(d);
                     alert("Posted " + $("#numHITs").val() + " HITs");
                     $('#postHITs').text("Post HITs");
                     $('#postHITs').removeAttr('disabled');
@@ -596,6 +596,41 @@ $("#useAutoMode").on("click", function(){
     $("#triggerDiv").hide();
     $("#autoSendToURLForm").show();
     $("#openInstructionsModal").hide();
+});
+
+$("#requireUniqueWorkers").change(function() {
+    if(this.checked) {
+       $.ajax({
+           url: retainerLocation + "php/uniqueWorkers.php",
+           type: "POST",
+           data: {task: $("#taskSession").val()},
+           dataType: "text",
+           success: function(d) {
+             //
+           },
+           fail: function() {
+             alert("Sending number of workers failed");
+           }
+       });
+    }
+});
+
+$("#resetUniqueWorkers").on("click", function(event) {
+    event.preventDefault();
+    if(confirm("Are you sure you want to reset your history of unique workers?")){
+         $.ajax({
+            url: retainerLocation + "php/uniqueWorkers.php",
+            type: "POST",
+            data: {task: $("#taskSession").val(), reset: true},
+            dataType: "text",
+            success: function(d) {
+              alert("Reset success");
+            },
+            fail: function() {
+              alert("Sending number of workers failed");
+            }
+        });
+    }
 });
 
 function validateTaskInfo(){

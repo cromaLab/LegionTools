@@ -28,6 +28,7 @@ function getTaskRowInDb(){
 }
 
 function createQualificationRequirement($row){
+	$qualsArray = array();
 
 	$percentApproved = (string)$row[0]["percentApproved"];
 	// require Worker_PercentAssignmentsApproved >= IntegerValue
@@ -37,6 +38,8 @@ function createQualificationRequirement($row){
 		 "Comparator" => "GreaterThanOrEqualTo",
 		 "IntegerValue" => $percentApproved
 		);
+
+		array_push($qualsArray, $Worker_PercentAssignmentsApproved);
 	}	
 
 	// require Worker_Locale == Country
@@ -47,10 +50,18 @@ function createQualificationRequirement($row){
 		 "Comparator" => "EqualTo",
 		 "LocaleValue" => array("Country" => $country)
 		);
-		return array($Worker_Locale, $Worker_PercentAssignmentsApproved);
+		array_push($qualsArray, $Worker_Locale);
 	}
 
-	return array($Worker_PercentAssignmentsApproved);
+	if($_REQUEST['requireUniqueWorkers'] == "true"){
+		$Unique_Workers_Qual = array(
+		 "QualificationTypeId" => (string)$row[0]["noRepeatQualId"],
+		 "Comparator" => "DoesNotExist"
+		);
+		array_push($qualsArray, $Unique_Workers_Qual);
+	}
+
+	return $qualsArray;
 }
 
 //Expires all HITs for given task
@@ -169,7 +180,8 @@ $task = $_REQUEST['task'];
 removeOldHITs();
 
 if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mode'] == "auto"){
-	if($_REQUEST['mode'] == "auto") $url = $_REQUEST['url'];
+	// if($_REQUEST['mode'] == "auto") $url = $_REQUEST['url'];
+	if($_REQUEST['mode'] == "auto") $url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['URL']);
 	else $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'];
 
 	$numAssignableHits = 0;
@@ -247,9 +259,11 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 	removeOldHITs();
 }
 else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
-	$url = $_REQUEST['URL'];
-
+	// $url = $_REQUEST['URL'];
 	$result = getTaskRowInDb();
+
+	$url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['URL']);
+
 	$qualification = createQualificationRequirement($result);
 
 	$price = $_REQUEST['price']/100;
@@ -264,7 +278,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 		$sql = "INSERT INTO hits (task, hit_Id, time, sandbox) values (:task, :hit_Id, :time, :sandbox)";
 		$sth = $dbh->prepare($sql);
 		$sth->execute(array(':task' => $_REQUEST['task'], ':hit_Id' => $hitId, ':time' => $currentTime, ':sandbox' => $SANDBOX));
-		$numAssignableHits++;
+		// $numAssignableHits++;
 		// fwrite($debug, "Post HIT\n");
 		sleep(1);
 	}

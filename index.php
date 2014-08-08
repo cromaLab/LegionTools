@@ -148,10 +148,10 @@
                           </div>
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox" value="">
+                              <input id = "requireUniqueWorkers" type="checkbox" value="">
                               Require unique workers
                             </label>&nbsp;
-                            <button type="submit" id="resetUniqueWorkers" class="btn btn-danger btn-xs">Reset</button>
+                            <button id="resetUniqueWorkers" class="btn btn-danger btn-xs">Reset</button>
                           </div>
                         </div>
                       </div>

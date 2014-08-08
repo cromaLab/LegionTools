@@ -382,5 +382,55 @@
         return $turk50->GetAccountBalance();
     }
 
+    function turk50_createQualificationType($name, $description, $keywords){
+        global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+        
+        if($SANDBOX)
+            $turk50 = new Turk50($AccessKey, $SecretKey);
+        else
+            $turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
+
+        $Request = array(
+            "Name" => $name,
+            "Description" => $description,
+            "Keywords" => $keywords,
+            "QualificationTypeStatus" => "Active",
+            "AutoGranted" => true
+        );
+
+        return $turk50->CreateQualificationType($Request);
+    }
+
+    function turk50_disposeQualificationType($qualificationTypeId){
+        global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+        
+        if($SANDBOX)
+            $turk50 = new Turk50($AccessKey, $SecretKey);
+        else
+            $turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
+
+        $Request = array(
+            "QualificationTypeId" => $qualificationTypeId,
+        );
+
+        return $turk50->DisposeQualificationType($Request);
+    }
+
+    function turk50_assignQualification($workerId, $qualificationTypeId){
+        global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+        
+        if($SANDBOX)
+            $turk50 = new Turk50($AccessKey, $SecretKey);
+        else
+            $turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
+
+        $Request = array(
+            "QualificationTypeId" => $qualificationTypeId,
+            "WorkerId" => $workerId,
+        );
+
+        return $turk50->AssignQualification($Request);
+    }
+
 
 ?>
