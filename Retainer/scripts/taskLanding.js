@@ -7,6 +7,8 @@ $(document).ready(function() {
     }
     else url = url + "&";
     url = url + "workerId=" + gup("workerId") + "&assignmentId=" + gup('assignmentId') + "&hitId=" + gup('hitId') + "&turkSubmitTo=" + gup('turkSubmitTo');
+    url = url.split("&amp;&amp;").join("&");
+
 
     var requireUniqueWorkers = gup('requireUniqueWorkers');
 

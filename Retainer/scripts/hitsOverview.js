@@ -26,7 +26,7 @@ function approveHit(assignmentId, hitId, id, bonus, workerId){
 		    }
 		});
 	}
-
+	
 	replaceWithDisposeButton(hitId, id);
 	
 }
@@ -66,7 +66,7 @@ function disposeHit(hitId, id){
 }
 
 function replaceWithDisposeButton(hitId, id){
-	$("#" + id + " .approveButton," + " #" + id + " .rejectButton").remove();
+	$("#" + id + " .approveButton," + " #" + id + " .rejectButton").fadeOut( function() { $(this).remove(); });
 	$("#" + id).append("<button type='button' onclick = 'disposeHit(&quot;" + hitId + "&quot;, &quot;" + id + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button>");
 
 }
