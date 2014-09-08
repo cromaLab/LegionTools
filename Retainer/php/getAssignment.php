@@ -9,9 +9,9 @@ include("../../isSandbox.php");
 
 
 $SANDBOX = false;
-$data = turk_easyHitToAssn('32MVG4819JB64VXGV4TDBJ3HVCVUCD');
+// $data = turk_easyHitToAssn('3NZ1E5QA6Z154BHKXXFZI5J21CWB5U‏');
 
-print_r($data);
+// print_r($data);
 
-// print_r(turk_easyApprove('3RWE2M8QWHAAWXIAUKJYGOIQLQV0N6'));
+print_r(turk_easyApprove('3KB8R4ZV1E756S4Y5W3SAL5CCJNGBK'));
 ?>
