@@ -505,7 +505,7 @@ function clearQueue(link){
     }
 }
 
-$("#fireWorkers").on("click", function(){
+$("#fireWorkers").on("click", function(event){
     event.preventDefault();
 
     var task = $("#taskSession").val();
