@@ -50,9 +50,11 @@ if( $dbh ) {
 		if($hitInfo["TotalNumResults"] <= 0){
 			$mt = turk_easyDispose($hitId);
 			// sleep(.25);
-			$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(':hit_Id' => $hitId));
+			if($mt->FinalData["Request"]["IsValid"] == "True"){
+				$sql = ("DELETE FROM hits WHERE hit_Id = :hit_Id");
+				$sth = $dbh->prepare($sql);
+				$sth->execute(array(':hit_Id' => $hitId));
+			}
 		}
 		else array_push($resultHits, $hitInfo);
 	}
