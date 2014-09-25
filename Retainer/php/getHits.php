@@ -29,6 +29,7 @@ if( $dbh ) {
 	// print_r($result);
 
 	$reviewableHits = turk50_getAllReviewableHits();
+	if(!is_array($reviewableHits)) $reviewableHits = array();
 
 	$hitsFromTurk = array();
 	foreach($reviewableHits as $hit){

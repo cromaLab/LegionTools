@@ -378,13 +378,13 @@ $("#reloadHits").on("click", function(event){
         success: function(d) {
             $('#hitsList').unblock(); 
             hits = d;
-            // console.log(d);
+            console.log(d);
 
             //Fade out all the old hits, then add the new ones.
             $('#hitsList').children().fadeOut(500).promise().then(function() {
                 $('#hitsList').empty();
                 var counter = 0;
-                console.log(hits);
+                alert(hits);
                 for (var i in hits) {
                     var hit = hits[i];
                     var numAssignments = hit.NumResults;
