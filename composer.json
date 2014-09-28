@@ -1,5 +1,7 @@
 {
     "require": {
-        "ext-sqlite3": "*"
+        "ext-sqlite3": "*",
+        "ext-soap": "*",
+        "ext-pdo_sqlite": "*"
     }
 }
