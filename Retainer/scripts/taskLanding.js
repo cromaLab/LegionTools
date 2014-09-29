@@ -22,7 +22,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             url: 'Retainer/php/uniqueWorkers.php',
-            data: {workerId: gup("workerId"), task: gup('task'), assignQualification: true, turkSubmitTo: gup('turkSubmitTo')},
+            data: {workerId: gup("workerId"), task: gup('task'), assignQualification: true, turkSubmitTo: gup('turkSubmitTo'), dbName: gup('dbName')},
             success: function (d) {
                 // alert(d);
                 window.location.replace(url);

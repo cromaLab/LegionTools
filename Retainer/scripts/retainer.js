@@ -8,7 +8,7 @@ $(document).ready(function() {
     $.ajax({
         async: false,
         url: "php/checkBanned.php",
-        data: {workerId: worker},
+        data: {workerId: worker, dbName: gup('dbName')},
         dataType: "text",
         success: function(d){
             if(d > 0){
@@ -29,7 +29,7 @@ $(document).ready(function() {
     $.ajax({
     	async: false,
     	url: "php/isWorkerActive.php",
-    	data: {workerId: worker},
+    	data: {workerId: worker, dbName: gup('dbName')},
     	dataType: "text",
     	success: function(d){
             // alert(d);
@@ -50,7 +50,7 @@ $(document).ready(function() {
     if( assignment != "ASSIGNMENT_ID_NOT_AVAILABLE" && isAllowed == true && isBanned == false) {
         $.ajax({
             url: "php/setLive.php",
-            data: {workerId: worker, task: task},
+            data: {workerId: worker, task: task, dbName: gup('dbName')},
             dataType: "text",
             success: function(d) {
 		url = "wait.php";

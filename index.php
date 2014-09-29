@@ -31,11 +31,13 @@
                 </div>
                 <div class="modal-body">
                   <input id = "modalAccessKey" type="text" class="form-control" name="accessKey" placeholder="Access Key" required="" autofocus="" />
-                  <input id = "modalSecretKey" type="text" class="form-control" name="secretKey" placeholder="Secret Key" required=""/>    
+                  <input id = "modalSecretKey" type="text" class="form-control" name="secretKey" placeholder="Secret Key" required=""/>
+
+                  </br>Your access key and secret key are never stored on our server.   
                 </div>
                 <div class="modal-footer">
                   <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                  <button id = "modalLoginButton" type="button" data-dismiss="modal" class="btn btn-primary">Login</button>
+                  <button id = "modalLoginButton" type="button" class="btn btn-primary">Login</button>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

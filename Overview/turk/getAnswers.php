@@ -10,6 +10,7 @@ include("../../isSandbox.php");
 include("../../getDB.php");
 include 'turk_functions.php';
 
+$tableName  = hash('sha256', $accessKey) . hash('sha256', $secretKey);
 
 try {
     $dbh = getDatabaseHandle();
@@ -199,8 +200,8 @@ removeOldHITs();
 
 if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mode'] == "auto"){
 	// if($_REQUEST['mode'] == "auto") $url = $_REQUEST['url'];
-	if($_REQUEST['mode'] == "auto") $url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']);
-	else $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'];
+	if($_REQUEST['mode'] == "auto") $url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']) . "&amp;&amp;dbName=" . $tableName;
+	else $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'] . "&amp;&amp;dbName=" . $tableName;
 
 	$numAssignableHits = 0;
 	while(!iShouldQuit()){
@@ -280,7 +281,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 	// $url = $_REQUEST['URL'];
 	$result = getTaskRowInDb();
 
-	$url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']);
+	$url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']) . "&amp;&amp;dbName=" . $tableName;
 
 	$qualification = createQualificationRequirement($result);
 

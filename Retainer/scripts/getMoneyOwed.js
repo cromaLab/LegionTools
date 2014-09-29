@@ -3,7 +3,7 @@ function getMoney(worker){
 	$.ajax({
 				async: false,
 				url: "Retainer/php/getTimeWaited.php",
-				data: {workerId: worker},
+				data: {workerId: worker, dbName: gup('dbName')},
 				dataType: "text",
 				success: function(d) {
 					//

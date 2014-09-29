@@ -16,7 +16,6 @@ $('#loginModal').modal('show');
 var sessionLoaded = false;
 
 updateSessionsList();
-setInterval(function(){updateSessionsList()},30000);
 
 $.blockUI.defaults.overlayCSS.cursor = 'not-allowed'; 
 
@@ -29,7 +28,7 @@ function updateSessionsList(){
     $.ajax({
         url: retainerLocation + "php/getSessionsList.php",
         type: "POST",
-        data: {},
+        data: {accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
             $("#taskSessionLoad").empty();
@@ -50,9 +49,24 @@ $("#modalLoginButton").on("click", function(event){
     event.preventDefault();
     $("#accessKey").val($("#modalAccessKey").val());
     $("#secretKey").val($("#modalSecretKey").val());
-
     $('#accessKey, #secretKey').attr('readonly', true);
-    // $('#secretKey').attr('disabled', true);
+    $('#modalLoginButton').attr('disabled', true);
+
+    $.ajax({
+        url: retainerLocation + "php/login.php",
+        type: "POST",
+        async: true,
+        data: {accessKey: $("#modalAccessKey").val(), secretKey: $("#modalSecretKey").val()},
+        dataType: "text",
+        success: function(d) {
+            $('#loginModal').modal('hide');
+            startWriteNumOnline();
+            setInterval(function(){updateSessionsList()},30000);
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
 });
 
 $("#addNewTask").on("click", function(event){
@@ -66,7 +80,7 @@ $("#addNewTask").on("click", function(event){
         url: retainerLocation + "php/addNewTask.php",
         type: "POST",
         async: false,
-        data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
+        data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
             // $('#loadTask').attr('disabled','disabled');
@@ -101,7 +115,7 @@ $("#minPrice,#maxPrice").on("change", function(event){
         url: retainerLocation + "php/updatePrice.php",
         type: "POST",
         async: true,
-        data: {task: $("#taskSession").val(), min_price: $("#minPrice").val(), max_price: $("#maxPrice").val()},
+        data: {task: $("#taskSession").val(), min_price: $("#minPrice").val(), max_price: $("#maxPrice").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
             
@@ -118,7 +132,7 @@ $("#currentTarget").change(function(){
         url: retainerLocation + "php/updateTargetNumWorkers.php",
         type: "POST",
         async: true,
-        data: {task: $("#taskSession").val(), target_workers: $("#currentTarget").val()},
+        data: {task: $("#taskSession").val(), target_workers: $("#currentTarget").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
             
@@ -140,7 +154,7 @@ $("#stopRecruiting").on("click", function(event){
         url: retainerLocation + "php/stopRecruiting.php",
         type: "POST",
         async: true,
-        data: {task: $("#taskSession").val()},
+        data: {task: $("#taskSession").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
             
@@ -180,7 +194,7 @@ $("#startRecruiting").on("click", function(event){
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
                         async: true,
-                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
                         dataType: "text",
                         success: function(d) {
                             alert(d);
@@ -200,7 +214,7 @@ $("#startRecruiting").on("click", function(event){
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
                         async: true,
-                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "auto", url: urlEscaped, requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "auto", url: urlEscaped, requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
                         dataType: "text",
                         success: function(d) {
                             alert(d);
@@ -250,7 +264,7 @@ $("#postHITs").on("click", function(event){
                 url: "Overview/turk/getAnswers.php",
                 type: "POST",
                 async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", url: urlEscaped, price: $("#price").val(), numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val(), requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
+                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", url: urlEscaped, price: $("#price").val(), numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val(), requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
                 dataType: "text",
                 success: function(d) {
                     alert(d);
@@ -282,7 +296,7 @@ $("#expireHITs").on("click", function(event){
         url: "Overview/turk/expireHITs.php",
         type: "POST",
         async: true,
-        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
             // alert(d);
@@ -310,7 +324,7 @@ $("#taskSessionLoad").on("change", function(event){
         url: retainerLocation + "php/loadTask.php",
         type: "POST",
         async: false,
-        data: {task: $("#taskSessionLoad").val()},
+        data: {task: $("#taskSessionLoad").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
             taskData = d;
@@ -364,7 +378,7 @@ $("#updateTask").on("click", function(event){
         url: retainerLocation + "php/updateTask.php",
         type: "POST",
         async: false,
-        data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val()},
+        data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
             alert("Update success");
@@ -387,7 +401,7 @@ $("#reloadHits").on("click", function(event){
         url: "Retainer/php/getHits.php",
         type: "POST",
         async: true,
-        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
             $('#hitsList').unblock(); 
@@ -475,7 +489,7 @@ function clearQueue(link){
         url: retainerLocation + "php/ajax_whosonline.php",
         type: "POST",
         async: false,
-        data: {task: task, role: "trigger"},
+        data: {task: task, role: "trigger", accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
             //
@@ -492,7 +506,7 @@ function clearQueue(link){
             url: retainerLocation + "php/setFire.php",
             type: "POST",
             async: false,
-            data: {url: link, task: task},
+            data: {url: link, task: task, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
                 //
@@ -507,7 +521,7 @@ function clearQueue(link){
             url: retainerLocation + "php/updateReleased.php",
             type: "POST",
             async: false,
-            data: {url: link, max: numOnline, task: task},
+            data: {url: link, max: numOnline, task: task, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
                 
@@ -541,7 +555,7 @@ $("#fireWorkers").on("click", function(){
             url: retainerLocation + "php/setFire.php",
             type: "POST",
             async: true,
-            data: {url: link, task: task},
+            data: {url: link, task: task, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
                 $.ajax({
@@ -583,7 +597,7 @@ $("#waitingInstructionsUpdated").on("click", function(){
     $.ajax({
         url: retainerLocation + "php/updateWaitingInstructions.php",
         type: "POST",
-        data: {task: $("#taskSession").val(), instructions: $("#waitingInstructions").val()},
+        data: {task: $("#taskSession").val(), instructions: $("#waitingInstructions").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
           //
@@ -617,7 +631,7 @@ $("#requireUniqueWorkers").change(function() {
        $.ajax({
            url: retainerLocation + "php/uniqueWorkers.php",
            type: "POST",
-           data: {task: $("#taskSession").val(), useSandbox: sandbox},
+           data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
            dataType: "text",
            success: function(d) {
              alert(d);
@@ -635,7 +649,7 @@ $("#resetUniqueWorkers").on("click", function(event) {
          $.ajax({
             url: retainerLocation + "php/uniqueWorkers.php",
             type: "POST",
-            data: {task: $("#taskSession").val(), reset: true, useSandbox: sandbox},
+            data: {task: $("#taskSession").val(), reset: true, useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
               alert("Reset success");
@@ -653,7 +667,7 @@ function validateTaskInfo(){
         url: retainerLocation + "php/loadTask.php",
         type: "POST",
         async: false,
-        data: {task: $("#taskSession").val()},
+        data: {task: $("#taskSession").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
             taskData = d;
