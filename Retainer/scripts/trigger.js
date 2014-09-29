@@ -32,6 +32,7 @@ function updateSessionsList(){
         dataType: "json",
         success: function(d) {
             $("#taskSessionLoad").empty();
+            $("#taskSessionLoad").append("<option>---</option>");
             for(var i = 0; i < d.length; i++) {
                 var obj = d[i];
                 var task = d[i].task;
@@ -61,6 +62,7 @@ $("#modalLoginButton").on("click", function(event){
         success: function(d) {
             $('#loginModal').modal('hide');
             startWriteNumOnline();
+            updateSessionsList()
             setInterval(function(){updateSessionsList()},30000);
         },
         fail: function() {

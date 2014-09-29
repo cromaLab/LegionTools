@@ -10,7 +10,7 @@ include("../../isSandbox.php");
 include("../../getDB.php");
 include 'turk_functions.php';
 
-$tableName  = hash('sha256', $accessKey) . hash('sha256', $secretKey);
+$tableName  = hash('sha256', $_REQUEST['accessKey']) . hash('sha256', $_REQUEST['secretKey']);
 
 try {
     $dbh = getDatabaseHandle();
