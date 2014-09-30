@@ -7,15 +7,23 @@ var retainerLocation = "Retainer/";
 //     clearQueue('https://roc.cs.rochester.edu/convInterface/videocoding/tutorial/tutorial.php?justTutorial=true');
 // });
 
-$('#loginModal').modal({
-  backdrop: 'static',
-  keyboard: false
-})
-$('#loginModal').modal('show');
+if(gup('login') =='false'){
+    $("#accessKey").val("use_file");
+    $("#secretKey").val("use_file");
+    $('#accessKey, #secretKey').attr('readonly', true);
+    startWriteNumOnline();
+    updateSessionsList()
+    setInterval(function(){updateSessionsList()},30000);
+}
+else{
+    $('#loginModal').modal({
+      backdrop: 'static',
+      keyboard: false
+    });
+    $('#loginModal').modal('show');
+}
 
 var sessionLoaded = false;
-
-updateSessionsList();
 
 $.blockUI.defaults.overlayCSS.cursor = 'not-allowed'; 
 
