@@ -6,7 +6,7 @@ setInterval( function() {
     //if( assignment != "ASSIGNMENT_ID_NOT_AVAILABLE" ) {
         $.ajax({
             url: "php/ajax_whosonline.php",
-            data: {task: task, worker: worker, role: "crowd"},
+            data: {task: task, worker: worker, role: "crowd", dbName: gup('dbName')},
             dataType: "text",
             success: function(d) {
                 //

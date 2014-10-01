@@ -13,6 +13,7 @@ $(document).ready(function() {
                     $("#bonusedHistory").append($("#workerId").val() + " : $" + $("#bonusAmount").val() + "</br>");
                   }
                   else alert("Bonus failed");
+                  alert(d);
                 }
             });
         }

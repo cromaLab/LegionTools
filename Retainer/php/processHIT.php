@@ -50,7 +50,11 @@ if( $dbh ) {
 		}
 	}
 
-	echo $mt->FinalData['Request']['IsValid']; //True or False
+	if($mt->FinalData['Request']['IsValid'] == "True") echo "True";
+	else print_r($mt->ArrayData);
+	 //True or False
+	// echo $mt->FinalData;
+
 
 }
 

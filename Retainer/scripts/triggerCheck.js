@@ -8,7 +8,7 @@ var interval = setInterval( function() {
 		type: 'POST',
 		async:false,
 		url: 'php/triggerCheck.php',
-		data: {task: gup('task') ? gup('task') : "default", first: firstCheck},
+		data: {task: gup('task') ? gup('task') : "default", first: firstCheck, dbName: gup('dbName')},
 		success: function(data) {
 			// alert(data);
 			if(data != null && data != "") {
@@ -23,7 +23,7 @@ var interval = setInterval( function() {
 					type: 'POST',
 					async:false,
 					url: 'php/releasedCheck.php',
-					data: {url: url, task: gup('task') ? gup('task') : "default"},
+					data: {url: url, task: gup('task') ? gup('task') : "default", dbName: gup('dbName')},
 					success: function(data) {
 						if(data == "true") send = true;
 					}

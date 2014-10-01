@@ -21,6 +21,29 @@
 
       <div class="blocky">
         <div class="container">
+
+          <div id = "loginModal" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <!-- <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button> -->
+                  <h4 class="modal-title">Login with your Mechanical Turk keys</h4>
+                </div>
+                <div class="modal-body">
+                  <input id = "modalAccessKey" type="text" class="form-control" name="accessKey" placeholder="Access Key" required="" autofocus="" />
+                  <input id = "modalSecretKey" type="text" class="form-control" name="secretKey" placeholder="Secret Key" required=""/>
+
+                  </br>Your keys are never stored on our server.   
+                </div>
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                  <button id = "modalLoginButton" type="button" class="btn btn-primary">Login</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+
           <!-- Modal -->
           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
