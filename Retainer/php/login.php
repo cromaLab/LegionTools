@@ -4,6 +4,7 @@ $accessKey = $_REQUEST['accessKey'];
 $secretKey = $_REQUEST['secretKey'];
 
 $tableName  = hash('sha256', $accessKey) . hash('sha256', $secretKey);
+$tableName = hash("sha256", $tableName);
 
 //The database with tables for the retainer tool
 
