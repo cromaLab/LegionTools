@@ -301,8 +301,8 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 		// fwrite($debug, "Post HIT\n");
 		sleep(1);
 	}
-
 }
+
 
 function generateRandomString($length = 50) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

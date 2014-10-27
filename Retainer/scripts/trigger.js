@@ -207,8 +207,8 @@ $("#startRecruiting").on("click", function(event){
                         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
                         dataType: "text",
                         success: function(d) {
-                            alert(d);
-                            alert("Recruiting stopped");
+                            // alert(d);
+                            alert("Recruiting stopped. Please make sure there is money in your account.");
                             $('#startRecruiting').removeAttr('disabled');
                             $('#startRecruiting').html('Start recruiting');
                         },
@@ -227,8 +227,8 @@ $("#startRecruiting").on("click", function(event){
                         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "auto", url: urlEscaped, requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
                         dataType: "text",
                         success: function(d) {
-                            alert(d);
-                            alert("Recruiting stopped");
+                            // alert(d);
+                            alert("Recruiting stopped. Please make sure there is money in your account.");
                             $('#startRecruiting').removeAttr('disabled');
                             $('#startRecruiting').html('Start recruiting');
                         },
