@@ -55,7 +55,18 @@
 <ul>
 <li>CentOS/RedHat: <code>yum install php-soap</code>
 </li>
-<li>Debian/Ubuntu: <code>apt-get install php5-soap</code>
+<li>Debian/Ubuntu: <code>apt-get install php-soap</code> <!-- was 'php5-soap' but that doesn't work -->
+  <p> <b>Warning</b>: on Ubuntu, php-soap does not always install properly. You may have to do the following:
+    <br/>
+
+    <code>apt-get --purge remove php5*</code><br>
+
+    <code>sudo apt-get install php5 php5-sqlite php5-mysql</code><br>
+
+    <code>sudo apt-get install php-pear php-apc php5-curl</code><br>
+
+    <code>sudo apt-get autoremove</code><br>
+  </p>
 </li>
 </ul>
 </li>
