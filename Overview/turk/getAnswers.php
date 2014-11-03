@@ -109,8 +109,10 @@ function expireHit($hitId){
 }
 
 function iShouldQuit(){
+	echo "checking to quit";
 	global $dbh, $debug, $SANDBOX;
 	$result = getTaskRowInDb();
+	print_r($result);
 	if($result[0]['done'] == 1){
 		expireAllHits();
 		return true;

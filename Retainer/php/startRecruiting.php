@@ -18,6 +18,7 @@ if( $dbh ) {
 	$sql = "UPDATE retainer SET done = 0 WHERE task = :task";
 	$sth = $dbh->prepare($sql); 
 	$sth->execute(array(':task' => $task));
+	echo "success";
 	
 }
 
