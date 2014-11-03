@@ -198,7 +198,7 @@ $("#startRecruiting").on("click", function(event){
             data: {task: $("#taskSession").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
-                alert(d);
+                // alert(d);
                 if(mode == "retainer"){
                     // Start the recruiting tool
                     $.ajax({
