@@ -293,7 +293,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 
 	for($i = 0; $i < $numHITs; $i++){
 		// turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments) 
-		$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 300, 50000, $qualification, $numAssignments, $result[0]['task_keywords'],1200);
+		$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 1800, 50000, $qualification, $numAssignments, $result[0]['task_keywords'],1200);
 		$hitId = $hitResponse->HIT->HITId;
 		$currentTime = time();
 		$sql = "INSERT INTO hits (task, hit_Id, time, sandbox) values (:task, :hit_Id, :time, :sandbox)";
