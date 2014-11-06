@@ -220,7 +220,7 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 			$price = rand( $minPrice, $maxPrice ) / 100;
 
 			// turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments,$AutoApprovalDelayInSeconds) 
-			$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 300, 50000, $qualification, 1, $result[0]['task_keywords'],1200);
+			$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 1800, 50000, $qualification, 1, $result[0]['task_keywords'],1200);
 			if($hitResponse->HIT->Request->IsValid == "True"){
 				$hitId = $hitResponse->HIT->HITId;
 				if(!empty($hitId) && $hitId != ""){
