@@ -179,7 +179,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                       <label class=" col-lg-offset-1 col-lg-6 control-label">For account balance, visit <a href="https://requester.mturk.com/mturk/youraccount">here.</a></label>
+                       <label class=" col-lg-offset-1 col-lg-6 control-label">For account balance, visit <a href="https://requester.mturk.com/mturk/youraccount" target="_blank">here.</a></label>
 
                      </div>
                      <div class="form-group">
@@ -223,11 +223,11 @@
                       <div id="priceRangeDiv"><p><form class="form-horizontal" role="form">
                         <div class="form-group someAirForRecruitingPanel">
                           <div class="col-lg-5 col-lg-offset-1">
-                            <label for="minPrice">Min task price</label>
+                            <label for="minPrice">Min task price (cents)</label>
                             <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents">
                           </div> 
                           <div class="col-lg-5">
-                            <label for="maxPrice">Max task price</label>
+                            <label for="maxPrice">Max task price (cents)</label>
                             <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
                           </div>
                         </div>
@@ -290,7 +290,7 @@
                   <div class="form-group someAirForRecruitingPanel">
 
                    <div class="col-lg-offset-1 col-lg-10">
-                    <label for="sendToURL" class="col-sm-2 control-label">Price</label>
+                    <label for="sendToURL" class="col-sm-2 control-label">Price (cents)</label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control" id="price" placeholder="Price in cents">
                     </div>

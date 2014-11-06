@@ -48,7 +48,7 @@ function updateSessionsList(){
             }
             $("#taskSessionLoad").val($("#taskSession").val());
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -73,7 +73,7 @@ $("#modalLoginButton").on("click", function(event){
             updateSessionsList()
             setInterval(function(){updateSessionsList()},30000);
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -113,7 +113,7 @@ $("#addNewTask").on("click", function(event){
             $('#triggerDiv').unblock(); 
 
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -130,7 +130,7 @@ $("#minPrice,#maxPrice").on("change", function(event){
         success: function(d) {
             
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -147,7 +147,7 @@ $("#currentTarget").change(function(){
         success: function(d) {
             
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -169,7 +169,7 @@ $("#stopRecruiting").on("click", function(event){
         success: function(d) {
             
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -213,7 +213,7 @@ $("#startRecruiting").on("click", function(event){
                             $('#startRecruiting').removeAttr('disabled');
                             $('#startRecruiting').html('Start recruiting');
                         },
-                        fail: function() {
+                        error: function() {
                             alert("Sending number of workers failed");
                         }
                     });
@@ -233,13 +233,13 @@ $("#startRecruiting").on("click", function(event){
                             $('#startRecruiting').removeAttr('disabled');
                             $('#startRecruiting').html('Start recruiting');
                         },
-                        fail: function() {
+                        error: function() {
                             alert("Sending number of workers failed");
                         }
                     });
                 }
             },
-            fail: function() {
+            error: function() {
                 alert("Sending number of workers failed");
             }
         });
@@ -284,7 +284,7 @@ $("#postHITs").on("click", function(event){
                     $('#postHITs').removeAttr('disabled');
                     $('#expireHITs').removeAttr('disabled');
                 },
-                fail: function() {
+                error: function() {
                     alert("Sending number of workers failed");
                 }
             });
@@ -316,7 +316,7 @@ $("#expireHITs").on("click", function(event){
             $('#postHITs').removeAttr('disabled');
             $('#expireHITs').removeAttr('disabled');
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -340,7 +340,7 @@ $("#taskSessionLoad").on("change", function(event){
         success: function(d) {
             taskData = d;
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -394,7 +394,7 @@ $("#updateTask").on("click", function(event){
         success: function(d) {
             alert("Update success");
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -403,7 +403,7 @@ $("#updateTask").on("click", function(event){
 $("#reloadHits").on("click", function(event){
     event.preventDefault();
     $('#hitsList').block({ 
-        message: '<h1>Loading</h1>', 
+        message: '<h1>Loading, this may take a while...</h1>', 
         css: { border: '3px solid #a00' } 
     }); 
 
@@ -412,9 +412,10 @@ $("#reloadHits").on("click", function(event){
         url: "Retainer/php/getHits.php",
         type: "POST",
         async: true,
-        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
+            alert("done");
             $('#hitsList').unblock(); 
             hits = d;
             console.log(d);
@@ -423,7 +424,7 @@ $("#reloadHits").on("click", function(event){
             $('#hitsList').children().fadeOut(500).promise().then(function() {
                 $('#hitsList').empty();
                 var counter = 0;
-                alert(hits);
+                //alert(hits);
                 for (var i in hits) {
                     var hit = hits[i];
                     var numAssignments = hit.NumResults;
@@ -449,8 +450,9 @@ $("#reloadHits").on("click", function(event){
                 }
             });
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
+            $('#hitsList').unblock(); 
         }
     });
 });
@@ -507,7 +509,7 @@ function clearQueue(link){
             // document.getElementById("numOnline").innerHTML= "There are " + d + " worker(s) online for this task";
             numOnline = d;
         },
-        fail: function() {
+        error: function() {
             alert("setOnline failed!")
         },
     });
@@ -523,7 +525,7 @@ function clearQueue(link){
                 //
                 //alert("Fire successful");
             },
-            fail: function() {
+            error: function() {
                 alert("Clear queue failed!");
             }
         });
@@ -537,7 +539,7 @@ function clearQueue(link){
             success: function(d) {
                 
             },
-            fail: function() {
+            error: function() {
                 alert("Sending number of workers failed");
             }
         });
@@ -578,12 +580,12 @@ $("#fireWorkers").on("click", function(event){
                     success: function(d) {
                         
                     },
-                    fail: function() {
+                    error: function() {
                         alert("Sending number of workers failed");
                     }
                 });
             },
-            fail: function() {
+            error: function() {
                 alert("Clear queue failed!");
             }
         });
@@ -613,7 +615,7 @@ $("#waitingInstructionsUpdated").on("click", function(){
         success: function(d) {
           //
         },
-        fail: function() {
+        error: function() {
           alert("Sending number of workers failed");
         }
     });
@@ -647,7 +649,7 @@ $("#requireUniqueWorkers").change(function() {
            success: function(d) {
              alert(d);
            },
-           fail: function() {
+           error: function() {
              alert("Sending number of workers failed");
            }
        });
@@ -665,7 +667,7 @@ $("#resetUniqueWorkers").on("click", function(event) {
             success: function(d) {
               alert("Reset success");
             },
-            fail: function() {
+            error: function() {
               alert("Sending number of workers failed");
             }
         });
@@ -683,7 +685,7 @@ function validateTaskInfo(){
         success: function(d) {
             taskData = d;
         },
-        fail: function() {
+        error: function() {
             alert("Sending number of workers failed");
         }
     });

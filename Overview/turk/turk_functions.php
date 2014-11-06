@@ -193,16 +193,19 @@
     function turk50_searchReviewable($pageNum) {
     	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
     	
-    	if($SANDBOX)
+    	if( $SANDBOX ) {
     		$turk50 = new Turk50($AccessKey, $SecretKey);
-    	else
+	}
+    	else {
     		$turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
+	}
 
     	$Request = array(
 	 		"PageSize" => 100,
 	 		"SortProperty" => "Enumeration",
 	 		"PageNumber" => $pageNum
 		);
+
     	
     	$search = $turk50->GetReviewableHITs($Request);
     	//print_r($search);
@@ -288,7 +291,7 @@
                 $mt->setVar('HITId',$hitId);
                 $result = $mt->Invoke();
 
-				print_r($mt->FinalData);
+		print_r($mt->FinalData);
         }
 
 	function turk_easyGetReviewable() {

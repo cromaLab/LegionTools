@@ -16,7 +16,6 @@ include("../../isSandbox.php");
 
 if( $dbh ) {
 
-
 	$task = $_REQUEST['task'];
 
 	$resultHitIds = array();
@@ -61,6 +60,9 @@ if( $dbh ) {
 	}
 	
 	echo json_encode($resultHits);
+
+}
+else {
 
 }
 
