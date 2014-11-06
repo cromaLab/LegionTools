@@ -16,6 +16,7 @@
 <script type="text/javascript" language="javascript"> 
 	// point to given instructions page, or default if no param is found
 	var task = gup('instructions') ? gup('instructions') : "instructions.php?task=" + gup("task");
+    var task = task + "&dbName=" + gup("dbName");
 	$('.myIframe').attr('src', task);
 	
 	$('.myIframe').css('height', $(window).height()+'px');

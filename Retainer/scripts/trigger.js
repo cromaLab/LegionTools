@@ -48,7 +48,7 @@ function updateSessionsList(){
             }
             $("#taskSessionLoad").val($("#taskSession").val());
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -73,7 +73,7 @@ $("#modalLoginButton").on("click", function(event){
             updateSessionsList()
             setInterval(function(){updateSessionsList()},30000);
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -113,7 +113,7 @@ $("#addNewTask").on("click", function(event){
             $('#triggerDiv').unblock(); 
 
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -130,7 +130,7 @@ $("#minPrice,#maxPrice").on("change", function(event){
         success: function(d) {
             
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -147,7 +147,7 @@ $("#currentTarget").change(function(){
         success: function(d) {
             
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -169,7 +169,7 @@ $("#stopRecruiting").on("click", function(event){
         success: function(d) {
             
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -205,7 +205,7 @@ $("#startRecruiting").on("click", function(event){
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
                         async: true,
-                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
                         dataType: "text",
                         success: function(d) {
                             console.log(d);
@@ -213,7 +213,7 @@ $("#startRecruiting").on("click", function(event){
                             $('#startRecruiting').removeAttr('disabled');
                             $('#startRecruiting').html('Start recruiting');
                         },
-                        error: function() {
+                        fail: function() {
                             alert("Sending number of workers failed");
                         }
                     });
@@ -233,13 +233,13 @@ $("#startRecruiting").on("click", function(event){
                             $('#startRecruiting').removeAttr('disabled');
                             $('#startRecruiting').html('Start recruiting');
                         },
-                        error: function() {
+                        fail: function() {
                             alert("Sending number of workers failed");
                         }
                     });
                 }
             },
-            error: function() {
+            fail: function() {
                 alert("Sending number of workers failed");
             }
         });
@@ -284,7 +284,7 @@ $("#postHITs").on("click", function(event){
                     $('#postHITs').removeAttr('disabled');
                     $('#expireHITs').removeAttr('disabled');
                 },
-                error: function() {
+                fail: function() {
                     alert("Sending number of workers failed");
                 }
             });
@@ -316,7 +316,7 @@ $("#expireHITs").on("click", function(event){
             $('#postHITs').removeAttr('disabled');
             $('#expireHITs').removeAttr('disabled');
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -340,7 +340,7 @@ $("#taskSessionLoad").on("change", function(event){
         success: function(d) {
             taskData = d;
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -394,7 +394,7 @@ $("#updateTask").on("click", function(event){
         success: function(d) {
             alert("Update success");
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });
@@ -424,7 +424,7 @@ $("#reloadHits").on("click", function(event){
             $('#hitsList').children().fadeOut(500).promise().then(function() {
                 $('#hitsList').empty();
                 var counter = 0;
-                //alert(hits);
+                alert(hits);
                 for (var i in hits) {
                     var hit = hits[i];
                     var numAssignments = hit.NumResults;
@@ -452,7 +452,6 @@ $("#reloadHits").on("click", function(event){
         },
         error: function() {
             alert("Sending number of workers failed");
-            $('#hitsList').unblock(); 
         }
     });
 });
@@ -509,7 +508,7 @@ function clearQueue(link){
             // document.getElementById("numOnline").innerHTML= "There are " + d + " worker(s) online for this task";
             numOnline = d;
         },
-        error: function() {
+        fail: function() {
             alert("setOnline failed!")
         },
     });
@@ -525,7 +524,7 @@ function clearQueue(link){
                 //
                 //alert("Fire successful");
             },
-            error: function() {
+            fail: function() {
                 alert("Clear queue failed!");
             }
         });
@@ -539,7 +538,7 @@ function clearQueue(link){
             success: function(d) {
                 
             },
-            error: function() {
+            fail: function() {
                 alert("Sending number of workers failed");
             }
         });
@@ -580,12 +579,12 @@ $("#fireWorkers").on("click", function(event){
                     success: function(d) {
                         
                     },
-                    error: function() {
+                    fail: function() {
                         alert("Sending number of workers failed");
                     }
                 });
             },
-            error: function() {
+            fail: function() {
                 alert("Clear queue failed!");
             }
         });
@@ -615,7 +614,7 @@ $("#waitingInstructionsUpdated").on("click", function(){
         success: function(d) {
           //
         },
-        error: function() {
+        fail: function() {
           alert("Sending number of workers failed");
         }
     });
@@ -649,7 +648,7 @@ $("#requireUniqueWorkers").change(function() {
            success: function(d) {
              alert(d);
            },
-           error: function() {
+           fail: function() {
              alert("Sending number of workers failed");
            }
        });
@@ -667,7 +666,7 @@ $("#resetUniqueWorkers").on("click", function(event) {
             success: function(d) {
               alert("Reset success");
             },
-            error: function() {
+            fail: function() {
               alert("Sending number of workers failed");
             }
         });
@@ -685,7 +684,7 @@ function validateTaskInfo(){
         success: function(d) {
             taskData = d;
         },
-        error: function() {
+        fail: function() {
             alert("Sending number of workers failed");
         }
     });

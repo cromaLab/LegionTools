@@ -4,6 +4,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 if(isset($_REQUEST['task']) && $_REQUEST['task'] != ""){
+  $dbName = $_REQUEST['dbName'];
   include('php/_db.php');
 
     try {

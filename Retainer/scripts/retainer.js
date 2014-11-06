@@ -62,6 +62,7 @@ $(document).ready(function() {
                 url += "&task=" + gup('task');
                 url += "&min=" + gup('min');
                 url += "&instructions=" +  gup('instructions');
+                url += "&dbName=" +  gup('dbName');
 
 		window.location = url;
             },
