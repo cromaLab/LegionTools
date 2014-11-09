@@ -31,17 +31,17 @@
         <h1>
 <a name="legiontools" class="anchor" href="#legiontools"><span class="octicon octicon-link"></span></a>LegionTools</h1>
 
-<p>LegionTools is a toolkit + UI that provides an easy way to recruit and route workers from Amazon Mechanical Turk to real-time and synchronous tasks.</p>
+<p>LegionTools provides an easy way to recruit and route workers from Amazon Mechanical Turk to synchronous real-time tasks.</p>
 
 <p>LegionTools provides three key features for requesters:</p>
 
 <ul>
 <li>
-<strong>Optimized automatic HIT posting</strong> - LegionTools makes it easy to automatically post HITs to AMT. To ensure your HITs are seen by workers, LegionTools uses an optimized algorithm to post and expire a steady stream of HITs. Additionally, you can easily change HIT title, price, and other values on the fly. These changes are reflected in subsequent posted HITs.</li>
+<strong>Automatically optimized HIT posting</strong> - LegionTools makes it easy to automatically post HITs to AMT. To ensure your HITs are seen by workers, LegionTools automatically posts, expires, and re-posts your HITs periodically to keep them showing on the first page of MTurk. Additionally, you can easily change HIT title, price, and other values on the fly (changes are reflected in all subsequently posted HITs).</li>
 <li>
-<strong>Worker staging</strong> - LegionTools allows you to pool workers prior to forwarding them to a task that require many workers to all begin at the same time. LegionTools lets you select the number of workers you need, then send them all to a single URL at the same time with the push of a button. </li>
+<strong>Worker staging</strong> - LegionTools allows you to stage workers in a retainer pool prior to forwarding them to a task. This lets you easily ensure that a specific number of workers all begin your task at the same time. LegionTools lets you select the number of workers you need, then send them all to a single URL with the push of a button. </li>
 <li>
-<strong>Completed-HIT management</strong> - LegionTools allows you to easily approve, reject, and dispose all the HITs that workers have completed.</li>
+<strong>Completed-HIT management</strong> - LegionTools allows you to easily approve, reject, and dispose the HITs that workers have completed.</li>
 </ul><h1>
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h1>
 
@@ -53,10 +53,10 @@
 <li>Install PHP’s SOAP extension. If you’re running PHP on Mac OS X or Windows, the extension is likely already installed.
 
 <ul>
-<li>CentOS/RedHat: <code>yum install php-soap</code>
+<li>For CentOS/RedHat: <code>yum install php-soap</code>
 </li>
-<li>Debian/Ubuntu: <code>apt-get install php-soap</code> <!-- was 'php5-soap' but that doesn't work -->
-  <p> <b>Warning</b>: on Ubuntu, php-soap does not always install properly. You may have to do the following:
+<li>For Debian/Ubuntu: <code>apt-get install php-soap</code> <!-- was 'php5-soap' but that doesn't work -->
+  <p> <b>Warning</b>: on Ubuntu, php-soap does not always install properly. You may have to also do the following:
     <br/>
 
     <code>apt-get --purge remove php5*</code><br>
@@ -71,27 +71,30 @@
 </ul>
 </li>
 <li>Modify <code>LegionTools/config.php</code> to contain the public URL of your LegionTools installation.</li>
-<li>Add your Amazon Mechanical Turk keys in <code>LegionTools/amtKeys.php</code>
-</li>
+<li>Enter your Amazon Mechanical Turk keys when you see the login screen.</li>
+<li>&#8594; OR: add your keys to <code>LegionTools/amtKeys.php</code>, and add <code>?login=false</code> to the URL to skip this process.</li>
 <li>Ensure that <code>LegionTools/db</code> and its contents has permissions <code>777</code>.</li>
-<li>To allow workers to submit HITs, import <code>LegionTools/mturk.js</code> to your task page. This will look for a form element with id="mturk_form". All that the task page needs to do is submit the form element when its time to submit the HIT.</li>
+<li>To allow workers to submit HITs, you can import <code>LegionTools/mturk.js</code> to your task page, and add a form element with <code>id="mturk_form"</code>.
+<!--All that the task page needs to do is submit the form element when its time to submit the HIT.-->
+</li>
+<li> &#8594; OR: add your own MTurk task-submit code.</code>
 </ol><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <ul>
-<li>Navigate to <code>LegionTools/index.php</code> in your browser (confirmed to work with the latest version of Chrome) to pull up the control UI.</li>
+<li>Navigate to <code>LegionTools/index.php</code> in your browser (tested on Chrome) to pull up the control UI.</li>
 </ul><h3>
 <a name="recruiting-workers" class="anchor" href="#recruiting-workers"><span class="octicon octicon-link"></span></a>Recruiting workers</h3>
 
 <ul>
-<li>Add a new task by typing a unique session name, title, description, keywords, and clicking <code>Add new task</code>. Remember your session name, you can use it to pull up your session later on.</li>
-<li>Set the target number of workers. Set the price range and click "Update price".</li>
-<li>Click <code>Change waiting page instructions</code> to edit the text that workers will be shown while waiting for your task.</li>
+<li>Add a new task by typing a unique session name, title, description, keywords, and clicking <code>Add new task</code>. Remember your session name, you can use it to restore your session later on.</li>
+<li>Set the target number of workers to keep around. Set the price range and click "Update price".</li>
+<li>Click <code>Change waiting page instructions</code> to edit the text that workers will be shown while worker waiting for you to send them to your task.</li>
 <li>Click <code>Start recruiting</code> to beging recruiting. <strong>You must click <code>Stop recruiting</code> to end the recruiting process</strong>. Note that stopping recruitment will take some time, depending on your target number of workers.</li>
-<li>Pull up a previous task using just your task session name. If you closed the UI page and left the recruiting tool running, you may stop that recruiting process by loading the associated session and clicking <code>Stop recruiting</code>.</li>
-<li>Modify task title, description, and keywords with <code>Update</code>. Changes automatically affect all new HITs posted by the recruiting tool.</li>
-<li>Send workers to a URL with the Fire button. <strong>Your chosen URL must be <code>HTTPS</code></strong>. </li>
-<li>When you are ready to review completed HITs, click <code>Reload</code> in the <code>Overview</code> section to load all reviewable HITs associated with a given task session.</li>
+<li>To pull up a previous task, select its session name. If you closed the UI page and left the recruiting tool running, you may stop that recruiting process by loading the associated session and clicking <code>Stop recruiting</code>.</li>
+<li>To modify a task's title, description, or keywords, change the content and click <code>Update</code>. Changes automatically affect all new HITs posted by the recruiting tool.</li>
+<li>To send workers to a URL, click the Fire button. <strong>Your chosen URL must be <code>HTTPS</code></strong>. </li>
+<li>When you are ready to review completed HITs, click <code>Load</code> in the <code>Overview</code> section to load all reviewable HITs associated with a given task session.</li>
 </ul>
 
 <h1><a name="citation" class="anchor" href="#cite"><span class="octicon octicon-link"></span></a>Citations</h1>
