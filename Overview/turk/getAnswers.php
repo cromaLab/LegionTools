@@ -10,7 +10,10 @@ include("../../isSandbox.php");
 include("../../getDB.php");
 include 'turk_functions.php';
 
-$tableName  = hash('sha256', $_REQUEST['accessKey']) . hash('sha256', $_REQUEST['secretKey']);
+if($_REQUEST['accessKey'] == "use_file" && $_REQUEST['secretKey'] == "use_file"){
+	$tableName = 'retainer.db';
+}
+else $tableName  = hash('sha256', $_REQUEST['accessKey']) . hash('sha256', $_REQUEST['secretKey']);
 
 try {
     $dbh = getDatabaseHandle();

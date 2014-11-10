@@ -10,7 +10,6 @@ var interval = setInterval( function() {
 		url: 'php/triggerCheck.php',
 		data: {task: gup('task') ? gup('task') : "default", first: firstCheck, dbName: gup('dbName')},
 		success: function(data) {
-			// alert(data);
 			if(data != null && data != "") {
 				//var moneyOwed = getMoney(gup('workerId'));
 				//var r = confirm("Now transfering you to " + data);

@@ -574,7 +574,7 @@ $("#fireWorkers").on("click", function(event){
                     url: retainerLocation + "php/updateReleased.php",
                     type: "POST",
                     async: true,
-                    data: {url: link, max: numFire, task: task},
+                    data: {url: link, max: numFire, task: task, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
                     dataType: "text",
                     success: function(d) {
                         

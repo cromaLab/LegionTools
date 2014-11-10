@@ -1,11 +1,17 @@
 <?php
 function getDatabaseHandle() {
-
 	if(isset($_REQUEST['dbName'])){
-		$hash1 = $_REQUEST['dbName'];
-		$tableName = hash("sha256", $hash1);
-		// echo $tableName;
-		$dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db' .'/' . $tableName . '.db');
+		$dbName = $_REQUEST['dbName'];
+	}
+
+	if(isset($dbName)){
+		if($dbName == "retainer.db") $dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db/retainer.db');
+		else{
+			$hash1 = $_REQUEST['dbName'];
+			$tableName = hash("sha256", $hash1);
+			// echo $tableName;
+			$dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db' .'/' . $tableName . '.db');
+		}
 	}
 	else if($_REQUEST['accessKey'] == "use_file" && $_REQUEST['secretKey'] == "use_file"){
 		//The database with tables for the retainer tool
@@ -37,5 +43,3 @@ function getDatabaseHandle() {
 	return $dbh;
 }
 ?>
-
-
