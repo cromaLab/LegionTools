@@ -415,7 +415,7 @@ $("#reloadHits").on("click", function(event){
         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
-            alert("done");
+            // alert("done");
             $('#hitsList').unblock(); 
             hits = d;
             console.log(d);
@@ -424,7 +424,7 @@ $("#reloadHits").on("click", function(event){
             $('#hitsList').children().fadeOut(500).promise().then(function() {
                 $('#hitsList').empty();
                 var counter = 0;
-                alert(hits);
+                // alert(hits);
                 for (var i in hits) {
                     var hit = hits[i];
                     var numAssignments = hit.NumResults;

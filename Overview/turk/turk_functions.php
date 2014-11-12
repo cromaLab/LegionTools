@@ -5,6 +5,8 @@
 	// require_once("../amtKeys.php");
 	// require_once("../isSandbox.php");
 
+	$PAGE_SIZE = 100;  // Number of HITs per 'page'
+
 	/*
 	   var $validOps   = array("ApproveAssignment", "CreateHIT", "CreateQualificationType", "DisableHIT", "DisposeHIT", "ExtendHIT",
 	   "GetAccountBalance", "GetAssignmentsForHIT", "GetHIT", "GetQualificationRequests", "GetQualificationScore",
@@ -156,21 +158,21 @@
 
 	function turk_easySearchHits() {
 
-           global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+           global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
            
                 $mt = new mturkinterface($AccessKey, $SecretKey, $SANDBOX);
 
                 $mt->SetOperation('SearchHITs');
                 $mt->SortProperty = "CreationTime";
                 $mt->SortDirection = "Descending";
-                $mt->setVar('PageSize',100);
+                $mt->setVar('PageSize',$PAGE_SIZE);
                 $result = $mt->Invoke();
 				//print_r($mt->FinalData);
                 return $mt->FinalData['HIT'];
         }
         
     function turk50_search($pageNum) {
-    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
     	
     	if($SANDBOX)
     		$turk50 = new Turk50($AccessKey, $SecretKey);
@@ -178,7 +180,7 @@
     		$turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
 
     	$Request = array(
-	 		"PageSize" => 100,
+	 		"PageSize" => $PAGE_SIZE,
 	 		"SortProperty" => "Enumeration",
 	 		"PageNumber" => $pageNum
 		);
@@ -191,7 +193,7 @@
     }
     
     function turk50_searchReviewable($pageNum) {
-    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
     	
     	if( $SANDBOX ) {
     		$turk50 = new Turk50($AccessKey, $SecretKey);
@@ -201,7 +203,7 @@
 	}
 
     	$Request = array(
-	 		"PageSize" => 100,
+	 		"PageSize" => $PAGE_SIZE,
 	 		"SortProperty" => "Enumeration",
 	 		"PageNumber" => $pageNum
 		);
@@ -215,7 +217,7 @@
     }
     
     function turk50_getNumHits() {
-    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
     	
     	if($SANDBOX)
     		$turk50 = new Turk50($AccessKey, $SecretKey);
@@ -223,7 +225,7 @@
     		$turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
 
     	$Request = array(
-	 		"PageSize" => 100,
+	 		"PageSize" => $PAGE_SIZE,
 	 		"SortProperty" => "Enumeration"
 		);
     	
@@ -234,7 +236,7 @@
     }
     
     function turk50_getNumReviewableHits() {
-    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
     	
     	if($SANDBOX)
     		$turk50 = new Turk50($AccessKey, $SecretKey);
@@ -242,7 +244,7 @@
     		$turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
 
     	$Request = array(
-	 		"PageSize" => 100,
+	 		"PageSize" => $PAGE_SIZE,
 	 		"SortProperty" => "Enumeration"
 		);
     	
@@ -253,10 +255,10 @@
     }
     
     function turk50_searchAllHits() {
-    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
     	
     	$totalNumHits = turk50_getNumHits();
-    	$numPages = ceil($totalNumHits / 100);
+    	$numPages = ceil($totalNumHits / $PAGE_SIZE);
     	$array = turk50_search(1);
     	for($i = 2; $i <= $numPages; $i++)
     	{
@@ -267,10 +269,10 @@
     }
     
     function turk50_getAllReviewableHits() {
-    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+    	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
     	
     	$totalNumHits = turk50_getNumReviewableHits();
-    	$numPages = ceil($totalNumHits / 100);
+    	$numPages = ceil($totalNumHits / $PAGE_SIZE);
     	$array = turk50_searchReviewable(1);
     	for($i = 2; $i <= $numPages; $i++)
     	{
@@ -295,13 +297,13 @@
         }
 
 	function turk_easyGetReviewable() {
-	   global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+	   global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
 
 		$mt = new mturkinterface($AccessKey, $SecretKey, $SANDBOX);
 
 		$mt->SetOperation('GetReviewableHITs');
 		$mt->setVar('Status',"Reviewable");
-		$mt->setVar('PageSize',100);
+		$mt->setVar('PageSize',$PAGE_SIZE);
 		$result = $mt->Invoke();
 
 		if (isset ($mt->FinalData['HIT']))
@@ -320,13 +322,13 @@
 	}
 
 	function turk_easyGetReviewing() {
-           global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+           global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey, $PAGE_SIZE;
 
                 $mt = new mturkinterface($AccessKey, $SecretKey, $SANDBOX);
 
                 $mt->SetOperation('GetReviewableHITs');
                 $mt->setVar('Status',"Reviewing");
-		$mt->setVar('PageSize',100);
+		$mt->setVar('PageSize',$PAGE_SIZE);
                 $result = $mt->Invoke();
 
                 if (isset ($mt->FinalData['HIT']))
