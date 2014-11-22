@@ -177,6 +177,8 @@ $("#stopRecruiting").on("click", function(event){
             alert("Sending number of workers failed");
         }
     });
+    window.clearInterval(isStoppedRecruitingInterval);
+    isStoppedRecruitingInterval = setInterval(function(){isStoppedRecruiting()},3000);
 
     $('#startRecruiting').html('Please wait while recruiting is stopped');
     $('#stopRecruiting').attr('disabled','disabled');
@@ -213,9 +215,6 @@ $("#startRecruiting").on("click", function(event){
                         dataType: "text",
                         success: function(d) {
                             console.log(d);
-                            // alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
-                            // $('#startRecruiting').removeAttr('disabled');
-                            // $('#startRecruiting').html('Start recruiting');
                         },
                         fail: function() {
                             alert("Sending number of workers failed");
@@ -233,9 +232,6 @@ $("#startRecruiting").on("click", function(event){
                         dataType: "text",
                         success: function(d) {
                             console.log(d);
-                            // alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
-                            // $('#startRecruiting').removeAttr('disabled');
-                            // $('#startRecruiting').html('Start recruiting');
                         },
                         fail: function() {
                             alert("Sending number of workers failed");
@@ -247,7 +243,7 @@ $("#startRecruiting").on("click", function(event){
                 alert("Sending number of workers failed");
             }
         });
-        isStoppedRecruitingInterval = setInterval(function(){isStoppedRecruiting()},3000);
+        isStoppedRecruitingInterval = setInterval(function(){isStoppedRecruiting()},5000);
 
         $('#startRecruiting').attr('disabled','disabled');
         $('#startRecruiting').html("Recruiting...");
