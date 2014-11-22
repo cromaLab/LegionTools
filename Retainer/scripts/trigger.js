@@ -251,8 +251,8 @@ $("#startRecruiting").on("click", function(event){
         $('#startRecruiting').html("Recruiting...");
         $('#stopRecruiting').removeAttr('disabled');
 
-        $('#yesSandbox').attr('disabled','disabled');
-        $('#noSandbox').attr('disabled','disabled');
+        if(!sandbox) $('#yesSandbox').attr('disabled','disabled');
+        if(sandbox) $('#noSandbox').attr('disabled','disabled');
     }
 
 });
@@ -699,6 +699,7 @@ $("#copyExperiment").on("click", function(event) {
 $("#deleteExperiment").on("click", function(event) {
     event.preventDefault();
     if(confirm("Are you sure you want to delete " + $("#taskSession").val() + " ? This will stop recruiting and prevent you from approving/rejecting submitted HITs.")){
+        $("#stopRecruiting").trigger('click');
         $.ajax({
             url: retainerLocation + "php/deleteExperiment.php",
             type: "POST",
