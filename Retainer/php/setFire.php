@@ -15,6 +15,7 @@ if( $dbh ) {
 
 	$url = $_REQUEST['url'];
 	$task = $_REQUEST['task'];
+	//echo("TASK: " . $task . " --> URL: " . $url);
 	
 	$sql = "SELECT link FROM triggerFlag WHERE task = :task ORDER BY id DESC LIMIT 1";
 	$sth = $dbh->prepare($sql); 

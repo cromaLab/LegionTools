@@ -41,8 +41,8 @@ var interval = setInterval( function() {
 					url += "&assignmentId=" + gup('assignmentId');
 					url += "&hitId=" + gup('hitId');
 					url += "&turkSubmitTo=" + gup('turkSubmitTo');
-					url += "&task=" + gup('task');
 					url += "&min=" + gup('min');
+					//url += "&task=" + gup('task');  // WSL: I don't think we use this information, and passing the retainer task name can conflict if the user's params include 'task'. Removed for now.
 
 					window.location = url;
 				}
