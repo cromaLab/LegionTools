@@ -112,6 +112,9 @@ $("#addNewTask").on("click", function(event){
             $('#recruitingDiv').unblock(); 
             $('#triggerDiv').unblock(); 
 
+            $('#copyExperiment').removeAttr('disabled');
+            $('#deleteExperiment').removeAttr('disabled');
+
         },
         fail: function() {
             alert("Sending number of workers failed");
@@ -361,6 +364,8 @@ $("#taskSessionLoad").on("change", function(event){
     // $('#taskSessionLoad').attr('disabled','disabled');
     $('#taskSession').attr('disabled','disabled');
     $('#updateTask').removeAttr('disabled');
+    $('#copyExperiment').removeAttr('disabled');
+    $('#deleteExperiment').removeAttr('disabled');
 
     $("#updateTask").show();
     $('#addNewTask').hide();
@@ -672,6 +677,45 @@ $("#resetUniqueWorkers").on("click", function(event) {
         });
     }
 });
+
+$("#copyExperiment").on("click", function(event) {
+    event.preventDefault();
+    var newTask = prompt("Please enter a unique new task name");
+     $.ajax({
+        url: retainerLocation + "php/copyExperiment.php",
+        type: "POST",
+        data: {task: $("#taskSession").val(), newTask: newTask, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+        dataType: "text",
+        success: function(d) {
+            updateSessionsList();
+            alert("Copied to " + newTask);
+        },
+        fail: function() {
+          alert("Copying failed");
+        }
+    });
+});
+
+$("#deleteExperiment").on("click", function(event) {
+    event.preventDefault();
+    if(confirm("Are you sure you want to delete " + $("#taskSession").val() + " ? This will stop recruiting and prevent you from approving/rejecting submitted HITs.")){
+        $.ajax({
+            url: retainerLocation + "php/deleteExperiment.php",
+            type: "POST",
+            data: {task: $("#taskSession").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+            dataType: "text",
+            success: function(d) {
+                updateSessionsList();
+                alert("Deleted " + $("#taskSession").val());
+                $("#taskSessionLoad").val("---");
+            },
+            fail: function() {
+              alert("Deleting failed");
+            }
+        });
+    }
+});
+
 
 function validateTaskInfo(){
     var taskData;

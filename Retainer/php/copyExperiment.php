@@ -1,0 +1,26 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+include("_db.php");
+
+
+try {
+  $dbh = getDatabaseHandle();
+} catch( PDOException $e ) {
+  echo $e->getMessage();
+}
+
+
+if( $dbh ) {
+
+	$task = $_REQUEST['task'];
+	$newTask = $_REQUEST['newTask'];
+
+	$sql = "INSERT INTO retainer(task_title, task_description, task_keywords, task, country, percentApproved) select task_title, task_description, task_keywords, :newTask, country, percentApproved from retainer where task = :task limit 1";
+	$sth = $dbh->prepare($sql); 
+	$sth->execute(array(':task' => $task, ':newTask' => $newTask));
+	echo $newTask;
+}
+
+?>

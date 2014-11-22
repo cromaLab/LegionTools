@@ -82,11 +82,13 @@
                           <div class="col-lg-4 pull-right">
                             <select id = "taskSessionLoad" class="form-control"></select>  
                           </div>
+                          <button type="button" id='deleteExperiment' disabled='disabled' class="btn btn-danger pull-right" style='margin-left:10px;'>Delete</button>
+                          <button type="button" id='copyExperiment' disabled='disabled' class="btn btn-default pull-right">Copy</button>
                         </div>
                         <!-- <button type="submit" id="loadTask" class="btn btn-default">Load</button> -->
                       </form>
 
-                      <span class="grandTitre text-primary">Or create a new experiment</span>
+                      <span class="grandTitre text-primary">OR create a new experiment</span>
                       <form class="form-horizontal" role="form">
                         <div class="form-group air">
                           <label for="taskSession" class="col-sm-4 control-label">Experiment name (remember this):</label>
@@ -109,7 +111,7 @@
                         <div class="form-group air">
                           <label for="hitKeywords" class="col-sm-4 control-label">HIT Keywords</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (separated by a single space)">
+                            <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (space-separated)">
                           </div>
                         </div>
                         <div class="form-group row">
