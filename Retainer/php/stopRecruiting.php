@@ -15,7 +15,7 @@ if( $dbh ) {
 
 	$task = $_REQUEST['task'];
 
-	$sql = "UPDATE retainer SET done = 1 WHERE task = :task";
+	$sql = "UPDATE retainer SET done = 2 WHERE task = :task";
 	$sth = $dbh->prepare($sql); 
 	$sth->execute(array(':task' => $task));
 	

@@ -24,6 +24,7 @@ else{
 }
 
 var sessionLoaded = false;
+var isStoppedRecruitingInterval;
 
 $.blockUI.defaults.overlayCSS.cursor = 'not-allowed'; 
 
@@ -212,9 +213,9 @@ $("#startRecruiting").on("click", function(event){
                         dataType: "text",
                         success: function(d) {
                             console.log(d);
-                            alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
-                            $('#startRecruiting').removeAttr('disabled');
-                            $('#startRecruiting').html('Start recruiting');
+                            // alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
+                            // $('#startRecruiting').removeAttr('disabled');
+                            // $('#startRecruiting').html('Start recruiting');
                         },
                         fail: function() {
                             alert("Sending number of workers failed");
@@ -232,9 +233,9 @@ $("#startRecruiting").on("click", function(event){
                         dataType: "text",
                         success: function(d) {
                             console.log(d);
-                            alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
-                            $('#startRecruiting').removeAttr('disabled');
-                            $('#startRecruiting').html('Start recruiting');
+                            // alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
+                            // $('#startRecruiting').removeAttr('disabled');
+                            // $('#startRecruiting').html('Start recruiting');
                         },
                         fail: function() {
                             alert("Sending number of workers failed");
@@ -246,6 +247,7 @@ $("#startRecruiting").on("click", function(event){
                 alert("Sending number of workers failed");
             }
         });
+        isStoppedRecruitingInterval = setInterval(function(){isStoppedRecruiting()},3000);
 
         $('#startRecruiting').attr('disabled','disabled');
         $('#startRecruiting').html("Recruiting...");
@@ -376,16 +378,25 @@ $("#taskSessionLoad").on("change", function(event){
     $('#recruitingDiv').unblock(); 
     $('#triggerDiv').unblock(); 
 
-    if(taskData.done == "1"){
+    // Stopping recruiting
+    if(taskData.done == "2"){
+        $('#startRecruiting').html('Please wait while recruiting is stopped');
         $('#stopRecruiting').attr('disabled','disabled');
-        $('#startRecruiting').removeAttr('disabled');
+        $('#startRecruiting').attr('disabled','disabled');
     }
+    // Recruiting
     else if(taskData.done == "0"){
+        $('#startRecruiting').html('Recruiting...');
         $('#startRecruiting').attr('disabled','disabled');
         $('#stopRecruiting').removeAttr('disabled');
     }
-
-
+    // Finished stopping recruiting, not running
+    else if(taskData.done == "1"){
+        $('#startRecruiting').html('Start recruiting');
+        $('#stopRecruiting').html('Stop recruiting');
+        $('#startRecruiting').removeAttr('disabled');
+        $('#stopRecruiting').attr('disabled','disabled');
+    }
 });
 
 $("#updateTask").on("click", function(event){
@@ -716,6 +727,33 @@ $("#deleteExperiment").on("click", function(event) {
         });
     }
 });
+
+function isStoppedRecruiting(){
+    var taskData;
+    $.ajax({
+        url: retainerLocation + "php/loadTask.php",
+        type: "POST",
+        async: false,
+        data: {task: $("#taskSessionLoad").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+        dataType: "json",
+        success: function(d) {
+            taskData = d;
+        },
+        fail: function() {
+            alert("Sending number of workers failed");
+        }
+    });
+    if(taskData.done == "1"){
+        window.clearInterval(isStoppedRecruitingInterval);
+        $('#startRecruiting').html('Start recruiting');
+        $('#stopRecruiting').html('Stop recruiting');
+        $('#startRecruiting').removeAttr('disabled');
+        $('#stopRecruiting').attr('disabled','disabled');
+        alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
+        return true;
+    }
+    else return false;
+}
 
 
 function validateTaskInfo(){

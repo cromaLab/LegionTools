@@ -116,7 +116,7 @@ function iShouldQuit(){
 	global $dbh, $debug, $SANDBOX;
 	$result = getTaskRowInDb();
 	// print_r($result);
-	if($result[0]['done'] == 1){
+	if($result[0]['done'] == 2){
 		expireAllHits();
 		return true;
 	}
@@ -310,6 +310,9 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 	}
 }
 
+$sql = ("UPDATE retainer set noRepeatQualIdLive = :noRepeatQualId WHERE task = :task");
+$sth = $dbh->prepare($sql); 
+$sth->execute(array(":task"=>$_REQUEST['task'], ":noRepeatQualId"=>$noRepeatQualId));
 
 function generateRandomString($length = 50) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -320,6 +323,9 @@ function generateRandomString($length = 50) {
     return $randomString;
 }
 
+$sql = "UPDATE retainer SET done = 1 WHERE task = :task";
+$sth = $dbh->prepare($sql); 
+$sth->execute(array(':task' => $_REQUEST['task']));
 
 
 // fwrite($debug, "Exit\n");
