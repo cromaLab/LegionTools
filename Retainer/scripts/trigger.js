@@ -379,6 +379,7 @@ $("#taskSessionLoad").on("change", function(event){
         $('#startRecruiting').html('Please wait while recruiting is stopped');
         $('#stopRecruiting').attr('disabled','disabled');
         $('#startRecruiting').attr('disabled','disabled');
+        isStoppedRecruitingInterval = setInterval(function(){isStoppedRecruiting()},3000);
     }
     // Recruiting
     else if(taskData.done == "0"){
