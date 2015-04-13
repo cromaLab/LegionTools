@@ -221,10 +221,13 @@ label {
   margin-top: 15px;
 }
 
-#sectionA, #sectionB {
+#sectionA {
    height: 545px;
 }
-
-.forAutoTab {
-   margin-top: -19px;
+#sectionB {
+   height: 610px;
 }
+
+/*.forAutoTab {
+   margin-top: -19px;
+}*/

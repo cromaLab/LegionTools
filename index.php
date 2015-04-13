@@ -259,7 +259,6 @@
                       </div>
                     </form>
 
-
                     <form class="form-horizontal" role="form">
                       <div id = "startStopButtons">
                         <div class="form-group someAirForRecruitingPanel">
