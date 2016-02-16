@@ -10,11 +10,16 @@ include("../../isSandbox.php");
 include("../../getDB.php");
 include 'turk_functions.php';
 
+$AccessKey = $_REQUEST['accessKey'];
+$SecretKey = $_REQUEST['secretKey'];
+
 if($_REQUEST['accessKey'] == "use_file" && $_REQUEST['secretKey'] == "use_file"){
 	$tableName = 'retainer.db';
 }
-else $tableName  = hash('sha256', $_REQUEST['accessKey']) . hash('sha256', $_REQUEST['secretKey']);
-
+else {
+    $hash1= hash('sha256', $_REQUEST['accessKey']) . hash('sha256', $_REQUEST['secretKey']);
+    $tableName = hash('sha256', $hash1); 
+}
 try {
     $dbh = getDatabaseHandle();
   } catch(PDOException $e) {
@@ -205,8 +210,12 @@ removeOldHITs();
 
 if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mode'] == "auto"){
 	// if($_REQUEST['mode'] == "auto") $url = $_REQUEST['url'];
-	if($_REQUEST['mode'] == "auto") $url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']) . "&amp;&amp;dbName=" . $tableName;
-	else $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'] . "&amp;&amp;dbName=" . $tableName;
+    if($_REQUEST['mode'] == "auto") { 
+        $url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']) . "&amp;&amp;dbName=" . $tableName; 
+    }
+    else {
+        $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'] . "&amp;&amp;dbName=" . $tableName . "&amp;&amp;thirdPartyUrl=" . urlencode($_REQUEST['thirdPartyURL']); 
+    }
 
 	$numAssignableHits = 0;
 	while(!iShouldQuit()){

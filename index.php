@@ -206,6 +206,9 @@
                       <div id="touchSpinDiv">
 
                         <form class="form-horizontal" role="form">
+
+                            <div class=""
+
                           <div class="form-group someAirForRecruitingPanel">
                             <label class="col-lg-6 col-lg-offset-1 control-label">Target number of assignable HITs</label>
                           </div>
@@ -231,6 +234,11 @@
                           <div class="col-lg-5">
                             <label for="maxPrice">Max task price (cents)</label>
                             <input type="text" class="form-control" id="maxPrice" placeholder="Max price in cents">
+                          </div>
+                          <div class="col-lg-10 col-lg-offset-1">
+                            <br/>
+                            <label for="thirdPartyUrl">Third Party Tutorial URL</label>
+                            <input type="text" class="form-control" id="thirdPartyURL" placeholder="Enter the third party URL here">
                           </div>
                         </div>
                         <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->

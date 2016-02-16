@@ -8,7 +8,8 @@ function getDatabaseHandle() {
 		if($dbName == "retainer.db") $dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db/retainer.db');
 		else{
 			$hash1 = $_REQUEST['dbName'];
-			$tableName = hash("sha256", $hash1);
+            $tableName = $hash1; 
+            //$tableName = hash("sha256", $hash1);
 			// echo $tableName;
 			$dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db' .'/' . $tableName . '.db');
 		}

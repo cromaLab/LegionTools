@@ -18,7 +18,7 @@
 	var task = gup('instructions') ? gup('instructions') : "instructions.php?task=" + gup("task");
     var task = task + "&dbName=" + gup("dbName");
 	$('.myIframe').attr('src', task);
-	
+    //alert(window.location.href); 	
 	$('.myIframe').css('height', $(window).height()+'px');
 </script>
 </body>

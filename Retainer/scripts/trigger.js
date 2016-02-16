@@ -207,11 +207,13 @@ $("#startRecruiting").on("click", function(event){
                 // alert(d);
                 if(mode == "retainer"){
                     // Start the recruiting tool
+                    var thirdPartyUrl = $("#thirdPartyURL").val().split("&").join("&amp;&amp;");
+                    //alert(thirdPartyUrl); 
                     $.ajax({
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
                         async: true,
-                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked')},
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), thirdPartyURL: thirdPartyUrl},
                         dataType: "text",
                         success: function(d) {
                             console.log(d);
