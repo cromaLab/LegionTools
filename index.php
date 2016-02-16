@@ -237,8 +237,13 @@
                           </div>
                           <div class="col-lg-10 col-lg-offset-1">
                             <br/>
-                            <label for="thirdPartyUrl">Third Party Tutorial URL</label>
-                            <input type="text" class="form-control" id="thirdPartyURL" placeholder="Enter the third party URL here">
+                            <label for="thirdPartyUrl">Third Party: Tutorial Page</label>
+                            <input type="text" class="form-control" id="thirdPartyURL" placeholder="Enter the third party tutorial URL here">
+                          </div>
+                          <div class="col-lg-10 col-lg-offset-1">
+                            <br/>
+                            <label for="thirdPartyUrl">Third Party: Instructions Page</label>
+                            <input type="text" class="form-control" id="thirdPartyInstr" placeholder="Enter the third party instructions URL here">
                           </div>
                         </div>
                         <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->

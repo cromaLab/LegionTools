@@ -16,7 +16,7 @@
 
 <script type="text/javascript" language="javascript"> 
 // point to given instructions page, or default if no param is found
-var task = gup('thirdPartyUrl');
+var task = gup('thirdPartyTutUrl');
 
 //alert(task); 
 
@@ -56,6 +56,7 @@ $(document).ready(function () {
                 url += "&min=" + gup('min');
                 url += "&instructions=" +  gup('instructions');
                 url += "&dbName=" +  gup('dbName');
+                url += "&thirdPartyInstrUrl=" + gup('thirdPartyInstrUrl'); 
                 //alert(url); 
                 window.location = url;    
             }

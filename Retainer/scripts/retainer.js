@@ -67,14 +67,15 @@ $(document).ready(function() {
                     async: false, 
                     success: function (dd) {
                         if (dd == 0) {
-                            url = "wait.php?"; 
+                            url = "wait.php?";
                         } else {
-                            //alert("gotta do the tutorial first bro!"); 
+                            //alert("gotta do the tutorial first!"); 
                             url = "tutorial.php?"; 
                             //url += "&thirdPartyUrl=" + decodeURIComponent(gup('thirdPartyUrl'));  
-                            url += "&thirdPartyUrl=" + gup('thirdPartyUrl');  
+                            url += "&thirdPartyTutUrl=" + gup('thirdPartyTutUrl');  
                             //url += "&thirdPartyUrl=" + "https://legionpowered.net/Glance/coding_tools/tutorial/tutorial.php?assignmentId=2o3u4324";  
                         }
+                        url += "&thirdPartyInstrUrl=" + gup('thirdPartyInstrUrl'); 
                         url += "&workerId=" + gup('workerId');
                         url += "&assignmentId=" + gup('assignmentId');
                         url += "&hitId=" + gup('hitId');
