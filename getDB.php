@@ -5,8 +5,10 @@ function getDatabaseHandle() {
 	}
 
 	if(isset($dbName)){
-		if($dbName == "retainer.db") $dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db/retainer.db');
-		else{
+        if($dbName == "retainer.db") { 
+            $dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db/retainer.db');
+        }
+        else{
 			$hash1 = $_REQUEST['dbName'];
             $tableName = $hash1; 
             //$tableName = hash("sha256", $hash1);
@@ -14,10 +16,10 @@ function getDatabaseHandle() {
 			$dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db' .'/' . $tableName . '.db');
 		}
 	}
-	else if($_REQUEST['accessKey'] == "use_file" && $_REQUEST['secretKey'] == "use_file"){
-		//The database with tables for the retainer tool
-		$dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db/retainer.db');
-	}
+	//else if($_REQUEST['accessKey'] == "use_file" && $_REQUEST['secretKey'] == "use_file"){
+	//	//The database with tables for the retainer tool
+	//	$dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db/retainer.db');
+	//}
 	else{
 		$accessKey = $_REQUEST['accessKey'];
 		$secretKey = $_REQUEST['secretKey'];

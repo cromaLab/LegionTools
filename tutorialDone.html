@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="Retainer/scripts/gupStr.js"></script>
+</head>
+
+<body>
+<p> You did a good ass job!! ~Chance the Rapper </p>
+</body>
+
+<script> 
+// update the database entry for this workerId
+
+
+
+$(document).ready(function () {
+    
+    // check to see if the worker is inside MTurk (and not just randomly going to this site)
+    var assignId = gupStr('assignmentId', parent.window.location); 
+    //alert(assignId); 
+
+    //alert(gupStr('workerId', parent.window.location)); 
+    //alert(gupStr('task', parent.window.location)); 
+
+    if ( (assignId != "") && (assignId != "ASSIGNMENT_ID_NOT_AVAILABLE") ) {
+        $.ajax({
+            url: "Retainer/php/updateTutorialLog.php",
+            type: "POST",
+            async: false,
+            data: {task: gupStr('task', parent.window.location), workerId: gupStr('workerId', parent.window.location), dbName: gupStr('dbName', parent.window.location)},
+            dataType: "text",
+            success: function(d) {
+                alert(d); 
+                url = "Retainer/wait.php?"; 
+                url += "&workerId=" + gupStr('workerId', parent.window.location);
+                url += "&assignmentId=" + gupStr('assignmentId', parent.window.location);
+                url += "&hitId=" + gupStr('hitId', parent.window.location);
+                url += "&turkSubmitTo=" + gupStr('turkSubmitTo', parent.window.location);
+                url += "&task=" + gupStr('task', parent.window.location);
+                url += "&min=" + gupStr('min', parent.window.location);
+                url += "&instructions=" +  gupStr('instructions', parent.window.location);
+                url += "&dbName=" +  gupStr('dbName', parent.window.location);
+                url += "&thirdPartyInstrUrl=" + gupStr('thirdPartyInstrUrl', parent.window.location); 
+                alert(url); 
+                parent.window.location = url;    
+            },
+            fail: function() {
+                alert("Updating tutorialLog failed!");
+            }
+        }); 
+    } else {
+        alert("gotta be inside MTurk dummy!"); 
+    }
+
+}); 
+
+
+</script>
+
+</html>

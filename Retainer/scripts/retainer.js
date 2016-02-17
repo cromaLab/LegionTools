@@ -62,38 +62,38 @@ $(document).ready(function() {
 
                 $.ajax({
                     url: "php/checkTutorialLog.php", 
-                    data: {workerId: worker, task: task, dbName: gup('dbName')}, 
-                    dataType: "text", 
-                    async: false, 
-                    success: function (dd) {
-                        if (dd == 0) {
-                            url = "wait.php?";
-                        } else {
-                            //alert("gotta do the tutorial first!"); 
-                            url = "tutorial.php?"; 
-                            //url += "&thirdPartyUrl=" + decodeURIComponent(gup('thirdPartyUrl'));  
-                            url += "&thirdPartyTutUrl=" + gup('thirdPartyTutUrl');  
-                            //url += "&thirdPartyUrl=" + "https://legionpowered.net/Glance/coding_tools/tutorial/tutorial.php?assignmentId=2o3u4324";  
-                        }
-                        url += "&thirdPartyInstrUrl=" + gup('thirdPartyInstrUrl'); 
-                        url += "&workerId=" + gup('workerId');
-                        url += "&assignmentId=" + gup('assignmentId');
-                        url += "&hitId=" + gup('hitId');
-                        url += "&turkSubmitTo=" + gup('turkSubmitTo');
-                        url += "&task=" + gup('task');
-                        url += "&min=" + gup('min');
-                        url += "&instructions=" +  gup('instructions');
-                        url += "&dbName=" +  gup('dbName');
-                        window.location = url; 
-                    },
-                    fail: function () {
-                        alert("something in checkTutorialLog.php failed!"); 
-                    },
+                data: {workerId: worker, task: task, dbName: gup('dbName')}, 
+                dataType: "text", 
+                async: false, 
+                success: function (dd) {
+                    if (dd == 1) {
+                        url = "wait.php?";
+                    } else {
+                        //alert("gotta do the tutorial first!"); 
+                        url = "tutorial.php?"; 
+                        //url += "&thirdPartyUrl=" + decodeURIComponent(gup('thirdPartyUrl'));  
+                        url += "&thirdPartyTutUrl=" + gup('thirdPartyTutUrl');  
+                        //url += "&thirdPartyUrl=" + "https://legionpowered.net/Glance/coding_tools/tutorial/tutorial.php?assignmentId=2o3u4324";  
+                    }
+                    url += "&thirdPartyInstrUrl=" + gup('thirdPartyInstrUrl'); 
+                    url += "&workerId=" + gup('workerId');
+                    url += "&assignmentId=" + gup('assignmentId');
+                    url += "&hitId=" + gup('hitId');
+                    url += "&turkSubmitTo=" + gup('turkSubmitTo');
+                    url += "&task=" + gup('task');
+                    url += "&min=" + gup('min');
+                    url += "&instructions=" +  gup('instructions');
+                    url += "&dbName=" +  gup('dbName');
+                    window.location = url; 
+                },
+                fail: function () {
+                    alert("something in checkTutorialLog.php failed!"); 
+                },
                 }); 
             },
-            fail: function() {
-                alert("setLive failed!")
-            },
+                fail: function() {
+                    alert("setLive failed!")
+                },
         });
     }
 });

@@ -57,7 +57,13 @@ try {
 	  "idx" text,
 	  "startTime" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	  "endTime" timestamp NOT NULL DEFAULT "0000-00-00 00:00:00"
-	);';
+    );
+    CREATE TABLE IF NOT EXISTS "tutorialLog" (
+        "id" INTEGER PRIMARY KEY,
+        "workerId" text,
+        "projectName" text
+    );
+    ';
 
 	$dbh->exec($sql);
 } catch(PDOException $e) {
