@@ -7,6 +7,9 @@ include('../../Overview/turk/turk_functions.php');
 include("../../amtKeys.php");
 include("../../isSandbox.php");
 
+$AccessKey = $_REQUEST['accessKey']; 
+$SecretKey = $_REQUEST['secretKey'];
+
   try {
       $dbh = getDatabaseHandle();
   } catch( PDOException $e ) {

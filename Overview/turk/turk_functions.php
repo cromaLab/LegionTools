@@ -7,7 +7,9 @@
 
 	$PAGE_SIZE = 100;  // Number of HITs per 'page'
 
-	/*
+    $AccessKey = $_REQUEST['accessKey'];
+    $SecretKey = $_REQUEST['secretKey'];
+    /*
 	   var $validOps   = array("ApproveAssignment", "CreateHIT", "CreateQualificationType", "DisableHIT", "DisposeHIT", "ExtendHIT",
 	   "GetAccountBalance", "GetAssignmentsForHIT", "GetHIT", "GetQualificationRequests", "GetQualificationScore",
 	   "GetQualificationType", "GetRequesterStatistic", "GetReviewableHITs", "GrantQualification", "Help", "NotifyWorkers",
@@ -248,9 +250,15 @@
 	 		"SortProperty" => "Enumeration"
 		);
     	
+        //echo "$AccessKey";
+        //echo "$SecretKey";
+
     	$search = $turk50->GetReviewableHITs($Request);
     	//print_r($search);
-    	return $search->GetReviewableHITsResult->TotalNumResults;
+        //echo "\ntotalResults: ";
+        //echo $search->GetReviewableHITsResult->TotalNumResults;
+        //echo "\n"; 
+        return $search->GetReviewableHITsResult->TotalNumResults;
     	
     }
     
@@ -349,6 +357,8 @@
 	function turk_easyHitToAssn($hit) {
 		global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
 
+        //echo "$AccessKey\n";
+        //echo "$SecretKey\n\n"; 
 		$mt = new mturkinterface($AccessKey, $SecretKey, $SANDBOX);
 
 		$mt->SetOperation('GetAssignmentsForHIT');
