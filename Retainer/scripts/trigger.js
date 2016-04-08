@@ -50,7 +50,7 @@ function updateSessionsList(){
             $("#taskSessionLoad").val($("#taskSession").val());
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            alert("Sending number of workers to loadTask in updateSessionList() failed");
         }
     });
 }
@@ -220,7 +220,7 @@ $("#startRecruiting").on("click", function(event){
                             console.log(d);
                         },
                         fail: function() {
-                            alert("Sending number of workers failed");
+                            alert("Sending number of workers in getAnswers() failed");
                         }
                     });
                 }
@@ -237,7 +237,7 @@ $("#startRecruiting").on("click", function(event){
                             console.log(d);
                         },
                         fail: function() {
-                            alert("Sending number of workers failed");
+                            alert("Sending number of workers in getAnswers() pt.2 failed");
                         }
                     });
                 }
@@ -345,7 +345,7 @@ $("#taskSessionLoad").on("change", function(event){
             taskData = d;
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            alert("Sending number of workers in taskSessionLoad failed");
         }
     });
 
@@ -431,7 +431,7 @@ $("#reloadHits").on("click", function(event){
         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
-            // alert("done");
+            alert("done");
             $('#hitsList').unblock(); 
             hits = d;
             console.log(d);
@@ -466,8 +466,8 @@ $("#reloadHits").on("click", function(event){
                 }
             });
         },
-        error: function() {
-            alert("Sending number of workers failed");
+        error: function(req, status, error) {
+            alert("Sending number of workers in getHits() failed");
         }
     });
 });
@@ -768,7 +768,7 @@ function validateTaskInfo(){
             taskData = d;
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            alert("Sending number of workers to loadTask in validate() failed");
         }
     });
 

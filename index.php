@@ -409,7 +409,7 @@
 
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-1">
-            <input type="text" class="form-control" id="numFire" placeholder="Number of workers to fire">
+            <input type="text" class="form-control" id="numFire" placeholder="Number of workers to route">
           </div>
         </div>                          
 
@@ -417,7 +417,7 @@
           <div class="col-lg-offset-1 col-lg-10">
             <div class="cta">
               <div class="cta-buttons pull-right">
-                <button type="submit" id="fireWorkers" class="btn btn-info btn-sm">Fire!</button> &nbsp;
+                <button type="submit" id="fireWorkers" class="btn btn-info btn-sm">Route!</button> &nbsp;
                 <button type="submit" id="clearQueue" class="btn btn-danger btn-sm">Clear entire queue (pays workers)</button> 
               </div>
             </div>

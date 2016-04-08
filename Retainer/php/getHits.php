@@ -21,14 +21,20 @@ if( $dbh ) {
 	$resultHitIds = array();
 	$resultHits = array();
 
-	$sql = "SELECT hit_Id FROM hits WHERE task = :task AND sandbox = :sandbox";
+	# $sql = "SELECT hit_Id FROM hits WHERE task = :task AND sandbox = :sandbox";
+	$sql = "SELECT hit_Id FROM hits WHERE task = :task";
 	$sth = $dbh->prepare($sql); 
-	$sth->execute(array(':task' => $task, ':sandbox' => $SANDBOX));
-	$hitsForTask = $sth->fetchAll();
-	// print_r($result);
+	# $sth->execute(array(':task' => $task, ':sandbox' => $SANDBOX));
+	$sth->execute(array(':task' => $task));
+    
+    $hitsForTask = $sth->fetchAll();
+	#print_r($result);
+    print_r($hitsForTask);
 
 	$reviewableHits = turk50_getAllReviewableHits();
-	if(!is_array($reviewableHits)) $reviewableHits = array();
+    if(!is_array($reviewableHits)) {
+        $reviewableHits = array();
+    }
 
 	$hitsFromTurk = array();
 	foreach($reviewableHits as $hit){
@@ -63,7 +69,7 @@ if( $dbh ) {
 
 }
 else {
-
+    echo "FAILED TO ACQUIRE DB HANDLE!";
 }
 
 ?>

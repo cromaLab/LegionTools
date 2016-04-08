@@ -11,10 +11,10 @@ var interval = setInterval( function() {
 		data: {task: gup('task') ? gup('task') : "default", first: firstCheck, dbName: gup('dbName')},
 		success: function(data) {
 			if(data != null && data != "") {
-				//var moneyOwed = getMoney(gup('workerId'));
 				//var r = confirm("Now transfering you to " + data);
 				clearInterval(interval);
-				alert("Now transfering you to the task");
+				//alert("Now transferring you to the task");
+				alert("Now transferring you to the task");
 
 				var send = false;
 				url = data;
@@ -29,8 +29,10 @@ var interval = setInterval( function() {
 				});
 				
 				if(send == true){
-					updateTime(gup('workerId'));
-					if( data.indexOf('?') != -1 ) {
+				    updateTime(gup('workerId'));
+				    var moneyOwed = getMoney(gup('workerId'));
+					
+                    if( data.indexOf('?') != -1 ) {
 						url += "&";
 					}
 					else {
@@ -42,8 +44,13 @@ var interval = setInterval( function() {
 					url += "&hitId=" + gup('hitId');
 					url += "&turkSubmitTo=" + gup('turkSubmitTo');
 					url += "&min=" + gup('min');
+                    url += "&getMoneyOwed=" + moneyOwed; 
 					//url += "&task=" + gup('task');  // WSL: I don't think we use this information, and passing the retainer task name can conflict if the user's params include 'task'. Removed for now.
-
+                    //alert(window.location);
+                    //alert(window.location.href);
+                    //$('.myIframe').attr('src', url); 
+                    //$('.myIframe').css('height', $(window).height()+'px'); 
+                    alert(url); 
 					window.location = url;
 				}
 				else{

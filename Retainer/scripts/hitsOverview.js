@@ -8,7 +8,7 @@ function approveHit(assignmentId, hitId, id, bonus, workerId){
 	        // alert(d);
 	    },
 	    fail: function() {
-	        alert("Sending number of workers failed");
+	        alert("Sending number of workers failed [approve]");
 	    }
 	});
 
@@ -22,7 +22,7 @@ function approveHit(assignmentId, hitId, id, bonus, workerId){
 		        // alert(d);
 		    },
 		    fail: function() {
-		        alert("Sending number of workers failed");
+		        alert("Sending number of workers failed [bonus]");
 		    }
 		});
 	}
@@ -41,7 +41,7 @@ function rejectHit(assignmentId, hitId, id){
 	        // alert(d);
 	    },
 	    fail: function() {
-	        alert("Sending number of workers failed");
+	        alert("Sending number of workers failed [reject]");
 	    }
 	});
 
@@ -59,7 +59,7 @@ function disposeHit(hitId, id){
 	        $("#" + id).fadeOut( function() { $(this).remove(); });
 	    },
 	    fail: function() {
-	        alert("Sending number of workers failed");
+	        alert("Sending number of workers failed [dispose]");
 	    }
 	});
 

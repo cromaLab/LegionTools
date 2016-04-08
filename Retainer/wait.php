@@ -7,6 +7,9 @@
     <script type="text/javascript" src="scripts/getMoneyOwed.js"></script>
     <script type="text/javascript" src="scripts/triggerCheck.js"></script>
     <script type="text/javascript" src="scripts/setOnline.js"></script>
+    <script type="text/javascript" src="scripts/vars.js"></script>
+    <script type="text/javascript" src="scripts/legion.js"></script>
+    <link href="style/legion.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -21,7 +24,8 @@
     //alert(task); 
     $('.myIframe').attr('src', task);
     //alert(window.location.href); 	
-	$('.myIframe').css('height', $(window).height()+'px');
+    $('.myIframe').css('height', $(window).height()+'px');
+    
 </script>
 </body>
 

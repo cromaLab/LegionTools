@@ -1,5 +1,4 @@
 
-
 var _score = 0;
 
 var pointRecord = {};
@@ -145,7 +144,7 @@ function submitToTurk(ev) {
             data: "workerId="+gup("workerId"),
             success: function(d) {
                 timeWaited = d;
-                //alert(timeWaited);
+                alert(timeWaited);
             },
             error: function() {
                 setTurkMessage("message_error");

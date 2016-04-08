@@ -32,7 +32,7 @@ $(document).ready( function() {
 
             },
             fail: function() {
-                alert("Sending number of workers failed")
+                alert("Sending number of workers failed (updateReleased)")
             },
     	});
     });
