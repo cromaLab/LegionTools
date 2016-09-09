@@ -26,9 +26,21 @@
       <label for="bonusAmount">Bonus amount (in dollars)</label>
       <input name = "amount" class="form-control" id="bonusAmount" placeholder="0.01">
     </div>
+    <div class="form-group">
+      <label for="accessKey">Access Key</label>
+      <input name = "accessKey" class="form-control" id="accessKey" placeholder="AMT Access Key">
+    </div>
+    <div class="form-group">
+      <label for="secretKey">Secret Key</label>
+      <input name = "secretKey" class="form-control" id="secretKey" placeholder="AMT Secret Key">
+    </div>
+    <div class="form-group">
+      <label for="Use Sandbox?">Use Sandbox?</label>
+      <input name = "useSandbox" class="form-control" id="useSandbox" placeholder="true or false">
+    </div>
+    <!-- <input type="hidden" name="useSandbox" value="true"> -->
     <input type="hidden" name="operation" value="Bonus">
-    <input type="hidden" name="useSandbox" value="false">
-    <button type="submit" class="btn btn-danger">Give bonus</button>
+    <button type="submit" class="btn btn-danger">Give bonus to the worker</button>
   </form>
 
   <p><div id="bonusedHistory"></div></p>

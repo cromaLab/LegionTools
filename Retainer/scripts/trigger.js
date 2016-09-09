@@ -207,14 +207,14 @@ $("#startRecruiting").on("click", function(event){
                 // alert(d);
                 if(mode == "retainer"){
                     // Start the recruiting tool
-                    var thirdPartyTutUrl = $("#thirdPartyURL").val().split("&").join("&amp;&amp;");
-                    var thirdPartyInstrUrl = $("#thirdPartyInstr").val().split("&").join("&amp;&amp;");
-                    //alert(thirdPartyTutUrl); 
+                    var tutPageUrl = encodeURI($("#tutPage").val()); 
+		    var waitPageUrl = encodeURI($("#waitPage").val()); 
+	            var instrPageUrl = encodeURI($("#instrPage").val()); 
                     $.ajax({
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
                         async: true,
-                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), thirdPartyTutURL: thirdPartyTutUrl, thirdPartyInstrURL: thirdPartyInstrUrl},
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), tutPageUrl: tutPageUrl, waitPageUrl: waitPageUrl, instrPageUrl: instrPageUrl},
                         dataType: "text",
                         success: function(d) {
                             console.log(d);
@@ -450,9 +450,16 @@ $("#reloadHits").on("click", function(event){
                             else var assignment = hit.Assignment[j];
                             var listId = "hit" + counter;
                             if(assignment.hasOwnProperty("AssignmentStatus")){
-                                var answer = assignment.Answer; // If legion.js was used, bonus will be stored in XML of assignment answer
-                                var bonus = $(answer).find("FreeText").text().substring(1);
+                                //var answer = assignment.Answer; // If legion.js was used, bonus will be stored in XML of assignment answer
+                                //var bonus = $(answer).find("FreeText").text().substring(1);
+				//console.log("workerId " + assignment.WorkerId); 
+				//var bonus = getMoney(assignment.WorkerId); 
+                var bonus = 5;
+				var centsPerWaiting = 0.05;
+				//console.log("bonus " + bonus); 
+ 
                                 if(isNaN(bonus)) bonus = 0; //make sure bonus is a number
+
                                 if(assignment.AssignmentStatus == "Submitted")
                                     $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + assignment.WorkerId + " AssignmentId: " + assignment.AssignmentId + " <button type='button' onclick = 'approveHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;, &quot;" + bonus + "&quot;, &quot;" + assignment.WorkerId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
 
@@ -468,6 +475,7 @@ $("#reloadHits").on("click", function(event){
         },
         error: function(req, status, error) {
             alert("Sending number of workers in getHits() failed");
+           // console.log(req.responseText);
         }
     });
 });

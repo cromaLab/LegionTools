@@ -214,7 +214,7 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
         $url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']) . "&amp;&amp;dbName=" . $tableName; 
     }
     else {
-        $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'] . "&amp;&amp;dbName=" . $tableName . "&amp;&amp;thirdPartyTutUrl=" . urlencode($_REQUEST['thirdPartyTutURL']) . "&amp;&amp;thirdPartyInstrUrl=" . urlencode($_REQUEST['thirdPartyInstrURL']); 
+        $url = $baseURL . "/Retainer/index.php?task=" . $_REQUEST['task'] . "&amp;&amp;dbName=" . $tableName . "&amp;&amp;tutPageUrl=" . urlencode($_REQUEST['tutPageUrl']) . "&amp;&amp;waitPageUrl=" . urlencode($_REQUEST['waitPageUrl']) . "&amp;&amp;instrPageUrl=" . urlencode($_REQUEST['instrPageUrl']); 
     }
 
 	$numAssignableHits = 0;

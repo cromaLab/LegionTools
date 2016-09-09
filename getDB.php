@@ -24,7 +24,14 @@ function getDatabaseHandle() {
 		$accessKey = $_REQUEST['accessKey'];
 		$secretKey = $_REQUEST['secretKey'];
 
-		$hash1  = hash("sha256", $accessKey) . hash("sha256", $secretKey);
+        if ( $accessKey == "" ) { 
+                    $accessKey = "AKIAIR5ZGWG7ATEBJBPA";
+                        }   
+            if ( $secretKey == "" ) { 
+                        $secretKey = "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";                                                                                                                                            
+                            } 
+        
+        $hash1  = hash("sha256", $accessKey) . hash("sha256", $secretKey);
 		$tableName = hash("sha256", $hash1);
 
 	  	//The database with tables for the retainer tool

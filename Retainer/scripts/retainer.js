@@ -69,13 +69,11 @@ $(document).ready(function() {
                     if (dd == 1) {
                         url = "wait.php?";
                     } else {
-                        //alert("gotta do the tutorial first!"); 
-                        url = "tutorial.php?"; 
-                        //url += "&thirdPartyUrl=" + decodeURIComponent(gup('thirdPartyUrl'));  
-                        url += "&thirdPartyTutUrl=" + gup('thirdPartyTutUrl');  
-                        //url += "&thirdPartyUrl=" + "https://legionpowered.net/Glance/coding_tools/tutorial/tutorial.php?assignmentId=2o3u4324";  
+                        // alert(window.location); 
+                        url = "tutorial.php"; 
+                        url += "?tutPageUrl=" + gup('tutPageUrl');
                     }
-                    url += "&thirdPartyInstrUrl=" + gup('thirdPartyInstrUrl'); 
+                    url += "&waitPageUrl=" + gup('waitPageUrl'); 
                     url += "&workerId=" + gup('workerId');
                     url += "&assignmentId=" + gup('assignmentId');
                     url += "&hitId=" + gup('hitId');
@@ -84,6 +82,7 @@ $(document).ready(function() {
                     url += "&min=" + gup('min');
                     url += "&instructions=" +  gup('instructions');
                     url += "&dbName=" +  gup('dbName');
+                    //alert("inside url check: " + url); 
                     window.location = url; 
                 },
                 fail: function () {

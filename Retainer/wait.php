@@ -18,10 +18,10 @@
 <p><iframe src="" width="100%" class="myIframe"></iframe></p>
 <script type="text/javascript" language="javascript"> 
 	// point to given instructions page, or default if no param is found
-	var task = gup('instructions') ? gup('instructions') : "instructions.php?task=" + gup("task");
+	// var task = gup('instructions') ? gup('instructions') : "instructions.php?task=" + gup("task");
     //var task = task + "&dbName=" + gup("dbName");
-    var task = gup('thirdPartyInstrUrl'); 
-    //alert(task); 
+    //alert("From wait.php:" + window.location);
+    var task = gup('waitPageUrl'); 
     $('.myIframe').attr('src', task);
     //alert(window.location.href); 	
     $('.myIframe').css('height', $(window).height()+'px');

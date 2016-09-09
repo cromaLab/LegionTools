@@ -5,6 +5,7 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script type="text/javascript" src="Retainer/scripts/gup.js"></script>
       <script type="text/javascript" src="Retainer/scripts/trigger.js"></script>
+      <script type="text/javascript" src="scripts/getMoneyOwed.js"></script>
       <script type="text/javascript" src="Retainer/scripts/writeNumOnline.js"></script>
       <script type="text/javascript" src="Retainer/scripts/bootstrap.touchspin.js"></script>
       <script type="text/javascript" src="Retainer/scripts/hitsOverview.js"></script>
@@ -75,7 +76,7 @@
                     <!-- Load Panel -->
                     <div id="sectionA" class="tab-pane fade in active">
                       <br />
-                      <span class="grandTitre text-primary">Load an old expriment</span>
+                      <span class="grandTitre text-primary">Load an old experiment</span>
                       <form class="form-horizontal" role="form">
                         <div class="form-group air">  
                           <label class="sr-only" for="taskSessionLoad">Load an old experiment</label>
@@ -237,13 +238,14 @@
                           </div>
                           <div class="col-lg-10 col-lg-offset-1">
                             <br/>
-                            <label for="thirdPartyUrl">Third Party: Tutorial Page</label>
-                            <input type="text" class="form-control" id="thirdPartyURL" placeholder="Enter the third party tutorial URL here">
-                          </div>
-                          <div class="col-lg-10 col-lg-offset-1">
+                            <label for="thirdPartyUrl">Instructions Page</label>
+                            <input type="text" class="form-control" id="instrPage" placeholder="Workers will see this page before they accept the HIT">
                             <br/>
-                            <label for="thirdPartyUrl">Third Party: Instructions Page</label>
-                            <input type="text" class="form-control" id="thirdPartyInstr" placeholder="Enter the third party instructions URL here">
+                            <label for="thirdPartyUrl">Tutorial Page</label>
+                            <input type="text" class="form-control" id="tutPage" placeholder="Tutorial URL to route workers">
+                            <br/>
+                            <label for="thirdPartyUrl">Post-Tutorial Waiting Page</label>
+                            <input type="text" class="form-control" id="waitPage" placeholder="Workers will see this page after successful tutorial completion">
                           </div>
                         </div>
                         <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->
