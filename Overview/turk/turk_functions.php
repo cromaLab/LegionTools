@@ -18,14 +18,6 @@
 	   "GrantBonus", "GetFileUploadURL", "RejectQualificationRequest", "GetQualificationsForQualificationType");
 	*/   
 
-    if ( $AccessKey == "" ) {
-        $AccessKey = "AKIAIR5ZGWG7ATEBJBPA";
-    }
-    if ( $SecretKey == "" ) {
-        $SecretKey = "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"; 
-    }
-
-
 	function turk_debug($mt) {
 		echo "<br /><br />\n\nRawData<br />\n".$mt->RawData."\n\n<br /><br />";
 		echo "<br /><br />\n\nSOAPData<br />\n".$mt->SOAPData."\n\n<br /><br />";
