@@ -10,12 +10,6 @@ include("../../isSandbox.php");
 $AccessKey = $_REQUEST['accessKey']; 
 $SecretKey = $_REQUEST['secretKey'];
 
-//if ( $AccessKey == "" ) { 
-//        $AccessKey = "AKIAIR5ZGWG7ATEBJBPA";
-//    }   
-//    if ( $SecretKey == "" ) { 
-//        $SecretKey = "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";                                                                                                                                          //    } 
-
 try {
       $dbh = getDatabaseHandle();
   } catch( PDOException $e ) {
