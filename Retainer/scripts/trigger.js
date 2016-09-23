@@ -217,7 +217,7 @@ $("#startRecruiting").on("click", function(event){
                         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), tutPageUrl: tutPageUrl, waitPageUrl: waitPageUrl, instrPageUrl: instrPageUrl},
                         dataType: "text",
                         success: function(d) {
-                            console.log(d);
+                            //console.log(d);
                         },
                         fail: function() {
                             alert("Sending number of workers in getAnswers() failed");
@@ -454,7 +454,7 @@ $("#reloadHits").on("click", function(event){
                                 //var bonus = $(answer).find("FreeText").text().substring(1);
 				//console.log("workerId " + assignment.WorkerId); 
 				//var bonus = getMoney(assignment.WorkerId); 
-                var bonus = 5;
+                		var bonus = 0;
 				var centsPerWaiting = 0.05;
 				//console.log("bonus " + bonus); 
  

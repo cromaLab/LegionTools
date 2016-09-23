@@ -296,8 +296,9 @@
                     <div class="form-group someAirForRecruitingPanel">
 
                      <div class="col-lg-offset-1 col-lg-10">
-                      <label for="sendToURL" class="col-sm-2 control-label">URL</label>
+                      <label for="sendToURL" class="col-sm-2 control-label">URLs</label>
                       <div class="col-sm-10">
+                        <!--<input type="text" class="form-control" id="directModeInstrPage" placeholder="Instructions Page">-->
                         <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
                       </div>
                     </div>
