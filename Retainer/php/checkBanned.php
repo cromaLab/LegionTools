@@ -13,14 +13,14 @@ include('_db.php');
 
 if( isset($_REQUEST['workerId']) && $dbh ) {
 
-	$worker = $_REQUEST['workerId'];
+    $worker = $_REQUEST['workerId'];
 	
-	$sql = "SELECT * FROM banned WHERE workerId=:workerId";
+	$sql = "SELECT COUNT(*) FROM banned WHERE workerId=:wId";
 	$sth = $dbh->prepare($sql); 
-	$sth->execute(array(':workerId'=>$worker));
-	$count = $sth->rowCount();
+	$sth->execute(array(':wId'=>$worker));
+    $count = $sth->fetchColumn();
 
-	echo $count;
+    echo $count;
 }
 
 ?>

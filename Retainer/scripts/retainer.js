@@ -13,7 +13,8 @@ $(document).ready(function() {
         success: function(d){
             if(d > 0){
                 isBanned = true;
-                alert("You are banned from this task.");
+                //alert("Sorry, there is no more tasks left for you.\nPlease come later! Thank you!");//You are banned from this task.");
+                window.location = "https://legionpowered.net/LegionToolsv2/noMoreTasks.html";
             }
             else{
                 isBanned = false;

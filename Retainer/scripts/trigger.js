@@ -585,7 +585,7 @@ $("#fireWorkers").on("click", function(event){
         return;
     }
 
-    var r = confirm("Fire " + numFire + " workers to: " + link + " ?");
+    var r = confirm("Route " + numFire + " workers to: " + link + " ?");
     if(r == true){
         $.ajax({
             url: retainerLocation + "php/setFire.php",

@@ -63,7 +63,11 @@ try {
         "workerId" text,
         "projectName" text
     );
-    ';
+    CREATE TABLE IF NOT EXISTS "retainerRoutingCheck" (
+        "id" INTEGER PRIMARY KEY,
+        "workerId" text,
+        "checked" text
+    );';
 
 	$dbh->exec($sql);
 } catch(PDOException $e) {

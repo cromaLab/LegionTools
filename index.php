@@ -5,7 +5,7 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script type="text/javascript" src="Retainer/scripts/gup.js"></script>
       <script type="text/javascript" src="Retainer/scripts/trigger.js"></script>
-      <script type="text/javascript" src="scripts/getMoneyOwed.js"></script>
+      <!-- <script type="text/javascript" src="scripts/getMoneyOwed.js"></script> -->
       <script type="text/javascript" src="Retainer/scripts/writeNumOnline.js"></script>
       <script type="text/javascript" src="Retainer/scripts/bootstrap.touchspin.js"></script>
       <script type="text/javascript" src="Retainer/scripts/hitsOverview.js"></script>
@@ -422,11 +422,23 @@
               <div class="cta-buttons pull-right">
                 <button type="submit" id="fireWorkers" class="btn btn-info btn-sm">Route!</button> &nbsp;
                 <button type="submit" id="clearQueue" class="btn btn-danger btn-sm">Clear entire queue (pays workers)</button> 
+                <!--    <div id="checkBoxes">
+                        <form id="checkBoxesCounts">
+                            <table>
+                                <div id="dynamicCheckBoxes">
+
+                                </div>
+                            </table>
+                        </form>
+                    </div>
+                -->
               </div>
             </div>
           </div>
         </div>
       </form>
+    
+
     </div>
   </div>
 </div>
