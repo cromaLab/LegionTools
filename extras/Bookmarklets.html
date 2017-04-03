@@ -1,0 +1,61 @@
+<html>
+
+	<head>
+		<title>Bookmarklets</title>
+	</head>
+
+	<body>
+		<a href="javascript:(function()%7Bvar%20accesskey%20%3D%20'ACCESS_KEY_PLACEHOLDER'%3Bvar%20secretkey%20%3D%20'SECRET_KEY_PLACEHOLDER'%3Bjavascript%3A(function()%7Bdocument.getElementById('modalAccessKey').value%20%3D%20accesskey%3Bdocument.getElementById('modalSecretKey').value%20%3D%20secretkey%3Bdocument.getElementById('modalLoginButton').click()%7D)()%7D)()">Authentication (replace key placeholders)</a><br />
+
+		<a href="javascript:(function()%7Bjavascript%3A(function()%7B%24(%22%23taskSessionLoad%22).val(%22EXPERIMENT_NAME_PLACEHOLDER%22).change()%3B%7D)()%7D)()">Select existing experiment from list (here called Experiment)</a><br />
+
+		<a href="javascript:(function()%7Bjavascript%3A(function()%7Bdocument.getElementById('recruitingTabLi').getElementsByTagName(%22a%22)%5B0%5D.click()%3Bdocument.getElementById('useDirectMode').getElementsByTagName(%22a%22)%5B0%5D.click()%3Bdocument.getElementById('sendToURL').value%20%3D%20'URL_PLACEHOLDER'%3Bdocument.getElementById('price').value%20%3D%20'2'%3Bdocument.getElementById('numHITs').value%20%3D%20'1'%3Bdocument.getElementById('numAssignments').value%20%3D%20'1'%3B%7D)()%7D)()">Switch to and fill out 2nd tab (replace URL_PLACEHOLDER)</a><br />
+
+		<a href="javascript:(function()%7Bjavascript%3A(function()%7Bdocument.getElementById('taskSession').value%20%3D%20'Experiment'%3Bdocument.getElementById('hitTitle').value%20%3D%20'Unique%20HIT%20Title%20so%20I%20find%20it'%3Bdocument.getElementById('hitDescription').value%20%3D%20'HIT%20Description'%3Bdocument.getElementById('hitKeywords').value%20%3D%20'HIT%20Keywords'%3Bdocument.getElementById('addNewTask').click()%3B%7D)()%7D)()">Add new experiment</a>
+
+<!--
+
+Here is the cleaner code:
+
+// Define keys
+var accesskey = 'ACCESS_KEY_PLACEHOLDER';
+var secretkey = 'SECRET_KEY_PLACEHOLDER';
+
+// We declare an anonymous function so possible output doesn't mess with the page
+javascript:(function(){
+// Fill in data fields with fake keys
+document.getElementById('modalAccessKey').value = accesskey;
+document.getElementById('modalSecretKey').value = secretkey;
+// Click dialog button to get rid of dialog box
+document.getElementById('modalLoginButton').click();
+
+// Fill in form on first page with fake data
+document.getElementById('taskSession').value = 'Experiment';
+document.getElementById('hitTitle').value = 'HIT Title';
+document.getElementById('hitDescription').value = 'HIT Description';
+document.getElementById('hitKeywords').value = 'HIT Keywords';
+// Click button to add experiment
+document.getElementById('addNewTask').click();
+
+// Switching tabs is slightly more involved, since the tab is a link without id, so we get the next highest element,
+// descend into its link children (which returns a list, but there is only one, so we select [0] and click it
+document.getElementById('recruitingTabLi').getElementsByTagName("a")[0].click();
+// Similarly to before: Switch to direct mode tab
+document.getElementById('useDirectMode').getElementsByTagName("a")[0].click();
+document.getElementById('sendToURL').value = 'URL_PLACEHOLDER';
+document.getElementById('price').value = '2';
+document.getElementById('numHITs').value = '1';
+document.getElementById('numAssignments').value = '1';
+  
+document.getElementById('postHITs').click();
+  
+alert('HITs posted, please login to MTurk Worker Sandbox and look for task in 20 seconds.');
+
+// Finally we end the funtion and call it
+})();
+
+-->
+
+	</body>
+
+</html>
