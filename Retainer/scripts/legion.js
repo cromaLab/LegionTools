@@ -144,7 +144,7 @@ function submitToTurk(ev) {
             data: "workerId="+gup("workerId"),
             success: function(d) {
                 timeWaited = d;
-                alert(timeWaited);
+                //alert(timeWaited);
             },
             error: function() {
                 setTurkMessage("message_error");
@@ -152,7 +152,8 @@ function submitToTurk(ev) {
             }
         });
 
-        var totalMoney = m + (timeWaited * centsPerSecondWaited); //adds the money earned by the worker for waiting in the retainer tool.
+        m = 0; 
+	var totalMoney = m + (timeWaited * centsPerSecondWaited); //adds the money earned by the worker for waiting in the retainer tool.
         $("#legion-money-field").attr("value", totalMoney);
 
 	// if( opts["useAlert"] ) {

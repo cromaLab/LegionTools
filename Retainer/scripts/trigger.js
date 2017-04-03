@@ -7,6 +7,8 @@ var retainerLocation = "Retainer/";
 //     clearQueue('https://roc.cs.rochester.edu/convInterface/videocoding/tutorial/tutorial.php?justTutorial=true');
 // });
 
+var statusbar = document.getElementById("statusbar");
+
 if(gup('login') =='false'){
     $("#accessKey").val("use_file");
     $("#secretKey").val("use_file");
@@ -50,7 +52,7 @@ function updateSessionsList(){
             $("#taskSessionLoad").val($("#taskSession").val());
         },
         fail: function() {
-            alert("Sending number of workers to loadTask in updateSessionList() failed");
+            statusbar.innerHTML = "Sending number of workers to loadTask in updateSessionList() failed";
         }
     });
 }
@@ -75,7 +77,7 @@ $("#modalLoginButton").on("click", function(event){
             setInterval(function(){updateSessionsList()},30000);
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
 });
@@ -83,7 +85,7 @@ $("#modalLoginButton").on("click", function(event){
 $("#addNewTask").on("click", function(event){
     event.preventDefault();
     if($("#hitTitle").val() == ""){
-        alert("Please enter an experiment name.");
+        statusbar.innerHTML = "Please enter an experiment name.";
         return;
     }
     sessionLoaded = true;
@@ -118,7 +120,7 @@ $("#addNewTask").on("click", function(event){
 
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
 });
@@ -135,7 +137,7 @@ $("#minPrice,#maxPrice").on("change", function(event){
             
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
 });
@@ -152,7 +154,7 @@ $("#currentTarget").change(function(){
             
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
 
@@ -174,7 +176,7 @@ $("#stopRecruiting").on("click", function(event){
             
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
     window.clearInterval(isStoppedRecruitingInterval);
@@ -193,7 +195,7 @@ $("#startRecruiting").on("click", function(event){
 
     var problem = validateTaskInfo();
     if(problem != ""){
-        alert("ERROR: please update " + problem);
+        statusbar.innerHTML = "ERROR: please update " + problem;
     }
     else {
         // Update db, mark ok to recruit
@@ -207,20 +209,20 @@ $("#startRecruiting").on("click", function(event){
                 // alert(d);
                 if(mode == "retainer"){
                     // Start the recruiting tool
-                    var thirdPartyTutUrl = $("#thirdPartyURL").val().split("&").join("&amp;&amp;");
-                    var thirdPartyInstrUrl = $("#thirdPartyInstr").val().split("&").join("&amp;&amp;");
-                    //alert(thirdPartyTutUrl); 
+                    var tutPageUrl = encodeURI($("#tutPage").val()); 
+		    var waitPageUrl = encodeURI($("#waitPage").val()); 
+	            var instrPageUrl = encodeURI($("#instrPage").val()); 
                     $.ajax({
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
                         async: true,
-                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), thirdPartyTutURL: thirdPartyTutUrl, thirdPartyInstrURL: thirdPartyInstrUrl},
+                        data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), tutPageUrl: tutPageUrl, waitPageUrl: waitPageUrl, instrPageUrl: instrPageUrl},
                         dataType: "text",
                         success: function(d) {
-                            console.log(d);
+                            //console.log(d);
                         },
                         fail: function() {
-                            alert("Sending number of workers in getAnswers() failed");
+                            statusbar.innerHTML = "Sending number of workers in getAnswers() failed";
                         }
                     });
                 }
@@ -237,13 +239,13 @@ $("#startRecruiting").on("click", function(event){
                             console.log(d);
                         },
                         fail: function() {
-                            alert("Sending number of workers in getAnswers() pt.2 failed");
+                            statusbar.innerHTML = "Sending number of workers in getAnswers() pt.2 failed";
                         }
                     });
                 }
             },
             fail: function() {
-                alert("Sending number of workers failed");
+                statusbar.innerHTML = "Sending number of workers failed";
             }
         });
         isStoppedRecruitingInterval = setInterval(function(){isStoppedRecruiting()},5000);
@@ -263,35 +265,50 @@ $("#postHITs").on("click", function(event){
 
     var problem = validateTaskInfo();
     if(problem != ""){
-        alert("ERROR: please update " + problem);
+        statusbar.innerHTML = "ERROR: please update " + problem;
     }
     else {
         if(mode == "direct"){
+
             var urlEscaped = $("#sendToURL").val().split("&").join("&amp;&amp;");
             // alert(urlEscaped);
             // Start the recruiting tool
+
+            // PHP would be: $array = explode(' ', $urlescape) and foreach($array as $value)
+            var a = urlEscaped.split("\\");
+            //alert("Test2");
+            //statusbar.innerHTML = 'TEST STATUS';
+
 
             $('#postHITs').attr('disabled','disabled');
             $('#postHITs').text("Posting...");
             $('#expireHITs').attr('disabled','disabled');
 
-            $.ajax({
-                url: "Overview/turk/getAnswers.php",
-                type: "POST",
-                async: true,
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "direct", url: urlEscaped, price: $("#price").val(), numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val(), requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
-                dataType: "text",
-                success: function(d) {
-                    alert(d);
-                    alert("Posted " + $("#numHITs").val() + " HITs");
-                    $('#postHITs').text("Post HITs");
-                    $('#postHITs').removeAttr('disabled');
-                    $('#expireHITs').removeAttr('disabled');
-                },
-                fail: function() {
-                    alert("Sending number of workers failed");
-                }
-            });
+            for (i=0; i<a.length; i++) {
+                //    alert(a[i]); urlEscaped
+                $.ajax({
+                    url: "Overview/turk/getAnswers.php",
+                    type: "POST",
+                    async: true,
+                    data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(),
+                        secretKey: $("#secretKey").val(), mode: "direct", url: a[i], price: $("#price").val(),
+                        numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val(),
+                        requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'),
+                        accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+                    dataType: "text",
+                    success: function(d) {
+                        //alert(d);
+                        statusbar.innerHTML = "Posted " + $("#numHITs").val() + " HITs";
+                        $('#postHITs').text("Post HITs");
+                        $('#postHITs').removeAttr('disabled');
+                        $('#expireHITs').removeAttr('disabled');
+                    },
+                    fail: function() {
+                        statusbar.innerHTML = "Sending number of workers failed";
+                    }
+                });
+            }
+
         }
 
         // $('#yesSandbox').attr('disabled','disabled');
@@ -315,13 +332,13 @@ $("#expireHITs").on("click", function(event){
         dataType: "text",
         success: function(d) {
             // alert(d);
-            alert("HITs expired");
+            statusbar.innerHTML = "HITs expired";
             $('#expireHITs').text("Expire All HITs");
             $('#postHITs').removeAttr('disabled');
             $('#expireHITs').removeAttr('disabled');
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
 
@@ -345,7 +362,7 @@ $("#taskSessionLoad").on("change", function(event){
             taskData = d;
         },
         fail: function() {
-            alert("Sending number of workers in taskSessionLoad failed");
+            statusbar.innerHTML = "Sending number of workers in taskSessionLoad failed";
         }
     });
 
@@ -408,10 +425,10 @@ $("#updateTask").on("click", function(event){
         data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
-            alert("Update success");
+            statusbar.innerHTML = "Update success";
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
 });
@@ -431,7 +448,7 @@ $("#reloadHits").on("click", function(event){
         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "json",
         success: function(d) {
-            alert("done");
+            statusbar.innerHTML = "done";
             $('#hitsList').unblock(); 
             hits = d;
             console.log(d);
@@ -450,9 +467,16 @@ $("#reloadHits").on("click", function(event){
                             else var assignment = hit.Assignment[j];
                             var listId = "hit" + counter;
                             if(assignment.hasOwnProperty("AssignmentStatus")){
-                                var answer = assignment.Answer; // If legion.js was used, bonus will be stored in XML of assignment answer
-                                var bonus = $(answer).find("FreeText").text().substring(1);
+                                //var answer = assignment.Answer; // If legion.js was used, bonus will be stored in XML of assignment answer
+                                //var bonus = $(answer).find("FreeText").text().substring(1);
+				//console.log("workerId " + assignment.WorkerId); 
+				//var bonus = getMoney(assignment.WorkerId); 
+                		var bonus = 0;
+				var centsPerWaiting = 0.05;
+				//console.log("bonus " + bonus); 
+ 
                                 if(isNaN(bonus)) bonus = 0; //make sure bonus is a number
+
                                 if(assignment.AssignmentStatus == "Submitted")
                                     $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + assignment.WorkerId + " AssignmentId: " + assignment.AssignmentId + " <button type='button' onclick = 'approveHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;, &quot;" + bonus + "&quot;, &quot;" + assignment.WorkerId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
 
@@ -467,7 +491,8 @@ $("#reloadHits").on("click", function(event){
             });
         },
         error: function(req, status, error) {
-            alert("Sending number of workers in getHits() failed");
+            statusbar.innerHTML = "Sending number of workers in getHits() failed";
+           // console.log(req.responseText);
         }
     });
 });
@@ -525,7 +550,7 @@ function clearQueue(link){
             numOnline = d;
         },
         fail: function() {
-            alert("setOnline failed!")
+            statusbar.innerHTML = "setOnline failed!";
         },
     });
     var r = confirm("Send all workers in queue to destination?");
@@ -538,10 +563,10 @@ function clearQueue(link){
             dataType: "text",
             success: function(d) {
                 //
-                //alert("Fire successful");
+                //statusbar.innerHTML = "Fire successful";
             },
             fail: function() {
-                alert("Clear queue failed!");
+                statusbar.innerHTML = "Clear queue failed!";
             }
         });
         
@@ -555,7 +580,7 @@ function clearQueue(link){
                 
             },
             fail: function() {
-                alert("Sending number of workers failed");
+                statusbar.innerHTML = "Sending number of workers failed";
             }
         });
     }
@@ -569,15 +594,15 @@ $("#fireWorkers").on("click", function(event){
     var numFire  = $("#numFire").val();
 
     if( link.substring(0, 8) != "https://") {
-        alert('ERROR: link must begin with "https://". No workers will be fired.');
+        statusbar.innerHTML = 'ERROR: link must begin with "https://". No workers will be fired.';
         return;
     }
     else if( numFire == "" ) {
-        alert('ERROR: number of workers to fire must be specified. No workers will be fired.');
+        statusbar.innerHTML = 'ERROR: number of workers to fire must be specified. No workers will be fired.';
         return;
     }
 
-    var r = confirm("Fire " + numFire + " workers to: " + link + " ?");
+    var r = confirm("Route " + numFire + " workers to: " + link + " ?");
     if(r == true){
         $.ajax({
             url: retainerLocation + "php/setFire.php",
@@ -596,12 +621,12 @@ $("#fireWorkers").on("click", function(event){
                         
                     },
                     fail: function() {
-                        alert("Sending number of workers failed");
+                        statusbar.innerHTML = "Sending number of workers failed";
                     }
                 });
             },
             fail: function() {
-                alert("Clear queue failed!");
+                statusbar.innerHTML = "Clear queue failed!";
             }
         });
     }
@@ -631,7 +656,7 @@ $("#waitingInstructionsUpdated").on("click", function(){
           //
         },
         fail: function() {
-          alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
 });
@@ -662,10 +687,10 @@ $("#requireUniqueWorkers").change(function() {
            data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
            dataType: "text",
            success: function(d) {
-             alert(d);
+               statusbar.innerHTML = d;
            },
            fail: function() {
-             alert("Sending number of workers failed");
+               statusbar.innerHTML = "Sending number of workers failed";
            }
        });
     }
@@ -680,10 +705,10 @@ $("#resetUniqueWorkers").on("click", function(event) {
             data: {task: $("#taskSession").val(), reset: true, useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
-              alert("Reset success");
+                statusbar.innerHTML = "Reset success";
             },
             fail: function() {
-              alert("Sending number of workers failed");
+                statusbar.innerHTML = "Sending number of workers failed";
             }
         });
     }
@@ -699,10 +724,10 @@ $("#copyExperiment").on("click", function(event) {
         dataType: "text",
         success: function(d) {
             updateSessionsList();
-            alert("Copied to " + newTask);
+            statusbar.innerHTML = "Copied to " + newTask;
         },
         fail: function() {
-          alert("Copying failed");
+            statusbar.innerHTML = "Copying failed";
         }
     });
 });
@@ -718,11 +743,11 @@ $("#deleteExperiment").on("click", function(event) {
             dataType: "text",
             success: function(d) {
                 updateSessionsList();
-                alert("Deleted " + $("#taskSession").val());
+                statusbar.innerHTML = "Deleted " + $("#taskSession").val();
                 $("#taskSessionLoad").val("---");
             },
             fail: function() {
-              alert("Deleting failed");
+                statusbar.innerHTML = "Deleting failed";
             }
         });
     }
@@ -740,7 +765,7 @@ function isStoppedRecruiting(){
             taskData = d;
         },
         fail: function() {
-            alert("Sending number of workers failed");
+            statusbar.innerHTML = "Sending number of workers failed";
         }
     });
     if(taskData.done == "1"){
@@ -749,7 +774,7 @@ function isStoppedRecruiting(){
         $('#stopRecruiting').html('Stop recruiting');
         $('#startRecruiting').removeAttr('disabled');
         $('#stopRecruiting').attr('disabled','disabled');
-        alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
+        statusbar.innerHTML = "Recruiting stopped. If this was an unwanted, please make sure there is money in your account.";
         return true;
     }
     else return false;
@@ -768,7 +793,7 @@ function validateTaskInfo(){
             taskData = d;
         },
         fail: function() {
-            alert("Sending number of workers to loadTask in validate() failed");
+            statusbar.innerHTML = "Sending number of workers to loadTask in validate() failed";
         }
     });
 
@@ -811,7 +836,7 @@ $('#fireToURL').blur( function() {
     },
     error: function() {
       // page does not exist
-      //alert("Invalid URL");
+      //statusbar.innerHTML = "Invalid URL";
       $('#fireToURL').after("<div id='url-alert' style='color: red; opacity: 0.6'><i>(Invalid URL)</i></div>");
       $('#fireToURL').css("color", "red");
     }

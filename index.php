@@ -5,6 +5,7 @@
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script type="text/javascript" src="Retainer/scripts/gup.js"></script>
       <script type="text/javascript" src="Retainer/scripts/trigger.js"></script>
+      <!-- <script type="text/javascript" src="scripts/getMoneyOwed.js"></script> -->
       <script type="text/javascript" src="Retainer/scripts/writeNumOnline.js"></script>
       <script type="text/javascript" src="Retainer/scripts/bootstrap.touchspin.js"></script>
       <script type="text/javascript" src="Retainer/scripts/hitsOverview.js"></script>
@@ -75,7 +76,7 @@
                     <!-- Load Panel -->
                     <div id="sectionA" class="tab-pane fade in active">
                       <br />
-                      <span class="grandTitre text-primary">Load an old expriment</span>
+                      <span class="grandTitre text-primary">Load an old experiment</span>
                       <form class="form-horizontal" role="form">
                         <div class="form-group air">  
                           <label class="sr-only" for="taskSessionLoad">Load an old experiment</label>
@@ -237,13 +238,14 @@
                           </div>
                           <div class="col-lg-10 col-lg-offset-1">
                             <br/>
-                            <label for="thirdPartyUrl">Third Party: Tutorial Page</label>
-                            <input type="text" class="form-control" id="thirdPartyURL" placeholder="Enter the third party tutorial URL here">
-                          </div>
-                          <div class="col-lg-10 col-lg-offset-1">
+                            <label for="thirdPartyUrl">Instructions Page</label>
+                            <input type="text" class="form-control" id="instrPage" placeholder="Workers will see this page before they accept the HIT">
                             <br/>
-                            <label for="thirdPartyUrl">Third Party: Instructions Page</label>
-                            <input type="text" class="form-control" id="thirdPartyInstr" placeholder="Enter the third party instructions URL here">
+                            <label for="thirdPartyUrl">Tutorial Page</label>
+                            <input type="text" class="form-control" id="tutPage" placeholder="Tutorial URL to route workers">
+                            <br/>
+                            <label for="thirdPartyUrl">Post-Tutorial Waiting Page</label>
+                            <input type="text" class="form-control" id="waitPage" placeholder="Workers will see this page after successful tutorial completion">
                           </div>
                         </div>
                         <!-- <button type="submit" id="updatePrice" class="btn btn-default">Update</button> -->
@@ -294,8 +296,9 @@
                     <div class="form-group someAirForRecruitingPanel">
 
                      <div class="col-lg-offset-1 col-lg-10">
-                      <label for="sendToURL" class="col-sm-2 control-label">URL</label>
+                      <label for="sendToURL" class="col-sm-2 control-label">URLs</label>
                       <div class="col-sm-10">
+                        <!--<input type="text" class="form-control" id="directModeInstrPage" placeholder="Instructions Page">-->
                         <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
                       </div>
                     </div>
@@ -367,6 +370,13 @@
     </div>
   </div>
 </div>
+                <!--Status block-->
+                <div class="cool-block">
+                    <div class="cool-block-bor">
+                        <p id="statusbar"></p>
+                    </div>
+                </div>
+
 </div>
 <div class="col-md-6">
   <!-- Overview Tab -->
@@ -419,11 +429,23 @@
               <div class="cta-buttons pull-right">
                 <button type="submit" id="fireWorkers" class="btn btn-info btn-sm">Route!</button> &nbsp;
                 <button type="submit" id="clearQueue" class="btn btn-danger btn-sm">Clear entire queue (pays workers)</button> 
+                <!--    <div id="checkBoxes">
+                        <form id="checkBoxesCounts">
+                            <table>
+                                <div id="dynamicCheckBoxes">
+
+                                </div>
+                            </table>
+                        </form>
+                    </div>
+                -->
               </div>
             </div>
           </div>
         </div>
       </form>
+    
+
     </div>
   </div>
 </div>

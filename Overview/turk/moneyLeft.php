@@ -6,6 +6,9 @@ include("../../config.php");
 include("../../isSandbox.php");
 include 'turk_functions.php';
 
+$AccessKey = $_REQUEST['accessKey']; 
+$SecretKey = $_REQUEST['secretKey'];
+
 
 // turk50_hit($title,$description,$money,$url,$duration,$lifetime);
 print_r(turk50_getAccountBalance());

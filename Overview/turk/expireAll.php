@@ -10,6 +10,8 @@ include("../../isSandbox.php");
 include("../../getDB.php");
 include 'turk_functions.php';
 
+$AccessKey = $_REQUEST['accessKey']; 
+$SecretKey = $_REQUEST['secretKey'];
 
 try {
     $dbh = getDatabaseHandle();

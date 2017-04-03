@@ -7,7 +7,9 @@
 
 	$PAGE_SIZE = 100;  // Number of HITs per 'page'
 
-	/*
+    $AccessKey = $_REQUEST['accessKey'];
+    $SecretKey = $_REQUEST['secretKey'];
+    /*
 	   var $validOps   = array("ApproveAssignment", "CreateHIT", "CreateQualificationType", "DisableHIT", "DisposeHIT", "ExtendHIT",
 	   "GetAccountBalance", "GetAssignmentsForHIT", "GetHIT", "GetQualificationRequests", "GetQualificationScore",
 	   "GetQualificationType", "GetRequesterStatistic", "GetReviewableHITs", "GrantQualification", "Help", "NotifyWorkers",
@@ -15,7 +17,6 @@
 	   "SetHITAsReviewing", "RegisterHITType", "SearchHITs", "ForceExpireHIT", "SetHITTypeNotification", "SendTestEventNotification",
 	   "GrantBonus", "GetFileUploadURL", "RejectQualificationRequest", "GetQualificationsForQualificationType");
 	*/   
-
 
 	function turk_debug($mt) {
 		echo "<br /><br />\n\nRawData<br />\n".$mt->RawData."\n\n<br /><br />";
@@ -58,7 +59,7 @@
     	$Question =
     	 "<ExternalQuestion xmlns='http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2006-07-14/ExternalQuestion.xsd'>" .
     	 "<ExternalURL>$url</ExternalURL>" .
-    	 "<FrameHeight>600</FrameHeight>" .
+    	 "<FrameHeight>800</FrameHeight>" .
     	 "</ExternalQuestion>";
 
     	// prepare Request
@@ -248,9 +249,15 @@
 	 		"SortProperty" => "Enumeration"
 		);
     	
+        //echo "$AccessKey";
+        //echo "$SecretKey";
+
     	$search = $turk50->GetReviewableHITs($Request);
     	//print_r($search);
-    	return $search->GetReviewableHITsResult->TotalNumResults;
+        //echo "\ntotalResults: ";
+        //echo $search->GetReviewableHITsResult->TotalNumResults;
+        //echo "\n"; 
+        return $search->GetReviewableHITsResult->TotalNumResults;
     	
     }
     
@@ -349,6 +356,8 @@
 	function turk_easyHitToAssn($hit) {
 		global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
 
+        //echo "$AccessKey\n";
+        //echo "$SecretKey\n\n"; 
 		$mt = new mturkinterface($AccessKey, $SecretKey, $SANDBOX);
 
 		$mt->SetOperation('GetAssignmentsForHIT');

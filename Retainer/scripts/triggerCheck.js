@@ -50,7 +50,7 @@ var interval = setInterval( function() {
                     //alert(window.location.href);
                     //$('.myIframe').attr('src', url); 
                     //$('.myIframe').css('height', $(window).height()+'px'); 
-                    alert(url); 
+                    // alert(url); 
 					window.location = url;
 				}
 				else{

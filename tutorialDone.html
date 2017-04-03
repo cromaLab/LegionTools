@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<p> You did a good ass job!! ~Chance the Rapper </p>
+<p> Tutorial Done </p>
 </body>
 
 <script> 
@@ -17,6 +17,10 @@
 $(document).ready(function () {
     
     // check to see if the worker is inside MTurk (and not just randomly going to this site)
+    //console.log("window:" + window.location); 
+    //console.log("parent:" + parent.window.location); 
+    //alert("window:" + window.location); 
+    //alert("parent:" + parent.window.location); 
     var assignId = gupStr('assignmentId', parent.window.location); 
     //alert(assignId); 
 
@@ -31,7 +35,7 @@ $(document).ready(function () {
             data: {task: gupStr('task', parent.window.location), workerId: gupStr('workerId', parent.window.location), dbName: gupStr('dbName', parent.window.location)},
             dataType: "text",
             success: function(d) {
-                alert(d); 
+                //alert(d); 
                 url = "Retainer/wait.php?"; 
                 url += "&workerId=" + gupStr('workerId', parent.window.location);
                 url += "&assignmentId=" + gupStr('assignmentId', parent.window.location);
@@ -41,8 +45,8 @@ $(document).ready(function () {
                 url += "&min=" + gupStr('min', parent.window.location);
                 url += "&instructions=" +  gupStr('instructions', parent.window.location);
                 url += "&dbName=" +  gupStr('dbName', parent.window.location);
-                url += "&thirdPartyInstrUrl=" + gupStr('thirdPartyInstrUrl', parent.window.location); 
-                alert(url); 
+                url += "&waitPageUrl=" + gupStr('waitPageUrl', parent.window.location); 
+                //alert(url); 
                 parent.window.location = url;    
             },
             fail: function() {
@@ -50,7 +54,7 @@ $(document).ready(function () {
             }
         }); 
     } else {
-        alert("gotta be inside MTurk dummy!"); 
+        alert("Can't execute this if not inside MTurk!"); 
     }
 
 }); 

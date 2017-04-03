@@ -938,7 +938,7 @@ class MTurkInterface
       curl_setopt($ch, CURLOPT_USERAGENT, 'Santa Cruz Tech MTurk Interface Script (SOAP Hack Version) V0.65');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
       curl_setopt($ch, CURLOPT_HEADER, 0); /* 1 for return header output */
       curl_setopt($ch, CURLOPT_URL, $this->soapURL);
       curl_setopt($ch, CURLOPT_POST, 1);
