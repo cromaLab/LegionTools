@@ -4,7 +4,7 @@ var min_money = 0.00; //minimum amount of money earned to allow submission
 
 var useRetainerTool = true; //set to true if the retainer tool is used.
 // var getTimeWaitedURL = "http://roc.cs.rochester.edu/LegionJS/LegionTools/Retainer/php/getTimeWaited.php"; //the URL of the tool to get the time a worker has waited in the retainer tool.
-var getTimeWaitedURL = "https://141.212.108.210/LegionTools/Retainer/php/getTimeWaited.php"; //the URL of the tool to get the time a worker has waited in the retainer tool.
+var getTimeWaitedURL = "https://legionpowered.net/LegionToolsv2/Retainer/php/getTimeWaited.php"; //the URL of the tool to get the time a worker has waited in the retainer tool.
 var centsPerSecondWaited = .05; //the numbers of cents to award the worker for each second waited.
 var submitInstructionsText = "Thanks for your help on this task! Please click submit to receive payment.";
 

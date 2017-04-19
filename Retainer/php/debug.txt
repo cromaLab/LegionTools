@@ -1,0 +1,29 @@
+
+
+Tue, 18 Apr 2017 17:14:54 -0400 - Status: Model Data
+----------
+Data can be retrieved from the model object using the get() method of the
+model (e.g., `$result->get($key)`) or "accessing the result like an
+associative array (e.g. `$result['key']`). You can also execute JMESPath
+expressions on the result data using the search() method.
+
+{
+    "@metadata": {
+        "statusCode": 200,
+        "effectiveUri": "https:\/\/mturk-requester-sandbox.us-east-1.amazonaws.com",
+        "headers": {
+            "x-amzn-requestid": "1169cb42-247c-11e7-b7c5-5f5e6e66c3f8",
+            "content-type": "application\/x-amz-json-1.1",
+            "content-length": "2",
+            "date": "Tue, 18 Apr 2017 21:14:54 GMT"
+        },
+        "transferStats": {
+            "http": [
+                [
+
+                ]
+            ]
+        }
+    }
+}
+ Sandbox: true

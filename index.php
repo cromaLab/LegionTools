@@ -370,12 +370,13 @@
     </div>
   </div>
 </div>
-                <!--Status block-->
-                <div class="cool-block">
-                    <div class="cool-block-bor">
-                        <p id="statusbar"></p>
-                    </div>
-                </div>
+
+<!--Status block-->
+<div class="cool-block">
+    <div class="cool-block-bor">
+        <p id="statusbar"></p>
+    </div>
+</div>
 
 </div>
 <div class="col-md-6">

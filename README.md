@@ -36,3 +36,9 @@ LegionTools provides three key features for requesters:
 # Authors
 * [Mitchell Gordon](http://mgordon.me/ "Mitchell Gordon")
 * [Walter S. Lasecki](http://wslasecki.com/ "Walter S. Lasecki")
+
+# Developer Overview
+After launch `index.php` is opened which includes scripts from the `Retainer/scripts` folder, most notably `trigger.js` which connects GUI elements with the PHP backend in `Retainer/php` via AJAX calls.
+
+## Overview
+Overview includes the old MTurk SDK in folder `turk` and global variables in folder `includes`.

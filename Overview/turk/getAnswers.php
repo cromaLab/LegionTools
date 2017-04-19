@@ -13,6 +13,7 @@ include 'turk_functions.php';
 $AccessKey = $_REQUEST['accessKey'];
 $SecretKey = $_REQUEST['secretKey'];
 
+// If key specifies use_file, use SQLite
 if($_REQUEST['accessKey'] == "use_file" && $_REQUEST['secretKey'] == "use_file"){
 	$tableName = 'retainer.db';
 }
@@ -206,8 +207,12 @@ $task = $_REQUEST['task'];
 // $debugFile = "debugFile.txt";
 // $debug = fopen($debugFile, 'w');
 
-removeOldHITs();
+// FIXME Uncommented this so we are able to post multiple HITs
+// Could also try to removeOldHIT and post normally if not list and iterate over list here if string contains separator
+// characters, i.e. encodes list
+//removeOldHITs();
 
+// Post HITs in retainer mode
 if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mode'] == "auto"){
 	// if($_REQUEST['mode'] == "auto") $url = $_REQUEST['url'];
     if($_REQUEST['mode'] == "auto") { 
@@ -292,8 +297,11 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 
 	removeOldHITs();
 }
+// Post HITs in direct mode
 else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 	// $url = $_REQUEST['URL'];
+
+	// This will fetch task from DB including its title, description and keywords
 	$result = getTaskRowInDb();
 
 	$url = $baseURL . "/taskLanding.php?task=" . $_REQUEST['task'] . "&amp;&amp;requireUniqueWorkers=" . $_REQUEST['requireUniqueWorkers'] . "&amp;&amp;url=" . urlencode($_REQUEST['url']) . "&amp;&amp;dbName=" . $tableName;

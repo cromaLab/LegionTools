@@ -16,7 +16,7 @@ try {
       echo $e->getMessage();
   }
 
-
+// Retrieve HITs from database (for specific task and either for Sandbox or productive MTurk mode)
 if( $dbh ) {
 
 	$task = $_REQUEST['task'];

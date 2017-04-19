@@ -1,13 +1,20 @@
-var sandbox = true;
-var mode;
+// This file contains click handlers for HTML elements
 
+// Main options in Recruiting Panel
+var sandbox = true; // Whether sandbox is used
+var mode; // Retainer, auto or direct mode (as reflected in tabs on Recruiting Panel)
+
+// Note: All click event handlers are collected in this giant function
 $(document).ready( function() {
+
 var retainerLocation = "Retainer/";
+
+// Statusbar to write status messages to (replaces alerts that were used earlier)
+var statusbar = document.getElementById("statusbar");
+
 // $('#send_to_tutorial_button').click(function() {
 //     clearQueue('https://roc.cs.rochester.edu/convInterface/videocoding/tutorial/tutorial.php?justTutorial=true');
 // });
-
-var statusbar = document.getElementById("statusbar");
 
 if(gup('login') =='false'){
     $("#accessKey").val("use_file");
@@ -30,7 +37,7 @@ var isStoppedRecruitingInterval;
 
 $.blockUI.defaults.overlayCSS.cursor = 'not-allowed'; 
 
-$("#updateTask").hide();
+$('#updateTask').hide();
 $('#overview').block({ message: null }); 
 $('#recruitingDiv').block({ message: null }); 
 $('#triggerDiv').block({ message: null });
@@ -57,6 +64,7 @@ function updateSessionsList(){
     });
 }
 
+// Login button - fetches credentials and logs in
 $("#modalLoginButton").on("click", function(event){
     event.preventDefault();
     $("#accessKey").val($("#modalAccessKey").val());
@@ -74,7 +82,7 @@ $("#modalLoginButton").on("click", function(event){
             $('#loginModal').modal('hide');
             startWriteNumOnline();
             updateSessionsList()
-            setInterval(function(){updateSessionsList()},30000);
+            setInterval(function(){updateSessionsList()}, 30000);
         },
         fail: function() {
             statusbar.innerHTML = "Sending number of workers failed";
@@ -82,6 +90,7 @@ $("#modalLoginButton").on("click", function(event){
     });
 });
 
+// When Add New Experiment is clicked, calls addNewTask.php to write experiment to DB
 $("#addNewTask").on("click", function(event){
     event.preventDefault();
     if($("#hitTitle").val() == ""){
@@ -125,6 +134,7 @@ $("#addNewTask").on("click", function(event){
     });
 });
 
+// Update prices when min or max price is changed
 $("#minPrice,#maxPrice").on("change", function(event){
     event.preventDefault();
     $.ajax({
@@ -142,6 +152,7 @@ $("#minPrice,#maxPrice").on("change", function(event){
     });
 });
 
+// Update target number of assignable HITs if it is changed via AJAX call to php/updateTargetNumWorkers.php
 $("#currentTarget").change(function(){
 
     $.ajax({
@@ -164,6 +175,7 @@ $("#currentTarget").change(function(){
     // }
 });
 
+// When Stop recruiting button is clicked => AJAX call to php/stopRecruiting.php
 $("#stopRecruiting").on("click", function(event){
     event.preventDefault();
     $.ajax({
@@ -190,6 +202,7 @@ $("#stopRecruiting").on("click", function(event){
     $('#noSandbox').removeAttr('disabled');
 });
 
+// When Start recruiting button is clicked => AJAX call to php/startRecruiting.php
 $("#startRecruiting").on("click", function(event){
     event.preventDefault();
 
@@ -206,12 +219,13 @@ $("#startRecruiting").on("click", function(event){
             data: {task: $("#taskSession").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
-                // alert(d);
+                // statusbar.innerHTML = d;
+
                 if(mode == "retainer"){
                     // Start the recruiting tool
                     var tutPageUrl = encodeURI($("#tutPage").val()); 
-		    var waitPageUrl = encodeURI($("#waitPage").val()); 
-	            var instrPageUrl = encodeURI($("#instrPage").val()); 
+		            var waitPageUrl = encodeURI($("#waitPage").val());
+	                var instrPageUrl = encodeURI($("#instrPage").val());
                     $.ajax({
                         url: "Overview/turk/getAnswers.php",
                         type: "POST",
@@ -260,6 +274,7 @@ $("#startRecruiting").on("click", function(event){
 
 });
 
+// When Post Hits button is clicked in direct (classic) mode
 $("#postHITs").on("click", function(event){
     event.preventDefault();
 
@@ -269,46 +284,47 @@ $("#postHITs").on("click", function(event){
     }
     else {
         if(mode == "direct"){
-
             var urlEscaped = $("#sendToURL").val().split("&").join("&amp;&amp;");
-            // alert(urlEscaped);
+
             // Start the recruiting tool
-
-            // PHP would be: $array = explode(' ', $urlescape) and foreach($array as $value)
-            var a = urlEscaped.split("\\");
-            //alert("Test2");
-            //statusbar.innerHTML = 'TEST STATUS';
-
+            var a = urlEscaped.split("\\").filter(function(el) {return el.length != 0});
 
             $('#postHITs').attr('disabled','disabled');
             $('#postHITs').text("Posting...");
             $('#expireHITs').attr('disabled','disabled');
 
             for (i=0; i<a.length; i++) {
-                //    alert(a[i]); urlEscaped
+                //statusbar.innerHTML = "Posting: " + a[i];
                 $.ajax({
                     url: "Overview/turk/getAnswers.php",
                     type: "POST",
                     async: true,
-                    data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(),
-                        secretKey: $("#secretKey").val(), mode: "direct", url: a[i], price: $("#price").val(),
-                        numHITs: $("#numHITs").val(), numAssignments: $("#numAssignments").val(),
+                    data: {
+                        task: $("#taskSession").val(),
+                        useSandbox: sandbox,
+                        accessKey: $("#accessKey").val(),
+                        secretKey: $("#secretKey").val(),
+                        mode: "direct",
+                        url: a[i],
+                        price: $("#price").val(),
+                        numHITs: $("#numHITs").val(),
+                        numAssignments: $("#numAssignments").val(),
                         requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'),
-                        accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+                        accessKey: $("#accessKey").val(),
+                        secretKey: $("#secretKey").val()
+                    },
                     dataType: "text",
-                    success: function(d) {
-                        //alert(d);
+                    success: function (d) {
                         statusbar.innerHTML = "Posted " + $("#numHITs").val() + " HITs";
                         $('#postHITs').text("Post HITs");
                         $('#postHITs').removeAttr('disabled');
                         $('#expireHITs').removeAttr('disabled');
                     },
-                    fail: function() {
+                    fail: function () {
                         statusbar.innerHTML = "Sending number of workers failed";
                     }
                 });
             }
-
         }
 
         // $('#yesSandbox').attr('disabled','disabled');
@@ -317,6 +333,7 @@ $("#postHITs").on("click", function(event){
 
 });
 
+// Expire All Hits buttons in direct mode
 $("#expireHITs").on("click", function(event){
     event.preventDefault();
 
@@ -331,7 +348,7 @@ $("#expireHITs").on("click", function(event){
         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
-            // alert(d);
+            // statusbar.innerHTML = d;
             statusbar.innerHTML = "HITs expired";
             $('#expireHITs').text("Expire All HITs");
             $('#postHITs').removeAttr('disabled');
@@ -346,6 +363,7 @@ $("#expireHITs").on("click", function(event){
         // $('#noSandbox').attr('disabled','disabled');
 });
 
+// Combobox on Load Panel that contains experiments - Populates text fields with values
 $("#taskSessionLoad").on("change", function(event){
     event.preventDefault();
 
@@ -416,6 +434,9 @@ $("#taskSessionLoad").on("change", function(event){
     }
 });
 
+/**
+ * Called when UPDATE button in Load Panel is clicked (makes AJAX call to updateTask.php)
+ */
 $("#updateTask").on("click", function(event){
     event.preventDefault();
     $.ajax({
@@ -433,6 +454,9 @@ $("#updateTask").on("click", function(event){
     });
 });
 
+/**
+ * Called when Load HITs button is clicked
+ */
 $("#reloadHits").on("click", function(event){
     event.preventDefault();
     $('#hitsList').block({ 
@@ -457,7 +481,7 @@ $("#reloadHits").on("click", function(event){
             $('#hitsList').children().fadeOut(500).promise().then(function() {
                 $('#hitsList').empty();
                 var counter = 0;
-                // alert(hits);
+                // statusbar.innerHTML = hits;
                 for (var i in hits) {
                     var hit = hits[i];
                     var numAssignments = hit.NumResults;
@@ -479,9 +503,10 @@ $("#reloadHits").on("click", function(event){
 
                                 if(assignment.AssignmentStatus == "Submitted")
                                     $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + assignment.WorkerId + " AssignmentId: " + assignment.AssignmentId + " <button type='button' onclick = 'approveHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;, &quot;" + bonus + "&quot;, &quot;" + assignment.WorkerId + "&quot;)' class='approveButton btn btn-success btn-sm'>Approve</button> <button type='button' onclick = 'rejectHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='rejectButton btn btn-danger btn-sm'>Reject</button></li>");
-
-                                else
+                                else if(assignment.AssignmentStatus == "Approved")
                                     $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + assignment.WorkerId + " AssignmentId: " + assignment.AssignmentId + " <button type='button' onclick = 'disposeHit(&quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button></li>");
+                                else if(assignment.AssignmentStatus == "Rejected")
+                                    $("#hitsList").append("<li id= '" + listId + "' class='list-group-item'>Worker: " + assignment.WorkerId + " AssignmentId: " + assignment.AssignmentId + " <button type='button' onclick = 'disposeHit(&quot;" + assignment.HITId + "&quot;, &quot;" + listId + "&quot;)' class='disposeButton btn btn-warning btn-sm'>Dispose</button><button type='button' onclick = 'unrejectHit(&quot;" + assignment.AssignmentId + "&quot;, &quot;" + assignment.workerId + "&quot;, &quot;" + listId + "&quot;)' class='approveButton btn btn-warning btn-sm'>Unreject</button></li>");
 
                                 counter++;
                             }
@@ -497,6 +522,7 @@ $("#reloadHits").on("click", function(event){
     });
 });
 
+// Approve All Loaded Hits button
 $("#approveAll").on("click", function(event){
     event.preventDefault();
     // $('#hitsList li').each(function() {
@@ -512,7 +538,7 @@ $("#approveAll").on("click", function(event){
     });
 });
 
-
+// Dispose All Loaded Hits button on right-hand side
 $("#disposeAll").on("click", function(event){
     event.preventDefault();
     // $('#hitsList li').each(function() {
@@ -528,7 +554,7 @@ $("#disposeAll").on("click", function(event){
     });
 });
 
-
+// Clear Entire Queue (Pays Workers) button on right-hand side in Retainer mode
 $("#clearQueue").on("click", function(event){
     event.preventDefault();
     
@@ -586,6 +612,7 @@ function clearQueue(link){
     }
 }
 
+// Route! button on right-hand side in Retainer mode - seems "fire" means routing workers, not disposing of them
 $("#fireWorkers").on("click", function(event){
     event.preventDefault();
 
@@ -632,6 +659,7 @@ $("#fireWorkers").on("click", function(event){
     }
 });
 
+// If user clicks on Sandbox or Live switch between MTurk sandbox and productive reflected in sandbox variable
 $("#yesSandbox, #noSandbox").on("click", function(){
     var id = $(this).attr('id');
     if(id == "yesSandbox"){
@@ -679,6 +707,7 @@ $("#useAutoMode").on("click", function(){
     $("#openInstructionsModal").hide();
 });
 
+// Checkbox on Recruiting Panel under credentials
 $("#requireUniqueWorkers").change(function() {
     if(this.checked) {
        $.ajax({
@@ -696,6 +725,7 @@ $("#requireUniqueWorkers").change(function() {
     }
 });
 
+// Red reset button next to Require Unique Workers checkbox
 $("#resetUniqueWorkers").on("click", function(event) {
     event.preventDefault();
     if(confirm("Are you sure you want to reset your history of unique workers?")){
@@ -714,6 +744,7 @@ $("#resetUniqueWorkers").on("click", function(event) {
     }
 });
 
+// Copy button on Load Panel - will ask for a new unique task name and duplicate database entry under that name
 $("#copyExperiment").on("click", function(event) {
     event.preventDefault();
     var newTask = prompt("Please enter a unique new task name");
@@ -732,6 +763,7 @@ $("#copyExperiment").on("click", function(event) {
     });
 });
 
+// Red Delete button on Load Panel, deletes selected experiment from database
 $("#deleteExperiment").on("click", function(event) {
     event.preventDefault();
     if(confirm("Are you sure you want to delete " + $("#taskSession").val() + " ? This will stop recruiting and prevent you from approving/rejecting submitted HITs.")){
@@ -780,8 +812,9 @@ function isStoppedRecruiting(){
     else return false;
 }
 
-
+// Validates a task definition in DB is well-specified
 function validateTaskInfo(){
+    // Retrieve task info from database via AJAX call to php/loadTask.php
     var taskData;
     $.ajax({
         url: retainerLocation + "php/loadTask.php",
@@ -797,6 +830,7 @@ function validateTaskInfo(){
         }
     });
 
+    // Check data fields not null - if one is, return its name to indicate problem
     // console.log(taskData);
     if(taskData.min_price == ""){
         return "min price";
@@ -813,12 +847,16 @@ function validateTaskInfo(){
     if(taskData.task_keywords == ""){
         return "keywords";
     }
+
+    // In direct mode make sure HTTPS is used
     if(mode == "direct"){
         var link  = $("#sendToURL").val();
         if( link.substring(0, 8) != "https://") {
             return('URL, must begin with "https://".');
         }
     }
+
+    // Return empty string => OK
     return "";
 }
 
