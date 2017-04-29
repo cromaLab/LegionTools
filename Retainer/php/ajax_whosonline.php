@@ -17,7 +17,7 @@ try {
 
   if($dbh) {
 	if ($role=='crowd') {
-		// Checking wheter the worker is already marked as being online:
+		// Checking whether the worker is already marked as being online:
 		$sth = $dbh->query("SELECT * FROM `whois_online` WHERE `id`='".$id."'");
 		$row = $sth->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_NEXT);
 		if($row){
