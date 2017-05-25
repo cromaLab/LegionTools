@@ -64,6 +64,33 @@
             </div>
           </div>
 
+            <!-- Modal for confirming bonus amount -->
+            <div class="modal fade" id="bonusModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Do you want to bonus the following amount?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <br />
+                            <p>Bonus Amount:</p>
+                            <input id = "modalBonusAmount" type="text" class="form-control" name="bonusAmountField" placeholder="0.01" required="" autofocus="" />
+                            <br /><p>Reason:</p>
+                            <input id = "modalBonusReason" type="text" class="form-control" name="bonusReasonField" required="" value="Great work." />
+                            <br /><p>Worker ID:</p>
+                            <input id = "modalBonusWorkerId" type="text" class="form-control" name="bonusWorkerIdField" required="" readonly />
+                            <br /><p>Assignment ID:</p>
+                            <input id = "modalBonusAssignmentId" type="text" class="form-control" name="bonusAIDField" required="" readonly />
+                        </div>
+                        <div class="modal-footer">
+                            <button id="sendBonusButtonInModal" type="button" class="btn btn-primary" data-dismiss="modal">Send Bonus</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
           <div class="row">
             <div class="col-md-6">
               <div class="cool-block">
@@ -371,12 +398,15 @@
   </div>
 </div>
 
-<!--Status block-->
+
+<!--Debug button
 <div class="cool-block">
+    <button type="submit" id="debugButton" class="btn btn-info btn-lg pull-right">DEBUG</button>
     <div class="cool-block-bor">
         <p id="statusbar"></p>
     </div>
 </div>
+-->
 
 </div>
 <div class="col-md-6">

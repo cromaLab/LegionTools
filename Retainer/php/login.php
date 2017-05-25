@@ -67,6 +67,14 @@ try {
         "id" INTEGER PRIMARY KEY,
         "workerId" text,
         "checked" text
+    );
+    CREATE TABLE IF NOT EXISTS "bonusLog" (
+        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+        "workerId" text,
+        "assignmentId" text,
+        "bonusAmount" INTEGER,
+        "authHash" text,
+        "creationTime" text
     );';
 
 	$dbh->exec($sql);

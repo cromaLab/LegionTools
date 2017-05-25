@@ -28,7 +28,7 @@ RUN a2enmod ssl
 RUN mkdir -p keys && openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout ./keys/apache.key -out ./keys/apache.crt -subj "/C=US/ST=MI/L=Ann Arbor/O=University of Michigan/CN=www.legionpowered.net"
 RUN mkdir /etc/apache2/ssl && cp ./keys/* /etc/apache2/ssl/
 # Modify Apache SSL configuration
-RUN sed -ie 's/ServerAdmin.*$/ServerAdmin sairohit@umich.edu\n                ServerName diae2.eecs.umich.edu\n                ServerAlias www.diae12.eecs.umich.edu/g' /etc/apache2/sites-available/default-ssl.conf
+RUN sed -ie 's/ServerAdmin.*$/ServerAdmin someone@umich.edu\n                ServerName diae2.eecs.umich.edu\n                ServerAlias www.diae12.eecs.umich.edu/g' /etc/apache2/sites-available/default-ssl.conf
 RUN sed -ie 's/ssl\/\(certs\|private\)\/ssl-cert-snakeoil/apache2\/ssl\/apache/g' /etc/apache2/sites-available/default-ssl.conf
 RUN sed -ie '0,/\/etc\/apache2\/ssl\/apache.pem/s//\/etc\/apache2\/ssl\/apache.crt/' /etc/apache2/sites-available/default-ssl.conf
 RUN a2ensite default-ssl.conf && service apache2 restart

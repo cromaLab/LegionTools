@@ -49,6 +49,10 @@ if( $dbh ) {
 	if($operation == "Approve"){
 		$mt = turk_easyApprove($id); //AssignmentId
 	}
+    // Bonusing - note: this is new bonus, old code is below under "Bonus"
+    else if($operation == "Bonusing"){
+		//
+    }
 	// Unreject
     else if($operation == "Unreject"){
 
