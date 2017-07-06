@@ -21,7 +21,7 @@
   
   <body>
 
-      <p>You are not needed for this task. However, you will still be paid and bonused according to the amount of time you waited. Please press the submit button below.</p>
+      <p>Oops, we had more than enough participants for this task. Unfortunately, you will not be able to participate in the task. However, you will still be paid with the base pay. Press the submit button below.</p>
 
       <div id="instructions"></div>
 

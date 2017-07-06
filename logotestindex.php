@@ -443,17 +443,13 @@
   </div>
 </div>
 
-<!--/ End Workers Tab -->
-
 <br>
 <div>
   <center>
-    <p style=font-size:18px;"> Supported in part by: </p> <br/>
-    <img src="IBM_logo.svg" style="height:50px;" hspace="20"> <img src="2color-bluebg.png" style="height:70px;">
+    <p>Thanks in part to <img src="IBM_logo.svg" style="height:25px;"> and <img src="2color-bluebg.png" style="height:50px;"> for their support.</p>
   </center>
 </div>
-
-
+<!--/ End Workers Tab -->
 
 </div>
 </div>

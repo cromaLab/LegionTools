@@ -21,7 +21,7 @@
 	// var task = gup('instructions') ? gup('instructions') : "instructions.php?task=" + gup("task");
     //var task = task + "&dbName=" + gup("dbName");
     //alert("From wait.php:" + window.location);
-    var task = gup('waitPageUrl'); 
+    var task = decodeURI(gup('waitPageUrl'))  + "&hitId=" + gup("hitId")+ "&workerId=" + gup("workerId") + "&assignmentId=" + gup("assignmentId") + "&turkSubmitTo=" + gup("turkSubmitTo");    
     $('.myIframe').attr('src', task);
     //alert(window.location.href); 	
     $('.myIframe').css('height', $(window).height()+'px');

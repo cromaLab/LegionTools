@@ -688,7 +688,7 @@ $("#resetUniqueWorkers").on("click", function(event) {
             data: {task: $("#taskSession").val(), reset: true, useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
-              alert("Reset success");
+              alert(d);
             },
             fail: function() {
               alert("Sending number of workers failed");
