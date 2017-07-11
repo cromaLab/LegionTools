@@ -70,15 +70,21 @@ function createQualificationRequirement($row){
 
 		$noRepeatQualId = $row[0][$dbCol];
 
-		if($noRepeatQualId == null || $noRepeatQualId == ""){
-			$qual = turk50_createQualificationType(generateRandomString(), "This qualification is for people who have worked for me on this task before.", "Worked for me before", $SANDBOX);
+        if($noRepeatQualId == null || $noRepeatQualId == ""){
+            echo "Could not find repeatQualificaitonId:".noRepeatQualId."/n";
+		    $qual = turk50_createQualificationType(date("Ymd-His").generateRandomString(), "This qualification is for people who have worked for me on this task(".$_REQUEST['task'].") before.", "Worked for me before", $SANDBOX);
+			//$qual = turk50_createQualificationType(generateRandomString(), "This qualification is for people who have worked for me on this task before.", "Worked for me before", $SANDBOX);
 			// print_r($qual);
 			$noRepeatQualId = $qual->QualificationType->QualificationTypeId;
+            error_log(date("Ymd-His").":Task(".$_REQUEST['task'].") generated one qualifitcation type(".$noRepeatQualId.") from getAnswers.php. (Sandbox:".$SANDBOX.",reset:false)\n", 3, "../../qualification-error.log");
 
 			if($SANDBOX) $sql = ("UPDATE retainer set noRepeatQualIdSandbox = :noRepeatQualId WHERE task = :task");
 			else $sql = ("UPDATE retainer set noRepeatQualIdLive = :noRepeatQualId WHERE task = :task");
 			$sth = $dbh->prepare($sql); 
-			$sth->execute(array(":task"=>$_REQUEST['task'], ":noRepeatQualId"=>$noRepeatQualId));
+            $sth->execute(array(":task"=>$_REQUEST['task'], ":noRepeatQualId"=>$noRepeatQualId));
+            echo "new qualification(".$noRepeatQualId.") is generated in ";
+            if($SANDBOX) echo "SANDBOX\n";
+            else echo "LIVE MTURK\n";
 		}
 
 		$Unique_Workers_Qual = array(
@@ -218,12 +224,13 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
     }
 
 	$numAssignableHits = 0;
+	$result = getTaskRowInDb();
+	$qualification = createQualificationRequirement($result);
 	while(!iShouldQuit()){
 	// fwrite($debug, "Start loop\n");
 
 	 	// Post HITs
 		$result = getTaskRowInDb();
-		$qualification = createQualificationRequirement($result);
 		while(!isTargetReached() && ($numAssignableHits < ($result[0]["target_workers"] + 5))) //Number of HITs to post: target number of workers + 5
 		// while($numAssignableHits < 3) //Number of HITs to post: target number of workers + 5
 		{
