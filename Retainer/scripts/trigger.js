@@ -171,7 +171,7 @@ $("#stopRecruiting").on("click", function(event){
         data: {task: $("#taskSession").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
         dataType: "text",
         success: function(d) {
-            
+           console.log("response received:\n",d); 
         },
         fail: function() {
             alert("Sending number of workers failed");
@@ -181,8 +181,8 @@ $("#stopRecruiting").on("click", function(event){
     isStoppedRecruitingInterval = setInterval(function(){isStoppedRecruiting()},3000);
 
     $('#startRecruiting').html('Please wait while recruiting is stopped');
-    $('#stopRecruiting').attr('disabled','disabled');
-    // $('#startRecruiting').removeAttr('disabled');
+    //$('#stopRecruiting').attr('disabled','disabled');
+    $('#startRecruiting').removeAttr('disabled');
 
     $('#yesSandbox').removeAttr('disabled');
     $('#noSandbox').removeAttr('disabled');
@@ -217,7 +217,7 @@ $("#startRecruiting").on("click", function(event){
                         data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val(), mode: "retainer", requireUniqueWorkers: $("#requireUniqueWorkers").is(':checked'), tutPageUrl: tutPageUrl, waitPageUrl: waitPageUrl, instrPageUrl: instrPageUrl},
                         dataType: "text",
                         success: function(d) {
-                            //console.log(d);
+                            console.log(d);
                         },
                         fail: function() {
                             alert("Sending number of workers in getAnswers() failed");
@@ -380,7 +380,7 @@ $("#taskSessionLoad").on("change", function(event){
     // Stopping recruiting
     if(taskData.done == "2"){
         $('#startRecruiting').html('Please wait while recruiting is stopped');
-        $('#stopRecruiting').attr('disabled','disabled');
+       // $('#stopRecruiting').attr('disabled','disabled');
         $('#startRecruiting').attr('disabled','disabled');
         isStoppedRecruitingInterval = setInterval(function(){isStoppedRecruiting()},3000);
     }
@@ -396,6 +396,10 @@ $("#taskSessionLoad").on("change", function(event){
         $('#stopRecruiting').html('Stop recruiting');
         $('#startRecruiting').removeAttr('disabled');
         $('#stopRecruiting').attr('disabled','disabled');
+    }
+    // clear interval from the previous experiment. 
+    if(isStoppedRecruitingInterval){
+        clearInterval(isStoppedRecruitingInterval);
     }
 });
 
@@ -746,21 +750,28 @@ function isStoppedRecruiting(){
         dataType: "json",
         success: function(d) {
             taskData = d;
+            console.log("checking the task state : ", d.done);
+                if(taskData.done == "1"){
+                    window.clearInterval(isStoppedRecruitingInterval);
+                    $('#startRecruiting').html('Start recruiting');
+                    $('#stopRecruiting').html('Stop recruiting');
+                    $('#startRecruiting').removeAttr('disabled');
+                    $('#stopRecruiting').attr('disabled','disabled');
+                    alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
+                    return true;
+                }
+                else if(taskData.done == "0"){
+                    // why would this happen though? It could happen if two people use the same experiment at the same time? 
+                    $('#startRecruiting').html('Recruiting...');
+                    $('#startRecruiting').attr('disabled','disabled');
+                    $('#stopRecruiting').removeAttr('disabled');
+                }
+                else return false;
         },
         fail: function() {
             alert("Sending number of workers failed");
         }
     });
-    if(taskData.done == "1"){
-        window.clearInterval(isStoppedRecruitingInterval);
-        $('#startRecruiting').html('Start recruiting');
-        $('#stopRecruiting').html('Stop recruiting');
-        $('#startRecruiting').removeAttr('disabled');
-        $('#stopRecruiting').attr('disabled','disabled');
-        alert("Recruiting stopped. If this was an unwanted, please make sure there is money in your account.");
-        return true;
-    }
-    else return false;
 }
 
 

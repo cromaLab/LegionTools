@@ -52,6 +52,7 @@ if( $dbh ) {
 		$qual = turk50_createQualificationType(date("Ymd-His").generateRandomString(), "This qualification is for people who have worked for me on this task(".$task.") before.", "Worked for me before", $SANDBOX);
 		// print_r($qual);
 		$noRepeatQualId = $qual->QualificationType->QualificationTypeId;
+        error_log(date("Ymd-His").":Task(".$task.") generated one qualifitcation type(".$noRepeatQualId.") from uniqueWorkers.php. (Sandbox:".$SANDBOX.",reset:". isset($_REQUEST['reset']).")\n", 3, "../../qualification-error.log");
 
 		if($SANDBOX) $sql = ("UPDATE retainer set noRepeatQualIdSandbox = :noRepeatQualId WHERE task = :task");
 		else $sql = ("UPDATE retainer set noRepeatQualIdLive = :noRepeatQualId WHERE task = :task");
