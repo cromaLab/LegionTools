@@ -71,13 +71,11 @@ function createQualificationRequirement($row){
 		$noRepeatQualId = $row[0][$dbCol];
 
         if($noRepeatQualId == null || $noRepeatQualId == ""){
-            echo "Could not find repeatQualificaitonId:".noRepeatQualId."/n";
 		    $qual = turk50_createQualificationType(date("Ymd-His").generateRandomString(), "This qualification is for people who have worked for me on this task(".$_REQUEST['task'].") before.", "Worked for me before", $SANDBOX);
-			//$qual = turk50_createQualificationType(generateRandomString(), "This qualification is for people who have worked for me on this task before.", "Worked for me before", $SANDBOX);
 			// print_r($qual);
 			$noRepeatQualId = $qual->QualificationType->QualificationTypeId;
             error_log(date("Ymd-His").":Task(".$_REQUEST['task'].") generated one qualifitcation type(".$noRepeatQualId.") from getAnswers.php. (Sandbox:".$SANDBOX.",reset:false)\n", 3, "../../qualification-error.log");
-
+            
 			if($SANDBOX) $sql = ("UPDATE retainer set noRepeatQualIdSandbox = :noRepeatQualId WHERE task = :task");
 			else $sql = ("UPDATE retainer set noRepeatQualIdLive = :noRepeatQualId WHERE task = :task");
 			$sth = $dbh->prepare($sql); 

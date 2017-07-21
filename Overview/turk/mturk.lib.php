@@ -844,6 +844,9 @@ class MTurkInterface
       $data .= ($this->ResponseGroup ? "<ResponseGroup>{$this->ResponseGroup}</ResponseGroup>\n" : "");
       $data .= "<Request>\n";
 
+          error_log( "sang debugging1:\n",3,"../../mturk.lib.log");
+          error_log("sang debugging2:".(string)($this->Operation)."\n",3,"../../mturk.lib.log");
+        error_log("sang debugging 3 : \n",3,"../../qualification-error.log");
       switch ($this->Operation)
       {
          case "CreateHIT":

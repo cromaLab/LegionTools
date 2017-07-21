@@ -14,7 +14,20 @@
 
     <!-- End LegionJS -->
     <script>
-    
+    var requireUniqueWorkers = gup('requireUniqueWorkers');
+    if(requireUniqueWorkers == "true"){
+        $.ajax({
+            type: 'POST',
+            url: 'php/uniqueWorkers.php',
+            data: {workerId: gup("workerId"), task: gup('task'), revokeQualification: true, turkSubmitTo: gup('turkSubmitTo'), dbName:gup('dbName')},
+            success: function (d) {
+                console.log(d);
+            },
+            failure:function(f){
+                console.log(f)
+            }
+        });
+    }   
     </script>
 
   </head>

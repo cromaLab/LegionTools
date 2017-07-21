@@ -115,12 +115,13 @@
                 $Timestamp = date("c");
                 try
                 {
-                    return $this->client->$name(array(
-                     "AWSAccessKeyId" => $this->AWSAccessKeyId,
-                     "Request" => (isset($arguments[0])) ? $arguments[0] : null,
-                     "Signature" => base64_encode($this->hmac_sha1($this->AWSSecretAccessKeyId, self::SERVICE . $name . $Timestamp)),
-                     "Timestamp" => $Timestamp
+                    $mt =  $this->client->$name(array(
+                        "AWSAccessKeyId" => $this->AWSAccessKeyId,
+                        "Request" => (isset($arguments[0])) ? $arguments[0] : null,
+                        "Signature" => base64_encode($this->hmac_sha1($this->AWSSecretAccessKeyId, self::SERVICE . $name . $Timestamp)),
+                        "Timestamp" => $Timestamp
                     ));
+                    return $mt;
                 }
                 catch (SoapFault $e)
                 {

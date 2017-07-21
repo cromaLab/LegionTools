@@ -3,25 +3,41 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 include('_db.php');
-include('../../Overview/turk/turk_functions.php');
 include("../../amtKeys.php");
 include("../../isSandbox.php");
+if(isset($_REQUEST['accessKey']) && isset($_REQUEST['secretKey'])){
+    $AccessKey = $_REQUEST['accessKey']; 
+    $SecretKey = $_REQUEST['secretKey'];
+}
+else{
+    if(isset($_REQUEST['dbName']) && $_REQUEST['dbName']=='fde3d30df56968f4d13c1bb7eef8e5c805a3c2adccd60ff54e8c1897d297a1df')
+    {
+        $myfile = fopen("../../../../cromalab-mturk", "r") or die("Unable to open file!");
+        $keys = explode(",",fread($myfile,filesize("../../../../cromalab-mturk")));
+        $AccessKey = $keys[0];
+        $SecretKey = substr($keys[1], 0, 40);// AWS secret key is 40 digits. This is to get rid of newline feed at the end. 
+        fclose($myfile);
+    }
+    else{
+        error_log("ERROR: no access key, no secret key and no db handle", 3,"../../qualification-error.log");
+        echo "ERROR: no access key, no secret key and no db handle";
+    }
+}
+// waiting for accessskey from the previous if statement. 
+include('../../Overview/turk/turk_functions.php');
 
-$AccessKey = $_REQUEST['accessKey']; 
-$SecretKey = $_REQUEST['secretKey'];
-
-  try {
-      $dbh = getDatabaseHandle();
-  } catch( PDOException $e ) {
-      echo $e->getMessage();
-  }
+try {
+    $dbh = getDatabaseHandle();
+} catch( PDOException $e ) {
+    echo $e->getMessage();
+}
 
 
 if( $dbh ) {
 
     $task = $_REQUEST['task'];
-    $useSandbox = filter_var ($_REQUEST['useSandbox'], FILTER_VALIDATE_BOOLEAN);
 	if(isset($_REQUEST['useSandbox'])){
+        $useSandbox = filter_var ($_REQUEST['useSandbox'], FILTER_VALIDATE_BOOLEAN);
 		if($useSandbox){
 			$dbCol = "noRepeatQualIdSandbox";
             $SANDBOX = true;
@@ -50,14 +66,15 @@ if( $dbh ) {
 	$noRepeatQualId = $result[$dbCol];
 	if(($noRepeatQualId == null || $noRepeatQualId == "") || isset($_REQUEST['reset'])){
 		$qual = turk50_createQualificationType(date("Ymd-His").generateRandomString(), "This qualification is for people who have worked for me on this task(".$task.") before.", "Worked for me before", $SANDBOX);
-		// print_r($qual);
-		$noRepeatQualId = $qual->QualificationType->QualificationTypeId;
-        error_log(date("Ymd-His").":Task(".$task.") generated one qualifitcation type(".$noRepeatQualId.") from uniqueWorkers.php. (Sandbox:".$SANDBOX.",reset:". isset($_REQUEST['reset']).")\n", 3, "../../qualification-error.log");
+        
+        $noRepeatQualId = $qual->QualificationType->QualificationTypeId;
+        error_log("log:".date("Ymd-His").":Task(".$task.") generated one qualifitcation type(".$noRepeatQualId.") from uniqueWorkers.php. (Sandbox:".$SANDBOX.",reset:". isset($_REQUEST['reset']).")\n", 3, "../../qualification-error.log");
 
 		if($SANDBOX) $sql = ("UPDATE retainer set noRepeatQualIdSandbox = :noRepeatQualId WHERE task = :task");
 		else $sql = ("UPDATE retainer set noRepeatQualIdLive = :noRepeatQualId WHERE task = :task");
 		$sth = $dbh->prepare($sql); 
         $sth->execute(array(":task"=>$task, ":noRepeatQualId"=>$noRepeatQualId));
+        
         echo "new qualification(".$noRepeatQualId.") is generated in ";
         if($SANDBOX) echo "SANDBOX\n";
         else echo "LIVE MTURK\n";
@@ -66,13 +83,14 @@ if( $dbh ) {
         echo "The experiment will use the qualification (".$noRepeatQualId.").";
     }
     
-
 	if(isset($_REQUEST['assignQualification']) && $_REQUEST['assignQualification'] = "true"){
-		$mt = turk50_assignQualification($_REQUEST['workerId'], $noRepeatQualId, $SANDBOX);
-		echo $mt;
+        $mt = turk50_assignQualification($_REQUEST['workerId'], $noRepeatQualId, $SANDBOX);
+        error_log("assignQualification:".$_REQUEST['assignQualification']."\n",3,"../../qualification-error.log");
 	}
-
-	// echo "here";
+	if(isset($_REQUEST['revokeQualification']) && $_REQUEST['revokeQualification'] = "true"){
+        $mt = turk50_revokeQualification($_REQUEST['workerId'], $noRepeatQualId, $SANDBOX);
+        error_log("revkoeQualification:".$_REQUEST['revokeQualification']."\n",3,"../../qualification-error.log");
+    }
 
 }
 

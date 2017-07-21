@@ -11,7 +11,6 @@ $(document).ready(function() {
 
 
     var requireUniqueWorkers = gup('requireUniqueWorkers');
-
     // alert(url + " " + requireUniqueWorkers);
 
     if(gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE" || requireUniqueWorkers != "true"){
@@ -24,7 +23,6 @@ $(document).ready(function() {
             url: 'Retainer/php/uniqueWorkers.php',
             data: {workerId: gup("workerId"), task: gup('task'), assignQualification: true, turkSubmitTo: gup('turkSubmitTo'), dbName: gup('dbName')},
             success: function (d) {
-                // alert(d);
                 window.location.replace(url);
             }
         });

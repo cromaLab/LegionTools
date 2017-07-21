@@ -25,7 +25,6 @@
     $('.myIframe').attr('src', task);
     //alert(window.location.href); 	
     $('.myIframe').css('height', $(window).height()+'px');
-    
 </script>
 </body>
 
