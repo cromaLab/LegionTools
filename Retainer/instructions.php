@@ -2,6 +2,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+error_log(".:: ".basename(__FILE__),0); // Debugging
 
 if(isset($_REQUEST['task']) && $_REQUEST['task'] != ""){
   $dbName = $_REQUEST['dbName'];

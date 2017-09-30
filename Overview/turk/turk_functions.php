@@ -90,7 +90,6 @@
 			//venar303@gmail.com account
 	   global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
 
-
 		$mt = new mturkinterface($AccessKey, $SecretKey, $SANDBOX);
 
 		$mt->SetOperation('ApproveAssignment');
@@ -291,14 +290,14 @@
 
 
       function turk_easyExpireHit($hitId) {
+		error_log('turk_easyExpireHit() :: Expiring all hits',0); // Debugging
+		global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
 
-           global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+		$mt = new mturkinterface($AccessKey, $SecretKey, $SANDBOX);
 
-                $mt = new mturkinterface($AccessKey, $SecretKey, $SANDBOX);
-
-                $mt->SetOperation('ForceExpireHIT');
-                $mt->setVar('HITId',$hitId);
-                $result = $mt->Invoke();
+		$mt->SetOperation('ForceExpireHIT');
+		$mt->setVar('HITId',$hitId);
+		$result = $mt->Invoke();
 
 		print_r($mt->FinalData);
         }

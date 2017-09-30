@@ -1,5 +1,6 @@
 <?php
-
+error_log(".:: ".basename(__FILE__),0); // Debugging
+	
 $accessKey = $_REQUEST['accessKey'];
 $secretKey = $_REQUEST['secretKey'];
 

@@ -399,14 +399,14 @@
 </div>
 
 
-<!--Debug button
+<!-- Debug button -->
 <div class="cool-block">
-    <button type="submit" id="debugButton" class="btn btn-info btn-lg pull-right">DEBUG</button>
+    <!-- <button type="submit" id="debugButton" class="btn btn-info btn-lg pull-right">DEBUG</button> -->
     <div class="cool-block-bor">
         <p id="statusbar"></p>
     </div>
 </div>
--->
+
 
 </div>
 <div class="col-md-6">
