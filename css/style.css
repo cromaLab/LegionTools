@@ -222,10 +222,10 @@ label {
 }
 
 #sectionA {
-   height: 545px;
+   height: auto;
 }
 #sectionB {
-   height: 610px;
+   height: auto;
 }
 
 /*.forAutoTab {
