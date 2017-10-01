@@ -235,8 +235,6 @@
 
                         <form class="form-horizontal" role="form">
 
-                            <div class=""
-
                           <div class="form-group someAirForRecruitingPanel">
                             <label class="col-lg-6 col-lg-offset-1 control-label">Target number of assignable HITs</label>
                           </div>
@@ -247,8 +245,13 @@
                             </div> 
 
                             <script>
-                            $("input[name='currentTarget']").TouchSpin();
+                            $("input[name='currentTarget']").TouchSpin({
+                              min: 0,
+                              max: 100,
+                              mousewheel: false
+                            });
                             </script>
+
                           </div>
                         </form>
                       </div>
