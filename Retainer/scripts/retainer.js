@@ -83,8 +83,26 @@ $(document).ready(function() {
                     url += "&min=" + gup('min');
                     url += "&instructions=" +  gup('instructions');
                     url += "&dbName=" +  gup('dbName');
+                    url += "&requireUniqueWorkers=" +  gup('requireUniqueWorkers');
                     //alert("inside url check: " + url); 
-                    window.location = url; 
+                    var requireUniqueWorkers = gup('requireUniqueWorkers');
+                    if(requireUniqueWorkers == "true"){
+                        $.ajax({
+                            type: 'POST',
+                            url: 'php/uniqueWorkers.php',
+                            data: {workerId: gup("workerId"), task: gup('task'), assignQualification: true, turkSubmitTo: gup('turkSubmitTo'), dbName:gup('dbName')},   
+                            success: function (d) {
+                                console.log(d);
+                                window.location = url; 
+                            },
+                            failure:function(f){
+                                console.log(f)
+                            }
+                        });
+                    }
+                    else{
+                        window.location=url;
+                    }
                 },
                 fail: function () {
                     alert("something in checkTutorialLog.php failed!"); 

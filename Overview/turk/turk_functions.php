@@ -7,8 +7,10 @@
 
 	$PAGE_SIZE = 100;  // Number of HITs per 'page'
 
-    $AccessKey = $_REQUEST['accessKey'];
-    $SecretKey = $_REQUEST['secretKey'];
+	if(isset($_REQUEST['accessKey']) && isset($_REQUEST['secretKey'])) {
+		$AccessKey = $_REQUEST['accessKey'];
+		$SecretKey = $_REQUEST['secretKey'];	
+	}
     /*
 	   var $validOps   = array("ApproveAssignment", "CreateHIT", "CreateQualificationType", "DisableHIT", "DisposeHIT", "ExtendHIT",
 	   "GetAccountBalance", "GetAssignmentsForHIT", "GetHIT", "GetQualificationRequests", "GetQualificationScore",
@@ -397,8 +399,8 @@
     }
 
     function turk50_createQualificationType($name, $description, $keywords, $qualSandbox){
-        global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
-        
+		global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+		        
         if($qualSandbox)
             $turk50 = new Turk50($AccessKey, $SecretKey);
         else
@@ -446,5 +448,18 @@
         return $turk50->AssignQualification($Request);
     }
 
-
+    function turk50_revokeQualification($workerId, $qualificationTypeId, $qualSandbox){
+        global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
+ 
+        if($qualSandbox)
+            $turk50 = new Turk50($AccessKey, $SecretKey);
+        else
+            $turk50 = new Turk50($AccessKey, $SecretKey, array("sandbox" => FALSE));
+        $Request = array(
+            "QualificationTypeId" => $qualificationTypeId,
+            "SubjectId" => $workerId,
+        );
+        return $turk50->RevokeQualification($Request);
+    }        
+	   
 ?>

@@ -13,6 +13,9 @@ include 'turk_functions.php';
 $AccessKey = $_REQUEST['accessKey'];
 $SecretKey = $_REQUEST['secretKey'];
 
+$task = $_REQUEST['task'];
+error_log("Task name: ".$task);
+
 // If key specifies use_file, use SQLite
 if($_REQUEST['accessKey'] == "use_file" && $_REQUEST['secretKey'] == "use_file"){
 	$tableName = 'retainer.db';
@@ -72,8 +75,8 @@ function createQualificationRequirement($row){
 		$noRepeatQualId = $row[0][$dbCol];
 
 		if($noRepeatQualId == null || $noRepeatQualId == ""){
-			$qual = turk50_createQualificationType(generateRandomString(), "This qualification is for people who have worked for me on this task before.", "Worked for me before", $SANDBOX);
-			// print_r($qual);
+			$qual = turk50_createQualificationType(date("Ymd-His").generateRandomString(), "This qualification is for people who have worked for me on this task(".$_REQUEST['task'].") before.", "Worked for me before", $SANDBOX);
+			error_log(print_r($qual,true),0);
 			$noRepeatQualId = $qual->QualificationType->QualificationTypeId;
 
 			if($SANDBOX) $sql = ("UPDATE retainer set noRepeatQualIdSandbox = :noRepeatQualId WHERE task = :task");
@@ -210,7 +213,7 @@ $task = $_REQUEST['task'];
 // FIXME Uncommented this so we are able to post multiple HITs
 // Could also try to removeOldHIT and post normally if not list and iterate over list here if string contains separator
 // characters, i.e. encodes list
-//removeOldHITs();
+removeOldHITs();
 
 // Post HITs in retainer mode
 if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mode'] == "auto"){
@@ -223,6 +226,8 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
     }
 
 	$numAssignableHits = 0;
+	$result = getTaskRowInDb();
+	$qualification = createQualificationRequirement($result);
 	while(!iShouldQuit()){
 	// fwrite($debug, "Start loop\n");
 

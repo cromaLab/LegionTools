@@ -30,7 +30,7 @@ if($_POST['action'] == "extractBonus") {
 
 } else if ($_POST['action'] == "executeBonus") {
 
-    // If we wanted to log payments
+// If we wanted to log payments
 //    $logFilePath = './debug.txt';
 //    ob_start();
 //    if (file_exists($logFilePath)) {

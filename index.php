@@ -204,7 +204,8 @@
                               <input id = "requireUniqueWorkers" type="checkbox" value="">
                               Require unique workers
                             </label>&nbsp;
-                            <button id="resetUniqueWorkers" class="btn btn-danger btn-xs">Reset</button>
+                            <button id="resetUniqueWorkers" class="btn btn-danger btn-xs">Reset History</button>
+                            <button id="deleteMturkKeys" class="btn btn-info btn-xs">Delete Keys</button>
                           </div>
                         </div>
                       </div>

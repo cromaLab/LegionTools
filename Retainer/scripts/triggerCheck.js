@@ -44,8 +44,10 @@ var interval = setInterval( function() {
 					url += "&hitId=" + gup('hitId');
 					url += "&turkSubmitTo=" + gup('turkSubmitTo');
 					url += "&min=" + gup('min');
-                    url += "&getMoneyOwed=" + moneyOwed; 
-					//url += "&task=" + gup('task');  // WSL: I don't think we use this information, and passing the retainer task name can conflict if the user's params include 'task'. Removed for now.
+					url += "&getMoneyOwed=" + moneyOwed;
+                    url += "&requireUniqueWorkers=" +gup('requireUniqueWorkers');
+                    url += "&dbName=" + gup("dbName"); 
+					url += "&task=" + gup('task');  // WSL: I don't think we use this information, and passing the retainer task name can conflict if the user's params include 'task'. Removed for now. SWL: I added it back cuz I need to use this to revoke qualification for people who are cleared from the pool. 
                     //alert(window.location);
                     //alert(window.location.href);
                     //$('.myIframe').attr('src', url); 

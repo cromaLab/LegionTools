@@ -9,10 +9,7 @@ function getDatabaseHandle() {
             $dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db/retainer.db');
         }
         else{
-			$hash1 = $_REQUEST['dbName'];
-            $tableName = $hash1; 
-            //$tableName = hash("sha256", $hash1);
-			// echo $tableName;
+			$tableName = $_REQUEST['dbName'];
 			$dbh = new PDO('sqlite:' . dirname(__FILE__) . '/db' .'/' . $tableName . '.db');
 		}
 	}

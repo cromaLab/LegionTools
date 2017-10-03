@@ -85,7 +85,7 @@ $(document).ready( function() {
                 setInterval(function(){updateSessionsList()}, 30000);
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/login.php failed";
             }
         });
     });
@@ -152,7 +152,7 @@ $(document).ready( function() {
 
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/addNewTask.php failed";
             }
         });
     });
@@ -170,7 +170,7 @@ $(document).ready( function() {
 
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/updatePrice.php failed";
             }
         });
     });
@@ -188,7 +188,7 @@ $(document).ready( function() {
 
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/updateTargetNumWorkers.php failed";
             }
         });
 
@@ -211,7 +211,7 @@ $(document).ready( function() {
 
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/stopRecruiting.php failed";
             }
         });
         window.clearInterval(isStoppedRecruitingInterval);
@@ -344,7 +344,7 @@ $(document).ready( function() {
                             $('#expireHITs').removeAttr('disabled');
                         },
                         fail: function () {
-                            statusbar.innerHTML = "Sending number of workers failed";
+                            statusbar.innerHTML = "ajax POST to php/getAnswers.php failed";
                         }
                     });
                 }
@@ -378,7 +378,7 @@ $(document).ready( function() {
                 $('#expireHITs').removeAttr('disabled');
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/expireHITs.php failed";
             }
         });
 
@@ -403,7 +403,7 @@ $(document).ready( function() {
                 taskData = d;
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers in taskSessionLoad failed";
+                statusbar.innerHTML = "ajax POST to php/loadTask.php failed";
             }
         });
 
@@ -472,7 +472,7 @@ $(document).ready( function() {
                 statusbar.innerHTML = "Update success";
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/updateTask.php failed";
             }
         });
     });
@@ -617,7 +617,11 @@ $(document).ready( function() {
                 });
             },
             error: function(req, status, error) {
-                statusbar.innerHTML = "Sending number of workers in getHits() failed";
+                statusbar.innerHTML = "ajax POST to php/getHits.php failed";
+                console.log('ajax POST to php/getHits.php:');
+                console.log('req',req);
+                console.log('status',status);
+                console.log('error',JSON.stringify(error));
                 // console.log(req.responseText);
             }
         });
@@ -700,7 +704,6 @@ $(document).ready( function() {
 // Clear Entire Queue (Pays Workers) button on right-hand side in Retainer mode
     $("#clearQueue").on("click", function(event){
         event.preventDefault();
-
         clearQueue(baseURL + '/Retainer/submitOnly.php');
     });
 
@@ -749,7 +752,7 @@ $(document).ready( function() {
 
                 },
                 fail: function() {
-                    statusbar.innerHTML = "Sending number of workers failed";
+                    statusbar.innerHTML = "ajax POST to php/updateReleased.php failed";
                 }
             });
         }
@@ -791,7 +794,7 @@ $(document).ready( function() {
 
                         },
                         fail: function() {
-                            statusbar.innerHTML = "Sending number of workers failed";
+                            statusbar.innerHTML = "ajax POST to php/updateReleased.php failed";
                         }
                     });
                 },
@@ -827,7 +830,7 @@ $(document).ready( function() {
                 //
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/updateWaitingInstructions.php failed";
             }
         });
     });
@@ -853,22 +856,51 @@ $(document).ready( function() {
 // Checkbox on Recruiting Panel under credentials
     $("#requireUniqueWorkers").change(function() {
         if(this.checked) {
-            $.ajax({
-                url: retainerLocation + "php/uniqueWorkers.php",
-                type: "POST",
-                data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
-                dataType: "text",
-                success: function(d) {
-                    statusbar.innerHTML = d;
-                },
-                fail: function() {
-                    statusbar.innerHTML = "Sending number of workers failed";
-                }
-            });
+            console.log('Requiring unique workers!');
+            if(confirm("Notice: If you want to require unique workers, " +
+                            "your MTurk Access and Secret keys must be temporarily stored on the server. " +
+                            "\n\n" +
+                            "You can delete your keys from the server at any time by pressing the Delete Keys button."
+                            ))
+            {
+                console.log('Require unique workers notice: accepted.');
+                alert("Unique workers required. Your keys have been temporarily stored to the server.");
+                $.ajax({
+                    url: retainerLocation + "php/tempKeyStore.php",
+                    type: "POST",
+                    data: {reset: 0, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+                    dataType: "text",
+                    async: false,
+                    success: function(d) {
+                        statusbar.innerHTML = d;
+                    },
+                    fail: function() {
+                        statusbar.innerHTML = "requireUniqueWorkers ajax POST to php/tempKeyStore.php failed";
+                    }
+                });
+                $.ajax({
+                    url: retainerLocation + "php/uniqueWorkers.php",
+                    type: "POST",
+                    data: {task: $("#taskSession").val(), useSandbox: sandbox, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+                    dataType: "text",
+                    success: function(d) {
+                        statusbar.innerHTML = d;
+                    },
+                    fail: function() {
+                        statusbar.innerHTML = "requireUniqueWorkers ajax POST to php/uniqueWorkers.php failed";
+                    }
+                });
+            } else {
+                console.log('Require unique workers notice: rejected.');
+                alert("Unique workers NOT required. Your keys have NOT been saved to the server.");                
+                $('#requireUniqueWorkers').prop('checked', false); 
+            }
+        } else {
+            console.log('Requiring unique workers!');            
         }
     });
 
-// Red reset button next to Require Unique Workers checkbox
+// Red 'Reset History' button next to Require Unique Workers checkbox
     $("#resetUniqueWorkers").on("click", function(event) {
         event.preventDefault();
         if(confirm("Are you sure you want to reset your history of unique workers?")){
@@ -881,11 +913,35 @@ $(document).ready( function() {
                     statusbar.innerHTML = "Reset success";
                 },
                 fail: function() {
-                    statusbar.innerHTML = "Sending number of workers failed";
+                    statusbar.innerHTML = "resetUniqueWorkers ajax POST to php/uniqueWorkers.php failed";
                 }
             });
         }
     });
+
+// Blue 'Delete Keys' button next to Require Unique Workers checkbox
+$("#deleteMturkKeys").on("click", function(event) {
+    event.preventDefault();
+    if(confirm("Are you sure you delete your Mturk Access and Secret Keys from the server?" +
+                "\n\n" +
+                "This will disable require unique workers."))
+    {
+        $.ajax({
+            url: retainerLocation + "php/tempKeyStore.php",
+            type: "POST",
+            data: {reset: 1, accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+            dataType: "text",
+            success: function(d) {
+                statusbar.innerHTML = "Keys deleted successfully";
+                $('#requireUniqueWorkers').prop('checked', false);        
+            },
+            fail: function() {
+                statusbar.innerHTML = "resetUniqueWorkers ajax POST to php/tempKeyStore.php failed";
+            }
+        });
+    }
+});
+
 
 // Copy button on Load Panel - will ask for a new unique task name and duplicate database entry under that name
     $("#copyExperiment").on("click", function(event) {
@@ -940,7 +996,7 @@ $(document).ready( function() {
                 taskData = d;
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers failed";
+                statusbar.innerHTML = "ajax POST to php/loadTask.php failed";
             }
         });
         if(taskData.done == "1"){
@@ -969,7 +1025,7 @@ $(document).ready( function() {
                 taskData = d;
             },
             fail: function() {
-                statusbar.innerHTML = "Sending number of workers to loadTask in validate() failed";
+                statusbar.innerHTML = "ajax POST to php/loadTask.php failed";
             }
         });
 
