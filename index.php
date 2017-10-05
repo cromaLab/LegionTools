@@ -20,6 +20,15 @@
     </head>
     <body>
 
+      <div class="page-header center">
+        <div style="display:inline-block;">
+          <h1>LegionTools</h1>
+        </div>
+        <div style="display:inline-block; float:right;">
+          <img src="static/img/CROMA_logo.png" alt="IBM" height="70px">
+        </div>
+      </div>
+
       <div class="blocky">
         <div class="container">
 
@@ -204,6 +213,10 @@
                               <input id = "requireUniqueWorkers" type="radio" value="">
                               Require unique workers
                             </label>&nbsp;
+                            <button class="btn btn-primary btn-circle btn-xs"
+                              onclick="alert('Requiring unique workers prevents the same worker from completing your HIT multiple times. This requires temporarily storing your MTurk Access and Secret keys on our server.\n\nYou can reset the history of unique workers by clicking the Reset History button.\n\nYou can delete your MTurk keys from our server by clicking the Delete Keys button.')">
+                              <span class="glyphicon glyphicon-info-sign"></span>
+                            </button>
                             <button id="resetUniqueWorkers" class="btn btn-danger btn-xs">Reset History</button>
                             <button id="deleteMturkKeys" class="btn btn-info btn-xs">Delete Keys</button>
                           </div>
@@ -218,7 +231,7 @@
                       <ul class="nav nav-tabs" role="tablist">
                         <li id = "useRetainerMode" class="active"><a href="#retainerTab" role="tab" data-toggle="tab">Retainer</a></li>
                         <!-- <li id = "useAutoMode"><a href="#retainerTab" role="tab" data-toggle="tab">Auto</a></li> -->
-                        <li id = "useDirectMode"><a href="#directTab" role="tab" data-toggle="tab">Direct (classic)</a></li>
+                        <li id = "useDirectMode"><a href="#directTab" role="tab" data-toggle="tab">Direct (Classic)</a></li>
                       </ul>
                     </div>
                   </form>
@@ -360,9 +373,10 @@
                           <input type="text" class="form-control" id="numHITs" placeholder="">
                         </div>
 
-                        <button class="btn btn-primary btn-circle"
+                        <button class="btn btn-primary btn-circle btn-xs"
                           onclick="alert('This is the number of individual HITs you would like to post.')">
-                        <span class="glyphicon glyphicon-info-sign"></span></button>
+                          <span class="glyphicon glyphicon-info-sign"></span>
+                        </button>
 
                       </div>
                     </div>
@@ -378,9 +392,10 @@
                           <input type="text" class="form-control" id="numAssignments" placeholder="">
                         </div>
 
-                        <button class="btn btn-primary btn-circle"
+                        <button class="btn btn-primary btn-circle btn-xs"
                           onclick="alert('This is the number of times you would like each individual HIT to be completed.\n\nFor example, if you set number of HITs to 2 and number of assignments to 3, then each of the 2 HITs will be completed by 3 workers for a total of 6 responses.')">
-                        <span class="glyphicon glyphicon-info-sign"></span></button>
+                          <span class="glyphicon glyphicon-info-sign"></span>
+                        </button>
                       
                       </div>
                     </div>
@@ -515,5 +530,13 @@
 </div>
 </div>
 </body>
+
+<footer class="footer">
+      <span class="text-muted text-center">
+        Supported in part by
+        <img src="static/img/IBM_logo.png" alt="IBM" height="90%">
+        <img src="static/img/UM_logo.png" alt="IBM" height="100%">
+      </span>
+</footer>
 
 </html>
