@@ -55,7 +55,7 @@ function createQualificationRequirement($row){
 		);
 
 		array_push($qualsArray, $Worker_PercentAssignmentsApproved);
-	}	
+	}
 
 	// require Worker_Locale == Country
 	$country = $row[0]["country"];
@@ -334,7 +334,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 
 if(isset($noRepeatQualId)){
 	$sql = ("UPDATE retainer set noRepeatQualIdLive = :noRepeatQualId WHERE task = :task");
-	$sth = $dbh->prepare($sql); 
+	$sth = $dbh->prepare($sql);
 	$sth->execute(array(":task"=>$_REQUEST['task'], ":noRepeatQualId"=>$noRepeatQualId));
 }
 
@@ -348,7 +348,7 @@ function generateRandomString($length = 50) {
 }
 
 $sql = "UPDATE retainer SET done = 1 WHERE task = :task";
-$sth = $dbh->prepare($sql); 
+$sth = $dbh->prepare($sql);
 $sth->execute(array(':task' => $_REQUEST['task']));
 
 

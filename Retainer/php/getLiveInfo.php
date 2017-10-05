@@ -17,7 +17,6 @@ try {
       echo $e->getMessage();
   }
 
-
 if( $dbh ) {
 
 	$rewardTotal = 0;

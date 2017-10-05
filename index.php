@@ -201,7 +201,7 @@
                           </div>
                           <div class="checkbox">
                             <label>
-                              <input id = "requireUniqueWorkers" type="checkbox" value="">
+                              <input id = "requireUniqueWorkers" type="radio" value="">
                               Require unique workers
                             </label>&nbsp;
                             <button id="resetUniqueWorkers" class="btn btn-danger btn-xs">Reset History</button>
@@ -217,7 +217,7 @@
                       <!-- Nav tabs -->
                       <ul class="nav nav-tabs" role="tablist">
                         <li id = "useRetainerMode" class="active"><a href="#retainerTab" role="tab" data-toggle="tab">Retainer</a></li>
-                        <li id = "useAutoMode"><a href="#retainerTab" role="tab" data-toggle="tab">Auto</a></li>
+                        <!-- <li id = "useAutoMode"><a href="#retainerTab" role="tab" data-toggle="tab">Auto</a></li> -->
                         <li id = "useDirectMode"><a href="#directTab" role="tab" data-toggle="tab">Direct (classic)</a></li>
                       </ul>
                     </div>
