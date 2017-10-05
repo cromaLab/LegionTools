@@ -327,7 +327,7 @@
                     <div class="form-group someAirForRecruitingPanel">
 
                      <div class="col-lg-offset-1 col-lg-10">
-                      <label for="sendToURL" class="col-sm-2 control-label">URLs</label>
+                      <label for="sendToURL" class="col-sm-2 control-label">URL</label>
                       <div class="col-sm-10">
                         <!--<input type="text" class="form-control" id="directModeInstrPage" placeholder="Instructions Page">-->
                         <input type="text" class="form-control" id="sendToURL" placeholder="USE HTTPS! Enter URL to send workers to">
@@ -338,29 +338,54 @@
                   <div class="form-group someAirForRecruitingPanel">
 
                    <div class="col-lg-offset-1 col-lg-10">
-                    <label for="sendToURL" class="col-sm-2 control-label">Price (cents)</label>
-                    <div class="col-sm-10">
+                    <label for="sendToURL" class="col-sm-4 control-label">Price (cents)</label>
+                    <div class="col-sm-8">
                       <input type="text" class="form-control" id="price" placeholder="Price in cents">
                     </div>
                   </div>
+
                 </div>
 
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <div class="form-group row someAirForRecruitingPanel">
 
-                      <div class="col-lg-offset-1 col-lg-10">
-                        <label for="numHITs" class="col-sm-3 control-label">Num HITs</label>
-                        <div class="col-sm-2">
+                    <div class="form-group row someAirForRecruitingPanel">
+                      <div class="col-lg-offset-1 col-lg-12">
+                        
+                        <label for="numHITs" class="col-sm-4 control-label">
+                          Num HITs
+                        </label>
+
+                        <div class="col-sm-3">
                           <input type="text" class="form-control" id="numHITs" placeholder="">
                         </div>
-                        <label for="numAssignments" class="col-sm-5 control-label">Num Assignments</label>
-                        <div class="col-sm-2">
+
+                        <button class="btn btn-primary btn-circle"
+                          onclick="alert('This is the number of individual HITs you would like to post.')">
+                        <span class="glyphicon glyphicon-info-sign"></span></button>
+
+                      </div>
+                    </div>
+
+                    <div class="form-group row someAirForRecruitingPanel">
+                      <div class="col-lg-offset-1 col-lg-12">
+
+                        <label for="numAssignments" class="col-sm-4 control-label">
+                          Num Assignments 
+                        </label>
+                            
+                        <div class="col-sm-3">
                           <input type="text" class="form-control" id="numAssignments" placeholder="">
                         </div>
+
+                        <button class="btn btn-primary btn-circle"
+                          onclick="alert('This is the number of times you would like each individual HIT to be completed.\n\nFor example, if you set number of HITs to 2 and number of assignments to 3, then each of the 2 HITs will be completed by 3 workers for a total of 6 responses.')">
+                        <span class="glyphicon glyphicon-info-sign"></span></button>
+                      
                       </div>
                     </div>
                   </div>
+
                 </div>
 
               </form>
