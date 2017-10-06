@@ -192,7 +192,7 @@
                               <button id="noSandbox" type="button" class="btn btn-lg btn-default">Live</button>
                               </div>
                             <button type="button" class="btn btn-primary btn-circle btn-xs"
-                              onclick="alert('Sandbox mode allows you to test your HIT for free before you post it live (https://workersandbox.mturk.com).\n\nLive mode actually posts your HIT to Mechanical Turk for workers to complete (https://www.mturk.com).')">
+                              onclick="alert('Sandbox mode allows you to test your HIT for free before you post it live (https://workersandbox.mturk.com).\n\nLive mode actually posts your HIT to Mechanical Turk for workers to complete (https://www.mturk.com).'); return false;">
                               <span class="glyphicon glyphicon-info-sign"></span>
                               </button>
                               </div>
@@ -223,7 +223,7 @@
                               <button id="resetUniqueWorkers" class="btn btn-danger btn-sm">Reset History</button>
                               <button id="deleteMturkKeys" class="btn btn-info btn-sm">Delete Keys</button>
                               <button class="btn btn-primary btn-circle btn-xs"
-                                onclick="alert('Requiring unique workers prevents the same worker from completing your HIT multiple times. This requires temporarily storing your MTurk Access and Secret keys on our server.\n\nYou can reset the history of unique workers by clicking the Reset History button.\n\nYou can delete your MTurk keys from our server by clicking the Delete Keys button.')">
+                                onclick="alert('Requiring unique workers prevents the same worker from completing your HIT multiple times. This requires temporarily storing your MTurk Access and Secret keys on our server.\n\nYou can reset the history of unique workers by clicking the Reset History button.\n\nYou can delete your MTurk keys from our server by clicking the Delete Keys button.'); return false;">
                                 <span class="glyphicon glyphicon-info-sign"></span>
                               </button>
                             <!-- </div> -->
@@ -382,7 +382,7 @@
                           </div>
 
                           <button class="btn btn-primary btn-circle btn-xs"
-                            onclick="alert('This is the number of individual HITs you would like to post.')">
+                            onclick="alert('This is the number of individual HITs you would like to post.'); return false;">
                             <span class="glyphicon glyphicon-info-sign"></span>
                           </button>
                         <!-- </div> -->
@@ -402,7 +402,7 @@
                           </div>
 
                           <button class="btn btn-primary btn-circle btn-xs"
-                            onclick="alert('This is the number of times you would like each individual HIT to be completed.\n\nFor example, if you set number of HITs to 2 and number of assignments to 3, then each of the 2 HITs will be completed by 3 workers for a total of 6 responses.')">
+                            onclick="alert('This is the number of times you would like each individual HIT to be completed.\n\nFor example, if you set number of HITs to 2 and number of assignments to 3, then each of the 2 HITs will be completed by 3 workers for a total of 6 responses.'); return false;">
                             <span class="glyphicon glyphicon-info-sign"></span>
                           </button>
                         <!-- </div> -->
@@ -476,7 +476,7 @@
               <button type="submit" id="approveAll" class="btn btn-success btn-sm">Approve all loaded HITs</button> &nbsp;
               <button type="submit" id="disposeAll" class="btn btn-warning btn-sm">Dispose all loaded HITs</button>
               <button class="btn btn-primary btn-circle btn-xs"
-                onclick="alert('Load Hits gathers all of your completed HITs for your approval or rejection.\n\nYou can approve HITs individually or en masse by clicking Approve All Loaded Hits.\n\nAfter submitting optional bonuses to workers, you can dispose HITs (send them their bonuses) individually or en masse by clicking Dispose All Loaded HITs.')">
+                onclick="alert('Load Hits gathers all of your completed HITs for your approval or rejection.\n\nYou can approve HITs individually or en masse by clicking Approve All Loaded Hits.\n\nAfter submitting optional bonuses to workers, you can dispose HITs (send them their bonuses) individually or en masse by clicking Dispose All Loaded HITs.'); return false;">
                 <span class="glyphicon glyphicon-info-sign"></span>
               </button>
             <!-- </div> -->
