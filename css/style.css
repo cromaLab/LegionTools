@@ -43,7 +43,7 @@ p {
 
 .cool-block-bor{
    margin:3px;
-   border:1px dashed #aaa;
+   border:1px solid #fafafa;
    box-shadow:0px 0px 1px #999;
    border-radius:3px;
    padding:15px;
@@ -248,6 +248,15 @@ img {
   padding: 10px;
 }
 
+body {
+  background-color: #fafafa;
+}
+
+.nopadding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;  
+  margin: 0 !important;
+}
 
 /*.forAutoTab {
    margin-top: -19px;

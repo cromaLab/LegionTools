@@ -20,12 +20,12 @@
     </head>
     <body>
 
-      <div class="page-header center">
+      <div class="page-header" style="height:70px; margin:0px; background-color:white; padding-left:10px;">
         <div style="display:inline-block;">
-          <h1>LegionTools</h1>
+          <h1 style="font-family: 'Open Sans Condensed', sans-serif; font-variant:small-caps;">LegionTools</h1>
         </div>
         <div style="display:inline-block; float:right;">
-          <img src="static/img/CROMA_logo.png" alt="IBM" height="70px">
+          <a href="http://web.eecs.umich.edu/~wlasecki/croma.html"><img src="static/img/CROMA_logo.png" alt="IBM" height="70px"></a>
         </div>
       </div>
 
@@ -186,10 +186,16 @@
                         <br /><br />
                         <form class="form-horizontal" role="form">
                           <div class="form-group">
-                            <div class="btn-group col-lg-offset-1 col-lg-10">
+                            <div class="col-lg-offset-1 col-lg-10">
+                              <div class="btn-group">
                               <button id="yesSandbox" type="button" class="btn btn-lg btn-default active">Sandbox</button>
                               <button id="noSandbox" type="button" class="btn btn-lg btn-default">Live</button>
-                            </div>
+                              </div>
+                            <button type="button" class="btn btn-primary btn-circle btn-xs"
+                              onclick="alert('Sandbox mode allows you to test your HIT for free before you post it live (https://workersandbox.mturk.com).\n\nLive mode actually posts your HIT to Mechanical Turk for workers to complete (https://www.mturk.com).')">
+                              <span class="glyphicon glyphicon-info-sign"></span>
+                              </button>
+                              </div>
                           </div>
 
                           <div class="form-group">
@@ -210,21 +216,22 @@
                           </div>
                           <div class="checkbox">
                             <label>
-                              <input id = "requireUniqueWorkers" type="radio" value="">
+                              <input id = "requireUniqueWorkers" class="form-check-input" type="radio" value="">
                               Require unique workers
                             </label>&nbsp;
-                            <button class="btn btn-primary btn-circle btn-xs"
-                              onclick="alert('Requiring unique workers prevents the same worker from completing your HIT multiple times. This requires temporarily storing your MTurk Access and Secret keys on our server.\n\nYou can reset the history of unique workers by clicking the Reset History button.\n\nYou can delete your MTurk keys from our server by clicking the Delete Keys button.')">
-                              <span class="glyphicon glyphicon-info-sign"></span>
-                            </button>
-                            <button id="resetUniqueWorkers" class="btn btn-danger btn-xs">Reset History</button>
-                            <button id="deleteMturkKeys" class="btn btn-info btn-xs">Delete Keys</button>
+                            <!-- <div class="btn-group"> -->
+                              <button id="resetUniqueWorkers" class="btn btn-danger btn-sm">Reset History</button>
+                              <button id="deleteMturkKeys" class="btn btn-info btn-sm">Delete Keys</button>
+                              <button class="btn btn-primary btn-circle btn-xs"
+                                onclick="alert('Requiring unique workers prevents the same worker from completing your HIT multiple times. This requires temporarily storing your MTurk Access and Secret keys on our server.\n\nYou can reset the history of unique workers by clicking the Reset History button.\n\nYou can delete your MTurk keys from our server by clicking the Delete Keys button.')">
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                              </button>
+                            <!-- </div> -->
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
                        <label class=" col-lg-offset-1 col-lg-6 control-label">For account balance, visit <a href="https://requester.mturk.com/mturk/youraccount" target="_blank">here.</a></label>
-
                      </div>
                      <div class="form-group">
                       <!-- Nav tabs -->
@@ -369,15 +376,16 @@
                           Num HITs
                         </label>
 
-                        <div class="col-sm-3">
-                          <input type="text" class="form-control" id="numHITs" placeholder="">
-                        </div>
+                        <!-- <div class="btn-group"> -->
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control" id="numHITs" placeholder="">
+                          </div>
 
-                        <button class="btn btn-primary btn-circle btn-xs"
-                          onclick="alert('This is the number of individual HITs you would like to post.')">
-                          <span class="glyphicon glyphicon-info-sign"></span>
-                        </button>
-
+                          <button class="btn btn-primary btn-circle btn-xs"
+                            onclick="alert('This is the number of individual HITs you would like to post.')">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                          </button>
+                        <!-- </div> -->
                       </div>
                     </div>
 
@@ -387,16 +395,17 @@
                         <label for="numAssignments" class="col-sm-4 control-label">
                           Num Assignments 
                         </label>
-                            
-                        <div class="col-sm-3">
-                          <input type="text" class="form-control" id="numAssignments" placeholder="">
-                        </div>
+                          
+                        <!-- <div class="btn-group"> -->
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control" id="numAssignments" placeholder="">
+                          </div>
 
-                        <button class="btn btn-primary btn-circle btn-xs"
-                          onclick="alert('This is the number of times you would like each individual HIT to be completed.\n\nFor example, if you set number of HITs to 2 and number of assignments to 3, then each of the 2 HITs will be completed by 3 workers for a total of 6 responses.')">
-                          <span class="glyphicon glyphicon-info-sign"></span>
-                        </button>
-                      
+                          <button class="btn btn-primary btn-circle btn-xs"
+                            onclick="alert('This is the number of times you would like each individual HIT to be completed.\n\nFor example, if you set number of HITs to 2 and number of assignments to 3, then each of the 2 HITs will be completed by 3 workers for a total of 6 responses.')">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                          </button>
+                        <!-- </div> -->
                       </div>
                     </div>
                   </div>
@@ -462,11 +471,15 @@
         <br /><br />
         <form role="form" class="form-horizontal">
           <div class="cta">
-            <div class="cta-buttons">
+            <!-- <div class="cta-buttons btn-group"> -->
               <button type="submit" id="reloadHits" class="btn btn-info btn-sm">Load HITs</button> &nbsp;
               <button type="submit" id="approveAll" class="btn btn-success btn-sm">Approve all loaded HITs</button> &nbsp;
               <button type="submit" id="disposeAll" class="btn btn-warning btn-sm">Dispose all loaded HITs</button>
-            </div>
+              <button class="btn btn-primary btn-circle btn-xs"
+                onclick="alert('Load Hits gathers all of your completed HITs for your approval or rejection.\n\nYou can approve HITs individually or en masse by clicking Approve All Loaded Hits.\n\nAfter submitting optional bonuses to workers, you can dispose HITs (send them their bonuses) individually or en masse by clicking Dispose All Loaded HITs.')">
+                <span class="glyphicon glyphicon-info-sign"></span>
+              </button>
+            <!-- </div> -->
           </div>
         </form>
       </br>
@@ -534,8 +547,8 @@
 <footer class="footer">
       <span class="text-muted text-center">
         Supported in part by
-        <img src="static/img/IBM_logo.png" alt="IBM" height="90%">
-        <img src="static/img/UM_logo.png" alt="IBM" height="100%">
+        <a href="https://www.ibm.com"><img src="static/img/IBM_logo.png" alt="IBM" height="90%"></a>
+        <a href="https://www.umich.edu/"><img src="static/img/UM_logo.png" alt="IBM" height="100%"></a>
       </span>
 </footer>
 
