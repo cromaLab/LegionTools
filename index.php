@@ -31,7 +31,15 @@
 
       <div class="blocky">
         <div class="container">
-
+          <!-- 
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+          %%%%%                                                                                            %%%%
+          %%%%%                                        Modals                                              %%%%
+          %%%%%                                                                                            %%%%
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+          -->
           <div id = "loginModal" class="modal fade">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -42,7 +50,6 @@
                 <div class="modal-body">
                   <input id = "modalAccessKey" type="text" class="form-control" name="accessKey" placeholder="Access Key" required="" autofocus="" />
                   <input id = "modalSecretKey" type="text" class="form-control" name="secretKey" placeholder="Secret Key" required=""/>
-
                   </br>Your keys are never stored on our server.   
                 </div>
                 <div class="modal-footer">
@@ -54,7 +61,7 @@
           </div><!-- /.modal -->
 
 
-          <!-- Modal -->
+          <!-- Modal for waiting instructions -->
           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -73,32 +80,143 @@
             </div>
           </div>
 
-            <!-- Modal for confirming bonus amount -->
-            <div class="modal fade" id="bonusModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Do you want to bonus the following amount?</h4>
-                        </div>
-                        <div class="modal-body">
-                            <br />
-                            <p>Bonus Amount:</p>
-                            <input id = "modalBonusAmount" type="text" class="form-control" name="bonusAmountField" placeholder="0.01" required="" autofocus="" />
-                            <br /><p>Reason:</p>
-                            <input id = "modalBonusReason" type="text" class="form-control" name="bonusReasonField" required="" value="Great work." />
-                            <br /><p>Worker ID:</p>
-                            <input id = "modalBonusWorkerId" type="text" class="form-control" name="bonusWorkerIdField" required="" readonly />
-                            <br /><p>Assignment ID:</p>
-                            <input id = "modalBonusAssignmentId" type="text" class="form-control" name="bonusAIDField" required="" readonly />
-                        </div>
-                        <div class="modal-footer">
-                            <button id="sendBonusButtonInModal" type="button" class="btn btn-primary" data-dismiss="modal">Send Bonus</button>
-                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                        </div>
-                    </div>
-                </div>
+          <!-- Modal for confirming bonus amount -->
+          <div class="modal fade" id="bonusModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title">Do you want to bonus the following amount?</h4>
+                      </div>
+                      <div class="modal-body">
+                          <br />
+                          <p>Bonus Amount:</p>
+                          <input id = "modalBonusAmount" type="text" class="form-control" name="bonusAmountField" placeholder="0.01" required="" autofocus="" />
+                          <br /><p>Reason:</p>
+                          <input id = "modalBonusReason" type="text" class="form-control" name="bonusReasonField" required="" value="Great work." />
+                          <br /><p>Worker ID:</p>
+                          <input id = "modalBonusWorkerId" type="text" class="form-control" name="bonusWorkerIdField" required="" readonly />
+                          <br /><p>Assignment ID:</p>
+                          <input id = "modalBonusAssignmentId" type="text" class="form-control" name="bonusAIDField" required="" readonly />
+                      </div>
+                      <div class="modal-footer">
+                          <button id="sendBonusButtonInModal" type="button" class="btn btn-primary" data-dismiss="modal">Send Bonus</button>
+                          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Modal for info box (Sandbox/live) -->
+          <div id="infoModal-SandboxLive" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sandbox mode and Live mode</h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button> -->
+              </div>
+              <div class="modal-body">
+                <p>Sandbox mode allows you to test your HIT for free at <a href="https://workersandbox.mturk.com" target="_blank">https://workersandbox.mturk.com</a> before you post it live.</p>
+                <br>
+                <p>Live mode actually posts your HIT to Mechanical Turk at <a href="https://www.mturk.com" target="_blank">https://www.mturk.com</a> for workers to complete.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
             </div>
+          </div>
+          </div>
+
+          <!-- Modal for info box (Require unique workers) -->
+          <div id="infoModal-RequireUniqueWorkers" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Requiring unique workers</h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button> -->
+              </div>
+              <div class="modal-body">
+                <p>Requiring unique workers prevents the same worker from completing your HIT multiple times. This requires temporarily storing your MTurk Access and Secret keys on our server.</p>
+                <br>
+                <p>You can reset the history of unique workers by clicking the Reset History button.</p>
+                <br>
+                <p>You can delete your MTurk keys from our server by clicking the Delete Keys button.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <!-- Modal for info box (Num HITs and Num Assignments) -->
+          <div id="infoModal-HitsAssignments" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Number of HITs and Number of Assignments</h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button> -->
+              </div>
+              <div class="modal-body">
+                <p>Num HITs is the number of individual HITs you would like to post.</p>
+                <br>
+                <p>Num Assignments is the number of times you would like each individual HIT to be completed.</p>
+                <br>
+                <p>For example, if you set number of HITs to 2 and number of assignments to 3, then each of the 2 HITs will be completed by 3 workers for a total of 6 worker responses.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <!-- Modal for info box (Load / Approve / Dispose all hits) -->
+          <div id="infoModal-LoadApproveDisposeAll" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Number of HITs and Number of Assignments</h5>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button> -->
+              </div>
+              <div class="modal-body">
+                <p>Clicking Load Hits gathers all of your completed HITs for your approval or rejection.</p>
+                <br>
+                <p>You can approve HITs individually or all at once by clicking Approve All Loaded Hits.</p>
+                <br>
+                <p>After submitting optional bonuses to workers, you can dispose HITs (send workers their bonuses) individually or all at once by clicking Dispose All Loaded HITs.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+
+
+          <!-- 
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+          %%%%%                                                                                            %%%%
+          %%%%%                                        Panels                                              %%%%
+          %%%%%                                                                                            %%%%
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+          %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+          -->
 
           <div class="row">
             <div class="col-md-6">
@@ -191,11 +309,10 @@
                               <button id="yesSandbox" type="button" class="btn btn-lg btn-default active">Sandbox</button>
                               <button id="noSandbox" type="button" class="btn btn-lg btn-default">Live</button>
                               </div>
-                            <button type="button" class="btn btn-primary btn-circle btn-xs"
-                              onclick="alert('Sandbox mode allows you to test your HIT for free before you post it live (https://workersandbox.mturk.com).\n\nLive mode actually posts your HIT to Mechanical Turk for workers to complete (https://www.mturk.com).'); return false;">
-                              <span class="glyphicon glyphicon-info-sign"></span>
+                              <button type="button" class="btn btn-primary btn-circle btn-xs" onclick="$('#infoModal-SandboxLive').modal('show');">
+                                <span class="glyphicon glyphicon-info-sign"></span>
                               </button>
-                              </div>
+                            </div>
                           </div>
 
                           <div class="form-group">
@@ -222,10 +339,10 @@
                             <!-- <div class="btn-group"> -->
                               <button id="resetUniqueWorkers" class="btn btn-danger btn-sm">Reset History</button>
                               <button id="deleteMturkKeys" class="btn btn-info btn-sm">Delete Keys</button>
-                              <button class="btn btn-primary btn-circle btn-xs"
-                                onclick="alert('Requiring unique workers prevents the same worker from completing your HIT multiple times. This requires temporarily storing your MTurk Access and Secret keys on our server.\n\nYou can reset the history of unique workers by clicking the Reset History button.\n\nYou can delete your MTurk keys from our server by clicking the Delete Keys button.'); return false;">
+                              <button type="button" class="btn btn-primary btn-circle btn-xs" onclick="$('#infoModal-RequireUniqueWorkers').modal('show');">
                                 <span class="glyphicon glyphicon-info-sign"></span>
                               </button>
+
                             <!-- </div> -->
                           </div>
                         </div>
@@ -381,10 +498,10 @@
                             <input type="text" class="form-control" id="numHITs" placeholder="">
                           </div>
 
-                          <button class="btn btn-primary btn-circle btn-xs"
+                          <!-- <button class="btn btn-primary btn-circle btn-xs"
                             onclick="alert('This is the number of individual HITs you would like to post.'); return false;">
                             <span class="glyphicon glyphicon-info-sign"></span>
-                          </button>
+                          </button> -->
                         <!-- </div> -->
                       </div>
                     </div>
@@ -401,9 +518,8 @@
                             <input type="text" class="form-control" id="numAssignments" placeholder="">
                           </div>
 
-                          <button class="btn btn-primary btn-circle btn-xs"
-                            onclick="alert('This is the number of times you would like each individual HIT to be completed.\n\nFor example, if you set number of HITs to 2 and number of assignments to 3, then each of the 2 HITs will be completed by 3 workers for a total of 6 responses.'); return false;">
-                            <span class="glyphicon glyphicon-info-sign"></span>
+                          <button type="button" class="btn btn-primary btn-circle btn-xs" onclick="$('#infoModal-HitsAssignments').modal('show');">
+                          <span class="glyphicon glyphicon-info-sign"></span>
                           </button>
                         <!-- </div> -->
                       </div>
@@ -432,17 +548,6 @@
             </div>
 
           </div>
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
       </div>
@@ -475,8 +580,7 @@
               <button type="submit" id="reloadHits" class="btn btn-info btn-sm">Load HITs</button> &nbsp;
               <button type="submit" id="approveAll" class="btn btn-success btn-sm">Approve all loaded HITs</button> &nbsp;
               <button type="submit" id="disposeAll" class="btn btn-warning btn-sm">Dispose all loaded HITs</button>
-              <button class="btn btn-primary btn-circle btn-xs"
-                onclick="alert('Load Hits gathers all of your completed HITs for your approval or rejection.\n\nYou can approve HITs individually or en masse by clicking Approve All Loaded Hits.\n\nAfter submitting optional bonuses to workers, you can dispose HITs (send them their bonuses) individually or en masse by clicking Dispose All Loaded HITs.'); return false;">
+              <button type="button" class="btn btn-primary btn-circle btn-xs" onclick="$('#infoModal-LoadApproveDisposeAll').modal('show');">
                 <span class="glyphicon glyphicon-info-sign"></span>
               </button>
             <!-- </div> -->
