@@ -160,7 +160,7 @@ class MTurkInterface
    var $Timestamp;
    
    /* Constructor */
-   function __constructor($AccessKey, $SecretKey, $sandbox = false, $Version = "2006-08-23")
+   function MTurkInterface($AccessKey, $SecretKey, $sandbox = false, $Version = "2006-08-23")
    {
    $this->sandbox = $sandbox;
       $this->Service       = "AWSMechanicalTurkRequester";
