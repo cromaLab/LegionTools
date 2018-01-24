@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Instructions</title>
+	<style>
+		#container{
+			position: relative;
+			width: 100%;
+		}
+		
+		#title{
+			position: relative;
+			font-size: 30px;
+			font-weight: bold;
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+		.introMess{
+			position: relative;
+			width: 90%;
+			margin: 0 auto;
+		}
+		
+		.normal{
+			font-size: 20px;
+			display: block;
+			margin-bottom: 15px;
+		}
+	</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="mturk.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="title">
+			<span>Instructions</span>
+		</div>
+	</div>
+
+    <form id="mturk_form"/>
+	
+	 <div class="introMess">
+         <span class="normal">This is the task page. To submit the HIT, use mturk.js to submit a form on button click.</span> 
+        <br/>
+        <br/>
+        <br/>
+        <button onclick="alert('Thanks for submitting the HIT!'); $('#mturk_form').submit();">Submit HIT</button>
+        </div>
+</body>
+</html>

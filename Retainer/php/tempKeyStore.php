@@ -37,7 +37,7 @@ $fname = $key_store_path."/".$tableName;
 if (!file_exists($fname)) {
     $fh = fopen($fname, 'a');
     fwrite($fh, $accessKey.",".$secretKey);
-    fclose($fh);    
+    fclose($fh);
 }
 
 // Delete keys if reset requested
