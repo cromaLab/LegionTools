@@ -1,7 +1,11 @@
 <html>
 <head>
-	<title>Instructions</title>
+	<title>Post-Tutorial Instructions</title>
 	<style>
+		body{
+			background: #FCFCF9;
+		}
+
 		#container{
 			position: relative;
 			width: 100%;
@@ -27,25 +31,19 @@
 			margin-bottom: 15px;
 		}
 	</style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="mturk.js"></script>
 </head>
 
 <body>
 	<div id="container">
 		<div id="title">
-			<span>Instructions</span>
+			<span>Wait Instructions</span>
 		</div>
 	</div>
-
-    <form id="mturk_form"/>
 	
 	 <div class="introMess">
-         <span class="normal">This is the task page. To submit the HIT, use mturk.js to submit a form on button click.</span> 
-        <br/>
-        <br/>
-        <br/>
-        <button onclick="alert('Thanks for submitting the HIT!'); $('#mturk_form').submit();">Submit HIT</button>
+		 <!-- <span class="normal">This is the page that is displayed AFTER workers successfully finish the tutorial!</span> -->
+		 <span class="normal">You have finished the tutorial!</span> 
+         <span class="normal">Please wait while you are redirected to the task.</span> 
         </div>
 </body>
 </html>
