@@ -157,8 +157,9 @@ function submitToTurk(ev) {
         $("#legion-money-field").attr("value", totalMoney);
 
 	// if( opts["useAlert"] ) {
-        	alert('Your HIT is being submitted. A quality check will be performed on your work, and you will be bonused up to $' + m + ' based on the results, in additon to $' + (timeWaited * centsPerSecondWaited) + ' for waiting. Generally, payments are processed within one hour.');
-	// }
+        	//alert('Your HIT is being submitted. A quality check will be performed on your work, and you will be bonused up to $' + m + ' based on the results, in additon to $' + (timeWaited * centsPerSecondWaited) + ' for waiting. Generally, payments are processed within one hour.');
+        	alert('Your HIT is being submitted. Generally, payments are processed within one hour.');
+    // }
     }
  //    else {
 	// if( opts["useAlert"] ) {
