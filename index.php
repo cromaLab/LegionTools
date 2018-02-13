@@ -246,7 +246,7 @@
                       <span class="grandTitre text-primary">OR create a new experiment</span>
                       <form class="form-horizontal" role="form">
                         <div class="form-group air">
-                          <label for="taskSession" class="col-sm-4 control-label">Experiment name (remember this):</label>
+                          <label for="taskSession" class="col-sm-4 control-label">Experiment Name (Remember This):</label>
                           <div class="col-sm-8">
                             <input type="text" class="form-control" id="taskSession" placeholder="Enter a task session name">
                           </div>
@@ -254,23 +254,23 @@
                         <div class="form-group air">
                           <label for="hitTitle" class="col-sm-4 control-label">HIT Title</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" id="hitTitle" placeholder="Enter HIT title">
+                            <input type="text" class="form-control" id="hitTitle" maxlength="128" placeholder="Enter HIT title (max 128 characters)">
                           </div>
                         </div>
                         <div class="form-group air">
                           <label for="hitDescription" class="col-sm-4 control-label">HIT Description</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" id="hitDescription" placeholder="Enter HIT description">
+                            <input type="text" class="form-control" id="hitDescription" maxlength="2000" placeholder="Enter HIT description (max 2000 characters)">
                           </div>
                         </div>
                         <div class="form-group air">
                           <label for="hitKeywords" class="col-sm-4 control-label">HIT Keywords</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (space-separated)">
+                            <input type="text" class="form-control" id="hitKeywords" placeholder="Enter HIT keywords (comma-separated)">
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="country" class="col-sm-4 control-label">Worker country</label>
+                          <label for="country" class="col-sm-4 control-label">Worker Country</label>
                           <div class="col-sm-3">
                             <select id = "country" class="form-control">
                               <option>All</option>
