@@ -1,7 +1,7 @@
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Retainer trigger</title>
+      <title>Legion Tools</title>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script type="text/javascript" src="Retainer/scripts/gup.js"></script>
       <script type="text/javascript" src="Retainer/scripts/trigger.js"></script>
@@ -25,7 +25,8 @@
           <h1 style="font-family: 'Open Sans Condensed', sans-serif; font-variant:small-caps;">LegionTools</h1>
         </div>
         <div style="display:inline-block; float:right;">
-          <a href="http://web.eecs.umich.edu/~wlasecki/croma.html"><img src="static/img/CROMA_logo.png" alt="IBM" height="70px"></a>
+          <a href="/LegionTools/guide.php" target="_blank">User Guide</a>
+          <a href="http://web.eecs.umich.edu/~wlasecki/croma.html" target="_blank"><img src="static/img/CROMA_logo.png" alt="IBM" height="70px"></a>
         </div>
       </div>
 
@@ -50,7 +51,11 @@
                 <div class="modal-body">
                   <input id = "modalAccessKey" type="text" class="form-control" name="accessKey" placeholder="Access Key" required="" autofocus="" />
                   <input id = "modalSecretKey" type="text" class="form-control" name="secretKey" placeholder="Secret Key" required=""/>
-                  </br>Your keys are never stored on our server.   
+                  </br>
+                  Your keys are never stored on our server without your consent. 
+                  </br>
+                  <p>Questions? Read the Legion Tools <a href="/LegionTools/guide.php" target="_blank">User Guide</a>.</p>
+
                 </div>
                 <div class="modal-footer">
                   <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
