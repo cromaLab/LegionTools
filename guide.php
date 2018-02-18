@@ -12,8 +12,5 @@
         </style>
     </head>
     <body>
-    <h1 style="font-family: 'Open Sans Condensed', sans-serif; font-variant:small-caps;">LegionTools User Guide</h1>
-        <iframe src="https://docs.google.com/document/d/1bip50Y22JpovuItpCcxt-VwBOazSWdH_45PWO3RfXPU/edit?usp=sharing">
-        </iframe>
-    </body>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vSGBJBshLXXbMzG1FMYy5L0fEdT0mwHwLh5o6qZcpSdk3y-Xk9ZIaPBwE5O2NSdCsbQrtrh7-QLzP4z/pub?embedded=true"></iframe>    </body>
 </html>
