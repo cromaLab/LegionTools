@@ -243,7 +243,7 @@ if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "retainer" || $_REQUEST['mod
 
 			// turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments,$AutoApprovalDelayInSeconds) 
 			//$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 1800, 50000, $qualification, 1, $result[0]['task_keywords'],12000);
-			$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 3600, 50000, $qualification, 1, $result[0]['task_keywords'],43200);
+			$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 5400, 50000, $qualification, 1, $result[0]['task_keywords'],43200);
 			if($hitResponse->HIT->Request->IsValid == "True"){
 				$hitId = $hitResponse->HIT->HITId;
 				if(!empty($hitId) && $hitId != ""){
@@ -319,7 +319,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 
 	for($i = 0; $i < $numHITs; $i++){
 		// turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments) 
-		$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 3600, 50000, $qualification, $numAssignments, $result[0]['task_keywords'],12000);
+		$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 5400, 50000, $qualification, $numAssignments, $result[0]['task_keywords'],12000);
 		//$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 3600, 50000, $qualification, $numAssignments, $result[0]['task_keywords'],1200);
 		$hitId = $hitResponse->HIT->HITId;
 		$currentTime = time();
