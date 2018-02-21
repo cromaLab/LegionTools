@@ -25,7 +25,7 @@
           <h1 style="font-family: 'Open Sans Condensed', sans-serif; font-variant:small-caps;">LegionTools</h1>
         </div>
         <div style="display:inline-block; float:right;">
-          <a href="/LegionTools/guide.php" target="_blank">User Guide</a>
+          <a href="./guide.php" target="_blank">User Guide</a>
           <a href="http://web.eecs.umich.edu/~wlasecki/croma.html" target="_blank"><img src="static/img/CROMA_logo.png" alt="IBM" height="70px"></a>
         </div>
       </div>
@@ -54,7 +54,7 @@
                   </br>
                   Your keys are never stored on our server without your consent. 
                   </br>
-                  <p>Questions? Read the Legion Tools <a href="/LegionTools/guide.php" target="_blank">User Guide</a>.</p>
+                  <p>Questions? Read the Legion Tools <a href="./guide.php" target="_blank">User Guide</a>.</p>
 
                 </div>
                 <div class="modal-footer">
