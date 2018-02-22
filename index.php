@@ -404,6 +404,14 @@
                           <div class="col-lg-5 col-lg-offset-1">
                             <label for="minPrice">Min task price (cents)</label>
                             <input type="text" class="form-control" id="minPrice" placeholder="Min price in cents">
+
+                            <script>
+                            $('#minPrice').on('input', function(e){
+                              if($('#minPrice').val() === '0') {
+                                alert('Warning: HITs with a price of $0.00 will not be shown to MTurk workers by default. This means you will not see your HIT if you search for it in MTurk. Refer to the "Setting the HIT price to $0.00" section in the LegionTools User Guide.');
+                              }
+                            });
+                            </script>
                           </div> 
                           <div class="col-lg-5">
                             <label for="maxPrice">Max task price (cents)</label>
@@ -484,6 +492,14 @@
                     <div class="col-sm-8">
                       <input type="text" class="form-control" id="price" placeholder="Price in cents">
                     </div>
+
+                    <script>
+                      $('#price').on('input', function(e){
+                        if($('#price').val() === '0') {
+                          alert('Warning: HITs with a price of $0.00 will not be shown to MTurk workers by default. This means you will not see your HIT if you search for it in MTurk. Refer to the "Setting the HIT price to $0.00" section in the LegionTools User Guide.');
+                        }
+                      });
+                    </script>
                   </div>
 
                 </div>
