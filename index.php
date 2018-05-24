@@ -1,7 +1,7 @@
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Legion Tools</title>
+      <title>LegionTools</title>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script type="text/javascript" src="Retainer/scripts/gup.js"></script>
       <script type="text/javascript" src="Retainer/scripts/trigger.js"></script>
@@ -54,7 +54,7 @@
                   </br>
                   Your keys are never stored on our server without your consent. 
                   </br>
-                  <p>Questions? Read the Legion Tools <a href="./guide.php" target="_blank">User Guide</a>.</p>
+                  <p>Questions? Read the LegionTools <a href="./guide.php" target="_blank">User Guide</a>.</p>
 
                 </div>
                 <div class="modal-footer">
@@ -282,8 +282,70 @@
                               <option>US</option>
                             </select>
                           </div>
-                          <label for="percentApproved" class="col-sm-3 control-label">Min % approved</label>
-                          <div class="col-sm-2">
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="state" class="col-sm-4 control-label">Worker State</label>
+                          <div class="col-sm-3">
+                            <select id = "state" class="form-control">
+                              <option>Any</option>
+                              <option>AK</option>
+                              <option>AL</option>
+                              <option>AZ</option>
+                              <option>AR</option>
+                              <option>CA</option>
+                              <option>CO</option>
+                              <option>CT</option>
+                              <option>DE</option>
+                              <option>FL</option>
+                              <option>GA</option>
+                              <option>HI</option>
+                              <option>ID</option>
+                              <option>IL</option>
+                              <option>IN</option>
+                              <option>IA</option>
+                              <option>KS</option>
+                              <option>KY</option>
+                              <option>LA</option>
+                              <option>ME</option>
+                              <option>MD</option>
+                              <option>MA</option>
+                              <option>MI</option>
+                              <option>MN</option>
+                              <option>MS</option>
+                              <option>MO</option>
+                              <option>MT</option>
+                              <option>NE</option>
+                              <option>NV</option>
+                              <option>NH</option>
+                              <option>NJ</option>
+                              <option>NM</option>
+                              <option>NY</option>
+                              <option>NC</option>
+                              <option>ND</option>
+                              <option>OH</option>
+                              <option>OK</option>
+                              <option>OR</option>
+                              <option>PA</option>
+                              <option>RI</option>
+                              <option>SC</option>
+                              <option>SD</option>
+                              <option>TN</option>
+                              <option>TX</option>
+                              <option>UT</option>
+                              <option>VT</option>
+                              <option>VA</option>
+                              <option>WA</option>
+                              <option>WV</option>
+                              <option>WI</option>
+                              <option>WY</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="percentApproved" class="col-sm-4 control-label">Min % approved</label>
+                          <div class="col-sm-3">
                             <input type="number" min = "0" max = "100" class="form-control text-center" id="percentApproved" value = "0">
                           </div>
                         </div>

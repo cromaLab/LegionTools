@@ -125,7 +125,7 @@ $(document).ready( function() {
             url: retainerLocation + "php/addNewTask.php",
             type: "POST",
             async: false,
-            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), state: $("#state").val(), percentApproved: $("#percentApproved").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
                 // $('#loadTask').attr('disabled','disabled');
@@ -415,6 +415,7 @@ $(document).ready( function() {
         $("#maxPrice").val(taskData.max_price);
         $("#currentTarget").val(taskData.target_workers);
         $("#country").val(taskData.country);
+        $("#state").val(taskData.state);
         $("#percentApproved").val(taskData.percentApproved);
         $("#waitingInstructions").val(taskData.instructions);
 
@@ -466,7 +467,7 @@ $(document).ready( function() {
             url: retainerLocation + "php/updateTask.php",
             type: "POST",
             async: false,
-            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), percentApproved: $("#percentApproved").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
+            data: {taskTitle: $("#hitTitle").val(), taskDescription: $("#hitDescription").val(), taskKeywords: $("#hitKeywords").val(), task: $("#taskSession").val(), country: $("#country").val(), state: $("#state").val(), percentApproved: $("#percentApproved").val(), accessKey: $("#accessKey").val(), secretKey: $("#secretKey").val()},
             dataType: "text",
             success: function(d) {
                 statusbar.innerHTML = "Update success";
