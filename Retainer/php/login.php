@@ -40,7 +40,7 @@ try {
 	  "sent" int(11) DEFAULT NULL,
 	  "task" varchar(99) DEFAULT NULL
 	);
-	CREATE TABLE IF NOT EXISTS retainer(id INTEGER PRIMARY KEY AUTOINCREMENT, task_title VARCHAR(100) NOT NULL, task_description VARCHAR(100) NOT NULL, task_keywords VARCHAR(100) NOT NULL, min_price VARCHAR(10), max_price VARCHAR(10), target_workers INT, task VARCHAR(100), done integer default 1, country VARCHAR(100), percentApproved INTEGER, instructions TEXT, noRepeatQualId text, noRepeatQualIdSandbox text, noRepeatQualIdLive text);
+	CREATE TABLE IF NOT EXISTS retainer(id INTEGER PRIMARY KEY AUTOINCREMENT, task_title VARCHAR(100) NOT NULL, task_description VARCHAR(100) NOT NULL, task_keywords VARCHAR(100) NOT NULL, min_price VARCHAR(10), max_price VARCHAR(10), target_workers INT, task VARCHAR(100), done integer default 1, country VARCHAR(100), state VARCHAR(100), percentApproved INTEGER, instructions TEXT, noRepeatQualId text, noRepeatQualIdSandbox text, noRepeatQualIdLive text);
 	CREATE TABLE IF NOT EXISTS "triggerFlag" (
 	  "id" INTEGER PRIMARY KEY ,
 	  "task" text,

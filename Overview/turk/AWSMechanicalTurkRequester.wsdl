@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- WSDL Version 2008-08-02 - The national mustard day release. -->
+<!-- WSDL Version 2014-08-15 - The Hot Summer Night (You Took The Words Right Out Of My Mouth) Release -->
 <definitions
     xmlns="http://schemas.xmlsoap.org/wsdl/"
     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:tns=      "http://requester.mturk.amazonaws.com/doc/2008-08-02"
-    targetNamespace="http://requester.mturk.amazonaws.com/doc/2008-08-02">
+    xmlns:tns=      "http://requester.mturk.amazonaws.com/doc/2014-08-15"
+    targetNamespace="http://requester.mturk.amazonaws.com/doc/2014-08-15">
 
   <types>
-	<xs:schema     
+	<xs:schema
 	    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	    targetNamespace="http://requester.mturk.amazonaws.com/doc/2008-08-02"
-	    xmlns:tns="http://requester.mturk.amazonaws.com/doc/2008-08-02"
+	    targetNamespace="http://requester.mturk.amazonaws.com/doc/2014-08-15"
+	    xmlns:tns="http://requester.mturk.amazonaws.com/doc/2014-08-15"
 	    elementFormDefault="qualified">
-	    
+	
 	    <!-- GENERAL-->
 	
 	    <xs:complexType name="Claim">
@@ -22,7 +22,7 @@
 	            <xs:element name="Body" type="xs:string"/>
 	        </xs:sequence>
 	    </xs:complexType>
-	    
+	
 	    <xs:complexType name="Price">
 	        <xs:sequence>
 	            <xs:element name="Amount" type="xs:decimal"/>
@@ -42,8 +42,8 @@
 	        <xs:sequence>
 	            <xs:element name="QualificationTypeId" type="xs:string" />
 	            <xs:element name="Comparator" type="tns:Comparator" />
-	            <xs:element name="IntegerValue" type="xs:int" minOccurs="0" />
-	            <xs:element name="LocaleValue" type="tns:Locale" minOccurs="0" />
+	            <xs:element name="IntegerValue" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+	            <xs:element name="LocaleValue" type="tns:Locale" minOccurs="0" maxOccurs="unbounded"/>
 	            <xs:element name="RequiredToPreview" type="xs:boolean" minOccurs="0" />
 	        </xs:sequence>
 	    </xs:complexType>
@@ -57,12 +57,16 @@
 	            <xs:enumeration value="EqualTo" />
 	            <xs:enumeration value="NotEqualTo" />
 	            <xs:enumeration value="Exists" />
+	            <xs:enumeration value="DoesNotExist"/>
+	            <xs:enumeration value="In"/>
+	            <xs:enumeration value="NotIn"/>            
 	        </xs:restriction>
 	    </xs:simpleType>
 	
 	    <xs:complexType name="Locale">
 	        <xs:sequence>
 	            <xs:element name="Country" type="xs:string" minOccurs="0" />
+	            <xs:element name="Subdivision" type="xs:string" minOccurs="0" />
 	        </xs:sequence>
 	    </xs:complexType>
 	
@@ -76,9 +80,14 @@
 	            <xs:enumeration value="AssignmentAbandoned" />
 	            <xs:enumeration value="AssignmentReturned" />
 	            <xs:enumeration value="AssignmentSubmitted" />
-	            <xs:enumeration value="AssignmentAutoApproved" />
-	            <xs:enumeration value="HITReviewable" />
+	            <xs:enumeration value="AssignmentRejected" />
+	            <xs:enumeration value="AssignmentApproved" />
+	            <xs:enumeration value="HITCreated" />
 	            <xs:enumeration value="HITExpired" />
+	            <xs:enumeration value="HITReviewable" />
+	            <xs:enumeration value="HITExtended" />
+	            <xs:enumeration value="HITDisposed" />
+	            <xs:enumeration value="Ping" />
 	        </xs:restriction>
 	    </xs:simpleType>
 	
@@ -87,6 +96,7 @@
 	            <xs:enumeration value="SOAP" />
 	            <xs:enumeration value="REST" />
 	            <xs:enumeration value="Email" />
+	            <xs:enumeration value="SQS" />
 	        </xs:restriction>
 	    </xs:simpleType>
 	
@@ -125,6 +135,8 @@
 	            <xs:element ref="tns:Request" minOccurs="0" />
 	            <xs:element name="HITId" type="xs:string" minOccurs="0" />
 	            <xs:element name="HITTypeId" type="xs:string" minOccurs="0" />
+	            <xs:element name="HITGroupId" type="xs:string" minOccurs="0" />
+	            <xs:element name="HITLayoutId" type="xs:string" minOccurs="0"/>
 	            <xs:element name="CreationTime" type="xs:dateTime" minOccurs="0" />
 	            <xs:element name="Title" type="xs:string" minOccurs="0" />
 	            <xs:element name="Description" type="xs:string" minOccurs="0" />
@@ -136,13 +148,41 @@
 	            <xs:element name="AutoApprovalDelayInSeconds" type="xs:long" minOccurs="0" />
 	            <xs:element name="Expiration" type="xs:dateTime" minOccurs="0" />
 	            <xs:element name="AssignmentDurationInSeconds" type="xs:long" minOccurs="0" />
-	            <xs:element name="NumberOfSimilarHITs" type="xs:int" minOccurs="0" />
 	            <xs:element name="RequesterAnnotation" type="xs:string" minOccurs="0" />
 	            <xs:element name="QualificationRequirement" type="tns:QualificationRequirement" minOccurs="0" maxOccurs="unbounded" />
 	            <xs:element name="HITReviewStatus" type="tns:HITReviewStatus" minOccurs="0" />
 	            <xs:element name="NumberOfAssignmentsPending" type="xs:int" minOccurs="0" />
 	            <xs:element name="NumberOfAssignmentsAvailable" type="xs:int" minOccurs="0" />
 	            <xs:element name="NumberOfAssignmentsCompleted" type="xs:int" minOccurs="0" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:complexType name="ReviewPolicy">
+	        <xs:sequence>
+	            <xs:element name="PolicyName" type="xs:string" />
+	            <xs:element name="Parameter" type="tns:PolicyParameter" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:complexType name="PolicyParameter">
+	        <xs:sequence>
+	            <xs:element name="Key" type="xs:string" />
+	            <xs:element name="Value" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+	            <xs:element name="MapEntry" type="tns:ParameterMapEntry" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:complexType name="ParameterMapEntry">
+	        <xs:sequence>
+	            <xs:element name="Key" type="xs:string" />
+	            <xs:element name="Value" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:complexType name="HITLayoutParameter">
+	        <xs:sequence>
+	            <xs:element name="Name" type="xs:string" />
+	            <xs:element name="Value" type="xs:string"/>
 	        </xs:sequence>
 	    </xs:complexType>
 	
@@ -172,9 +212,14 @@
 	            <xs:element name="Title" type="xs:string" minOccurs="0" />
 	            <xs:element name="Keywords" type="xs:string" minOccurs="0" />
 	            <xs:element name="Description" type="xs:string" minOccurs="0" />
-	            <xs:element name="Question" type="xs:string" />
+	            <xs:element name="Question" type="xs:string" minOccurs="0" />
 	            <xs:element name="RequesterAnnotation" type="xs:string" minOccurs="0" />
 	            <xs:element name="QualificationRequirement" type="tns:QualificationRequirement" minOccurs="0" maxOccurs="unbounded" />
+	            <xs:element name="UniqueRequestToken" type="xs:string" minOccurs="0" maxOccurs="1" />
+	            <xs:element name="AssignmentReviewPolicy" type="tns:ReviewPolicy" minOccurs="0" maxOccurs="1" />
+	            <xs:element name="HITReviewPolicy" type="tns:ReviewPolicy" minOccurs="0" maxOccurs="1" />
+	            <xs:element name="HITLayoutId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	            <xs:element name="HITLayoutParameter" type="tns:HITLayoutParameter" minOccurs="0" maxOccurs="unbounded"/>
 	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 	        </xs:sequence>
 	    </xs:complexType>
@@ -235,7 +280,7 @@
 	    <!-- Update HITType -->
 	    
 	    <xs:element name="SetHITTypeNotification">
-		    <xs:complexType>
+	        <xs:complexType>
 	            <xs:sequence>
 	                <xs:element name="AWSAccessKeyId" type="xs:string" />
 	                <xs:element name="Timestamp" type="xs:dateTime" />
@@ -245,14 +290,14 @@
 	                <xs:element name="Request" type="tns:SetHITTypeNotificationRequest" maxOccurs="unbounded"/>
 	            </xs:sequence>
 	        </xs:complexType>
-		</xs:element>
+	    </xs:element>
 	
-		<xs:complexType name="SetHITTypeNotificationRequest">
-	    	<xs:sequence>
+	    <xs:complexType name="SetHITTypeNotificationRequest">
+	        <xs:sequence>
 	           <xs:element name="HITTypeId" type="xs:string" />
 	           <xs:element name="Notification" type="tns:NotificationSpecification" minOccurs="0" />
 	           <xs:element name="Active" type="xs:boolean" minOccurs="0" />
-			</xs:sequence>
+	        </xs:sequence>
 	    </xs:complexType>
 	
 	    <xs:element name="SetHITTypeNotificationResponse">
@@ -273,7 +318,7 @@
 	    <!-- Send Test Event Notification -->
 	    
 	    <xs:element name="SendTestEventNotification">
-		        <xs:complexType>
+	            <xs:complexType>
 	            <xs:sequence>
 	                <xs:element name="AWSAccessKeyId" type="xs:string" />
 	                <xs:element name="Timestamp" type="xs:dateTime" />
@@ -283,14 +328,14 @@
 	                <xs:element name="Request" type="tns:SendTestEventNotificationRequest" maxOccurs="unbounded"/>
 	            </xs:sequence>
 	        </xs:complexType>
-		</xs:element>
+	    </xs:element>
 	
-		<xs:complexType name="SendTestEventNotificationRequest">
-			<xs:sequence>
+	    <xs:complexType name="SendTestEventNotificationRequest">
+	        <xs:sequence>
 	            <xs:element name="Notification" type="tns:NotificationSpecification" />
 	            <xs:element name="TestEventType" type="tns:EventType" minOccurs="0" />
-			</xs:sequence>
-		</xs:complexType>
+	        </xs:sequence>
+	    </xs:complexType>
 	
 	    <xs:element name="SendTestEventNotificationResponse">
 	        <xs:complexType>
@@ -413,6 +458,47 @@
 	        </xs:complexType>
 	    </xs:element>
 	
+	    <!-- tns:HIT functions in place of a "GetHITResult" type -->
+	
+	    <!-- Get Assignment -->
+	
+	    <xs:element name="GetAssignment">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element name="AWSAccessKeyId" type="xs:string" />
+	                <xs:element name="Timestamp" type="xs:dateTime" />
+	                <xs:element name="Signature" type="xs:string" />
+	                <xs:element name="Validate" type="xs:string" minOccurs="0" />
+	                <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	                <xs:element name="Request" type="tns:GetAssignmentRequest" minOccurs="0" maxOccurs="unbounded"/>
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="GetAssignmentRequest">
+	        <xs:sequence>
+	            <xs:element name="AssignmentId" type="xs:string" />
+	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:element name="GetAssignmentResponse">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element ref="tns:OperationRequest" minOccurs="0" />
+	                <xs:element name="GetAssignmentResult" type="tns:GetAssignmentResult" minOccurs="0" maxOccurs="unbounded" />
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="GetAssignmentResult">
+	        <xs:sequence>
+	            <xs:element ref="tns:Request" minOccurs="0" />
+	            <xs:element name="Assignment" type="tns:Assignment" minOccurs="0" />
+	            <xs:element name="HIT" type="tns:HIT" minOccurs="0" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
 	    <!-- Get Reviewable HITs -->
 	
 	    <xs:simpleType name="ReviewableHITStatus">
@@ -476,91 +562,188 @@
 	        </xs:sequence>
 	    </xs:complexType>
 	
+	    <!-- Get Review Results For HIT -->
+	
+	    <xs:simpleType name="ReviewPolicyLevel">
+	        <xs:restriction base="xs:string">
+	            <xs:enumeration value="Assignment" />
+	            <xs:enumeration value="HIT" />
+	        </xs:restriction>
+	    </xs:simpleType>
+	
+	    <xs:complexType name="ReviewReport">
+	        <xs:sequence>
+	            <xs:element name="PageNumber" type="xs:int" minOccurs="0" />
+	            <xs:element name="NumResults" type="xs:int" minOccurs="0" />
+	            <xs:element name="TotalNumResults" type="xs:int" minOccurs="0" />
+	            <xs:element name="ReviewResult" type="tns:ReviewResultDetail" minOccurs="0" maxOccurs="unbounded" />
+	            <xs:element name="ReviewAction" type="tns:ReviewActionDetail" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:complexType name="ReviewResultDetail">
+	        <xs:sequence>
+	            <xs:element name="ActionId" type="xs:string" />
+	            <xs:element name="SubjectId" type="xs:string" />
+	            <xs:element name="SubjectType" type="xs:string" />
+	            <xs:element name="QuestionId" type="xs:string" minOccurs="0" />
+	            <xs:element name="Key" type="xs:string" />
+	            <xs:element name="Value" type="xs:string" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:simpleType name="ReviewActionStatus">
+	        <xs:restriction base="xs:string">
+	            <xs:enumeration value="Intended" />
+	            <xs:enumeration value="Succeeded" />
+	            <xs:enumeration value="Failed" />
+	            <xs:enumeration value="Cancelled" />
+	        </xs:restriction>
+	    </xs:simpleType>
+	
+	    <xs:complexType name="ReviewActionDetail">
+	        <xs:sequence>
+	            <xs:element name="ActionId" type="xs:string" />
+	            <xs:element name="ActionName" type="xs:string" />
+	            <xs:element name="ObjectId" type="xs:string" />
+	            <xs:element name="ObjectType" type="xs:string" />
+	            <xs:element name="Status" type="tns:ReviewActionStatus" />
+	            <xs:element name="CompleteTime" type="xs:dateTime" minOccurs="0" />
+	            <xs:element name="Result" type="xs:string" minOccurs="0" />
+	            <xs:element name="ErrorCode" type="xs:string" minOccurs="0" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:element name="GetReviewResultsForHIT">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element name="AWSAccessKeyId" type="xs:string" />
+	                <xs:element name="Timestamp" type="xs:dateTime" />
+	                <xs:element name="Signature" type="xs:string" />
+	                <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	                <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	                <xs:element name="Request" type="tns:GetReviewResultsForHITRequest" minOccurs="0" maxOccurs="unbounded"/>
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="GetReviewResultsForHITRequest">
+	        <xs:sequence>
+	            <xs:element name="HITId" type="xs:string" />
+	            <xs:element name="PolicyLevel" type="tns:ReviewPolicyLevel" minOccurs="0" maxOccurs="unbounded" />
+	            <xs:element name="RetrieveActions" type="xs:boolean" minOccurs="0" />
+	            <xs:element name="RetrieveResults" type="xs:boolean" minOccurs="0" />
+	            <xs:element name="PageNumber" type="xs:int" minOccurs="0"/>
+	            <xs:element name="PageSize" type="xs:int" minOccurs="0"/>
+	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:element name="GetReviewResultsForHITResponse">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element ref="tns:OperationRequest" minOccurs="0" />
+	                <xs:element name="GetReviewResultsForHITResult" type="tns:GetReviewResultsForHITResult" minOccurs="0" maxOccurs="unbounded"/>
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="GetReviewResultsForHITResult">
+	        <xs:sequence>
+	            <xs:element ref="tns:Request" minOccurs="0" />
+	            <xs:element name="HITId" type="xs:string" />
+	            <xs:element name="AssignmentReviewPolicy" type="tns:ReviewPolicy" minOccurs="0" />
+	            <xs:element name="HITReviewPolicy" type="tns:ReviewPolicy" minOccurs="0" />
+	            <xs:element name="AssignmentReviewReport" type="tns:ReviewReport" minOccurs="0" />
+	            <xs:element name="HITReviewReport" type="tns:ReviewReport" minOccurs="0" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
 	    <!-- Get HITs For Qualification Type -->
 	
 	    <xs:element name="GetHITsForQualificationType">
-		<xs:complexType>
-		    <xs:sequence>
-			<xs:element name="AWSAccessKeyId" type="xs:string" />
-			<xs:element name="Timestamp" type="xs:dateTime" />
-			<xs:element name="Signature" type="xs:string" />
-			<xs:element name="Validate" type="xs:string" minOccurs="0"/>
-			<xs:element name="Credential" type="xs:string" minOccurs="0" />
-			<xs:element name="Request" type="tns:GetHITsForQualificationTypeRequest" minOccurs="0" maxOccurs="unbounded"/>
-		    </xs:sequence>
-		</xs:complexType>
+	    <xs:complexType>
+	        <xs:sequence>
+	        <xs:element name="AWSAccessKeyId" type="xs:string" />
+	        <xs:element name="Timestamp" type="xs:dateTime" />
+	        <xs:element name="Signature" type="xs:string" />
+	        <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	        <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	        <xs:element name="Request" type="tns:GetHITsForQualificationTypeRequest" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	    </xs:complexType>
 	    </xs:element>
 	
 	    <xs:complexType name="GetHITsForQualificationTypeRequest">
-		<xs:sequence>
-		    <xs:element name="QualificationTypeId" type="xs:string" />
-		    <xs:element name="PageNumber" type="xs:int" minOccurs="0"/>
-		    <xs:element name="PageSize" type="xs:int" minOccurs="0"/>
-		    <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-		</xs:sequence>
+	    <xs:sequence>
+	        <xs:element name="QualificationTypeId" type="xs:string" />
+	        <xs:element name="PageNumber" type="xs:int" minOccurs="0"/>
+	        <xs:element name="PageSize" type="xs:int" minOccurs="0"/>
+	        <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+	    </xs:sequence>
 	    </xs:complexType>
 	
 	    <xs:element name="GetHITsForQualificationTypeResponse">
-		<xs:complexType>
-		    <xs:sequence>
-			<xs:element ref="tns:OperationRequest" minOccurs="0" />
-			<xs:element name="GetHITsForQualificationTypeResult" type="tns:GetHITsForQualificationTypeResult" minOccurs="0" maxOccurs="unbounded"/>
-		    </xs:sequence>
-		</xs:complexType>
+	    <xs:complexType>
+	        <xs:sequence>
+	        <xs:element ref="tns:OperationRequest" minOccurs="0" />
+	        <xs:element name="GetHITsForQualificationTypeResult" type="tns:GetHITsForQualificationTypeResult" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	    </xs:complexType>
 	    </xs:element>
 	
 	    <xs:complexType name="GetHITsForQualificationTypeResult">
-		<xs:sequence>
-		    <xs:element ref="tns:Request" minOccurs="0" />
-		    <xs:element name="PageNumber" type="xs:int" minOccurs="0" />
-		    <xs:element name="NumResults" type="xs:int" minOccurs="0" />
-		    <xs:element name="TotalNumResults" type="xs:int" minOccurs="0" />
-		    <xs:element name="HIT" type="tns:HIT" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
+	    <xs:sequence>
+	        <xs:element ref="tns:Request" minOccurs="0" />
+	        <xs:element name="PageNumber" type="xs:int" minOccurs="0" />
+	        <xs:element name="NumResults" type="xs:int" minOccurs="0" />
+	        <xs:element name="TotalNumResults" type="xs:int" minOccurs="0" />
+	        <xs:element name="HIT" type="tns:HIT" minOccurs="0" maxOccurs="unbounded"/>
+	    </xs:sequence>
 	    </xs:complexType>
 	
 	   <!-- Get Qualifications For Qualification Type -->
 	
 	    <xs:element name="GetQualificationsForQualificationType">
-		<xs:complexType>
-		    <xs:sequence>
-			<xs:element name="AWSAccessKeyId" type="xs:string" />
-			<xs:element name="Timestamp" type="xs:dateTime" />
-			<xs:element name="Signature" type="xs:string" />
-			<xs:element name="Validate" type="xs:string" minOccurs="0"/>
-			<xs:element name="Credential" type="xs:string" minOccurs="0" />
-			<xs:element name="Request" type="tns:GetQualificationsForQualificationTypeRequest" minOccurs="0" maxOccurs="unbounded"/>
-		    </xs:sequence>
-		</xs:complexType>
+	    <xs:complexType>
+	        <xs:sequence>
+	        <xs:element name="AWSAccessKeyId" type="xs:string" />
+	        <xs:element name="Timestamp" type="xs:dateTime" />
+	        <xs:element name="Signature" type="xs:string" />
+	        <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	        <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	        <xs:element name="Request" type="tns:GetQualificationsForQualificationTypeRequest" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	    </xs:complexType>
 	    </xs:element>
 	
 	    <xs:complexType name="GetQualificationsForQualificationTypeRequest">
-		<xs:sequence>
-		    <xs:element name="QualificationTypeId" type="xs:string" />
+	    <xs:sequence>
+	        <xs:element name="QualificationTypeId" type="xs:string" />
 	        <xs:element name="Status" type="tns:QualificationStatus" minOccurs="0" />
-		    <xs:element name="PageNumber" type="xs:int" minOccurs="0"/>
-		    <xs:element name="PageSize" type="xs:int" minOccurs="0"/>
-		    <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-		</xs:sequence>
+	        <xs:element name="PageNumber" type="xs:int" minOccurs="0"/>
+	        <xs:element name="PageSize" type="xs:int" minOccurs="0"/>
+	        <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+	    </xs:sequence>
 	    </xs:complexType>
 	
 	    <xs:element name="GetQualificationsForQualificationTypeResponse">
-		<xs:complexType>
-		    <xs:sequence>
-			<xs:element ref="tns:OperationRequest" minOccurs="0" />
-			<xs:element name="GetQualificationsForQualificationTypeResult" type="tns:GetQualificationsForQualificationTypeResult" minOccurs="0" maxOccurs="unbounded"/>
-		    </xs:sequence>
-		</xs:complexType>
+	    <xs:complexType>
+	        <xs:sequence>
+	        <xs:element ref="tns:OperationRequest" minOccurs="0" />
+	        <xs:element name="GetQualificationsForQualificationTypeResult" type="tns:GetQualificationsForQualificationTypeResult" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	    </xs:complexType>
 	    </xs:element>
 	
 	    <xs:complexType name="GetQualificationsForQualificationTypeResult">
-		<xs:sequence>
-		    <xs:element ref="tns:Request" minOccurs="0" />
-		    <xs:element name="PageNumber" type="xs:int" minOccurs="0" />
-		    <xs:element name="NumResults" type="xs:int" minOccurs="0" />
-		    <xs:element name="TotalNumResults" type="xs:int" minOccurs="0" />
-		    <xs:element name="Qualification" type="tns:Qualification" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
+	    <xs:sequence>
+	        <xs:element ref="tns:Request" minOccurs="0" />
+	        <xs:element name="PageNumber" type="xs:int" minOccurs="0" />
+	        <xs:element name="NumResults" type="xs:int" minOccurs="0" />
+	        <xs:element name="TotalNumResults" type="xs:int" minOccurs="0" />
+	        <xs:element name="Qualification" type="tns:Qualification" minOccurs="0" maxOccurs="unbounded"/>
+	    </xs:sequence>
 	    </xs:complexType>
 	
 	    <!-- SetHITAsReviewing -->
@@ -622,6 +805,7 @@
 	            <xs:element name="HITId" type="xs:string" />
 	            <xs:element name="MaxAssignmentsIncrement" type="xs:int" minOccurs="0"/>
 	            <xs:element name="ExpirationIncrementInSeconds" type="xs:long" minOccurs="0"/>
+	            <xs:element name="UniqueRequestToken" type="xs:string" minOccurs="0" maxOccurs="1" />
 	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 	        </xs:sequence>
 	    </xs:complexType>
@@ -785,6 +969,44 @@
 	        </xs:sequence>
 	    </xs:complexType>
 	
+	    <!-- Approve previously rejected Assignment -->
+	
+	    <xs:element name="ApproveRejectedAssignment">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element name="AWSAccessKeyId" type="xs:string" />
+	                <xs:element name="Timestamp" type="xs:dateTime" />
+	                <xs:element name="Signature" type="xs:string" />
+	                <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	                <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	                <xs:element name="Request" type="tns:ApproveRejectedAssignmentRequest" minOccurs="0" maxOccurs="unbounded"/>
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="ApproveRejectedAssignmentRequest">
+	        <xs:sequence>
+	            <xs:element name="AssignmentId" type="xs:string" />
+	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+	            <xs:element name="RequesterFeedback" type="xs:string" minOccurs="0"/>
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:element name="ApproveRejectedAssignmentResponse">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element ref="tns:OperationRequest" minOccurs="0" />
+	                <xs:element name="ApproveRejectedAssignmentResult" type="tns:ApproveRejectedAssignmentResult" minOccurs="0" maxOccurs="unbounded" />
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="ApproveRejectedAssignmentResult">
+	        <xs:sequence>
+	            <xs:element ref="tns:Request" minOccurs="0"/>
+	        </xs:sequence>
+	    </xs:complexType>
+	
 	    <!-- Get Assignments for HIT -->
 	
 	    <xs:simpleType name="GetAssignmentsForHITSortProperty">
@@ -816,7 +1038,7 @@
 	            <xs:element name="SortProperty" type="tns:GetAssignmentsForHITSortProperty" minOccurs="0"/>
 	            <xs:element name="PageNumber" type="xs:int" minOccurs="0"/>
 	            <xs:element name="PageSize" type="xs:int" minOccurs="0"/>
-		    <xs:element name="AssignmentStatus" type="tns:AssignmentStatus" minOccurs="0" maxOccurs="unbounded" />
+	            <xs:element name="AssignmentStatus" type="tns:AssignmentStatus" minOccurs="0" maxOccurs="unbounded" />
 	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 	        </xs:sequence>
 	    </xs:complexType>
@@ -839,7 +1061,7 @@
 	            <xs:element name="Assignment" type="tns:Assignment" minOccurs="0" maxOccurs="unbounded"/>
 	        </xs:sequence>
 	    </xs:complexType>
-	    
+	
 	    <!-- Get short-lived URLs for Uploaded files For a single Assignment answer -->
 	    <!-- Specified by the Assignment ID and the question identifier -->
 	    <xs:element name="GetFileUploadURL">
@@ -953,6 +1175,7 @@
 	            <xs:element name="BonusAmount" type="tns:Price" />
 	            <xs:element name="AssignmentId" type="xs:string" />
 	            <xs:element name="Reason" type="xs:string" />
+	            <xs:element name="UniqueRequestToken" type="xs:string" minOccurs="0" maxOccurs="1" />
 	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 	        </xs:sequence>
 	    </xs:complexType>
@@ -1082,7 +1305,7 @@
 	            <xs:element name="RetryDelayInSeconds" type="xs:long" minOccurs="0" />
 	            <xs:element name="IsRequestable" type="xs:boolean" minOccurs="0"/>
 	            <xs:element name="AutoGranted" type="xs:boolean" minOccurs="0"/>
-		    <xs:element name="AutoGrantedValue" type="xs:int" minOccurs="0"/>
+	        <xs:element name="AutoGrantedValue" type="xs:int" minOccurs="0"/>
 	        </xs:sequence>
 	    </xs:complexType>
 	
@@ -1236,39 +1459,39 @@
 	    <!-- Reject Qualification Request -->
 	
 	    <xs:element name="RejectQualificationRequest">
-		<xs:complexType>
-		    <xs:sequence>
-			<xs:element name="AWSAccessKeyId" type="xs:string" />
-			<xs:element name="Timestamp" type="xs:dateTime" />
-			<xs:element name="Signature" type="xs:string" />
-			<xs:element name="Validate" type="xs:string" minOccurs="0"/>
-			<xs:element name="Credential" type="xs:string" minOccurs="0" />
-			<xs:element name="Request" type="tns:RejectQualificationRequestRequest" minOccurs="0" maxOccurs="unbounded" />
-		    </xs:sequence>
-		</xs:complexType>
+	    <xs:complexType>
+	        <xs:sequence>
+	        <xs:element name="AWSAccessKeyId" type="xs:string" />
+	        <xs:element name="Timestamp" type="xs:dateTime" />
+	        <xs:element name="Signature" type="xs:string" />
+	        <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	        <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	        <xs:element name="Request" type="tns:RejectQualificationRequestRequest" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
 	    </xs:element>
 	
 	    <xs:complexType name="RejectQualificationRequestRequest">
-		<xs:sequence>
-		    <xs:element name="QualificationRequestId" type="xs:string" />
-		    <xs:element name="Reason" type="xs:string" minOccurs="0"/>
-		    <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
+	    <xs:sequence>
+	        <xs:element name="QualificationRequestId" type="xs:string" />
+	        <xs:element name="Reason" type="xs:string" minOccurs="0"/>
+	        <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+	    </xs:sequence>
 	    </xs:complexType>
 	
 	    <xs:element name="RejectQualificationRequestResponse">
-		<xs:complexType>
-		    <xs:sequence>
-			<xs:element ref="tns:OperationRequest" minOccurs="0"/>
-			<xs:element name="RejectQualificationRequestResult" type="tns:RejectQualificationRequestResult" minOccurs="0" maxOccurs="unbounded"/>
-		    </xs:sequence>
-		</xs:complexType>
+	    <xs:complexType>
+	        <xs:sequence>
+	        <xs:element ref="tns:OperationRequest" minOccurs="0"/>
+	        <xs:element name="RejectQualificationRequestResult" type="tns:RejectQualificationRequestResult" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	    </xs:complexType>
 	    </xs:element>
 	
 	    <xs:complexType name="RejectQualificationRequestResult">
-		<xs:sequence>
-		    <xs:element ref="tns:Request" minOccurs="0"/>
-		</xs:sequence>
+	    <xs:sequence>
+	        <xs:element ref="tns:Request" minOccurs="0"/>
+	    </xs:sequence>
 	    </xs:complexType>
 	
 	    <!-- Grant Qualification -->
@@ -1355,46 +1578,46 @@
 	    <!-- Revoke Qualification -->
 	
 	    <xs:element name="RevokeQualification">
-		<xs:complexType>
-		    <xs:sequence>
-			<xs:element name="AWSAccessKeyId" type="xs:string" />
-			<xs:element name="Timestamp" type="xs:dateTime" />
-			<xs:element name="Signature" type="xs:string" />
-			<xs:element name="Validate" type="xs:string" minOccurs="0"/>
-			<xs:element name="Credential" type="xs:string" minOccurs="0" />
-			<xs:element name="Request" type="tns:RevokeQualificationRequest" minOccurs="0" maxOccurs="unbounded" />
-		    </xs:sequence>
-		</xs:complexType>
+	    <xs:complexType>
+	        <xs:sequence>
+	        <xs:element name="AWSAccessKeyId" type="xs:string" />
+	        <xs:element name="Timestamp" type="xs:dateTime" />
+	        <xs:element name="Signature" type="xs:string" />
+	        <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	        <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	        <xs:element name="Request" type="tns:RevokeQualificationRequest" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
 	    </xs:element>
 	
 	    <xs:complexType name="RevokeQualificationRequest">
-		<xs:sequence>
-		    <xs:element name="SubjectId" type="xs:string" />
-		    <xs:element name="QualificationTypeId" type="xs:string" />
-		    <xs:element name="Reason" type="xs:string" minOccurs="0"/>
-		    <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
+	    <xs:sequence>
+	        <xs:element name="SubjectId" type="xs:string" />
+	        <xs:element name="QualificationTypeId" type="xs:string" />
+	        <xs:element name="Reason" type="xs:string" minOccurs="0"/>
+	        <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+	    </xs:sequence>
 	    </xs:complexType>
 	
 	    <xs:element name="RevokeQualificationResponse">
-		<xs:complexType>
-		    <xs:sequence>
-			<xs:element ref="tns:OperationRequest" minOccurs="0"/>
-			<xs:element name="RevokeQualificationResult" type="tns:RevokeQualificationResult" minOccurs="0" maxOccurs="unbounded"/>
-		    </xs:sequence>
-		</xs:complexType>
+	    <xs:complexType>
+	        <xs:sequence>
+	        <xs:element ref="tns:OperationRequest" minOccurs="0"/>
+	        <xs:element name="RevokeQualificationResult" type="tns:RevokeQualificationResult" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	    </xs:complexType>
 	    </xs:element>
 	
 	    <xs:complexType name="RevokeQualificationResult">
-		<xs:sequence>
-		    <xs:element ref="tns:Request" minOccurs="0"/>
-		</xs:sequence>
+	    <xs:sequence>
+	        <xs:element ref="tns:Request" minOccurs="0"/>
+	    </xs:sequence>
 	    </xs:complexType>
 	
 	    <!-- Update Qualification -->
 	
-		<xs:element name="UpdateQualificationScore">
-		    <xs:complexType>
+	    <xs:element name="UpdateQualificationScore">
+	        <xs:complexType>
 	                <xs:sequence>
 	                    <xs:element name="AWSAccessKeyId" type="xs:string" />
 	                    <xs:element name="Timestamp" type="xs:dateTime" />
@@ -1404,9 +1627,9 @@
 	                    <xs:element name="Request" type="tns:UpdateQualificationScoreRequest" minOccurs="0" maxOccurs="unbounded"/>
 	                </xs:sequence>
 	            </xs:complexType>
-		</xs:element>
+	    </xs:element>
 	
-		<xs:complexType name="UpdateQualificationScoreRequest">
+	    <xs:complexType name="UpdateQualificationScoreRequest">
 	            <xs:sequence>
 	                <xs:element name="QualificationTypeId" type="xs:string" />
 	                <xs:element name="SubjectId" type="xs:string"/>
@@ -1462,7 +1685,7 @@
 	    </xs:element>
 	
 	    <!-- Get Qualification -->
-		<xs:element name="GetQualificationScore">
+	    <xs:element name="GetQualificationScore">
 	        <xs:complexType>
 	            <xs:sequence>
 	                <xs:element name="AWSAccessKeyId" type="xs:string" />
@@ -1505,10 +1728,10 @@
 	    </xs:complexType>
 	
 	    <xs:simpleType name="QualificationStatus">
-		<xs:restriction base="xs:string">
-		    <xs:enumeration value="Granted"/>
-		    <xs:enumeration value="Revoked" />
-		</xs:restriction>
+	    <xs:restriction base="xs:string">
+	        <xs:enumeration value="Granted"/>
+	        <xs:enumeration value="Revoked" />
+	    </xs:restriction>
 	    </xs:simpleType>
 	
 	    <!-- Search QualificationTypes -->
@@ -1535,7 +1758,7 @@
 	    <xs:complexType name="SearchQualificationTypesRequest">
 	        <xs:sequence>
 	            <xs:element name="Query" type="xs:string" minOccurs="0"/>
-		    <xs:element name="MustBeRequestable" type="xs:boolean"/>
+	            <xs:element name="MustBeRequestable" type="xs:boolean"/>
 	            <xs:element name="MustBeOwnedByCaller" type="xs:boolean" minOccurs="0" />
 	            <xs:element name="SortDirection" type="tns:SortDirection" minOccurs="0"/>
 	            <xs:element name="SortProperty" type="tns:SearchQualificationTypesSortProperty" minOccurs="0"/>
@@ -1701,8 +1924,50 @@
 	            <xs:enumeration value="AverageRewardAmount"/>
 	            <xs:enumeration value="PercentAssignmentsApproved"/>
 	            <xs:enumeration value="PercentAssignmentsRejected"/>
+	            <xs:enumeration value="NumberKnownAnswersCorrect"/>
+	            <xs:enumeration value="NumberKnownAnswersIncorrect"/>
+	            <xs:enumeration value="NumberKnownAnswersEvaluated"/>
+	            <xs:enumeration value="PercentKnownAnswersCorrect"/>
+	            <xs:enumeration value="NumberPluralityAnswersCorrect"/>
+	            <xs:enumeration value="NumberPluralityAnswersIncorrect"/>
+	            <xs:enumeration value="NumberPluralityAnswersEvaluated"/>
+	            <xs:enumeration value="PercentPluralityAnswersCorrect"/>
 	        </xs:restriction>
 	    </xs:simpleType>
+	
+	    <!-- GetRequesterWorkerStatistic -->
+	
+	    <xs:element name="GetRequesterWorkerStatistic">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element name="AWSAccessKeyId" type="xs:string" />
+	                <xs:element name="Timestamp" type="xs:dateTime" />
+	                <xs:element name="Signature" type="xs:string" />
+	                <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	                <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	                <xs:element name="Request" type="tns:GetRequesterWorkerStatisticRequest" minOccurs="0" maxOccurs="unbounded"/>
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="GetRequesterWorkerStatisticRequest">
+	        <xs:sequence>
+	            <xs:element name="Statistic" type="tns:RequesterStatistic"/>
+	            <xs:element name="TimePeriod" type="tns:TimePeriod" minOccurs="0"/>
+	            <xs:element name="WorkerId" type="xs:string"/>
+	            <xs:element name="Count" type="xs:int" minOccurs="0" />
+	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:element name="GetRequesterWorkerStatisticResponse">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element ref="tns:OperationRequest" minOccurs="0" />
+	                <xs:element name="GetStatisticResult" type="tns:GetStatisticResult" minOccurs="0" maxOccurs="unbounded" />
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
 	
 	  <!-- Notify Workers -->
 	
@@ -1724,13 +1989,13 @@
 	   <xs:element name="NotifyWorkers">
 	     <xs:complexType>
 	       <xs:sequence>
-		 <xs:element name="AWSAccessKeyId" type="xs:string" />
+	     <xs:element name="AWSAccessKeyId" type="xs:string" />
 	       <xs:element name="Timestamp" type="xs:dateTime" />
 	       <xs:element name="Signature" type="xs:string" />
-		   <xs:element name="Validate" type="xs:string" minOccurs="0"/>
-		   <xs:element name="Credential" type="xs:string" minOccurs="0" />
-		   <xs:element name="Request" type="tns:NotifyWorkersRequest" maxOccurs="unbounded"/>
-		 </xs:sequence>
+	       <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	       <xs:element name="Credential" type="xs:string" minOccurs="0" />
+	       <xs:element name="Request" type="tns:NotifyWorkersRequest" maxOccurs="unbounded"/>
+	     </xs:sequence>
 	     </xs:complexType>
 	   </xs:element>
 	
@@ -1754,8 +2019,8 @@
 	   <xs:element name="NotifyWorkersResponse">
 	     <xs:complexType>
 	       <xs:sequence>
-		 <xs:element ref="tns:OperationRequest" minOccurs="0" />
-		 <xs:element name="NotifyWorkersResult" type="tns:NotifyWorkersResult" minOccurs="0" maxOccurs="unbounded" />
+	     <xs:element ref="tns:OperationRequest" minOccurs="0" />
+	     <xs:element name="NotifyWorkersResult" type="tns:NotifyWorkersResult" minOccurs="0" maxOccurs="unbounded" />
 	       </xs:sequence>
 	     </xs:complexType>
 	   </xs:element>
@@ -1766,6 +2031,9 @@
 	        <xs:sequence>
 	            <xs:element ref="tns:Request" minOccurs="0" />
 	            <xs:element name="DataPoint" type="tns:DataPoint" minOccurs="0" maxOccurs="unbounded"/>
+	            <xs:element name="Statistic" type="tns:RequesterStatistic" minOccurs="0"/>
+	            <xs:element name="TimePeriod" type="tns:TimePeriod" minOccurs="0"/>
+	            <xs:element name="WorkerId" type="xs:string" minOccurs="0"/>
 	        </xs:sequence>
 	    </xs:complexType>
 	
@@ -1787,6 +2055,53 @@
 	    </xs:simpleType>
 	
 	    <!--  Block Worker structures -->
+	
+	    <xs:element name="GetBlockedWorkers">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element name="AWSAccessKeyId" type="xs:string"/>
+	                <xs:element name="Timestamp" type="xs:dateTime"/>
+	                <xs:element name="Signature" type="xs:string"/>
+	                <xs:element name="Validate" type="xs:string" minOccurs="0"/>
+	                <xs:element name="Credential" type="xs:string" minOccurs="0"/>
+	                <xs:element name="Request" type="tns:GetBlockedWorkersRequest" maxOccurs="unbounded"/>
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="GetBlockedWorkersRequest">
+	        <xs:sequence>
+	            <xs:element name="PageNumber" type="xs:int" minOccurs="0"/>
+	            <xs:element name="PageSize" type="xs:int" minOccurs="0"/>
+	            <xs:element name="ResponseGroup" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:element name="GetBlockedWorkersResponse">
+	        <xs:complexType>
+	            <xs:sequence>
+	                <xs:element ref="tns:OperationRequest" minOccurs="0"/>
+	                <xs:element name="GetBlockedWorkersResult" type="tns:GetBlockedWorkersResult" minOccurs="0" maxOccurs="unbounded"/>
+	            </xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+	
+	    <xs:complexType name="GetBlockedWorkersResult">
+	        <xs:sequence>
+	            <xs:element ref="tns:Request" minOccurs="0"/>
+	            <xs:element name="PageNumber" type="xs:int" minOccurs="0"/>
+	            <xs:element name="NumResults" type="xs:int" minOccurs="0"/>
+	            <xs:element name="TotalNumResults" type="xs:int" minOccurs="0"/>
+	            <xs:element name="WorkerBlock" type="tns:WorkerBlock" minOccurs="0" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	    </xs:complexType>
+	
+	    <xs:complexType name="WorkerBlock">
+	        <xs:sequence>
+	            <xs:element name="WorkerId" type="xs:string"/>
+	            <xs:element name="Reason" type="xs:string"/>
+	        </xs:sequence>
+	    </xs:complexType>
 	
 	    <xs:element name="BlockWorker">
 	        <xs:complexType>
@@ -1882,6 +2197,8 @@
 	                <xs:element name="DisposeHITRequest" type="tns:DisposeHITRequest" minOccurs="0" />
 	                <xs:element name="DisableHITRequest" type="tns:DisableHITRequest" minOccurs="0"/>
 	                <xs:element name="GetHITRequest" type="tns:GetHITRequest" minOccurs="0"/>
+	                <xs:element name="GetAssignmentRequest" type="tns:GetAssignmentRequest" minOccurs="0"/>
+	                <xs:element name="GetReviewResultsForHITRequest" type="tns:GetReviewResultsForHITRequest" minOccurs="0"/>
 	                <xs:element name="GetReviewableHITsRequest" type="tns:GetReviewableHITsRequest" minOccurs="0"/>
 	                <xs:element name="GetHITsForQualificationTypeRequest" type="tns:GetHITsForQualificationTypeRequest" minOccurs="0"/>
 	                <xs:element name="GetQualificationsForQualificationTypeRequest" type="tns:GetQualificationsForQualificationTypeRequest" minOccurs="0"/>
@@ -1902,14 +2219,18 @@
 	                <xs:element name="UpdateQualificationTypeRequest" type="tns:UpdateQualificationTypeRequest" minOccurs="0"/>
 	                <xs:element name="ApproveAssignmentRequest" type="tns:ApproveAssignmentRequest" minOccurs="0"/>
 	                <xs:element name="RejectAssignmentRequest" type="tns:RejectAssignmentRequest" minOccurs="0"/>
-	                <xs:element name="GetAssignmentsForHIT" type="tns:GetAssignmentsForHITRequest" minOccurs="0"/>
-	                <xs:element name="GetFileUploadURL" type="tns:GetFileUploadURLRequest" minOccurs="0"/>
+	                <xs:element name="ApproveRejectedAssignmentRequest" type="tns:ApproveRejectedAssignmentRequest" minOccurs="0"/>
+	                <xs:element name="GetAssignmentsForHITRequest" type="tns:GetAssignmentsForHITRequest" minOccurs="0"/>
+	                <xs:element name="GetFileUploadURLRequest" type="tns:GetFileUploadURLRequest" minOccurs="0"/>
 	                <xs:element name="GrantBonusRequest" type="tns:GrantBonusRequest" minOccurs="0" />
 	                <xs:element name="GetBonusPaymentsRequest" type="tns:GetBonusPaymentsRequest" minOccurs="0" />
 	                <xs:element name="GetAccountBalanceRequest" type="tns:GetAccountBalanceRequest" minOccurs="0"/>
 	                <xs:element name="NotifyWorkersRequest" type="tns:NotifyWorkersRequest" minOccurs="0"/>
+	                <xs:element name="GetBlockedWorkersRequest" type="tns:GetBlockedWorkersRequest" minOccurs="0"/>
 	                <xs:element name="BlockWorkerRequest" type="tns:BlockWorkerRequest" minOccurs="0" />
 	                <xs:element name="UnblockWorkerRequest" type="tns:UnblockWorkerRequest" minOccurs="0"/>
+	                <xs:element name="GetRequesterStatisticRequest" type="tns:GetRequesterStatisticRequest" minOccurs="0"/>
+	                <xs:element name="GetRequesterWorkerStatisticRequest" type="tns:GetRequesterWorkerStatisticRequest" minOccurs="0"/>
 	                <xs:element name="HelpRequest" type="tns:HelpRequest" minOccurs="0"/>
 	                <xs:element ref="tns:Errors" minOccurs="0"/>
 	            </xs:sequence>
@@ -2079,10 +2400,10 @@
   </types>
 
   <message name="CreateHITRequestMsg">
-    <part name="body" element="tns:CreateHIT" /> 
+    <part name="body" element="tns:CreateHIT" />
   </message>
   <message name="CreateHITResponseMsg">
-    <part name="body" element="tns:CreateHITResponse" /> 
+    <part name="body" element="tns:CreateHITResponse" />
   </message>
   <message name="RegisterHITTypeRequestMsg">
     <part name="body" element="tns:RegisterHITType" />
@@ -2103,40 +2424,52 @@
     <part name="body" element="tns:SendTestEventNotificationResponse" />
   </message>
   <message name="DisposeHITRequestMsg">
-    <part name="body" element="tns:DisposeHIT" /> 
+    <part name="body" element="tns:DisposeHIT" />
   </message>
   <message name="DisposeHITResponseMsg">
-    <part name="body" element="tns:DisposeHITResponse" /> 
+    <part name="body" element="tns:DisposeHITResponse" />
   </message>
   <message name="DisableHITRequestMsg">
-    <part name="body" element="tns:DisableHIT" /> 
+    <part name="body" element="tns:DisableHIT" />
   </message>
   <message name="DisableHITResponseMsg">
-    <part name="body" element="tns:DisableHITResponse" /> 
+    <part name="body" element="tns:DisableHITResponse" />
   </message>
   <message name="GetHITRequestMsg">
-    <part name="body" element="tns:GetHIT" /> 
+    <part name="body" element="tns:GetHIT" />
   </message>
   <message name="GetHITResponseMsg">
-    <part name="body" element="tns:GetHITResponse" /> 
+    <part name="body" element="tns:GetHITResponse" />
+  </message>
+  <message name="GetAssignmentRequestMsg">
+    <part name="body" element="tns:GetAssignment" />
+  </message>
+  <message name="GetAssignmentResponseMsg">
+    <part name="body" element="tns:GetAssignmentResponse" />
+  </message>
+  <message name="GetReviewResultsForHITRequestMsg">
+    <part name="body" element="tns:GetReviewResultsForHIT" />
+  </message>
+  <message name="GetReviewResultsForHITResponseMsg">
+    <part name="body" element="tns:GetReviewResultsForHITResponse" />
   </message>
   <message name="GetReviewableHITsRequestMsg">
-    <part name="body" element="tns:GetReviewableHITs" /> 
+    <part name="body" element="tns:GetReviewableHITs" />
   </message>
   <message name="GetReviewableHITsResponseMsg">
-    <part name="body" element="tns:GetReviewableHITsResponse" /> 
+    <part name="body" element="tns:GetReviewableHITsResponse" />
   </message>
   <message name="GetHITsForQualificationTypeRequestMsg">
-    <part name="body" element="tns:GetHITsForQualificationType" /> 
+    <part name="body" element="tns:GetHITsForQualificationType" />
   </message>
   <message name="GetHITsForQualificationTypeResponseMsg">
-    <part name="body" element="tns:GetHITsForQualificationTypeResponse" /> 
+    <part name="body" element="tns:GetHITsForQualificationTypeResponse" />
   </message>
   <message name="GetQualificationsForQualificationTypeRequestMsg">
-    <part name="body" element="tns:GetQualificationsForQualificationType" /> 
+    <part name="body" element="tns:GetQualificationsForQualificationType" />
   </message>
   <message name="GetQualificationsForQualificationTypeResponseMsg">
-    <part name="body" element="tns:GetQualificationsForQualificationTypeResponse" /> 
+    <part name="body" element="tns:GetQualificationsForQualificationTypeResponse" />
   </message>
   <message name="SetHITAsReviewingRequestMsg">
     <part name="body" element="tns:SetHITAsReviewing" />
@@ -2145,41 +2478,47 @@
     <part name="body" element="tns:SetHITAsReviewingResponse" />
   </message>
   <message name="ExtendHITRequestMsg">
-    <part name="body" element="tns:ExtendHIT" /> 
+    <part name="body" element="tns:ExtendHIT" />
   </message>
   <message name="ExtendHITResponseMsg">
-    <part name="body" element="tns:ExtendHITResponse" /> 
+    <part name="body" element="tns:ExtendHITResponse" />
   </message>
   <message name="ForceExpireHITRequestMsg">
-    <part name="body" element="tns:ForceExpireHIT" /> 
+    <part name="body" element="tns:ForceExpireHIT" />
   </message>
   <message name="ForceExpireHITResponseMsg">
-    <part name="body" element="tns:ForceExpireHITResponse" /> 
+    <part name="body" element="tns:ForceExpireHITResponse" />
   </message>
   <message name="ApproveAssignmentRequestMsg">
-    <part name="body" element="tns:ApproveAssignment" /> 
+    <part name="body" element="tns:ApproveAssignment" />
   </message>
   <message name="ApproveAssignmentResponseMsg">
-    <part name="body" element="tns:ApproveAssignmentResponse" /> 
+    <part name="body" element="tns:ApproveAssignmentResponse" />
   </message>
   <message name="RejectAssignmentRequestMsg">
-    <part name="body" element="tns:RejectAssignment" /> 
+    <part name="body" element="tns:RejectAssignment" />
   </message>
   <message name="RejectAssignmentResponseMsg">
-    <part name="body" element="tns:RejectAssignmentResponse" /> 
+    <part name="body" element="tns:RejectAssignmentResponse" />
+  </message>
+  <message name="ApproveRejectedAssignmentRequestMsg">
+    <part name="body" element="tns:ApproveRejectedAssignment" />
+  </message>
+  <message name="ApproveRejectedAssignmentResponseMsg">
+    <part name="body" element="tns:ApproveRejectedAssignmentResponse" />
   </message>
   <message name="GetAssignmentsForHITRequestMsg">
-    <part name="body" element="tns:GetAssignmentsForHIT" /> 
+    <part name="body" element="tns:GetAssignmentsForHIT" />
   </message>
   <message name="GetAssignmentsForHITResponseMsg">
-    <part name="body" element="tns:GetAssignmentsForHITResponse" /> 
-  </message>  
+    <part name="body" element="tns:GetAssignmentsForHITResponse" />
+  </message>
   <message name="GetFileUploadURLRequestMsg">
-    <part name="body" element="tns:GetFileUploadURL" /> 
+    <part name="body" element="tns:GetFileUploadURL" />
   </message>
   <message name="GetFileUploadURLResponseMsg">
-    <part name="body" element="tns:GetFileUploadURLResponse" /> 
-  </message>  
+    <part name="body" element="tns:GetFileUploadURLResponse" />
+  </message>
   <message name="SearchHITsRequestMsg">
     <part name="body" element="tns:SearchHITs" />
   </message>
@@ -2193,29 +2532,29 @@
     <part name="body" element="tns:ChangeHITTypeOfHITResponse"/>
   </message>
 
-  <!--  Grant bonus messages -->  
+  <!--  Grant bonus messages -->
   <message name="GrantBonusRequestMsg">
     <part name="body" element="tns:GrantBonus" />
   </message>
   <message name="GrantBonusResponseMsg">
     <part name="body" element="tns:GrantBonusResponse" />
-  </message>   
+  </message>
 
-  <!--  Get bonus payments messages -->  
+  <!--  Get bonus payments messages -->
 
   <message name="GetBonusPaymentsRequestMsg">
     <part name="body" element="tns:GetBonusPayments" />
   </message>
   <message name="GetBonusPaymentsResponseMsg">
     <part name="body" element="tns:GetBonusPaymentsResponse" />
-  </message>   
+  </message>
 
   <!-- QualificationType messages -->
   <message name="CreateQualificationTypeRequestMsg">
-    <part name="body" element="tns:CreateQualificationType" /> 
+    <part name="body" element="tns:CreateQualificationType" />
   </message>
   <message name="CreateQualificationTypeResponseMsg">
-    <part name="body" element="tns:CreateQualificationTypeResponse" /> 
+    <part name="body" element="tns:CreateQualificationTypeResponse" />
   </message>
   <message name="GetQualificationRequestsRequestMsg">
     <part name="body" element="tns:GetQualificationRequests" />
@@ -2230,16 +2569,16 @@
     <part name="body" element="tns:RejectQualificationRequestResponse"/>
   </message>
   <message name="GrantQualificationRequestMsg">
-    <part name="body" element="tns:GrantQualification" /> 
+    <part name="body" element="tns:GrantQualification" />
   </message>
   <message name="GrantQualificationResponseMsg">
-    <part name="body" element="tns:GrantQualificationResponse" /> 
+    <part name="body" element="tns:GrantQualificationResponse" />
   </message>
   <message name="AssignQualificationRequestMsg">
-    <part name="body" element="tns:AssignQualification" /> 
+    <part name="body" element="tns:AssignQualification" />
   </message>
   <message name="AssignQualificationResponseMsg">
-    <part name="body" element="tns:AssignQualificationResponse" /> 
+    <part name="body" element="tns:AssignQualificationResponse" />
   </message>
   <message name="RevokeQualificationRequestMsg">
     <part name="body" element="tns:RevokeQualification"/>
@@ -2248,34 +2587,34 @@
     <part name="body" element="tns:RevokeQualificationResponse"/>
   </message>
   <message name="UpdateQualificationScoreRequestMsg">
-  	<part name="body" element="tns:UpdateQualificationScore"/>
+      <part name="body" element="tns:UpdateQualificationScore"/>
   </message>
   <message name="UpdateQualificationScoreResponseMsg">
     <part name="body" element="tns:UpdateQualificationScoreResponse"/>
   </message>
   <message name="GetQualificationScoreRequestMsg">
-  	<part name="body" element="tns:GetQualificationScore"/>
+      <part name="body" element="tns:GetQualificationScore"/>
   </message>
   <message name="GetQualificationScoreResponseMsg">
     <part name="body" element="tns:GetQualificationScoreResponse"/>
   </message>
   <message name="GetQualificationTypeRequestMsg">
-    <part name="body" element="tns:GetQualificationType" /> 
+    <part name="body" element="tns:GetQualificationType" />
   </message>
   <message name="GetQualificationTypeResponseMsg">
-    <part name="body" element="tns:GetQualificationTypeResponse" /> 
+    <part name="body" element="tns:GetQualificationTypeResponse" />
   </message>
   <message name="UpdateQualificationTypeRequestMsg">
-    <part name="body" element="tns:UpdateQualificationType" /> 
+    <part name="body" element="tns:UpdateQualificationType" />
   </message>
   <message name="UpdateQualificationTypeResponseMsg">
-    <part name="body" element="tns:UpdateQualificationTypeResponse" /> 
+    <part name="body" element="tns:UpdateQualificationTypeResponse" />
   </message>
   <message name="SearchQualificationTypesRequestMsg">
-    <part name="body" element="tns:SearchQualificationTypes" /> 
+    <part name="body" element="tns:SearchQualificationTypes" />
   </message>
   <message name="SearchQualificationTypesResponseMsg">
-    <part name="body" element="tns:SearchQualificationTypesResponse" /> 
+    <part name="body" element="tns:SearchQualificationTypesResponse" />
   </message>
   
   <!-- Disposing Qualifications -->
@@ -2286,31 +2625,45 @@
      <part name="body" element="tns:DisposeQualificationTypeResponse" />
   </message>
 
-  <!-- Statistic messages -->
+  <!-- GetRequesterStatistic messages -->
   <message name="GetRequesterStatisticRequestMsg">
     <part name="body" element="tns:GetRequesterStatistic" />
   </message>
   <message name="GetRequesterStatisticResponseMsg">
-    <part name="body" element="tns:GetRequesterStatisticResponse" /> 
+    <part name="body" element="tns:GetRequesterStatisticResponse" />
   </message>
 
-  <!--  Notification messages -->  
+  <!-- GetRequesterWorkerStatistic messages -->
+  <message name="GetRequesterWorkerStatisticRequestMsg">
+    <part name="body" element="tns:GetRequesterWorkerStatistic" />
+  </message>
+  <message name="GetRequesterWorkerStatisticResponseMsg">
+    <part name="body" element="tns:GetRequesterWorkerStatisticResponse" />
+  </message>
+
+  <!--  Notification messages -->
   <message name="NotifyWorkersRequestMsg">
     <part name="body" element="tns:NotifyWorkers" />
   </message>
   <message name="NotifyWorkersResponseMsg">
     <part name="body" element="tns:NotifyWorkersResponse" />
-  </message>     
+  </message>
 
   <!-- Account balance messages -->
   <message name="GetAccountBalanceRequestMsg">
-    <part name="body" element="tns:GetAccountBalance" /> 
+    <part name="body" element="tns:GetAccountBalance" />
   </message>
   <message name="GetAccountBalanceResponseMsg">
-    <part name="body" element="tns:GetAccountBalanceResponse" /> 
+    <part name="body" element="tns:GetAccountBalanceResponse" />
   </message>
 
   <!-- BlockWorker messages -->
+  <message name="GetBlockedWorkersRequestMsg">
+    <part name="body" element="tns:GetBlockedWorkers" />
+  </message>
+  <message name="GetBlockedWorkersResponseMsg">
+    <part name="body" element="tns:GetBlockedWorkersResponse" />
+  </message>
   <message name="BlockWorkerRequestMsg">
     <part name="body" element="tns:BlockWorker" />
   </message>
@@ -2327,7 +2680,7 @@
   <!-- Help messages -->
   <message name="HelpRequestMsg">
     <part name="body" element="tns:Help"/>
-  </message>    
+  </message>
   <message name="HelpResponseMsg">
     <part name="body" element="tns:HelpResponse"/>
   </message>
@@ -2361,6 +2714,14 @@
       <input message="tns:GetHITRequestMsg"/>
       <output message="tns:GetHITResponseMsg"/>
     </operation>
+    <operation name="GetAssignment">
+      <input message="tns:GetAssignmentRequestMsg"/>
+      <output message="tns:GetAssignmentResponseMsg"/>
+    </operation>
+    <operation name="GetReviewResultsForHIT">
+      <input message="tns:GetReviewResultsForHITRequestMsg"/>
+      <output message="tns:GetReviewResultsForHITResponseMsg"/>
+    </operation>
     <operation name="GetReviewableHITs">
       <input message="tns:GetReviewableHITsRequestMsg"/>
       <output message="tns:GetReviewableHITsResponseMsg"/>
@@ -2392,6 +2753,10 @@
     <operation name="RejectAssignment">
       <input message="tns:RejectAssignmentRequestMsg"/>
       <output message="tns:RejectAssignmentResponseMsg"/>
+    </operation>
+    <operation name="ApproveRejectedAssignment">
+      <input message="tns:ApproveRejectedAssignmentRequestMsg"/>
+      <output message="tns:ApproveRejectedAssignmentResponseMsg"/>
     </operation>
     <operation name="GetAssignmentsForHIT">
       <input message="tns:GetAssignmentsForHITRequestMsg"/>
@@ -2470,16 +2835,22 @@
       <output message="tns:DisposeQualificationTypeResponseMsg"/>
     </operation>
 
-    <!-- Statistic operation -->
+    <!-- GetRequesterStatistic operation -->
     <operation name="GetRequesterStatistic">
       <input message="tns:GetRequesterStatisticRequestMsg"/>
       <output message="tns:GetRequesterStatisticResponseMsg"/>
     </operation>
-    
+
+    <!-- GetRequesterWorkerStatistic operation -->
+    <operation name="GetRequesterWorkerStatistic">
+      <input message="tns:GetRequesterWorkerStatisticRequestMsg"/>
+      <output message="tns:GetRequesterWorkerStatisticResponseMsg"/>
+    </operation>
+
     <!-- Notification operation -->
     <operation name="NotifyWorkers">
-	  <input message="tns:NotifyWorkersRequestMsg"/>
-	  <output message="tns:NotifyWorkersResponseMsg"/>
+      <input message="tns:NotifyWorkersRequestMsg"/>
+      <output message="tns:NotifyWorkersResponseMsg"/>
     </operation>
 
     <!-- Account Balance operation -->
@@ -2489,6 +2860,10 @@
     </operation>
 
     <!-- BlockWorker operations -->
+    <operation name="GetBlockedWorkers">
+      <input message="tns:GetBlockedWorkersRequestMsg"/>
+      <output message="tns:GetBlockedWorkersResponseMsg"/>
+    </operation>
     <operation name="BlockWorker">
       <input message="tns:BlockWorkerRequestMsg"/>
       <output message="tns:BlockWorkerResponseMsg"/>
@@ -2512,10 +2887,10 @@
     <operation name="CreateHIT">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
     
@@ -2552,45 +2927,65 @@
     <operation name="DisposeHIT">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
     <operation name="DisableHIT">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
     <operation name="GetHIT">
-      <soap:operation soapAction="http://soap.amazon.com"/> 
+      <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="GetAssignment">
+      <soap:operation soapAction="http://soap.amazon.com"/>
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="GetReviewResultsForHIT">
+      <soap:operation soapAction="http://soap.amazon.com"/>
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetReviewableHITs">
-      <soap:operation soapAction="http://soap.amazon.com"/> 
+      <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetHITsForQualificationType">
-      <soap:operation soapAction="http://soap.amazon.com"/> 
+      <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
         <soap:body use="literal" />
       </input>
@@ -2600,7 +2995,7 @@
     </operation>
 
     <operation name="GetQualificationsForQualificationType">
-      <soap:operation soapAction="http://soap.amazon.com"/> 
+      <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
         <soap:body use="literal" />
       </input>
@@ -2622,120 +3017,130 @@
     <operation name="ExtendHIT">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
     <operation name="ForceExpireHIT">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
     <operation name="ApproveAssignment">
-      <soap:operation soapAction="http://soap.amazon.com"/> 
+      <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="RejectAssignment">
-      <soap:operation soapAction="http://soap.amazon.com"/> 
+      <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="ApproveRejectedAssignment">
+      <soap:operation soapAction="http://soap.amazon.com"/>
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetAssignmentsForHIT">
-      <soap:operation soapAction="http://soap.amazon.com"/> 
+      <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </output>
     </operation>
     
     <operation name="GetFileUploadURL">
-      <soap:operation soapAction="http://soap.amazon.com"/> 
+      <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="SearchHITs">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </output>
     </operation>
     
     <operation name="GrantBonus">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetBonusPayments">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </input>
       <output>
-	<soap:body use="literal" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="ChangeHITTypeOfHIT">
-        <soap:operation soapAction="http://soap.amazon.com"/>
-        <input>
-            <soap:body use="literal"/>
-        </input>
-        <output>
-            <soap:body use="literal"/>
-        </output>
+      <soap:operation soapAction="http://soap.amazon.com"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
     </operation>
 
     <operation name="CreateQualificationType">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
     <operation name="GetQualificationRequests">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
@@ -2747,35 +3152,35 @@
       <output>
         <soap:body use="literal"/>
       </output>
-    </operation>   
+    </operation>
 
     <operation name="GetQualificationType">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
-    </operation>   
+    </operation>
 
     <operation name="GrantQualification">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
     <operation name="AssignQualification">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
@@ -2787,116 +3192,136 @@
       <output>
         <soap:body use="literal"/>
       </output>
-    </operation>  
+    </operation>
 
     <operation name="SearchQualificationTypes">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
-    </operation>   
+    </operation>
 
     <operation name="UpdateQualificationType">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
     
     <operation name="GetQualificationScore">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
-    </operation> 
+    </operation>
     
     <operation name="UpdateQualificationScore">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
-    </operation>     
+    </operation>
 
     <operation name="GetAccountBalance">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
  
     <operation name="GetRequesterStatistic">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
-    
+
+    <operation name="GetRequesterWorkerStatistic">
+      <soap:operation soapAction="http://soap.amazon.com"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+
     <operation name="DisposeQualificationType">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
-    </operation>   
+    </operation>
 
-    <!-- Notification bindings -->   
+    <!-- Notification bindings -->
     <operation name="NotifyWorkers">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+
+    <operation name="GetBlockedWorkers">
+      <soap:operation soapAction="http://soap.amazon.com"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
     <operation name="BlockWorker">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
-    </operation>   
+    </operation>
 
     <operation name="UnblockWorker">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
-    </operation>   
+    </operation>
 
     <operation name="Help">
       <soap:operation soapAction="http://soap.amazon.com"/>
       <input>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </input>
       <output>
-	<soap:body use="literal"/>
+        <soap:body use="literal"/>
       </output>
     </operation>
 
@@ -2904,8 +3329,8 @@
   
   <service name="AWSMechanicalTurkRequester">
     <port name="AWSMechanicalTurkRequesterPort" binding="tns:AWSMechanicalTurkRequesterBinding">
-      <soap:address location="http://mechanicalturk.amazonaws.com/?Service=AWSMechanicalTurkRequester"/>
+      <soap:address location="https://mechanicalturk.amazonaws.com/?Service=AWSMechanicalTurkRequester"/>
     </port>
-  </service>
+</service>
 
 </definitions>

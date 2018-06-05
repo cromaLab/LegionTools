@@ -18,7 +18,7 @@ if( $dbh ) {
 	$task = $_REQUEST['task'];
 	$newTask = $_REQUEST['newTask'];
 
-	$sql = "INSERT INTO retainer(task_title, task_description, task_keywords, task, country, percentApproved) select task_title, task_description, task_keywords, :newTask, country, percentApproved from retainer where task = :task limit 1";
+	$sql = "INSERT INTO retainer(task_title, task_description, task_keywords, task, country, state, percentApproved) select task_title, task_description, task_keywords, :newTask, country, :state, percentApproved from retainer where task = :task limit 1";
 	$sth = $dbh->prepare($sql); 
 	$sth->execute(array(':task' => $task, ':newTask' => $newTask));
 	echo $newTask;

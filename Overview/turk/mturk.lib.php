@@ -422,8 +422,6 @@ class MTurkInterface
       /* Required values for either type */
       if     (!$this->LifetimeInSeconds)                return $this->mtError("Missing LifetimeInSeconds Parameter");
       elseif (!$this->Question)                         return $this->mtError("Missing Question Parameter");
-
-
       return $this->mtFakeSoap();
    }
 
@@ -647,7 +645,7 @@ class MTurkInterface
             elseif (!$val['Comparator'])                            return $this->mtError("Missing Comparator Parameter {$fg}");
             elseif (!in_array($val['Comparator'], $this->validCPT)) return $this->mtError("Invalid Comparator Parameter {$fg}");
             elseif (!$val['Value'])                                 return $this->mtError("Missing Value Parameter {$fg}");
-            elseif (!is_numeric($val['Value']))                     return $this->mtError("Invalid Value Parameter {$fg}");
+            // elseif (!is_numeric($val['Value']))                     return $this->mtError("Invalid Value Parameter {$fg}"); // Debugging
          }
       }
 
@@ -795,13 +793,39 @@ class MTurkInterface
       $this->SOAPSwitch = TRUE; /* We ARE making a SOAP request */
 
       /* Qualification List */
+      // if (is_array($this->QualificationRequirement))
+      // {
+      //    $quals = "";
+      //    foreach ($this->QualificationRequirement as $foo)
+      //    {
+      //       $quals .= "<QualificationRequirement>\n";
+      //       foreach ($foo as $key => $val) {
+      //         $quals .= "<{$key}>{$val}</{$key}>\n";
+      //       }
+      //       $quals .= "</QualificationRequirement>\n";
+      //    }
+      // }
+
+      /* Qualification List */
       if (is_array($this->QualificationRequirement))
       {
          $quals = "";
          foreach ($this->QualificationRequirement as $foo)
          {
             $quals .= "<QualificationRequirement>\n";
-            foreach ($foo as $key => $val) $quals .= "<{$key}>{$val}</{$key}>\n";
+            foreach ($foo as $key => $val) {
+              if (!is_array($val)) $quals .= "<{$key}>{$val}</{$key}>\n";
+              else
+              {
+                /* Covering multiple qual inputs */
+                $quals .= "<{$key}>\n";
+                foreach ($val as $k2 => $v2)
+                {
+                  $quals .= "<{$k2}>{$v2}</{$k2}>\n";
+                }
+                $quals .= "</{$key}>\n";
+              }
+            }
             $quals .= "</QualificationRequirement>\n";
          }
       }

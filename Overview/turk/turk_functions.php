@@ -51,7 +51,10 @@
 
     function turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments,$keywords,$AutoApprovalDelayInSeconds) {
     	global $DEBUG, $SANDBOX, $AccessKey ,$SecretKey;
-    	
+		
+		error_log('.:: turk50_hit()',0); // Debugging
+		error_log(print_r($qualification,true),0);
+
     	if($SANDBOX)
     		$turk50 = new Turk50($AccessKey, $SecretKey);
     	else
@@ -76,10 +79,13 @@
          "MaxAssignments" => $maxAssignments,
          "Keywords" => $keywords,
          "AutoApprovalDelayInSeconds" => $AutoApprovalDelayInSeconds
-    	);
-
+		);
+		
     	// invoke CreateHIT
-    	$CreateHITResponse = $turk50->CreateHIT($Request);
+		$CreateHITResponse = $turk50->CreateHIT($Request);
+		
+		error_log($turk50->__getLastRequest(),0); // Debugging
+
         // $hitId = $CreateHITResponse->HIT->HITId;
         // $assignId = turk_easyHitToAssn($hitId);
         return $CreateHITResponse;
@@ -414,7 +420,9 @@
             "AutoGranted" => true
         );
 
-        return $turk50->CreateQualificationType($Request);
+		$temp = $turk50->CreateQualificationType($Request);
+
+		return $temp;
     }
 
     function turk50_disposeQualificationType($qualificationTypeId){

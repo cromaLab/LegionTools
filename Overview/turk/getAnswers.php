@@ -59,14 +59,37 @@ function createQualificationRequirement($row){
 
 	// require Worker_Locale == Country
 	$country = $row[0]["country"];
+	$state = $row[0]["state"];
+
+	error_log(".:: getAnswers.php :: Country ".$country,0); // Debugging
+	error_log(".:: getAnswers.php :: State ".$state,0); // Debugging
+
 	if($country != "" && $country != "All"){
-		$Worker_Locale = array(
-		 "QualificationTypeId" => "00000000000000000071",
-		 "Comparator" => "EqualTo",
-		 "LocaleValue" => array("Country" => $country)
-		);
+		if($state != "" && $state != "Any"){
+			$Worker_Locale = array(
+				"QualificationTypeId" => "00000000000000000071",
+				"Comparator" => "EqualTo",
+				"LocaleValue" => array("Country" => $country, "Subdivision" => $state)
+			);
+		}
+		else{
+			$Worker_Locale = array(
+				"QualificationTypeId" => "00000000000000000071",
+				"Comparator" => "EqualTo",
+				"LocaleValue" => array("Country" => $country)
+			);
+		}
 		array_push($qualsArray, $Worker_Locale);
 	}
+
+// 	QualificationRequirement:{
+// 		QualificationTypeId:"00000000000000000071",
+// 		Comparator:"EqualTo",
+// 		LocaleValues:[{
+// 			Country:"US",
+// 			Subdivision:"PA"
+// 	  }]
+//   }
 
 	if($_REQUEST['requireUniqueWorkers'] == "true"){
 		if($SANDBOX) $dbCol = "noRepeatQualIdSandbox";
@@ -76,7 +99,7 @@ function createQualificationRequirement($row){
 
 		if($noRepeatQualId == null || $noRepeatQualId == ""){
 			$qual = turk50_createQualificationType(date("Ymd-His").generateRandomString(), "This qualification is for people who have worked for me on this task(".$_REQUEST['task'].") before.", "Worked for me before", $SANDBOX);
-			error_log(print_r($qual,true),0);
+			error_log(print_r($qual,true),0); //Debugging
 			$noRepeatQualId = $qual->QualificationType->QualificationTypeId;
 
 			if($SANDBOX) $sql = ("UPDATE retainer set noRepeatQualIdSandbox = :noRepeatQualId WHERE task = :task");
@@ -92,6 +115,9 @@ function createQualificationRequirement($row){
 		array_push($qualsArray, $Unique_Workers_Qual);
 	}
 
+	error_log('///////// getAnswers.php',0);
+	error_log(print_r($qualsArray,true),0); //Debugging
+	
 	return $qualsArray;
 }
 
