@@ -1,5 +1,6 @@
 <?php
-
+    ini_set("soap.wsdl_cache_enabled",0);
+    
     /**
      * @author David J. Malan <dmalan@harvard.edu>
      * @link http://wiki.cs50.net/Turk50
@@ -82,7 +83,7 @@
                 $trace = $options["trace"];
             }
             else
-                $trace = FALSE;
+                $trace = TRUE;
 
             // instantiate SOAP client
             $this->client = new SoapClient(

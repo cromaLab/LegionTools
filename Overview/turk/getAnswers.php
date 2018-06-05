@@ -99,7 +99,7 @@ function createQualificationRequirement($row){
 
 		if($noRepeatQualId == null || $noRepeatQualId == ""){
 			$qual = turk50_createQualificationType(date("Ymd-His").generateRandomString(), "This qualification is for people who have worked for me on this task(".$_REQUEST['task'].") before.", "Worked for me before", $SANDBOX);
-			error_log(print_r($qual,true),0);
+			error_log(print_r($qual,true),0); //Debugging
 			$noRepeatQualId = $qual->QualificationType->QualificationTypeId;
 
 			if($SANDBOX) $sql = ("UPDATE retainer set noRepeatQualIdSandbox = :noRepeatQualId WHERE task = :task");
@@ -115,6 +115,7 @@ function createQualificationRequirement($row){
 		array_push($qualsArray, $Unique_Workers_Qual);
 	}
 
+	error_log('///////// getAnswers.php',0);
 	error_log(print_r($qualsArray,true),0); //Debugging
 	
 	return $qualsArray;
@@ -345,7 +346,7 @@ else if(isset($_REQUEST['mode']) && $_REQUEST['mode'] == "direct"){
 	for($i = 0; $i < $numHITs; $i++){
 		// turk50_hit($title,$description,$money,$url,$duration,$lifetime,$qualification,$maxAssignments) 
 		$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 5400, 50000, $qualification, $numAssignments, $result[0]['task_keywords'],12000);
-		//$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 3600, 50000, $qualification, $numAssignments, $result[0]['task_keywords'],1200);
+		//$hitResponse = turk50_hit($result[0]['task_title'], $result[0]['task_description'], $price, $url, 3600, 50000, $qualification, $numAssignments, $result[0]['task_keywords'],1200);		
 		$hitId = $hitResponse->HIT->HITId;
 		$currentTime = time();
 		$sql = "INSERT INTO hits (task, hit_Id, time, sandbox) values (:task, :hit_Id, :time, :sandbox)";

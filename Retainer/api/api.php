@@ -595,7 +595,7 @@ switch ($method) {
                                 'LocaleValues' => [
                                     [
                                         'Country' => 'US', // REQUIRED
-                                        //'Subdivision' => 'US-MI',
+                                        'Subdivision' => 'US-MI'
                                     ],
                                     // ...
                                 ],
