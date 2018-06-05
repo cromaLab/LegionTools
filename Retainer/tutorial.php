@@ -16,7 +16,7 @@
 
 <script type="text/javascript" language="javascript"> 
 // point to given instructions page, or default if no param is found
-var task = decodeURI(gup('tutPageUrl')) + "&workerId=" + gup("workerId") + "&assignmentId=" + gup("assignmentId");
+var task = decodeURI(gup('tutPageUrl')) + "?&workerId=" + gup("workerId") + "&assignmentId=" + gup("assignmentId");
 
 //alert(task); 
 

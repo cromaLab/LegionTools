@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+ini_set('log_errors_max_len', 0);
 error_log(".:: ".basename(__FILE__),0); // Debugging
 
 include('_db.php');
@@ -29,16 +30,15 @@ if( $dbh ) {
 	# $sql = "SELECT hit_Id FROM hits WHERE task = :task";
     $sth = $dbh->prepare($sql);
 
-    //echo "sandbox is ";
-    //echo "$SANDBOX"; 
-    //echo "...\n"; 
+    error_log("SANDBOX: ".$SANDBOX);
 
 	$sth->execute(array(':task' => $task, ':sandbox' => $SANDBOX));
 	# $sth->execute(array(':task' => $task));
     
     $hitsForTask = $sth->fetchAll();
     //echo "\nhitsForTask --> \n"; 
-    //print_r($hitsForTask);
+    error_log('$hitsForTask');
+    error_log(print_r($hitsForTask,true),0);
 
 	$reviewableHits = turk50_getAllReviewableHits();
     if(!is_array($reviewableHits)) {
@@ -51,7 +51,8 @@ if( $dbh ) {
 	}
 
     //echo "\nhitsFromTurk --> \n"; 
-    //print_r($hitsFromTurk); 
+    error_log('$hitsFromTurk');
+    error_log(print_r($hitsFromTurk,true),0); 
 
 	if(is_array($hitsFromTurk)){
 		foreach($hitsForTask as $hit){
@@ -62,7 +63,8 @@ if( $dbh ) {
 	}
 
     //echo "\nresultHitIds --> \n";
-    //print_r($resultHitIds);
+    error_log('$resultHitIds');
+    error_log(print_r($resultHitIds,true),0);
 
 	foreach($resultHitIds as $hitId){
 		//print_r(turk_easyHitToAssn($hitId));
@@ -81,6 +83,8 @@ if( $dbh ) {
 	}
 	
     //echo "\njson encoding resultHits --> \n";
+    error_log('$resultHits');
+    error_log(print_r($resultHits,true),0);
     echo json_encode($resultHits);
 
 }
